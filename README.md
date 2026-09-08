@@ -1,14 +1,8 @@
-fontend
-next.js + tailwind css
-
-backend
-python (FastAPI)
-
-database
-postgres
-
-AI+ML workflow
-typhoon OCR
-
-Decision 
-LLM API
+Tech Stack
+Frontend: React, Tailwind CSS
+Backend: FastAPI (Python)
+Database: Supabase (PostgreSQL)
+Infrastructure: Cloudflare
+AI: LLM API, Embedding Model
+Document Processing: PyMuPDF, python-docx, PaddleOCR
+Vector Search: pgvector
