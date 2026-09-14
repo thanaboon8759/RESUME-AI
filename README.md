@@ -25,7 +25,7 @@ An intelligent recruitment and candidate evaluation platform.
 4. Activate the virtual environment and start the FastAPI server:
    ```powershell
    .\.venv\Scripts\Activate.ps1
-   uvicorn main:app --reload
+   uvicorn app.main:app --reload
    ```
 
 ### 2. Frontend Setup

@@ -1,17 +1,6 @@
 from pydantic import BaseModel
-from typing import List, Optional, Any, Dict
-from enum import Enum
-
-class DecisionEnum(str, Enum):
-    shortlisted = "shortlisted"
-    rejected = "rejected"
-    undecided = "undecided"
-
-class CriterionStatusEnum(str, Enum):
-    met = "met"
-    partial = "partial"
-    unmet = "unmet"
-    unknown = "unknown"
+from typing import List, Optional, Dict
+from .core import DecisionEnum, CriterionStatusEnum
 
 class Evidence(BaseModel):
     id: str
@@ -55,10 +44,8 @@ class Candidate(BaseModel):
 class CandidateCreate(BaseModel):
     name: str
     resume_text: str
-    # Add other basic info needed for the mock AI
-    
+
 class DumbdogAIResponse(BaseModel):
     score: int
     decision: DecisionEnum
     reasons: List[str]
-    # We map this to the frontend candidate fields in main.py
