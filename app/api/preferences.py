@@ -9,13 +9,21 @@ router = APIRouter()
 async def get_preferences(user = Depends(get_current_user)):
     prefs = preference_service.get_preferences(user.id)
     if not prefs:
+        display_name = (user.user_metadata or {}).get("displayName") or (user.email.split('@')[0] if user.email else "Workspace")
+        default_reasons = [
+            {"id": "reason-0-0", "label": "ผลงานตรงกับที่ต้องการ", "appliesTo": ["shortlisted"], "hidden": False, "isDefault": True},
+            {"id": "reason-1-0", "label": "ประสบการณ์ไม่ตรงสายงาน", "appliesTo": ["rejected"], "hidden": False, "isDefault": True},
+            {"id": "reason-1-1", "label": "ขาดทักษะหลัก", "appliesTo": ["rejected"], "hidden": False, "isDefault": True},
+            {"id": "reason-2-0", "label": "ต้องการข้อมูลเพิ่มเติม", "appliesTo": ["undecided"], "hidden": False, "isDefault": True}
+        ]
+            
         prefs = Preferences(
-            name="Workspace",
+            name=display_name,
             email=user.email,
-            company="My Company",
+            company="",
             retention="0",
-            reasons={"0": "ประสบการณ์ทำงานน้อยไป", "1": "เรียกเงินเดือนสูงเกินไป", "2": "ทักษะไม่ตรงกับตำแหน่ง", "3": "อื่นๆ"},
-            members=[{"id": "owner", "email": user.email, "role": "admin"}],
+            reasons=default_reasons,
+            members=[{"id": "owner", "email": user.email, "role": "user"}],
             deleted=[],
             jobDeleted=False
         )
