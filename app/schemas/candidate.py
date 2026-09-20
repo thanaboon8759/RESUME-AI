@@ -44,8 +44,63 @@ class Candidate(BaseModel):
 class CandidateCreate(BaseModel):
     name: str
     resume_text: str
+    resume_url: Optional[str] = None
 
 class DumbdogAIResponse(BaseModel):
     score: int
     decision: DecisionEnum
     reasons: List[str]
+
+class EvidenceResponse(BaseModel):
+    quote: str
+    block_ids: List[str] = []
+
+class FactEvidence(BaseModel):
+    quote: str
+    block_ids: List[str] = []
+
+class SkillFact(BaseModel):
+    name: str
+    evidence: Optional[FactEvidence] = None
+
+class PersonalInfo(BaseModel):
+    name: Optional[str] = None
+    email: Optional[str] = None
+    phone: Optional[str] = None
+    location: Optional[str] = None
+    website: Optional[str] = None
+    github: Optional[str] = None
+    linkedin: Optional[str] = None
+
+class CandidateProfile(BaseModel):
+    personal_info: PersonalInfo
+    education: List[dict] = []
+    experience: List[dict] = []
+    projects: List[dict] = []
+    skills: List[SkillFact] = []
+    certifications: List[dict] = []
+    languages: List[str] = []
+
+class EvidenceRef(BaseModel):
+    field: str
+    value: str
+
+class CriterionEvaluation(BaseModel):
+    label: str
+    status: CriterionStatusEnum
+    evidence_refs: List[EvidenceRef] = []
+
+class ScreeningResult(BaseModel):
+    score: int
+    decision: DecisionEnum
+    role: Optional[str] = "Unknown"
+    headline: Optional[str] = "Evaluated by AI"
+    experience_summary: Optional[str] = "Unknown"
+    location: Optional[str] = "Unknown"
+    strengths: List[str] = []
+    weaknesses: List[str] = []
+    missingInformation: List[str] = []
+    detectedLanguages: List[str] = []
+    reasons: List[str] = []
+    criteria: List[CriterionEvaluation] = []
+    evidence: List[EvidenceResponse] = []

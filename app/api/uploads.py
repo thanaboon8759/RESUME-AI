@@ -30,7 +30,11 @@ async def upload_file(
     try:
         content = await file.read()
         file_path = f"{jobId}/{id}_{file.filename}"
-        supabase.storage.from_("uploads").upload(file_path, content)
+        supabase.storage.from_("uploads").upload(
+            file_path, 
+            content,
+            file_options={"content-type": file.content_type, "x-upsert": "true"}
+        )
         return {"status": "success"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

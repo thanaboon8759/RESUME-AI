@@ -1,8 +1,10 @@
 from fastapi import APIRouter, HTTPException, Depends
+from fastapi.responses import Response
 from typing import List
 from app.schemas.candidate import Candidate, CandidateCreate
 from app.services import candidate_service
 from app.auth import get_current_user
+from app.database.supabase.client import supabase
 
 router = APIRouter()
 
@@ -19,3 +21,15 @@ async def get_candidate(candidate_id: str, user = Depends(get_current_user)):
     cand = candidate_service.get_candidate(candidate_id, user.id)
     if not cand: raise HTTPException(status_code=404, detail="Candidate not found")
     return cand
+
+@router.get("/candidates/{candidate_id}/resume")
+async def download_candidate_resume(candidate_id: str, user = Depends(get_current_user)):
+    cand = candidate_service.get_candidate(candidate_id, user.id)
+    if not cand or not cand.get("resumeUrl"):
+        raise HTTPException(status_code=404, detail="Resume not found")
+    
+    try:
+        res = supabase.storage.from_("uploads").download(cand.get("resumeUrl"))
+        return Response(content=res, media_type="application/pdf")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
