@@ -32,4 +32,4 @@ async def download_candidate_resume(candidate_id: str, user = Depends(get_curren
         res = supabase.storage.from_("uploads").download(cand.get("resumeUrl"))
         return Response(content=res, media_type="application/pdf")
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=404, detail=f"Resume not found in storage: {str(e)}")
