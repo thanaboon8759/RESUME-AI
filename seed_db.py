@@ -7,12 +7,24 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-from database import supabase
+from app.database.supabase.client import supabase
 
 def seed():
     if not supabase:
         print("Error: Supabase client not initialized. Check your .env file.")
         sys.exit(1)
+
+    print("Logging in as admin to bypass RLS...")
+    try:
+        auth_response = supabase.auth.sign_in_with_password({
+            "email": "admin@example.com",
+            "password": "REDACTED"
+        })
+        user_id = auth_response.user.id
+        print(f"Logged in as admin, user_id: {user_id}")
+    except Exception as e:
+        print(f"Warning: Login failed: {e}")
+
 
     # Path to fixtures.json
     fixtures_path = Path(__file__).parent.parent / "frontend" / "src" / "mocks" / "fixtures.json"
@@ -27,6 +39,60 @@ def seed():
 
     print(f"Found {len(candidates)} candidates to seed.")
 
+    # 1. Seed Preferences
+    reasons = []
+    labels = [
+        ["ผลงานตรงกับที่ต้องการ", "ประสบการณ์เทียบเคียงได้แม้ชื่อตำแหน่งไม่ตรง", "น่าสนใจแม้ระบบให้คะแนนต่ำ"],
+        ["ประสบการณ์ไม่ตรงสายงาน", "ขาดทักษะหลัก", "เกินระดับตำแหน่ง", "สถานที่ทำงานไม่ตรง", "ช่วงเงินเดือนไม่ตรง", "ข้อมูลในเรซูเม่ไม่พอตัดสิน"],
+        ["ต้องการข้อมูลเพิ่มเติม", "รอหารือกับทีม"]
+    ]
+    applies_to_map = ["shortlisted", "rejected", "undecided"]
+    for g, group in enumerate(labels):
+        for i, label in enumerate(group):
+            reasons.append({
+                "id": f"reason-{g}-{i}",
+                "label": label,
+                "appliesTo": [applies_to_map[g]],
+                "hidden": False,
+                "isDefault": True
+            })
+
+    prefs = {
+        "id": "default",
+        "user_id": user_id,
+        "name": "ทีมทรัพยากรบุคคล",
+        "email": "hr@example.com",
+        "company": "Hireproof Studio",
+        "retention": "90",
+        "reasons": reasons,
+        "members": [{"id": "owner", "email": "hr@example.com", "role": "admin"}],
+        "deleted": [],
+        "job_deleted": False
+    }
+    supabase.table("preferences").upsert(prefs).execute()
+    print("[OK] Seeded: Preferences")
+
+    # 2. Seed Jobs
+    from datetime import datetime, timezone
+    job = {
+        "id": "design",
+        "user_id": user_id,
+        "title": "Senior Product Designer",
+        "jd": "",
+        "required": ["Figma", "User Research"],
+        "preferred": ["English"],
+        "weights": {"Figma": 5, "User Research": 4, "English": 3},
+        "experience": "3",
+        "education": "ปริญญาตรี",
+        "location": "กรุงเทพมหานคร",
+        "salary": "50,000–80,000",
+        "mandatory": ["ทำงานที่กรุงเทพฯ ได้"],
+        "created_at": datetime.now(timezone.utc).isoformat()
+    }
+    supabase.table("jobs").upsert(job).execute()
+    print("[OK] Seeded: Job (design)")
+
+    # 3. Seed Candidates
     success_count = 0
     error_count = 0
 
@@ -34,6 +100,8 @@ def seed():
         try:
             db_record = {
                 "id": candidate["id"],
+                "user_id": user_id,
+                "job_id": "design",
                 "candidate_name": candidate["name"],
                 "position": candidate.get("role", "Unknown"),
                 "score": candidate.get("score", 0),
@@ -45,10 +113,10 @@ def seed():
             # Using upsert to avoid duplicates if run multiple times
             result = supabase.table("candidates").upsert(db_record).execute()
             success_count += 1
-            print(f"✅ Seeded: {candidate['name']} ({candidate['id']})")
+            print(f"[OK] Seeded: {candidate['name']} ({candidate['id']})")
         except Exception as e:
             error_count += 1
-            print(f"❌ Failed to seed {candidate.get('name', 'Unknown')}: {e}")
+            print(f"[ERROR] Failed to seed {candidate.get('name', 'Unknown')}: {e}")
 
     print(f"\nSeeding complete! Success: {success_count}, Errors: {error_count}")
 

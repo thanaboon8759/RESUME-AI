@@ -1,7 +1,8 @@
 import os
 from dotenv import load_dotenv
 import asyncio
-from models import DumbdogAIResponse, DecisionEnum
+from app.schemas.candidate import DumbdogAIResponse
+from app.schemas.core import DecisionEnum
 
 load_dotenv()
 
