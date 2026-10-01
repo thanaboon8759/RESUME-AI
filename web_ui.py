@@ -128,6 +128,9 @@ HTML_CONTENT = """<!DOCTYPE html>
         <div>
           <div class="text-xs text-slate-400 mb-2 font-medium">Or Quick-Load Benchmark Sample:</div>
           <div class="grid grid-cols-2 gap-1.5" id="samplesContainer">
+            <button onclick="loadSample('removed_resume.pdf')" id="btn-removed_resume.pdf" class="col-span-2 sample-btn px-2.5 py-1.5 text-xs bg-blue-900/40 hover:bg-blue-800/60 rounded-lg border border-blue-500/50 text-left transition truncate text-blue-300 font-semibold">
+              Sample Candidate (Cybersecurity PDF)
+            </button>
             <button onclick="loadSample('thai_resume.pdf')" id="btn-thai_resume.pdf" class="sample-btn px-2.5 py-1.5 text-xs bg-slate-900 hover:bg-slate-700 rounded-lg border border-slate-700 text-left transition truncate">
               Thai Resume (PDF)
             </button>
@@ -142,12 +145,6 @@ HTML_CONTENT = """<!DOCTYPE html>
             </button>
             <button onclick="loadSample('real_functional_resume.pdf')" id="btn-real_functional_resume.pdf" class="col-span-2 sample-btn px-2.5 py-1.5 text-xs bg-slate-900 hover:bg-slate-700 rounded-lg border border-slate-700 text-left transition truncate">
               Real Functional Resume (PDF)
-            </button>
-            <button onclick="loadSample('thai_rendered.png')" id="btn-thai_rendered.png" class="sample-btn px-2.5 py-1.5 text-xs bg-slate-900 hover:bg-slate-700 rounded-lg border border-slate-700 text-left transition truncate">
-              Thai Rendered (PNG)
-            </button>
-            <button onclick="loadSample('english_rendered.png')" id="btn-english_rendered.png" class="sample-btn px-2.5 py-1.5 text-xs bg-slate-900 hover:bg-slate-700 rounded-lg border border-slate-700 text-left transition truncate">
-              English Rendered (PNG)
             </button>
           </div>
         </div>
@@ -389,14 +386,14 @@ HTML_CONTENT = """<!DOCTYPE html>
 
   <script>
     let activeTab = 'profile';
-    let selectedSample = 'thai_resume.pdf';
+    let selectedSample = 'removed_resume.pdf';
     let currentUploadedFile = null;
     let latestSingleData = null;
     let latestBatchData = null;
 
     // Check backend health on load
     window.onload = async () => {
-      loadSample('thai_resume.pdf');
+      loadSample('removed_resume.pdf');
       try {
         const res = await fetch('/api/health');
         if (res.ok) {

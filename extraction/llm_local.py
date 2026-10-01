@@ -52,13 +52,13 @@ as a single JSON object conforming strictly to the CandidateProfile schema.
 - **contact_email**: The primary email address, or null if missing.
 - **contact_phone**: The primary phone number, or null if missing.
 - **languages**: Human spoken/written languages (e.g. ["Thai", "English"]).
-- **skills**: Explicitly stated technical and soft skills (languages, frameworks, tools, databases).
-- **implicit_skills**: Skills clearly demonstrated in project achievements but not explicitly listed in skills section (e.g. "managed sprint planning" -> "Agile Methodology", "reduced query time by 50%" -> "Database Optimization").
-- **seniority_level**: Estimate candidate seniority level: "Junior" (<2 yrs), "Mid-Level" (2-5 yrs), "Senior" (5-8 yrs), "Lead/Principal" (8+ yrs or team lead), or "Executive".
-- **total_years_experience**: Floating-point calculation of total professional years based on work dates.
+- **skills**: Explicitly stated technical and soft skills (languages, frameworks, tools, security tools, databases, soft skills).
+- **implicit_skills**: Skills clearly demonstrated in project achievements or profile description but not explicitly listed in skills section.
+- **seniority_level**: Estimate candidate seniority level: "Junior" (<2 yrs or student/intern), "Mid-Level" (2-5 yrs), "Senior" (5-8 yrs), "Lead/Principal" (8+ yrs or team lead), or "Executive". For students, interns, or fresh graduates, always assign "Junior".
+- **total_years_experience**: Floating-point calculation of total professional/internship years based on work dates (0.0 to 1.0 for students/interns).
 - **executive_summary**: High-impact 2-3 sentence executive profile summarizing the candidate's core expertise, domain experience, and key value proposition.
 - **extraction_confidence**: Self-assessed confidence score between 0.0 and 1.0 based on document clarity.
-- **experience**: List of work-experience entries ordered most recent first.
+- **experience**: List of work-experience entries ordered most recent first. For students or recent graduates, also include substantive technical projects, CTF competitions, or internship roles listed in the experience section.
 - **education**: List of degrees, institutions, and graduation years.
 
 ### Important
