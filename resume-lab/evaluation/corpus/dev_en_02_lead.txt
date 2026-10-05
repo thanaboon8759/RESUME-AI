@@ -1,0 +1,30 @@
+# David Miller
+**Email:** david.miller@cloudarch.io
+**Phone:** +1-415-555-0899
+**Location:** San Francisco, CA
+
+## Executive Summary
+Principal Cloud Architect with 10+ years driving digital transformation across Fortune 500 enterprises. Expert in Kubernetes cluster governance, multi-cloud architecture, and leading cross-functional engineering teams.
+
+## Technical Skills
+- Cloud & Infrastructure: AWS, Azure, GCP, Terraform, Kubernetes, Helm, Docker
+- Observability: Prometheus, Grafana, Datadog
+- Languages & Frameworks: Go, Python, Bash
+- Methodologies: GitOps, DevSecOps, SRE, Agile Leadership
+
+## Professional Experience
+
+### Principal Cloud Architect — CloudScale Systems
+*March 2020 – Present*
+- Spearheaded enterprise migration of 120+ microservices to multi-region AWS EKS clusters, reducing downtime to 99.99%.
+- Formulated FinOps cost-governance strategy yielding $1.4M in annual cloud infrastructure savings.
+- Mentored a global team of 14 DevOps and Platform engineers.
+
+### Lead DevOps Engineer — FinTech Horizons
+*January 2016 – February 2020*
+- Architected zero-trust CI/CD deployment pipeline handling 500+ production releases per month.
+- Implemented automated compliance auditing for PCI-DSS using Terraform and Open Policy Agent.
+
+## Education
+### M.S. in Software Engineering — Carnegie Mellon University (2015)
+### B.S. in Computer Science — University of California, Berkeley (2013)

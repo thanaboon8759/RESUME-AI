@@ -1,0 +1,38 @@
+{
+  "stage": "extraction",
+  "split": "development",
+  "corpus_sha256": "ccad7aff918f5f59b055619a0ff3cde998570b8480cffc5c33d1706699580332",
+  "corpus_directory": "corpus-v2",
+  "annotation_sha256": "de048cfe4375519696c7b7506d83ebeb19d2990d618b5e75ee30a5b20d3562af",
+  "server_sha256": "3100a7750a954d5d65d05e47d2e48266e60a47c015d1a1f8149a7bacd62384c9",
+  "schema_sha256": "c60bebba1b180efd8ad65eee72ed2f6499e6ac8a81a0bfa0a0fab5cf0fea4f75",
+  "runtime": {
+    "ollama": {
+      "version": "0.34.0"
+    },
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "evaluator_sha256": "b1390e5dff381ab547883f32abab2a8e88c1246bc7ed2b8fd26908c5cff79403",
+  "models": [
+    {
+      "name": "qwen2.5:7b",
+      "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "7.6B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 32768,
+        "embedding_length": 3584
+      },
+      "capabilities": [
+        "completion",
+        "tools"
+      ]
+    }
+  ]
+}

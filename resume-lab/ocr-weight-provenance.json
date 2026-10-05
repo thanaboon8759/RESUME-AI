@@ -1,0 +1,64 @@
+[
+  {
+    "variant": "base",
+    "layers": [
+      {
+        "mediaType": "application/vnd.ollama.image.model",
+        "digest": "sha256:2c2720a40fa3732b175fb69bc5ec58f6b11e0267c770a10ae2726ca33c247b39",
+        "size": 7517349696
+      },
+      {
+        "mediaType": "application/vnd.ollama.image.template",
+        "digest": "sha256:a242d8dfdc8f8c2b0586ee85fba70adb408fb633aba2836fe1b05f2c46631474",
+        "size": 487
+      },
+      {
+        "mediaType": "application/vnd.ollama.image.system",
+        "digest": "sha256:75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+        "size": 28
+      },
+      {
+        "mediaType": "application/vnd.ollama.image.license",
+        "digest": "sha256:c156170b718ec29139d3653d40ed1986fd92fb7e0959b5c71f3c48f62e6636f4",
+        "size": 11344
+      },
+      {
+        "mediaType": "application/vnd.ollama.image.params",
+        "digest": "sha256:1d5b6f1b18726e6cec1b7404c9ab7255b891bc9f657a3aa71ed647504c56c676",
+        "size": 53
+      }
+    ]
+  },
+  {
+    "variant": "configured_variant",
+    "layers": [
+      {
+        "mediaType": "application/vnd.ollama.image.model",
+        "digest": "sha256:2c2720a40fa3732b175fb69bc5ec58f6b11e0267c770a10ae2726ca33c247b39",
+        "size": 7517349696,
+        "from": "scb10x/typhoon-ocr-3b:latest"
+      },
+      {
+        "mediaType": "application/vnd.ollama.image.license",
+        "digest": "sha256:c156170b718ec29139d3653d40ed1986fd92fb7e0959b5c71f3c48f62e6636f4",
+        "size": 11344,
+        "from": "scb10x/typhoon-ocr-3b:latest"
+      },
+      {
+        "mediaType": "application/vnd.ollama.image.template",
+        "digest": "sha256:eb91e674f70f6c5e3da80cb034f68cb7902ad7355382ef488b8e441e8a08d70c",
+        "size": 186
+      },
+      {
+        "mediaType": "application/vnd.ollama.image.system",
+        "digest": "sha256:6c30c3f3920be306f2c21cd5dd5342adba742d8f36a4d9693e9fcb250fdcabc8",
+        "size": 324
+      },
+      {
+        "mediaType": "application/vnd.ollama.image.params",
+        "digest": "sha256:2901b42b8f28de5a2382ca063347221f45346900bf9a92205164e7d6c469223a",
+        "size": 127
+      }
+    ]
+  }
+]

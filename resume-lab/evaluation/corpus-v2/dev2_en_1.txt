@@ -1,0 +1,19 @@
+Dr. Casey Lane (C. Lane)
+Email: practice_1@example.com
+
+Skills
+Java, JUnit, Maven
+
+Employment history
+Software Engineer | Practice Software 2
+Feb 2021 – Current
+- Built services using Java.
+
+Education
+Practice College
+BSc / Computer Science
+2014
+
+Learning Academy 1
+Diploma in Information Technology
+2010

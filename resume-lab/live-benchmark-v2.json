@@ -1,0 +1,2399 @@
+{
+  "mode": "live",
+  "started_at": "2026-10-02T10:24:30.038752+00:00",
+  "dataset_sha256": "fba6027e1aacef80c41a68ba7e8ac14ff0b90f3bca8d654aa046526fe500d20f",
+  "code_sha256": "1db4ad6a9b72bf44a651bed07d9f7ce89fd962f982e20fee99923130caa3e8a3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "models": [
+    {
+      "name": "qwen2.5:7b",
+      "model": "qwen2.5:7b",
+      "modified_at": "2026-09-13T03:24:59.0423812+07:00",
+      "size": 4683087332,
+      "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "7.6B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 32768,
+        "embedding_length": 3584
+      },
+      "capabilities": [
+        "completion",
+        "tools"
+      ]
+    },
+    {
+      "name": "llama3.1:8b",
+      "model": "llama3.1:8b",
+      "modified_at": "2026-09-13T03:29:28.2543413+07:00",
+      "size": 4920753328,
+      "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "8.0B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 131072,
+        "embedding_length": 4096
+      },
+      "capabilities": [
+        "completion",
+        "tools"
+      ]
+    }
+  ],
+  "ollama_version": {
+    "version": "0.34.0"
+  },
+  "limits": {
+    "samples": 5,
+    "repeats": 2,
+    "temperature": 0,
+    "num_ctx": 32768,
+    "num_predict": 4096
+  },
+  "production_winner": null,
+  "records": [
+    {
+      "model": "qwen2.5:7b",
+      "sample_id": "en_01",
+      "repeat": 1,
+      "status": "ok",
+      "result": {
+        "filename": "en_01.md",
+        "route": "Text extraction",
+        "source_text": "# Alice Smith\n**Email:** alice.smith@example.com\n**Phone:** +1-555-0199\n\n## Summary\nExperienced software engineer specializing in backend development and scalable microservices.\n\n## Skills\nPython, FastAPI, React, Docker, Kubernetes, SQL, Agile\n\n## Experience\n\n### Senior Software Engineer\n**TechCorp Inc.**\n*Jan 2020 - Present*\n- Architected and deployed microservices using FastAPI and Docker.\n- Improved database query performance by 30% using SQL optimization techniques.\n\n### Software Developer\n**WebSolutions LLC**\n*Jun 2017 - Dec 2019*\n- Developed RESTful APIs using Python.\n- Collaborated with frontend teams to integrate React components.\n\n## Education\n\n### B.S. Computer Science\n**State University**\n*2013 - 2017*\n",
+        "mode": "live",
+        "model": "qwen2.5:7b",
+        "ocr_model": null,
+        "ocr_used": false,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 0.0,
+        "profile": {
+          "full_name": "Alice Smith",
+          "contact_email": "alice.smith@example.com",
+          "contact_phone": "+1-555-0199",
+          "languages": [],
+          "skills": [
+            "Python",
+            "FastAPI",
+            "React",
+            "Docker",
+            "Kubernetes",
+            "SQL",
+            "Agile"
+          ],
+          "implicit_skills": [],
+          "seniority_level": null,
+          "total_years_experience": null,
+          "executive_summary": null,
+          "extraction_confidence": null,
+          "experience": [
+            {
+              "company": "TechCorp Inc.",
+              "role": "Senior Software Engineer",
+              "start_date": "Jan 2020",
+              "end_date": "Present",
+              "achievements": [
+                "Architected and deployed microservices using FastAPI and Docker.",
+                "Improved database query performance by 30% using SQL optimization techniques."
+              ]
+            },
+            {
+              "company": "WebSolutions LLC",
+              "role": "Software Developer",
+              "start_date": "Jun 2017",
+              "end_date": "Dec 2019",
+              "achievements": [
+                "Developed RESTful APIs using Python.",
+                "Collaborated with frontend teams to integrate React components."
+              ]
+            }
+          ],
+          "education": [
+            {
+              "institution": "State University",
+              "degree": "B.S. Computer Science",
+              "field_of_study": null,
+              "graduation_year": "2017"
+            }
+          ]
+        },
+        "schema_valid": true,
+        "warnings": [
+          "Schema validity does not prove factual accuracy. Review against the source before use."
+        ],
+        "tokens": 343,
+        "inference_ns": 3619217000,
+        "prompt_tokens": 1479,
+        "load_ns": 4014000700,
+        "skill_evidence": [
+          {
+            "skill": "Python",
+            "literal_match": true
+          },
+          {
+            "skill": "FastAPI",
+            "literal_match": true
+          },
+          {
+            "skill": "React",
+            "literal_match": true
+          },
+          {
+            "skill": "Docker",
+            "literal_match": true
+          },
+          {
+            "skill": "Kubernetes",
+            "literal_match": true
+          },
+          {
+            "skill": "SQL",
+            "literal_match": true
+          },
+          {
+            "skill": "Agile",
+            "literal_match": true
+          }
+        ],
+        "elapsed_seconds": 7.938
+      },
+      "metrics": {
+        "skill_precision": 1.0,
+        "skill_recall": 1.0,
+        "skill_f1": 1.0,
+        "contact_exact_match": 1.0,
+        "unmatched_literal_skills": []
+      },
+      "elapsed_seconds": 7.938003299999764
+    },
+    {
+      "model": "qwen2.5:7b",
+      "sample_id": "th_01",
+      "repeat": 1,
+      "status": "ok",
+      "result": {
+        "filename": "th_01.md",
+        "route": "Text extraction",
+        "source_text": "# สมชาย ใจดี\n**อีเมล:** somchai.j@example.co.th\n**เบอร์โทร:** 081-234-5678\n\n## ทักษะ\nData Engineering, Apache Spark, Airflow, Python, SQL, Hadoop, AWS\n\n## ประสบการณ์การทำงาน\n\n### Data Engineer\n**บริษัท ข้อมูลไทย จำกัด**\n*มี.ค. 2564 - ปัจจุบัน*\n- สร้างและดูแล Data Pipeline ด้วย Apache Airflow และ Spark\n- จัดการข้อมูลขนาดใหญ่บน Hadoop และ AWS\n\n### Junior Data Analyst\n**บริษัท วิเคราะห์ธุรกิจ จำกัด**\n*ก.ค. 2561 - ก.พ. 2564*\n- วิเคราะห์ข้อมูลยอดขายด้วย SQL และ Python\n- สร้าง Dashboard สำหรับผู้บริหาร\n\n## การศึกษา\n\n### ปริญญาตรี วิศวกรรมศาสตร์ (วิศวกรรมคอมพิวเตอร์)\n**มหาวิทยาลัยเทคโนโลยี**\n*2557 - 2561*\n",
+        "mode": "live",
+        "model": "qwen2.5:7b",
+        "ocr_model": null,
+        "ocr_used": false,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 0.0,
+        "profile": {
+          "full_name": "สมชาย ใจดี",
+          "contact_email": "somchai.j@example.co.th",
+          "contact_phone": "081-234-5678",
+          "languages": [],
+          "skills": [
+            "Data Engineering",
+            "Apache Spark",
+            "Airflow",
+            "Python",
+            "SQL",
+            "Hadoop",
+            "AWS"
+          ],
+          "implicit_skills": [],
+          "seniority_level": null,
+          "total_years_experience": null,
+          "executive_summary": null,
+          "extraction_confidence": null,
+          "experience": [
+            {
+              "company": "บริษัท ข้อมูลไทย จำกัด",
+              "role": "Data Engineer",
+              "start_date": "มี.ค. 2564",
+              "end_date": "ปัจจุบัน",
+              "achievements": [
+                "สร้างและดูแล Data Pipeline ด้วย Apache Airflow และ Spark",
+                "จัดการข้อมูลขนาดใหญ่บน Hadoop และ AWS"
+              ]
+            },
+            {
+              "company": "บริษัท วิเคราะห์ธุรกิจ จำกัด",
+              "role": "Junior Data Analyst",
+              "start_date": "ก.ค. 2561",
+              "end_date": "ก.พ. 2564",
+              "achievements": [
+                "วิเคราะห์ข้อมูลยอดขายด้วย SQL และ Python",
+                "สร้าง Dashboard สำหรับผู้บริหาร"
+              ]
+            }
+          ],
+          "education": [
+            {
+              "institution": "มหาวิทยาลัยเทคโนโลยี",
+              "degree": "ปริญญาตรี",
+              "field_of_study": "วิศวกรรมศาสตร์ (วิศวกรรมคอมพิวเตอร์)",
+              "graduation_year": "2561"
+            }
+          ]
+        },
+        "schema_valid": true,
+        "warnings": [
+          "Schema validity does not prove factual accuracy. Review against the source before use."
+        ],
+        "tokens": 439,
+        "inference_ns": 4711531000,
+        "prompt_tokens": 1588,
+        "load_ns": 2227800,
+        "skill_evidence": [
+          {
+            "skill": "Data Engineering",
+            "literal_match": true
+          },
+          {
+            "skill": "Apache Spark",
+            "literal_match": true
+          },
+          {
+            "skill": "Airflow",
+            "literal_match": true
+          },
+          {
+            "skill": "Python",
+            "literal_match": true
+          },
+          {
+            "skill": "SQL",
+            "literal_match": true
+          },
+          {
+            "skill": "Hadoop",
+            "literal_match": true
+          },
+          {
+            "skill": "AWS",
+            "literal_match": true
+          }
+        ],
+        "elapsed_seconds": 4.781
+      },
+      "metrics": {
+        "skill_precision": 1.0,
+        "skill_recall": 1.0,
+        "skill_f1": 1.0,
+        "contact_exact_match": 1.0,
+        "unmatched_literal_skills": []
+      },
+      "elapsed_seconds": 4.780826399999569
+    },
+    {
+      "model": "qwen2.5:7b",
+      "sample_id": "bi_01",
+      "repeat": 1,
+      "status": "ok",
+      "result": {
+        "filename": "bi_01.md",
+        "route": "Text extraction",
+        "source_text": "# วรรณิภา สุขสมบูรณ์ (Wannipa Suksombun)\n**Email:** w.suksombun@ai-startup.com\n**Tel:** +66 90 987 6543\n\n## Objective\nMachine Learning Engineer passionate about NLP and Computer Vision. สนใจในการพัฒนา AI เพื่อแก้ปัญหาจริง\n\n## Skills / ทักษะ\n- Machine Learning: PyTorch, TensorFlow, Scikit-learn\n- Languages: Python, C++\n- Tools: Git, Docker, MLflow\n- ภาษา: Thai (Native), English (Fluent)\n\n## Work Experience\n\n### Machine Learning Engineer\n**AI Vision Co., Ltd.**\n*August 2021 - Present*\n- พัฒนาระบบ Image Recognition สำหรับโรงงานอุตสาหกรรม\n- Deployed models using Docker and optimized with TensorRT.\n\n### AI Researcher (Intern)\n**National Research Lab**\n*Jan 2021 - May 2021*\n- วิจัยและทดลองโมเดล NLP ภาษาไทย (Thai NLP)\n- Published a paper on Thai Sentiment Analysis.\n\n## Education\n\n### Master of Science in Artificial Intelligence\n**Global Tech University**\n*2019 - 2021*\n\n### Bachelor of Science in Mathematics\n**Local Science College**\n*2015 - 2019*\n",
+        "mode": "live",
+        "model": "qwen2.5:7b",
+        "ocr_model": null,
+        "ocr_used": false,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 0.0,
+        "profile": {
+          "full_name": "วรรณิภา สุขสมบูรณ์ (Wannipa Suksombun)",
+          "contact_email": "w.suksombun@ai-startup.com",
+          "contact_phone": "+66 90 987 6543",
+          "languages": [
+            "Thai (Native)",
+            "English (Fluent)"
+          ],
+          "skills": [
+            "Machine Learning: PyTorch, TensorFlow, Scikit-learn",
+            "Languages: Python, C++",
+            "Tools: Git, Docker, MLflow"
+          ],
+          "implicit_skills": [],
+          "seniority_level": null,
+          "total_years_experience": null,
+          "executive_summary": null,
+          "extraction_confidence": null,
+          "experience": [
+            {
+              "company": "AI Vision Co., Ltd.",
+              "role": "Machine Learning Engineer",
+              "start_date": "2021-08",
+              "end_date": "Present",
+              "achievements": [
+                "พัฒนาระบบ Image Recognition สำหรับโรงงานอุตสาหกรรม",
+                "Deployed models using Docker and optimized with TensorRT."
+              ]
+            },
+            {
+              "company": "National Research Lab",
+              "role": "AI Researcher (Intern)",
+              "start_date": "2021-01",
+              "end_date": "2021-05",
+              "achievements": [
+                "วิจัยและทดลองโมเดล NLP ภาษาไทย (Thai NLP)",
+                "Published a paper on Thai Sentiment Analysis."
+              ]
+            }
+          ],
+          "education": [
+            {
+              "institution": "Global Tech University",
+              "degree": "Master of Science in Artificial Intelligence",
+              "field_of_study": null,
+              "graduation_year": "2021"
+            },
+            {
+              "institution": "Local Science College",
+              "degree": "Bachelor of Science in Mathematics",
+              "field_of_study": null,
+              "graduation_year": "2019"
+            }
+          ]
+        },
+        "schema_valid": true,
+        "warnings": [
+          "Schema validity does not prove factual accuracy. Review against the source before use."
+        ],
+        "tokens": 453,
+        "inference_ns": 4857429000,
+        "prompt_tokens": 1608,
+        "load_ns": 2110700,
+        "skill_evidence": [
+          {
+            "skill": "Machine Learning: PyTorch, TensorFlow, Scikit-learn",
+            "literal_match": true
+          },
+          {
+            "skill": "Languages: Python, C++",
+            "literal_match": true
+          },
+          {
+            "skill": "Tools: Git, Docker, MLflow",
+            "literal_match": true
+          }
+        ],
+        "elapsed_seconds": 4.932
+      },
+      "metrics": {
+        "skill_precision": 0.0,
+        "skill_recall": 0.0,
+        "skill_f1": 0,
+        "contact_exact_match": 0.6666666666666666,
+        "unmatched_literal_skills": []
+      },
+      "elapsed_seconds": 4.932287100000394
+    },
+    {
+      "model": "qwen2.5:7b",
+      "sample_id": "en_02_lead",
+      "repeat": 1,
+      "status": "ok",
+      "result": {
+        "filename": "en_02_lead.md",
+        "route": "Text extraction",
+        "source_text": "# David Miller\n**Email:** david.miller@cloudarch.io\n**Phone:** +1-415-555-0899\n**Location:** San Francisco, CA\n\n## Executive Summary\nPrincipal Cloud Architect with 10+ years driving digital transformation across Fortune 500 enterprises. Expert in Kubernetes cluster governance, multi-cloud architecture, and leading cross-functional engineering teams.\n\n## Technical Skills\n- Cloud & Infrastructure: AWS, Azure, GCP, Terraform, Kubernetes, Helm, Docker\n- Observability: Prometheus, Grafana, Datadog\n- Languages & Frameworks: Go, Python, Bash\n- Methodologies: GitOps, DevSecOps, SRE, Agile Leadership\n\n## Professional Experience\n\n### Principal Cloud Architect — CloudScale Systems\n*March 2020 – Present*\n- Spearheaded enterprise migration of 120+ microservices to multi-region AWS EKS clusters, reducing downtime to 99.99%.\n- Formulated FinOps cost-governance strategy yielding $1.4M in annual cloud infrastructure savings.\n- Mentored a global team of 14 DevOps and Platform engineers.\n\n### Lead DevOps Engineer — FinTech Horizons\n*January 2016 – February 2020*\n- Architected zero-trust CI/CD deployment pipeline handling 500+ production releases per month.\n- Implemented automated compliance auditing for PCI-DSS using Terraform and Open Policy Agent.\n\n## Education\n### M.S. in Software Engineering — Carnegie Mellon University (2015)\n### B.S. in Computer Science — University of California, Berkeley (2013)\n",
+        "mode": "live",
+        "model": "qwen2.5:7b",
+        "ocr_model": null,
+        "ocr_used": false,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 0.0,
+        "profile": {
+          "full_name": "David Miller",
+          "contact_email": "david.miller@cloudarch.io",
+          "contact_phone": "+1-415-555-0899",
+          "languages": [],
+          "skills": [
+            "AWS",
+            "Azure",
+            "GCP",
+            "Terraform",
+            "Kubernetes",
+            "Helm",
+            "Docker",
+            "Prometheus",
+            "Grafana",
+            "Datadog",
+            "Go",
+            "Python",
+            "Bash",
+            "GitOps",
+            "DevSecOps",
+            "SRE",
+            "Agile Leadership"
+          ],
+          "implicit_skills": [],
+          "seniority_level": null,
+          "total_years_experience": null,
+          "executive_summary": null,
+          "extraction_confidence": null,
+          "experience": [
+            {
+              "company": "CloudScale Systems",
+              "role": "Principal Cloud Architect",
+              "start_date": "March 2020",
+              "end_date": "Present",
+              "achievements": [
+                "Spearheaded enterprise migration of 120+ microservices to multi-region AWS EKS clusters, reducing downtime to 99.99%.",
+                "Formulated FinOps cost-governance strategy yielding $1.4M in annual cloud infrastructure savings.",
+                "Mentored a global team of 14 DevOps and Platform engineers."
+              ]
+            },
+            {
+              "company": "FinTech Horizons",
+              "role": "Lead DevOps Engineer",
+              "start_date": "January 2016",
+              "end_date": "February 2020",
+              "achievements": [
+                "Architected zero-trust CI/CD deployment pipeline handling 500+ production releases per month.",
+                "Implemented automated compliance auditing for PCI-DSS using Terraform and Open Policy Agent."
+              ]
+            }
+          ],
+          "education": [
+            {
+              "institution": "Carnegie Mellon University",
+              "degree": "M.S. in Software Engineering",
+              "field_of_study": null,
+              "graduation_year": "2015"
+            },
+            {
+              "institution": "University of California, Berkeley",
+              "degree": "B.S. in Computer Science",
+              "field_of_study": null,
+              "graduation_year": "2013"
+            }
+          ]
+        },
+        "schema_valid": true,
+        "warnings": [
+          "Schema validity does not prove factual accuracy. Review against the source before use."
+        ],
+        "tokens": 520,
+        "inference_ns": 5509673000,
+        "prompt_tokens": 1642,
+        "load_ns": 2087900,
+        "skill_evidence": [
+          {
+            "skill": "AWS",
+            "literal_match": true
+          },
+          {
+            "skill": "Azure",
+            "literal_match": true
+          },
+          {
+            "skill": "GCP",
+            "literal_match": true
+          },
+          {
+            "skill": "Terraform",
+            "literal_match": true
+          },
+          {
+            "skill": "Kubernetes",
+            "literal_match": true
+          },
+          {
+            "skill": "Helm",
+            "literal_match": true
+          },
+          {
+            "skill": "Docker",
+            "literal_match": true
+          },
+          {
+            "skill": "Prometheus",
+            "literal_match": true
+          },
+          {
+            "skill": "Grafana",
+            "literal_match": true
+          },
+          {
+            "skill": "Datadog",
+            "literal_match": true
+          },
+          {
+            "skill": "Go",
+            "literal_match": true
+          },
+          {
+            "skill": "Python",
+            "literal_match": true
+          },
+          {
+            "skill": "Bash",
+            "literal_match": true
+          },
+          {
+            "skill": "GitOps",
+            "literal_match": true
+          },
+          {
+            "skill": "DevSecOps",
+            "literal_match": true
+          },
+          {
+            "skill": "SRE",
+            "literal_match": true
+          },
+          {
+            "skill": "Agile Leadership",
+            "literal_match": true
+          }
+        ],
+        "elapsed_seconds": 5.586
+      },
+      "metrics": {
+        "skill_precision": 1.0,
+        "skill_recall": 1.0,
+        "skill_f1": 1.0,
+        "contact_exact_match": 1.0,
+        "unmatched_literal_skills": []
+      },
+      "elapsed_seconds": 5.586296700001185
+    },
+    {
+      "model": "qwen2.5:7b",
+      "sample_id": "th_02_gov",
+      "repeat": 1,
+      "status": "ok",
+      "result": {
+        "filename": "th_02_gov.md",
+        "route": "Text extraction",
+        "source_text": "# ดร. ธีรพัฒน์ วงศ์สวัสดิ์\n**อีเมล:** teerapat.w@nectec.or.th\n**โทรศัพท์:** 02-564-6900 ต่อ 2341\n**ที่อยู่:** ปทุมธานี, ประเทศไทย\n\n## ประวัติโดยย่อ\nนักวิทยาศาสตร์ข้อมูลอาวุโสและหัวหน้าโครงการวิจัย มีความเชี่ยวชาญด้าน Large Language Model สำหรับภาษาไทย, การประมวลผลสัญญาณเสียง และระบบปัญญาประดิษฐ์เพื่อการแพทย์\n\n## ความเชี่ยวชาญและทักษะ\n- การสร้างและปรับแต่งโมเดล: PyTorch, Hugging Face Transformers, DeepSpeed, LoRA, QLoRA\n- ภาษาโปรแกรม: Python, C++, SQL, R\n- การประมวลผลภาษาธรรมชาติ (NLP): Thai Word Segmentation, Named Entity Recognition, Machine Translation\n- การบริหารจัดการ: การบริหารโครงการวิจัย (Project Management), การให้คำปรึกษาภาครัฐ\n\n## ประวัติการทำงาน\n\n### นักวิทยาศาสตร์ข้อมูลอาวุโส — ศูนย์เทคโนโลยีอิเล็กทรอนิกส์และคอมพิวเตอร์แห่งชาติ (NECTEC)\n*พฤศจิกายน 2562 – ปัจจุบัน*\n- หัวหน้าโครงการพัฒนา Thai LLM Foundation Model สำหรับบริการภาครัฐ\n- ออกแบบ Data Pipeline สำหรับคัดกรองชุดข้อมูลภาษาไทยขนาด 100 พันล้านคำ\n- ควบคุมทีมวิจัยจำนวน 8 ท่าน และจัดทำรายงานเสนอต่อกระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม\n\n### นักวิจัยหลังปริญญาเอก (Postdoctoral Researcher) — สถาบันวิทยสิริเมธี (VISTEC)\n*พฤษภาคม 2560 – ตุลาคม 2562*\n- วิจัยโมเดล Deep Learning สำหรับการวิเคราะห์ภาพถ่ายทางการแพทย์ (Medical Imaging)\n- เผยแพร่ผลงานวิจัยในระดับนานาชาติ 6 บทความใน IEEE และ ACL\n\n## ประวัติการศึกษา\n- ปริญญาเอก (Ph.D.) วิศวกรรมคอมพิวเตอร์ — จุฬาลงกรณ์มหาวิทยาลัย (พ.ศ. 2560)\n- ปริญญาตรี (เกียรตินิยมอันดับหนึ่ง) วิศวกรรมคอมพิวเตอร์ — มหาวิทยาลัยเกษตรศาสตร์ (พ.ศ. 2555)\n",
+        "mode": "live",
+        "model": "qwen2.5:7b",
+        "ocr_model": null,
+        "ocr_used": false,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 0.0,
+        "profile": {
+          "full_name": "ดร. ธีรพัฒน์ วงศ์สวัสดิ์",
+          "contact_email": "teerapat.w@nectec.or.th",
+          "contact_phone": "02-564-6900 ต่อ 2341",
+          "languages": [],
+          "skills": [
+            "การสร้างและปรับแต่งโมเดล: PyTorch, Hugging Face Transformers, DeepSpeed, LoRA, QLoRA",
+            "ภาษาโปรแกรม: Python, C++, SQL, R",
+            "การประมวลผลภาษาธรรมชาติ (NLP): Thai Word Segmentation, Named Entity Recognition, Machine Translation",
+            "การบริหารจัดการ: การบริหารโครงการวิจัย (Project Management), การให้คำปรึกษาภาครัฐ"
+          ],
+          "implicit_skills": [],
+          "seniority_level": null,
+          "total_years_experience": null,
+          "executive_summary": null,
+          "extraction_confidence": null,
+          "experience": [
+            {
+              "company": "ศูนย์เทคโนโลยีอิเล็กทรอนิกส์และคอมพิวเตอร์แห่งชาติ (NECTEC)",
+              "role": "นักวิทยาศาสตร์ข้อมูลอาวุโส",
+              "start_date": "พฤศจิกายน 2562",
+              "end_date": "ปัจจุบัน",
+              "achievements": [
+                "หัวหน้าโครงการพัฒนา Thai LLM Foundation Model สำหรับบริการภาครัฐ",
+                "ออกแบบ Data Pipeline สำหรับคัดกรองชุดข้อมูลภาษาไทยขนาด 100 พันล้านคำ",
+                "ควบคุมทีมวิจัยจำนวน 8 ท่าน และจัดทำรายงานเสนอต่อกระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม"
+              ]
+            },
+            {
+              "company": "สถาบันวิทยสิริเมธี (VISTEC)",
+              "role": "นักวิจัยหลังปริญญาเอก (Postdoctoral Researcher)",
+              "start_date": "พฤษภาคม 2560",
+              "end_date": "ตุลาคม 2562",
+              "achievements": [
+                "วิจัยโมเดล Deep Learning สำหรับการวิเคราะห์ภาพถ่ายทางการแพทย์ (Medical Imaging)",
+                "เผยแพร่ผลงานวิจัยในระดับนานาชาติ 6 บทความใน IEEE และ ACL"
+              ]
+            }
+          ],
+          "education": [
+            {
+              "institution": "จุฬาลงกรณ์มหาวิทยาลัย",
+              "degree": "ปริญญาเอก (Ph.D.) วิศวกรรมคอมพิวเตอร์",
+              "field_of_study": null,
+              "graduation_year": "พ.ศ. 2560"
+            },
+            {
+              "institution": "มหาวิทยาลัยเกษตรศาสตร์",
+              "degree": "ปริญญาตรี (เกียรตินิยมอันดับหนึ่ง) วิศวกรรมคอมพิวเตอร์",
+              "field_of_study": null,
+              "graduation_year": "พ.ศ. 2555"
+            }
+          ]
+        },
+        "schema_valid": true,
+        "warnings": [
+          "Schema validity does not prove factual accuracy. Review against the source before use."
+        ],
+        "tokens": 770,
+        "inference_ns": 8466352000,
+        "prompt_tokens": 2017,
+        "load_ns": 2227600,
+        "skill_evidence": [
+          {
+            "skill": "การสร้างและปรับแต่งโมเดล: PyTorch, Hugging Face Transformers, DeepSpeed, LoRA, QLoRA",
+            "literal_match": true
+          },
+          {
+            "skill": "ภาษาโปรแกรม: Python, C++, SQL, R",
+            "literal_match": true
+          },
+          {
+            "skill": "การประมวลผลภาษาธรรมชาติ (NLP): Thai Word Segmentation, Named Entity Recognition, Machine Translation",
+            "literal_match": true
+          },
+          {
+            "skill": "การบริหารจัดการ: การบริหารโครงการวิจัย (Project Management), การให้คำปรึกษาภาครัฐ",
+            "literal_match": true
+          }
+        ],
+        "elapsed_seconds": 8.623
+      },
+      "metrics": {
+        "skill_precision": 0.0,
+        "skill_recall": 0.0,
+        "skill_f1": 0,
+        "contact_exact_match": 1.0,
+        "unmatched_literal_skills": []
+      },
+      "elapsed_seconds": 8.62266290000116
+    },
+    {
+      "model": "qwen2.5:7b",
+      "sample_id": "en_01",
+      "repeat": 2,
+      "status": "ok",
+      "result": {
+        "filename": "en_01.md",
+        "route": "Text extraction",
+        "source_text": "# Alice Smith\n**Email:** alice.smith@example.com\n**Phone:** +1-555-0199\n\n## Summary\nExperienced software engineer specializing in backend development and scalable microservices.\n\n## Skills\nPython, FastAPI, React, Docker, Kubernetes, SQL, Agile\n\n## Experience\n\n### Senior Software Engineer\n**TechCorp Inc.**\n*Jan 2020 - Present*\n- Architected and deployed microservices using FastAPI and Docker.\n- Improved database query performance by 30% using SQL optimization techniques.\n\n### Software Developer\n**WebSolutions LLC**\n*Jun 2017 - Dec 2019*\n- Developed RESTful APIs using Python.\n- Collaborated with frontend teams to integrate React components.\n\n## Education\n\n### B.S. Computer Science\n**State University**\n*2013 - 2017*\n",
+        "mode": "live",
+        "model": "qwen2.5:7b",
+        "ocr_model": null,
+        "ocr_used": false,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 0.0,
+        "profile": {
+          "full_name": "Alice Smith",
+          "contact_email": "alice.smith@example.com",
+          "contact_phone": "+1-555-0199",
+          "languages": [],
+          "skills": [
+            "Python",
+            "FastAPI",
+            "React",
+            "Docker",
+            "Kubernetes",
+            "SQL",
+            "Agile"
+          ],
+          "implicit_skills": [],
+          "seniority_level": null,
+          "total_years_experience": null,
+          "executive_summary": null,
+          "extraction_confidence": null,
+          "experience": [
+            {
+              "company": "TechCorp Inc.",
+              "role": "Senior Software Engineer",
+              "start_date": "Jan 2020",
+              "end_date": "Present",
+              "achievements": [
+                "Architected and deployed microservices using FastAPI and Docker.",
+                "Improved database query performance by 30% using SQL optimization techniques."
+              ]
+            },
+            {
+              "company": "WebSolutions LLC",
+              "role": "Software Developer",
+              "start_date": "Jun 2017",
+              "end_date": "Dec 2019",
+              "achievements": [
+                "Developed RESTful APIs using Python.",
+                "Collaborated with frontend teams to integrate React components."
+              ]
+            }
+          ],
+          "education": [
+            {
+              "institution": "State University",
+              "degree": "B.S. Computer Science",
+              "field_of_study": null,
+              "graduation_year": "2017"
+            }
+          ]
+        },
+        "schema_valid": true,
+        "warnings": [
+          "Schema validity does not prove factual accuracy. Review against the source before use."
+        ],
+        "tokens": 343,
+        "inference_ns": 3629935000,
+        "prompt_tokens": 1479,
+        "load_ns": 2138700,
+        "skill_evidence": [
+          {
+            "skill": "Python",
+            "literal_match": true
+          },
+          {
+            "skill": "FastAPI",
+            "literal_match": true
+          },
+          {
+            "skill": "React",
+            "literal_match": true
+          },
+          {
+            "skill": "Docker",
+            "literal_match": true
+          },
+          {
+            "skill": "Kubernetes",
+            "literal_match": true
+          },
+          {
+            "skill": "SQL",
+            "literal_match": true
+          },
+          {
+            "skill": "Agile",
+            "literal_match": true
+          }
+        ],
+        "elapsed_seconds": 3.739
+      },
+      "metrics": {
+        "skill_precision": 1.0,
+        "skill_recall": 1.0,
+        "skill_f1": 1.0,
+        "contact_exact_match": 1.0,
+        "unmatched_literal_skills": []
+      },
+      "elapsed_seconds": 3.7389727999998286
+    },
+    {
+      "model": "qwen2.5:7b",
+      "sample_id": "th_01",
+      "repeat": 2,
+      "status": "ok",
+      "result": {
+        "filename": "th_01.md",
+        "route": "Text extraction",
+        "source_text": "# สมชาย ใจดี\n**อีเมล:** somchai.j@example.co.th\n**เบอร์โทร:** 081-234-5678\n\n## ทักษะ\nData Engineering, Apache Spark, Airflow, Python, SQL, Hadoop, AWS\n\n## ประสบการณ์การทำงาน\n\n### Data Engineer\n**บริษัท ข้อมูลไทย จำกัด**\n*มี.ค. 2564 - ปัจจุบัน*\n- สร้างและดูแล Data Pipeline ด้วย Apache Airflow และ Spark\n- จัดการข้อมูลขนาดใหญ่บน Hadoop และ AWS\n\n### Junior Data Analyst\n**บริษัท วิเคราะห์ธุรกิจ จำกัด**\n*ก.ค. 2561 - ก.พ. 2564*\n- วิเคราะห์ข้อมูลยอดขายด้วย SQL และ Python\n- สร้าง Dashboard สำหรับผู้บริหาร\n\n## การศึกษา\n\n### ปริญญาตรี วิศวกรรมศาสตร์ (วิศวกรรมคอมพิวเตอร์)\n**มหาวิทยาลัยเทคโนโลยี**\n*2557 - 2561*\n",
+        "mode": "live",
+        "model": "qwen2.5:7b",
+        "ocr_model": null,
+        "ocr_used": false,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 0.0,
+        "profile": {
+          "full_name": "สมชาย ใจดี",
+          "contact_email": "somchai.j@example.co.th",
+          "contact_phone": "081-234-5678",
+          "languages": [],
+          "skills": [
+            "Data Engineering",
+            "Apache Spark",
+            "Airflow",
+            "Python",
+            "SQL",
+            "Hadoop",
+            "AWS"
+          ],
+          "implicit_skills": [],
+          "seniority_level": null,
+          "total_years_experience": null,
+          "executive_summary": null,
+          "extraction_confidence": null,
+          "experience": [
+            {
+              "company": "บริษัท ข้อมูลไทย จำกัด",
+              "role": "Data Engineer",
+              "start_date": "มี.ค. 2564",
+              "end_date": "ปัจจุบัน",
+              "achievements": [
+                "สร้างและดูแล Data Pipeline ด้วย Apache Airflow และ Spark",
+                "จัดการข้อมูลขนาดใหญ่บน Hadoop และ AWS"
+              ]
+            },
+            {
+              "company": "บริษัท วิเคราะห์ธุรกิจ จำกัด",
+              "role": "Junior Data Analyst",
+              "start_date": "ก.ค. 2561",
+              "end_date": "ก.พ. 2564",
+              "achievements": [
+                "วิเคราะห์ข้อมูลยอดขายด้วย SQL และ Python",
+                "สร้าง Dashboard สำหรับผู้บริหาร"
+              ]
+            }
+          ],
+          "education": [
+            {
+              "institution": "มหาวิทยาลัยเทคโนโลยี",
+              "degree": "ปริญญาตรี",
+              "field_of_study": "วิศวกรรมศาสตร์ (วิศวกรรมคอมพิวเตอร์)",
+              "graduation_year": "2561"
+            }
+          ]
+        },
+        "schema_valid": true,
+        "warnings": [
+          "Schema validity does not prove factual accuracy. Review against the source before use."
+        ],
+        "tokens": 439,
+        "inference_ns": 4674081000,
+        "prompt_tokens": 1588,
+        "load_ns": 3220000,
+        "skill_evidence": [
+          {
+            "skill": "Data Engineering",
+            "literal_match": true
+          },
+          {
+            "skill": "Apache Spark",
+            "literal_match": true
+          },
+          {
+            "skill": "Airflow",
+            "literal_match": true
+          },
+          {
+            "skill": "Python",
+            "literal_match": true
+          },
+          {
+            "skill": "SQL",
+            "literal_match": true
+          },
+          {
+            "skill": "Hadoop",
+            "literal_match": true
+          },
+          {
+            "skill": "AWS",
+            "literal_match": true
+          }
+        ],
+        "elapsed_seconds": 4.746
+      },
+      "metrics": {
+        "skill_precision": 1.0,
+        "skill_recall": 1.0,
+        "skill_f1": 1.0,
+        "contact_exact_match": 1.0,
+        "unmatched_literal_skills": []
+      },
+      "elapsed_seconds": 4.745709799999531
+    },
+    {
+      "model": "qwen2.5:7b",
+      "sample_id": "bi_01",
+      "repeat": 2,
+      "status": "ok",
+      "result": {
+        "filename": "bi_01.md",
+        "route": "Text extraction",
+        "source_text": "# วรรณิภา สุขสมบูรณ์ (Wannipa Suksombun)\n**Email:** w.suksombun@ai-startup.com\n**Tel:** +66 90 987 6543\n\n## Objective\nMachine Learning Engineer passionate about NLP and Computer Vision. สนใจในการพัฒนา AI เพื่อแก้ปัญหาจริง\n\n## Skills / ทักษะ\n- Machine Learning: PyTorch, TensorFlow, Scikit-learn\n- Languages: Python, C++\n- Tools: Git, Docker, MLflow\n- ภาษา: Thai (Native), English (Fluent)\n\n## Work Experience\n\n### Machine Learning Engineer\n**AI Vision Co., Ltd.**\n*August 2021 - Present*\n- พัฒนาระบบ Image Recognition สำหรับโรงงานอุตสาหกรรม\n- Deployed models using Docker and optimized with TensorRT.\n\n### AI Researcher (Intern)\n**National Research Lab**\n*Jan 2021 - May 2021*\n- วิจัยและทดลองโมเดล NLP ภาษาไทย (Thai NLP)\n- Published a paper on Thai Sentiment Analysis.\n\n## Education\n\n### Master of Science in Artificial Intelligence\n**Global Tech University**\n*2019 - 2021*\n\n### Bachelor of Science in Mathematics\n**Local Science College**\n*2015 - 2019*\n",
+        "mode": "live",
+        "model": "qwen2.5:7b",
+        "ocr_model": null,
+        "ocr_used": false,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 0.0,
+        "profile": {
+          "full_name": "วรรณิภา สุขสมบูรณ์ (Wannipa Suksombun)",
+          "contact_email": "w.suksombun@ai-startup.com",
+          "contact_phone": "+66 90 987 6543",
+          "languages": [
+            "Thai (Native)",
+            "English (Fluent)"
+          ],
+          "skills": [
+            "Machine Learning: PyTorch, TensorFlow, Scikit-learn",
+            "Languages: Python, C++",
+            "Tools: Git, Docker, MLflow"
+          ],
+          "implicit_skills": [],
+          "seniority_level": null,
+          "total_years_experience": null,
+          "executive_summary": null,
+          "extraction_confidence": null,
+          "experience": [
+            {
+              "company": "AI Vision Co., Ltd.",
+              "role": "Machine Learning Engineer",
+              "start_date": "2021-08",
+              "end_date": "Present",
+              "achievements": [
+                "พัฒนาระบบ Image Recognition สำหรับโรงงานอุตสาหกรรม",
+                "Deployed models using Docker and optimized with TensorRT."
+              ]
+            },
+            {
+              "company": "National Research Lab",
+              "role": "AI Researcher (Intern)",
+              "start_date": "2021-01",
+              "end_date": "2021-05",
+              "achievements": [
+                "วิจัยและทดลองโมเดล NLP ภาษาไทย (Thai NLP)",
+                "Published a paper on Thai Sentiment Analysis."
+              ]
+            }
+          ],
+          "education": [
+            {
+              "institution": "Global Tech University",
+              "degree": "Master of Science in Artificial Intelligence",
+              "field_of_study": null,
+              "graduation_year": "2021"
+            },
+            {
+              "institution": "Local Science College",
+              "degree": "Bachelor of Science in Mathematics",
+              "field_of_study": null,
+              "graduation_year": "2019"
+            }
+          ]
+        },
+        "schema_valid": true,
+        "warnings": [
+          "Schema validity does not prove factual accuracy. Review against the source before use."
+        ],
+        "tokens": 453,
+        "inference_ns": 4950224000,
+        "prompt_tokens": 1608,
+        "load_ns": 2104000,
+        "skill_evidence": [
+          {
+            "skill": "Machine Learning: PyTorch, TensorFlow, Scikit-learn",
+            "literal_match": true
+          },
+          {
+            "skill": "Languages: Python, C++",
+            "literal_match": true
+          },
+          {
+            "skill": "Tools: Git, Docker, MLflow",
+            "literal_match": true
+          }
+        ],
+        "elapsed_seconds": 5.022
+      },
+      "metrics": {
+        "skill_precision": 0.0,
+        "skill_recall": 0.0,
+        "skill_f1": 0,
+        "contact_exact_match": 0.6666666666666666,
+        "unmatched_literal_skills": []
+      },
+      "elapsed_seconds": 5.021641799999998
+    },
+    {
+      "model": "qwen2.5:7b",
+      "sample_id": "en_02_lead",
+      "repeat": 2,
+      "status": "ok",
+      "result": {
+        "filename": "en_02_lead.md",
+        "route": "Text extraction",
+        "source_text": "# David Miller\n**Email:** david.miller@cloudarch.io\n**Phone:** +1-415-555-0899\n**Location:** San Francisco, CA\n\n## Executive Summary\nPrincipal Cloud Architect with 10+ years driving digital transformation across Fortune 500 enterprises. Expert in Kubernetes cluster governance, multi-cloud architecture, and leading cross-functional engineering teams.\n\n## Technical Skills\n- Cloud & Infrastructure: AWS, Azure, GCP, Terraform, Kubernetes, Helm, Docker\n- Observability: Prometheus, Grafana, Datadog\n- Languages & Frameworks: Go, Python, Bash\n- Methodologies: GitOps, DevSecOps, SRE, Agile Leadership\n\n## Professional Experience\n\n### Principal Cloud Architect — CloudScale Systems\n*March 2020 – Present*\n- Spearheaded enterprise migration of 120+ microservices to multi-region AWS EKS clusters, reducing downtime to 99.99%.\n- Formulated FinOps cost-governance strategy yielding $1.4M in annual cloud infrastructure savings.\n- Mentored a global team of 14 DevOps and Platform engineers.\n\n### Lead DevOps Engineer — FinTech Horizons\n*January 2016 – February 2020*\n- Architected zero-trust CI/CD deployment pipeline handling 500+ production releases per month.\n- Implemented automated compliance auditing for PCI-DSS using Terraform and Open Policy Agent.\n\n## Education\n### M.S. in Software Engineering — Carnegie Mellon University (2015)\n### B.S. in Computer Science — University of California, Berkeley (2013)\n",
+        "mode": "live",
+        "model": "qwen2.5:7b",
+        "ocr_model": null,
+        "ocr_used": false,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 0.0,
+        "profile": {
+          "full_name": "David Miller",
+          "contact_email": "david.miller@cloudarch.io",
+          "contact_phone": "+1-415-555-0899",
+          "languages": [],
+          "skills": [
+            "AWS",
+            "Azure",
+            "GCP",
+            "Terraform",
+            "Kubernetes",
+            "Helm",
+            "Docker",
+            "Prometheus",
+            "Grafana",
+            "Datadog",
+            "Go",
+            "Python",
+            "Bash",
+            "GitOps",
+            "DevSecOps",
+            "SRE",
+            "Agile Leadership"
+          ],
+          "implicit_skills": [],
+          "seniority_level": null,
+          "total_years_experience": null,
+          "executive_summary": null,
+          "extraction_confidence": null,
+          "experience": [
+            {
+              "company": "CloudScale Systems",
+              "role": "Principal Cloud Architect",
+              "start_date": "March 2020",
+              "end_date": "Present",
+              "achievements": [
+                "Spearheaded enterprise migration of 120+ microservices to multi-region AWS EKS clusters, reducing downtime to 99.99%.",
+                "Formulated FinOps cost-governance strategy yielding $1.4M in annual cloud infrastructure savings.",
+                "Mentored a global team of 14 DevOps and Platform engineers."
+              ]
+            },
+            {
+              "company": "FinTech Horizons",
+              "role": "Lead DevOps Engineer",
+              "start_date": "January 2016",
+              "end_date": "February 2020",
+              "achievements": [
+                "Architected zero-trust CI/CD deployment pipeline handling 500+ production releases per month.",
+                "Implemented automated compliance auditing for PCI-DSS using Terraform and Open Policy Agent."
+              ]
+            }
+          ],
+          "education": [
+            {
+              "institution": "Carnegie Mellon University",
+              "degree": "M.S. in Software Engineering",
+              "field_of_study": null,
+              "graduation_year": "2015"
+            },
+            {
+              "institution": "University of California, Berkeley",
+              "degree": "B.S. in Computer Science",
+              "field_of_study": null,
+              "graduation_year": "2013"
+            }
+          ]
+        },
+        "schema_valid": true,
+        "warnings": [
+          "Schema validity does not prove factual accuracy. Review against the source before use."
+        ],
+        "tokens": 520,
+        "inference_ns": 5886791000,
+        "prompt_tokens": 1642,
+        "load_ns": 2192100,
+        "skill_evidence": [
+          {
+            "skill": "AWS",
+            "literal_match": true
+          },
+          {
+            "skill": "Azure",
+            "literal_match": true
+          },
+          {
+            "skill": "GCP",
+            "literal_match": true
+          },
+          {
+            "skill": "Terraform",
+            "literal_match": true
+          },
+          {
+            "skill": "Kubernetes",
+            "literal_match": true
+          },
+          {
+            "skill": "Helm",
+            "literal_match": true
+          },
+          {
+            "skill": "Docker",
+            "literal_match": true
+          },
+          {
+            "skill": "Prometheus",
+            "literal_match": true
+          },
+          {
+            "skill": "Grafana",
+            "literal_match": true
+          },
+          {
+            "skill": "Datadog",
+            "literal_match": true
+          },
+          {
+            "skill": "Go",
+            "literal_match": true
+          },
+          {
+            "skill": "Python",
+            "literal_match": true
+          },
+          {
+            "skill": "Bash",
+            "literal_match": true
+          },
+          {
+            "skill": "GitOps",
+            "literal_match": true
+          },
+          {
+            "skill": "DevSecOps",
+            "literal_match": true
+          },
+          {
+            "skill": "SRE",
+            "literal_match": true
+          },
+          {
+            "skill": "Agile Leadership",
+            "literal_match": true
+          }
+        ],
+        "elapsed_seconds": 5.964
+      },
+      "metrics": {
+        "skill_precision": 1.0,
+        "skill_recall": 1.0,
+        "skill_f1": 1.0,
+        "contact_exact_match": 1.0,
+        "unmatched_literal_skills": []
+      },
+      "elapsed_seconds": 5.964313500000571
+    },
+    {
+      "model": "qwen2.5:7b",
+      "sample_id": "th_02_gov",
+      "repeat": 2,
+      "status": "ok",
+      "result": {
+        "filename": "th_02_gov.md",
+        "route": "Text extraction",
+        "source_text": "# ดร. ธีรพัฒน์ วงศ์สวัสดิ์\n**อีเมล:** teerapat.w@nectec.or.th\n**โทรศัพท์:** 02-564-6900 ต่อ 2341\n**ที่อยู่:** ปทุมธานี, ประเทศไทย\n\n## ประวัติโดยย่อ\nนักวิทยาศาสตร์ข้อมูลอาวุโสและหัวหน้าโครงการวิจัย มีความเชี่ยวชาญด้าน Large Language Model สำหรับภาษาไทย, การประมวลผลสัญญาณเสียง และระบบปัญญาประดิษฐ์เพื่อการแพทย์\n\n## ความเชี่ยวชาญและทักษะ\n- การสร้างและปรับแต่งโมเดล: PyTorch, Hugging Face Transformers, DeepSpeed, LoRA, QLoRA\n- ภาษาโปรแกรม: Python, C++, SQL, R\n- การประมวลผลภาษาธรรมชาติ (NLP): Thai Word Segmentation, Named Entity Recognition, Machine Translation\n- การบริหารจัดการ: การบริหารโครงการวิจัย (Project Management), การให้คำปรึกษาภาครัฐ\n\n## ประวัติการทำงาน\n\n### นักวิทยาศาสตร์ข้อมูลอาวุโส — ศูนย์เทคโนโลยีอิเล็กทรอนิกส์และคอมพิวเตอร์แห่งชาติ (NECTEC)\n*พฤศจิกายน 2562 – ปัจจุบัน*\n- หัวหน้าโครงการพัฒนา Thai LLM Foundation Model สำหรับบริการภาครัฐ\n- ออกแบบ Data Pipeline สำหรับคัดกรองชุดข้อมูลภาษาไทยขนาด 100 พันล้านคำ\n- ควบคุมทีมวิจัยจำนวน 8 ท่าน และจัดทำรายงานเสนอต่อกระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม\n\n### นักวิจัยหลังปริญญาเอก (Postdoctoral Researcher) — สถาบันวิทยสิริเมธี (VISTEC)\n*พฤษภาคม 2560 – ตุลาคม 2562*\n- วิจัยโมเดล Deep Learning สำหรับการวิเคราะห์ภาพถ่ายทางการแพทย์ (Medical Imaging)\n- เผยแพร่ผลงานวิจัยในระดับนานาชาติ 6 บทความใน IEEE และ ACL\n\n## ประวัติการศึกษา\n- ปริญญาเอก (Ph.D.) วิศวกรรมคอมพิวเตอร์ — จุฬาลงกรณ์มหาวิทยาลัย (พ.ศ. 2560)\n- ปริญญาตรี (เกียรตินิยมอันดับหนึ่ง) วิศวกรรมคอมพิวเตอร์ — มหาวิทยาลัยเกษตรศาสตร์ (พ.ศ. 2555)\n",
+        "mode": "live",
+        "model": "qwen2.5:7b",
+        "ocr_model": null,
+        "ocr_used": false,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 0.0,
+        "profile": {
+          "full_name": "ดร. ธีรพัฒน์ วงศ์สวัสดิ์",
+          "contact_email": "teerapat.w@nectec.or.th",
+          "contact_phone": "02-564-6900 ต่อ 2341",
+          "languages": [],
+          "skills": [
+            "การสร้างและปรับแต่งโมเดล: PyTorch, Hugging Face Transformers, DeepSpeed, LoRA, QLoRA",
+            "ภาษาโปรแกรม: Python, C++, SQL, R",
+            "การประมวลผลภาษาธรรมชาติ (NLP): Thai Word Segmentation, Named Entity Recognition, Machine Translation",
+            "การบริหารจัดการ: การบริหารโครงการวิจัย (Project Management), การให้คำปรึกษาภาครัฐ"
+          ],
+          "implicit_skills": [],
+          "seniority_level": null,
+          "total_years_experience": null,
+          "executive_summary": null,
+          "extraction_confidence": null,
+          "experience": [
+            {
+              "company": "ศูนย์เทคโนโลยีอิเล็กทรอนิกส์และคอมพิวเตอร์แห่งชาติ (NECTEC)",
+              "role": "นักวิทยาศาสตร์ข้อมูลอาวุโส",
+              "start_date": "พฤศจิกายน 2562",
+              "end_date": "ปัจจุบัน",
+              "achievements": [
+                "หัวหน้าโครงการพัฒนา Thai LLM Foundation Model สำหรับบริการภาครัฐ",
+                "ออกแบบ Data Pipeline สำหรับคัดกรองชุดข้อมูลภาษาไทยขนาด 100 พันล้านคำ",
+                "ควบคุมทีมวิจัยจำนวน 8 ท่าน และจัดทำรายงานเสนอต่อกระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม"
+              ]
+            },
+            {
+              "company": "สถาบันวิทยสิริเมธี (VISTEC)",
+              "role": "นักวิจัยหลังปริญญาเอก (Postdoctoral Researcher)",
+              "start_date": "พฤษภาคม 2560",
+              "end_date": "ตุลาคม 2562",
+              "achievements": [
+                "วิจัยโมเดล Deep Learning สำหรับการวิเคราะห์ภาพถ่ายทางการแพทย์ (Medical Imaging)",
+                "เผยแพร่ผลงานวิจัยในระดับนานาชาติ 6 บทความใน IEEE และ ACL"
+              ]
+            }
+          ],
+          "education": [
+            {
+              "institution": "จุฬาลงกรณ์มหาวิทยาลัย",
+              "degree": "ปริญญาเอก (Ph.D.) วิศวกรรมคอมพิวเตอร์",
+              "field_of_study": null,
+              "graduation_year": "พ.ศ. 2560"
+            },
+            {
+              "institution": "มหาวิทยาลัยเกษตรศาสตร์",
+              "degree": "ปริญญาตรี (เกียรตินิยมอันดับหนึ่ง) วิศวกรรมคอมพิวเตอร์",
+              "field_of_study": null,
+              "graduation_year": "พ.ศ. 2555"
+            }
+          ]
+        },
+        "schema_valid": true,
+        "warnings": [
+          "Schema validity does not prove factual accuracy. Review against the source before use."
+        ],
+        "tokens": 770,
+        "inference_ns": 8598083000,
+        "prompt_tokens": 2017,
+        "load_ns": 2856300,
+        "skill_evidence": [
+          {
+            "skill": "การสร้างและปรับแต่งโมเดล: PyTorch, Hugging Face Transformers, DeepSpeed, LoRA, QLoRA",
+            "literal_match": true
+          },
+          {
+            "skill": "ภาษาโปรแกรม: Python, C++, SQL, R",
+            "literal_match": true
+          },
+          {
+            "skill": "การประมวลผลภาษาธรรมชาติ (NLP): Thai Word Segmentation, Named Entity Recognition, Machine Translation",
+            "literal_match": true
+          },
+          {
+            "skill": "การบริหารจัดการ: การบริหารโครงการวิจัย (Project Management), การให้คำปรึกษาภาครัฐ",
+            "literal_match": true
+          }
+        ],
+        "elapsed_seconds": 8.764
+      },
+      "metrics": {
+        "skill_precision": 0.0,
+        "skill_recall": 0.0,
+        "skill_f1": 0,
+        "contact_exact_match": 1.0,
+        "unmatched_literal_skills": []
+      },
+      "elapsed_seconds": 8.763744400001087
+    },
+    {
+      "model": "llama3.1:8b",
+      "sample_id": "en_01",
+      "repeat": 1,
+      "status": "ok",
+      "result": {
+        "filename": "en_01.md",
+        "route": "Text extraction",
+        "source_text": "# Alice Smith\n**Email:** alice.smith@example.com\n**Phone:** +1-555-0199\n\n## Summary\nExperienced software engineer specializing in backend development and scalable microservices.\n\n## Skills\nPython, FastAPI, React, Docker, Kubernetes, SQL, Agile\n\n## Experience\n\n### Senior Software Engineer\n**TechCorp Inc.**\n*Jan 2020 - Present*\n- Architected and deployed microservices using FastAPI and Docker.\n- Improved database query performance by 30% using SQL optimization techniques.\n\n### Software Developer\n**WebSolutions LLC**\n*Jun 2017 - Dec 2019*\n- Developed RESTful APIs using Python.\n- Collaborated with frontend teams to integrate React components.\n\n## Education\n\n### B.S. Computer Science\n**State University**\n*2013 - 2017*\n",
+        "mode": "live",
+        "model": "llama3.1:8b",
+        "ocr_model": null,
+        "ocr_used": false,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 0.0,
+        "profile": {
+          "full_name": "Alice Smith",
+          "contact_email": "alice.smith@example.com",
+          "contact_phone": "+1-555-0199",
+          "languages": [],
+          "skills": [
+            "Python",
+            "FastAPI",
+            "React",
+            "Docker",
+            "Kubernetes",
+            "SQL",
+            "Agile"
+          ],
+          "implicit_skills": [],
+          "seniority_level": null,
+          "total_years_experience": null,
+          "executive_summary": null,
+          "extraction_confidence": null,
+          "experience": [
+            {
+              "company": "TechCorp Inc.",
+              "role": "Senior Software Engineer",
+              "start_date": "Jan 2020",
+              "end_date": "Present",
+              "achievements": [
+                "Architected and deployed microservices using FastAPI and Docker.",
+                "Improved database query performance by 30% using SQL optimization techniques."
+              ]
+            },
+            {
+              "company": "WebSolutions LLC",
+              "role": "Software Developer",
+              "start_date": "Jun 2017",
+              "end_date": "Dec 2019",
+              "achievements": [
+                "Developed RESTful APIs using Python.",
+                "Collaborated with frontend teams to integrate React components."
+              ]
+            }
+          ],
+          "education": [
+            {
+              "institution": "State University",
+              "degree": "B.S. Computer Science",
+              "field_of_study": "Computer Science",
+              "graduation_year": "2017"
+            }
+          ]
+        },
+        "schema_valid": true,
+        "warnings": [
+          "Schema validity does not prove factual accuracy. Review against the source before use."
+        ],
+        "tokens": 332,
+        "inference_ns": 3789700000,
+        "prompt_tokens": 1459,
+        "load_ns": 3779763800,
+        "skill_evidence": [
+          {
+            "skill": "Python",
+            "literal_match": true
+          },
+          {
+            "skill": "FastAPI",
+            "literal_match": true
+          },
+          {
+            "skill": "React",
+            "literal_match": true
+          },
+          {
+            "skill": "Docker",
+            "literal_match": true
+          },
+          {
+            "skill": "Kubernetes",
+            "literal_match": true
+          },
+          {
+            "skill": "SQL",
+            "literal_match": true
+          },
+          {
+            "skill": "Agile",
+            "literal_match": true
+          }
+        ],
+        "elapsed_seconds": 7.905
+      },
+      "metrics": {
+        "skill_precision": 1.0,
+        "skill_recall": 1.0,
+        "skill_f1": 1.0,
+        "contact_exact_match": 1.0,
+        "unmatched_literal_skills": []
+      },
+      "elapsed_seconds": 7.90478069999881
+    },
+    {
+      "model": "llama3.1:8b",
+      "sample_id": "th_01",
+      "repeat": 1,
+      "status": "ok",
+      "result": {
+        "filename": "th_01.md",
+        "route": "Text extraction",
+        "source_text": "# สมชาย ใจดี\n**อีเมล:** somchai.j@example.co.th\n**เบอร์โทร:** 081-234-5678\n\n## ทักษะ\nData Engineering, Apache Spark, Airflow, Python, SQL, Hadoop, AWS\n\n## ประสบการณ์การทำงาน\n\n### Data Engineer\n**บริษัท ข้อมูลไทย จำกัด**\n*มี.ค. 2564 - ปัจจุบัน*\n- สร้างและดูแล Data Pipeline ด้วย Apache Airflow และ Spark\n- จัดการข้อมูลขนาดใหญ่บน Hadoop และ AWS\n\n### Junior Data Analyst\n**บริษัท วิเคราะห์ธุรกิจ จำกัด**\n*ก.ค. 2561 - ก.พ. 2564*\n- วิเคราะห์ข้อมูลยอดขายด้วย SQL และ Python\n- สร้าง Dashboard สำหรับผู้บริหาร\n\n## การศึกษา\n\n### ปริญญาตรี วิศวกรรมศาสตร์ (วิศวกรรมคอมพิวเตอร์)\n**มหาวิทยาลัยเทคโนโลยี**\n*2557 - 2561*\n",
+        "mode": "live",
+        "model": "llama3.1:8b",
+        "ocr_model": null,
+        "ocr_used": false,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 0.0,
+        "profile": {
+          "full_name": "สมชาย ใจดี",
+          "contact_email": "somchai.j@example.co.th",
+          "contact_phone": "081-234-5678",
+          "languages": [],
+          "skills": [
+            "Data Engineering",
+            "Apache Spark",
+            "Airflow",
+            "Python",
+            "SQL",
+            "Hadoop",
+            "AWS"
+          ],
+          "implicit_skills": [],
+          "seniority_level": null,
+          "total_years_experience": null,
+          "executive_summary": null,
+          "extraction_confidence": null,
+          "experience": [
+            {
+              "company": "บริษัท ข้อมูลไทย จำกัด",
+              "role": "Data Engineer",
+              "start_date": "มี.ค. 2564",
+              "end_date": "ปัจจุบัน",
+              "achievements": [
+                "สร้างและดูแล Data Pipeline ด้วย Apache Airflow และ Spark",
+                "จัดการข้อมูลขนาดใหญ่บน Hadoop และ AWS"
+              ]
+            },
+            {
+              "company": "บริษัท วิเคราะห์ธุรกิจ จำกัด",
+              "role": "Junior Data Analyst",
+              "start_date": "ก.ค. 2561",
+              "end_date": "ก.พ. 2564",
+              "achievements": [
+                "วิเคราะห์ข้อมูลยอดขายด้วย SQL และ Python",
+                "สร้าง Dashboard สำหรับผู้บริหาร"
+              ]
+            }
+          ],
+          "education": [
+            {
+              "institution": "มหาวิทยาลัยเทคโนโลยี",
+              "degree": "ปริญญาตรี วิศวกรรมศาสตร์ (วิศวกรรมคอมพิวเตอร์)",
+              "field_of_study": "วิศวกรรมคอมพิวเตอร์",
+              "graduation_year": "2561"
+            }
+          ]
+        },
+        "schema_valid": true,
+        "warnings": [
+          "Schema validity does not prove factual accuracy. Review against the source before use."
+        ],
+        "tokens": 327,
+        "inference_ns": 3702313000,
+        "prompt_tokens": 1512,
+        "load_ns": 1542900,
+        "skill_evidence": [
+          {
+            "skill": "Data Engineering",
+            "literal_match": true
+          },
+          {
+            "skill": "Apache Spark",
+            "literal_match": true
+          },
+          {
+            "skill": "Airflow",
+            "literal_match": true
+          },
+          {
+            "skill": "Python",
+            "literal_match": true
+          },
+          {
+            "skill": "SQL",
+            "literal_match": true
+          },
+          {
+            "skill": "Hadoop",
+            "literal_match": true
+          },
+          {
+            "skill": "AWS",
+            "literal_match": true
+          }
+        ],
+        "elapsed_seconds": 3.771
+      },
+      "metrics": {
+        "skill_precision": 1.0,
+        "skill_recall": 1.0,
+        "skill_f1": 1.0,
+        "contact_exact_match": 1.0,
+        "unmatched_literal_skills": []
+      },
+      "elapsed_seconds": 3.770778500000233
+    },
+    {
+      "model": "llama3.1:8b",
+      "sample_id": "bi_01",
+      "repeat": 1,
+      "status": "ok",
+      "result": {
+        "filename": "bi_01.md",
+        "route": "Text extraction",
+        "source_text": "# วรรณิภา สุขสมบูรณ์ (Wannipa Suksombun)\n**Email:** w.suksombun@ai-startup.com\n**Tel:** +66 90 987 6543\n\n## Objective\nMachine Learning Engineer passionate about NLP and Computer Vision. สนใจในการพัฒนา AI เพื่อแก้ปัญหาจริง\n\n## Skills / ทักษะ\n- Machine Learning: PyTorch, TensorFlow, Scikit-learn\n- Languages: Python, C++\n- Tools: Git, Docker, MLflow\n- ภาษา: Thai (Native), English (Fluent)\n\n## Work Experience\n\n### Machine Learning Engineer\n**AI Vision Co., Ltd.**\n*August 2021 - Present*\n- พัฒนาระบบ Image Recognition สำหรับโรงงานอุตสาหกรรม\n- Deployed models using Docker and optimized with TensorRT.\n\n### AI Researcher (Intern)\n**National Research Lab**\n*Jan 2021 - May 2021*\n- วิจัยและทดลองโมเดล NLP ภาษาไทย (Thai NLP)\n- Published a paper on Thai Sentiment Analysis.\n\n## Education\n\n### Master of Science in Artificial Intelligence\n**Global Tech University**\n*2019 - 2021*\n\n### Bachelor of Science in Mathematics\n**Local Science College**\n*2015 - 2019*\n",
+        "mode": "live",
+        "model": "llama3.1:8b",
+        "ocr_model": null,
+        "ocr_used": false,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 0.0,
+        "profile": {
+          "full_name": "Wannipa Suksombun",
+          "contact_email": "w.suksombun@ai-startup.com",
+          "contact_phone": "+66 90 987 6543",
+          "languages": [
+            "Thai",
+            "English"
+          ],
+          "skills": [
+            "Machine Learning",
+            "PyTorch",
+            "TensorFlow",
+            "Scikit-learn",
+            "Python",
+            "C++",
+            "Git",
+            "Docker",
+            "MLflow"
+          ],
+          "implicit_skills": [],
+          "seniority_level": null,
+          "total_years_experience": null,
+          "executive_summary": null,
+          "extraction_confidence": null,
+          "experience": [
+            {
+              "company": "AI Vision Co., Ltd.",
+              "role": "Machine Learning Engineer",
+              "start_date": "August 2021",
+              "end_date": "Present",
+              "achievements": [
+                "Developed Image Recognition system for industrial factory",
+                "Deployed models using Docker and optimized with TensorRT"
+              ]
+            },
+            {
+              "company": "National Research Lab",
+              "role": "AI Researcher (Intern)",
+              "start_date": "Jan 2021",
+              "end_date": "May 2021",
+              "achievements": [
+                "Conducted research and experimented with Thai NLP models",
+                "Published a paper on Thai Sentiment Analysis"
+              ]
+            }
+          ],
+          "education": [
+            {
+              "institution": "Global Tech University",
+              "degree": "Master of Science in Artificial Intelligence",
+              "field_of_study": "Artificial Intelligence",
+              "graduation_year": "2021"
+            },
+            {
+              "institution": "Local Science College",
+              "degree": "Bachelor of Science in Mathematics",
+              "field_of_study": "Mathematics",
+              "graduation_year": "2019"
+            }
+          ]
+        },
+        "schema_valid": true,
+        "warnings": [
+          "Schema validity does not prove factual accuracy. Review against the source before use."
+        ],
+        "tokens": 337,
+        "inference_ns": 3872482000,
+        "prompt_tokens": 1570,
+        "load_ns": 2061500,
+        "skill_evidence": [
+          {
+            "skill": "Machine Learning",
+            "literal_match": true
+          },
+          {
+            "skill": "PyTorch",
+            "literal_match": true
+          },
+          {
+            "skill": "TensorFlow",
+            "literal_match": true
+          },
+          {
+            "skill": "Scikit-learn",
+            "literal_match": true
+          },
+          {
+            "skill": "Python",
+            "literal_match": true
+          },
+          {
+            "skill": "C++",
+            "literal_match": true
+          },
+          {
+            "skill": "Git",
+            "literal_match": true
+          },
+          {
+            "skill": "Docker",
+            "literal_match": true
+          },
+          {
+            "skill": "MLflow",
+            "literal_match": true
+          }
+        ],
+        "elapsed_seconds": 3.95
+      },
+      "metrics": {
+        "skill_precision": 0.8888888888888888,
+        "skill_recall": 1.0,
+        "skill_f1": 0.9411764705882353,
+        "contact_exact_match": 0.6666666666666666,
+        "unmatched_literal_skills": []
+      },
+      "elapsed_seconds": 3.950314600000638
+    },
+    {
+      "model": "llama3.1:8b",
+      "sample_id": "en_02_lead",
+      "repeat": 1,
+      "status": "ok",
+      "result": {
+        "filename": "en_02_lead.md",
+        "route": "Text extraction",
+        "source_text": "# David Miller\n**Email:** david.miller@cloudarch.io\n**Phone:** +1-415-555-0899\n**Location:** San Francisco, CA\n\n## Executive Summary\nPrincipal Cloud Architect with 10+ years driving digital transformation across Fortune 500 enterprises. Expert in Kubernetes cluster governance, multi-cloud architecture, and leading cross-functional engineering teams.\n\n## Technical Skills\n- Cloud & Infrastructure: AWS, Azure, GCP, Terraform, Kubernetes, Helm, Docker\n- Observability: Prometheus, Grafana, Datadog\n- Languages & Frameworks: Go, Python, Bash\n- Methodologies: GitOps, DevSecOps, SRE, Agile Leadership\n\n## Professional Experience\n\n### Principal Cloud Architect — CloudScale Systems\n*March 2020 – Present*\n- Spearheaded enterprise migration of 120+ microservices to multi-region AWS EKS clusters, reducing downtime to 99.99%.\n- Formulated FinOps cost-governance strategy yielding $1.4M in annual cloud infrastructure savings.\n- Mentored a global team of 14 DevOps and Platform engineers.\n\n### Lead DevOps Engineer — FinTech Horizons\n*January 2016 – February 2020*\n- Architected zero-trust CI/CD deployment pipeline handling 500+ production releases per month.\n- Implemented automated compliance auditing for PCI-DSS using Terraform and Open Policy Agent.\n\n## Education\n### M.S. in Software Engineering — Carnegie Mellon University (2015)\n### B.S. in Computer Science — University of California, Berkeley (2013)\n",
+        "mode": "live",
+        "model": "llama3.1:8b",
+        "ocr_model": null,
+        "ocr_used": false,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 0.0,
+        "profile": {
+          "full_name": "David Miller",
+          "contact_email": "david.miller@cloudarch.io",
+          "contact_phone": "+1-415-555-0899",
+          "languages": [],
+          "skills": [
+            "AWS",
+            "Azure",
+            "GCP",
+            "Terraform",
+            "Kubernetes",
+            "Helm",
+            "Docker",
+            "Prometheus",
+            "Grafana",
+            "Datadog",
+            "Go",
+            "Python",
+            "Bash",
+            "GitOps",
+            "DevSecOps",
+            "SRE",
+            "Agile Leadership"
+          ],
+          "implicit_skills": [],
+          "seniority_level": null,
+          "total_years_experience": null,
+          "executive_summary": "Principal Cloud Architect with 10+ years driving digital transformation across Fortune 500 enterprises. Expert in Kubernetes cluster governance, multi-cloud architecture, and leading cross-functional engineering teams.",
+          "extraction_confidence": null,
+          "experience": [
+            {
+              "company": "CloudScale Systems",
+              "role": "Principal Cloud Architect",
+              "start_date": "March 2020",
+              "end_date": "Present",
+              "achievements": [
+                "Spearheaded enterprise migration of 120+ microservices to multi-region AWS EKS clusters, reducing downtime to 99.99.",
+                "Formulated FinOps cost-governance strategy yielding $1.4M in annual cloud infrastructure savings.",
+                "Mentored a global team of 14 DevOps and Platform engineers."
+              ]
+            },
+            {
+              "company": "FinTech Horizons",
+              "role": "Lead DevOps Engineer",
+              "start_date": "January 2016",
+              "end_date": "February 2020",
+              "achievements": [
+                "Architected zero-trust CI/CD deployment pipeline handling 500+ production releases per month.",
+                "Implemented automated compliance auditing for PCI-DSS using Terraform and Open Policy Agent."
+              ]
+            }
+          ],
+          "education": [
+            {
+              "institution": "Carnegie Mellon University",
+              "degree": "M.S. in Software Engineering",
+              "field_of_study": "Software Engineering",
+              "graduation_year": "2015"
+            },
+            {
+              "institution": "University of California, Berkeley",
+              "degree": "B.S. in Computer Science",
+              "field_of_study": "Computer Science",
+              "graduation_year": "2013"
+            }
+          ]
+        },
+        "schema_valid": true,
+        "warnings": [
+          "Schema validity does not prove factual accuracy. Review against the source before use."
+        ],
+        "tokens": 452,
+        "inference_ns": 5156555000,
+        "prompt_tokens": 1610,
+        "load_ns": 3267900,
+        "skill_evidence": [
+          {
+            "skill": "AWS",
+            "literal_match": true
+          },
+          {
+            "skill": "Azure",
+            "literal_match": true
+          },
+          {
+            "skill": "GCP",
+            "literal_match": true
+          },
+          {
+            "skill": "Terraform",
+            "literal_match": true
+          },
+          {
+            "skill": "Kubernetes",
+            "literal_match": true
+          },
+          {
+            "skill": "Helm",
+            "literal_match": true
+          },
+          {
+            "skill": "Docker",
+            "literal_match": true
+          },
+          {
+            "skill": "Prometheus",
+            "literal_match": true
+          },
+          {
+            "skill": "Grafana",
+            "literal_match": true
+          },
+          {
+            "skill": "Datadog",
+            "literal_match": true
+          },
+          {
+            "skill": "Go",
+            "literal_match": true
+          },
+          {
+            "skill": "Python",
+            "literal_match": true
+          },
+          {
+            "skill": "Bash",
+            "literal_match": true
+          },
+          {
+            "skill": "GitOps",
+            "literal_match": true
+          },
+          {
+            "skill": "DevSecOps",
+            "literal_match": true
+          },
+          {
+            "skill": "SRE",
+            "literal_match": true
+          },
+          {
+            "skill": "Agile Leadership",
+            "literal_match": true
+          }
+        ],
+        "elapsed_seconds": 5.243
+      },
+      "metrics": {
+        "skill_precision": 1.0,
+        "skill_recall": 1.0,
+        "skill_f1": 1.0,
+        "contact_exact_match": 1.0,
+        "unmatched_literal_skills": []
+      },
+      "elapsed_seconds": 5.242598099999668
+    },
+    {
+      "model": "llama3.1:8b",
+      "sample_id": "th_02_gov",
+      "repeat": 1,
+      "status": "error",
+      "error": "Model output failed schema validation. No candidate profile was created.",
+      "metrics": {
+        "skill_f1": 0,
+        "contact_exact_match": 0
+      },
+      "elapsed_seconds": 49.04567990000032
+    },
+    {
+      "model": "llama3.1:8b",
+      "sample_id": "en_01",
+      "repeat": 2,
+      "status": "ok",
+      "result": {
+        "filename": "en_01.md",
+        "route": "Text extraction",
+        "source_text": "# Alice Smith\n**Email:** alice.smith@example.com\n**Phone:** +1-555-0199\n\n## Summary\nExperienced software engineer specializing in backend development and scalable microservices.\n\n## Skills\nPython, FastAPI, React, Docker, Kubernetes, SQL, Agile\n\n## Experience\n\n### Senior Software Engineer\n**TechCorp Inc.**\n*Jan 2020 - Present*\n- Architected and deployed microservices using FastAPI and Docker.\n- Improved database query performance by 30% using SQL optimization techniques.\n\n### Software Developer\n**WebSolutions LLC**\n*Jun 2017 - Dec 2019*\n- Developed RESTful APIs using Python.\n- Collaborated with frontend teams to integrate React components.\n\n## Education\n\n### B.S. Computer Science\n**State University**\n*2013 - 2017*\n",
+        "mode": "live",
+        "model": "llama3.1:8b",
+        "ocr_model": null,
+        "ocr_used": false,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 0.0,
+        "profile": {
+          "full_name": "Alice Smith",
+          "contact_email": "alice.smith@example.com",
+          "contact_phone": "+1-555-0199",
+          "languages": [],
+          "skills": [
+            "Python",
+            "FastAPI",
+            "React",
+            "Docker",
+            "Kubernetes",
+            "SQL",
+            "Agile"
+          ],
+          "implicit_skills": [],
+          "seniority_level": null,
+          "total_years_experience": null,
+          "executive_summary": null,
+          "extraction_confidence": null,
+          "experience": [
+            {
+              "company": "TechCorp Inc.",
+              "role": "Senior Software Engineer",
+              "start_date": "Jan 2020",
+              "end_date": "Present",
+              "achievements": [
+                "Architected and deployed microservices using FastAPI and Docker.",
+                "Improved database query performance by 30% using SQL optimization techniques."
+              ]
+            },
+            {
+              "company": "WebSolutions LLC",
+              "role": "Software Developer",
+              "start_date": "Jun 2017",
+              "end_date": "Dec 2019",
+              "achievements": [
+                "Developed RESTful APIs using Python.",
+                "Collaborated with frontend teams to integrate React components."
+              ]
+            }
+          ],
+          "education": [
+            {
+              "institution": "State University",
+              "degree": "B.S. Computer Science",
+              "field_of_study": "Computer Science",
+              "graduation_year": "2017"
+            }
+          ]
+        },
+        "schema_valid": true,
+        "warnings": [
+          "Schema validity does not prove factual accuracy. Review against the source before use."
+        ],
+        "tokens": 332,
+        "inference_ns": 3839944000,
+        "prompt_tokens": 1459,
+        "load_ns": 2064300,
+        "skill_evidence": [
+          {
+            "skill": "Python",
+            "literal_match": true
+          },
+          {
+            "skill": "FastAPI",
+            "literal_match": true
+          },
+          {
+            "skill": "React",
+            "literal_match": true
+          },
+          {
+            "skill": "Docker",
+            "literal_match": true
+          },
+          {
+            "skill": "Kubernetes",
+            "literal_match": true
+          },
+          {
+            "skill": "SQL",
+            "literal_match": true
+          },
+          {
+            "skill": "Agile",
+            "literal_match": true
+          }
+        ],
+        "elapsed_seconds": 4.188
+      },
+      "metrics": {
+        "skill_precision": 1.0,
+        "skill_recall": 1.0,
+        "skill_f1": 1.0,
+        "contact_exact_match": 1.0,
+        "unmatched_literal_skills": []
+      },
+      "elapsed_seconds": 4.188270000000557
+    },
+    {
+      "model": "llama3.1:8b",
+      "sample_id": "th_01",
+      "repeat": 2,
+      "status": "ok",
+      "result": {
+        "filename": "th_01.md",
+        "route": "Text extraction",
+        "source_text": "# สมชาย ใจดี\n**อีเมล:** somchai.j@example.co.th\n**เบอร์โทร:** 081-234-5678\n\n## ทักษะ\nData Engineering, Apache Spark, Airflow, Python, SQL, Hadoop, AWS\n\n## ประสบการณ์การทำงาน\n\n### Data Engineer\n**บริษัท ข้อมูลไทย จำกัด**\n*มี.ค. 2564 - ปัจจุบัน*\n- สร้างและดูแล Data Pipeline ด้วย Apache Airflow และ Spark\n- จัดการข้อมูลขนาดใหญ่บน Hadoop และ AWS\n\n### Junior Data Analyst\n**บริษัท วิเคราะห์ธุรกิจ จำกัด**\n*ก.ค. 2561 - ก.พ. 2564*\n- วิเคราะห์ข้อมูลยอดขายด้วย SQL และ Python\n- สร้าง Dashboard สำหรับผู้บริหาร\n\n## การศึกษา\n\n### ปริญญาตรี วิศวกรรมศาสตร์ (วิศวกรรมคอมพิวเตอร์)\n**มหาวิทยาลัยเทคโนโลยี**\n*2557 - 2561*\n",
+        "mode": "live",
+        "model": "llama3.1:8b",
+        "ocr_model": null,
+        "ocr_used": false,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 0.0,
+        "profile": {
+          "full_name": "สมชาย ใจดี",
+          "contact_email": "somchai.j@example.co.th",
+          "contact_phone": "081-234-5678",
+          "languages": [],
+          "skills": [
+            "Data Engineering",
+            "Apache Spark",
+            "Airflow",
+            "Python",
+            "SQL",
+            "Hadoop",
+            "AWS"
+          ],
+          "implicit_skills": [],
+          "seniority_level": null,
+          "total_years_experience": null,
+          "executive_summary": null,
+          "extraction_confidence": null,
+          "experience": [
+            {
+              "company": "บริษัท ข้อมูลไทย จำกัด",
+              "role": "Data Engineer",
+              "start_date": "มี.ค. 2564",
+              "end_date": "ปัจจุบัน",
+              "achievements": [
+                "สร้างและดูแล Data Pipeline ด้วย Apache Airflow และ Spark",
+                "จัดการข้อมูลขนาดใหญ่บน Hadoop และ AWS"
+              ]
+            },
+            {
+              "company": "บริษัท วิเคราะห์ธุรกิจ จำกัด",
+              "role": "Junior Data Analyst",
+              "start_date": "ก.ค. 2561",
+              "end_date": "ก.พ. 2564",
+              "achievements": [
+                "วิเคราะห์ข้อมูลยอดขายด้วย SQL และ Python",
+                "สร้าง Dashboard สำหรับผู้บริหาร"
+              ]
+            }
+          ],
+          "education": [
+            {
+              "institution": "มหาวิทยาลัยเทคโนโลยี",
+              "degree": "ปริญญาตรี วิศวกรรมศาสตร์ (วิศวกรรมคอมพิวเตอร์)",
+              "field_of_study": "วิศวกรรมคอมพิวเตอร์",
+              "graduation_year": "2561"
+            }
+          ]
+        },
+        "schema_valid": true,
+        "warnings": [
+          "Schema validity does not prove factual accuracy. Review against the source before use."
+        ],
+        "tokens": 327,
+        "inference_ns": 3945371000,
+        "prompt_tokens": 1512,
+        "load_ns": 1721300,
+        "skill_evidence": [
+          {
+            "skill": "Data Engineering",
+            "literal_match": true
+          },
+          {
+            "skill": "Apache Spark",
+            "literal_match": true
+          },
+          {
+            "skill": "Airflow",
+            "literal_match": true
+          },
+          {
+            "skill": "Python",
+            "literal_match": true
+          },
+          {
+            "skill": "SQL",
+            "literal_match": true
+          },
+          {
+            "skill": "Hadoop",
+            "literal_match": true
+          },
+          {
+            "skill": "AWS",
+            "literal_match": true
+          }
+        ],
+        "elapsed_seconds": 4.031
+      },
+      "metrics": {
+        "skill_precision": 1.0,
+        "skill_recall": 1.0,
+        "skill_f1": 1.0,
+        "contact_exact_match": 1.0,
+        "unmatched_literal_skills": []
+      },
+      "elapsed_seconds": 4.031267200000002
+    },
+    {
+      "model": "llama3.1:8b",
+      "sample_id": "bi_01",
+      "repeat": 2,
+      "status": "ok",
+      "result": {
+        "filename": "bi_01.md",
+        "route": "Text extraction",
+        "source_text": "# วรรณิภา สุขสมบูรณ์ (Wannipa Suksombun)\n**Email:** w.suksombun@ai-startup.com\n**Tel:** +66 90 987 6543\n\n## Objective\nMachine Learning Engineer passionate about NLP and Computer Vision. สนใจในการพัฒนา AI เพื่อแก้ปัญหาจริง\n\n## Skills / ทักษะ\n- Machine Learning: PyTorch, TensorFlow, Scikit-learn\n- Languages: Python, C++\n- Tools: Git, Docker, MLflow\n- ภาษา: Thai (Native), English (Fluent)\n\n## Work Experience\n\n### Machine Learning Engineer\n**AI Vision Co., Ltd.**\n*August 2021 - Present*\n- พัฒนาระบบ Image Recognition สำหรับโรงงานอุตสาหกรรม\n- Deployed models using Docker and optimized with TensorRT.\n\n### AI Researcher (Intern)\n**National Research Lab**\n*Jan 2021 - May 2021*\n- วิจัยและทดลองโมเดล NLP ภาษาไทย (Thai NLP)\n- Published a paper on Thai Sentiment Analysis.\n\n## Education\n\n### Master of Science in Artificial Intelligence\n**Global Tech University**\n*2019 - 2021*\n\n### Bachelor of Science in Mathematics\n**Local Science College**\n*2015 - 2019*\n",
+        "mode": "live",
+        "model": "llama3.1:8b",
+        "ocr_model": null,
+        "ocr_used": false,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 0.0,
+        "profile": {
+          "full_name": "Wannipa Suksombun",
+          "contact_email": "w.suksombun@ai-startup.com",
+          "contact_phone": "+66 90 987 6543",
+          "languages": [
+            "Thai",
+            "English"
+          ],
+          "skills": [
+            "Machine Learning",
+            "PyTorch",
+            "TensorFlow",
+            "Scikit-learn",
+            "Python",
+            "C++",
+            "Git",
+            "Docker",
+            "MLflow"
+          ],
+          "implicit_skills": [],
+          "seniority_level": null,
+          "total_years_experience": null,
+          "executive_summary": null,
+          "extraction_confidence": null,
+          "experience": [
+            {
+              "company": "AI Vision Co., Ltd.",
+              "role": "Machine Learning Engineer",
+              "start_date": "August 2021",
+              "end_date": "Present",
+              "achievements": [
+                "Developed Image Recognition system for industrial factory",
+                "Deployed models using Docker and optimized with TensorRT"
+              ]
+            },
+            {
+              "company": "National Research Lab",
+              "role": "AI Researcher (Intern)",
+              "start_date": "Jan 2021",
+              "end_date": "May 2021",
+              "achievements": [
+                "Conducted research and experimented with Thai NLP models",
+                "Published a paper on Thai Sentiment Analysis"
+              ]
+            }
+          ],
+          "education": [
+            {
+              "institution": "Global Tech University",
+              "degree": "Master of Science in Artificial Intelligence",
+              "field_of_study": "Artificial Intelligence",
+              "graduation_year": "2021"
+            },
+            {
+              "institution": "Local Science College",
+              "degree": "Bachelor of Science in Mathematics",
+              "field_of_study": "Mathematics",
+              "graduation_year": "2019"
+            }
+          ]
+        },
+        "schema_valid": true,
+        "warnings": [
+          "Schema validity does not prove factual accuracy. Review against the source before use."
+        ],
+        "tokens": 337,
+        "inference_ns": 4148242000,
+        "prompt_tokens": 1570,
+        "load_ns": 2109500,
+        "skill_evidence": [
+          {
+            "skill": "Machine Learning",
+            "literal_match": true
+          },
+          {
+            "skill": "PyTorch",
+            "literal_match": true
+          },
+          {
+            "skill": "TensorFlow",
+            "literal_match": true
+          },
+          {
+            "skill": "Scikit-learn",
+            "literal_match": true
+          },
+          {
+            "skill": "Python",
+            "literal_match": true
+          },
+          {
+            "skill": "C++",
+            "literal_match": true
+          },
+          {
+            "skill": "Git",
+            "literal_match": true
+          },
+          {
+            "skill": "Docker",
+            "literal_match": true
+          },
+          {
+            "skill": "MLflow",
+            "literal_match": true
+          }
+        ],
+        "elapsed_seconds": 4.228
+      },
+      "metrics": {
+        "skill_precision": 0.8888888888888888,
+        "skill_recall": 1.0,
+        "skill_f1": 0.9411764705882353,
+        "contact_exact_match": 0.6666666666666666,
+        "unmatched_literal_skills": []
+      },
+      "elapsed_seconds": 4.227865700000621
+    },
+    {
+      "model": "llama3.1:8b",
+      "sample_id": "en_02_lead",
+      "repeat": 2,
+      "status": "ok",
+      "result": {
+        "filename": "en_02_lead.md",
+        "route": "Text extraction",
+        "source_text": "# David Miller\n**Email:** david.miller@cloudarch.io\n**Phone:** +1-415-555-0899\n**Location:** San Francisco, CA\n\n## Executive Summary\nPrincipal Cloud Architect with 10+ years driving digital transformation across Fortune 500 enterprises. Expert in Kubernetes cluster governance, multi-cloud architecture, and leading cross-functional engineering teams.\n\n## Technical Skills\n- Cloud & Infrastructure: AWS, Azure, GCP, Terraform, Kubernetes, Helm, Docker\n- Observability: Prometheus, Grafana, Datadog\n- Languages & Frameworks: Go, Python, Bash\n- Methodologies: GitOps, DevSecOps, SRE, Agile Leadership\n\n## Professional Experience\n\n### Principal Cloud Architect — CloudScale Systems\n*March 2020 – Present*\n- Spearheaded enterprise migration of 120+ microservices to multi-region AWS EKS clusters, reducing downtime to 99.99%.\n- Formulated FinOps cost-governance strategy yielding $1.4M in annual cloud infrastructure savings.\n- Mentored a global team of 14 DevOps and Platform engineers.\n\n### Lead DevOps Engineer — FinTech Horizons\n*January 2016 – February 2020*\n- Architected zero-trust CI/CD deployment pipeline handling 500+ production releases per month.\n- Implemented automated compliance auditing for PCI-DSS using Terraform and Open Policy Agent.\n\n## Education\n### M.S. in Software Engineering — Carnegie Mellon University (2015)\n### B.S. in Computer Science — University of California, Berkeley (2013)\n",
+        "mode": "live",
+        "model": "llama3.1:8b",
+        "ocr_model": null,
+        "ocr_used": false,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 0.0,
+        "profile": {
+          "full_name": "David Miller",
+          "contact_email": "david.miller@cloudarch.io",
+          "contact_phone": "+1-415-555-0899",
+          "languages": [],
+          "skills": [
+            "AWS",
+            "Azure",
+            "GCP",
+            "Terraform",
+            "Kubernetes",
+            "Helm",
+            "Docker",
+            "Prometheus",
+            "Grafana",
+            "Datadog",
+            "Go",
+            "Python",
+            "Bash",
+            "GitOps",
+            "DevSecOps",
+            "SRE",
+            "Agile Leadership"
+          ],
+          "implicit_skills": [],
+          "seniority_level": null,
+          "total_years_experience": null,
+          "executive_summary": "Principal Cloud Architect with 10+ years driving digital transformation across Fortune 500 enterprises. Expert in Kubernetes cluster governance, multi-cloud architecture, and leading cross-functional engineering teams.",
+          "extraction_confidence": null,
+          "experience": [
+            {
+              "company": "CloudScale Systems",
+              "role": "Principal Cloud Architect",
+              "start_date": "March 2020",
+              "end_date": "Present",
+              "achievements": [
+                "Spearheaded enterprise migration of 120+ microservices to multi-region AWS EKS clusters, reducing downtime to 99.99.",
+                "Formulated FinOps cost-governance strategy yielding $1.4M in annual cloud infrastructure savings.",
+                "Mentored a global team of 14 DevOps and Platform engineers."
+              ]
+            },
+            {
+              "company": "FinTech Horizons",
+              "role": "Lead DevOps Engineer",
+              "start_date": "January 2016",
+              "end_date": "February 2020",
+              "achievements": [
+                "Architected zero-trust CI/CD deployment pipeline handling 500+ production releases per month.",
+                "Implemented automated compliance auditing for PCI-DSS using Terraform and Open Policy Agent."
+              ]
+            }
+          ],
+          "education": [
+            {
+              "institution": "Carnegie Mellon University",
+              "degree": "M.S. in Software Engineering",
+              "field_of_study": "Software Engineering",
+              "graduation_year": "2015"
+            },
+            {
+              "institution": "University of California, Berkeley",
+              "degree": "B.S. in Computer Science",
+              "field_of_study": "Computer Science",
+              "graduation_year": "2013"
+            }
+          ]
+        },
+        "schema_valid": true,
+        "warnings": [
+          "Schema validity does not prove factual accuracy. Review against the source before use."
+        ],
+        "tokens": 452,
+        "inference_ns": 5514059000,
+        "prompt_tokens": 1610,
+        "load_ns": 1541400,
+        "skill_evidence": [
+          {
+            "skill": "AWS",
+            "literal_match": true
+          },
+          {
+            "skill": "Azure",
+            "literal_match": true
+          },
+          {
+            "skill": "GCP",
+            "literal_match": true
+          },
+          {
+            "skill": "Terraform",
+            "literal_match": true
+          },
+          {
+            "skill": "Kubernetes",
+            "literal_match": true
+          },
+          {
+            "skill": "Helm",
+            "literal_match": true
+          },
+          {
+            "skill": "Docker",
+            "literal_match": true
+          },
+          {
+            "skill": "Prometheus",
+            "literal_match": true
+          },
+          {
+            "skill": "Grafana",
+            "literal_match": true
+          },
+          {
+            "skill": "Datadog",
+            "literal_match": true
+          },
+          {
+            "skill": "Go",
+            "literal_match": true
+          },
+          {
+            "skill": "Python",
+            "literal_match": true
+          },
+          {
+            "skill": "Bash",
+            "literal_match": true
+          },
+          {
+            "skill": "GitOps",
+            "literal_match": true
+          },
+          {
+            "skill": "DevSecOps",
+            "literal_match": true
+          },
+          {
+            "skill": "SRE",
+            "literal_match": true
+          },
+          {
+            "skill": "Agile Leadership",
+            "literal_match": true
+          }
+        ],
+        "elapsed_seconds": 5.604
+      },
+      "metrics": {
+        "skill_precision": 1.0,
+        "skill_recall": 1.0,
+        "skill_f1": 1.0,
+        "contact_exact_match": 1.0,
+        "unmatched_literal_skills": []
+      },
+      "elapsed_seconds": 5.603691100001015
+    },
+    {
+      "model": "llama3.1:8b",
+      "sample_id": "th_02_gov",
+      "repeat": 2,
+      "status": "error",
+      "error": "Model output failed schema validation. No candidate profile was created.",
+      "metrics": {
+        "skill_f1": 0,
+        "contact_exact_match": 0
+      },
+      "elapsed_seconds": 49.75646570000026
+    }
+  ],
+  "summary": [
+    {
+      "model": "qwen2.5:7b",
+      "attempts": 10,
+      "success_rate": 1.0,
+      "all_attempt_skill_f1": 0.6,
+      "contact_exact_match": 0.9333333333333333,
+      "mean_seconds": 6.009445870000309,
+      "p95_seconds": 8.763744400001087
+    },
+    {
+      "model": "llama3.1:8b",
+      "attempts": 10,
+      "success_rate": 0.8,
+      "all_attempt_skill_f1": 0.7882352941176471,
+      "contact_exact_match": 0.7333333333333333,
+      "mean_seconds": 13.772171150000213,
+      "p95_seconds": 49.75646570000026
+    }
+  ],
+  "limitations": [
+    "Repository fixtures are development data, not a sealed holdout.",
+    "Exact skill labels omit some skills stated elsewhere in resumes; inspect disagreements.",
+    "Exact full-name scoring may penalize preservation of a bilingual name.",
+    "Literal skill matches are a diagnostic, not a factual hallucination rate.",
+    "No dollar or energy cost is measured; latency and token counts are resource proxies."
+  ]
+}

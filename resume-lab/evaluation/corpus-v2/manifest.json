@@ -1,0 +1,1145 @@
+{
+  "version": "synthetic-resume-v2",
+  "annotations_frozen": true,
+  "source_corpus_sha256": "54c8b8288604007a942715a7a92ca76927ea5d8c2ec6e9d114b5ec576cc4e576",
+  "annotation_overlay_sha256": "de048cfe4375519696c7b7506d83ebeb19d2990d618b5e75ee30a5b20d3562af",
+  "purpose": "Expanded development plus fresh untouched holdout; old failed holdout excluded. Synthetic template families overlap, so no population accuracy claim.",
+  "rendering": "Tahoma via Pillow without RAQM. Same glyph-width wrapping in images and digital PDFs.",
+  "font_sha256": "9af03d4ad44a3b413d92f7de48b94aa7cc8a1471a75d498406eae837f62ee1d1",
+  "samples": [
+    {
+      "id": "dev_en_01",
+      "split": "development",
+      "language": "en",
+      "text": "# Alice Smith\n**Email:** alice.smith@example.com\n**Phone:** +1-555-0199\n\n## Summary\nExperienced software engineer specializing in backend development and scalable microservices.\n\n## Skills\nPython, FastAPI, React, Docker, Kubernetes, SQL, Agile\n\n## Experience\n\n### Senior Software Engineer\n**TechCorp Inc.**\n*Jan 2020 - Present*\n- Architected and deployed microservices using FastAPI and Docker.\n- Improved database query performance by 30% using SQL optimization techniques.\n\n### Software Developer\n**WebSolutions LLC**\n*Jun 2017 - Dec 2019*\n- Developed RESTful APIs using Python.\n- Collaborated with frontend teams to integrate React components.\n\n## Education\n\n### B.S. Computer Science\n**State University**\n*2013 - 2017*\n",
+      "truth": {
+        "full_name": "Alice Smith",
+        "contact_email": "alice.smith@example.com",
+        "contact_phone": "+1-555-0199",
+        "skills": [
+          "Python",
+          "FastAPI",
+          "React",
+          "Docker",
+          "Kubernetes",
+          "SQL",
+          "Agile"
+        ],
+        "experience": [
+          {
+            "company": "TechCorp Inc.",
+            "role": "Senior Software Engineer",
+            "start_date": "Jan 2020",
+            "end_date": "Present",
+            "achievements": [
+              "Architected and deployed microservices using FastAPI and Docker.",
+              "Improved database query performance by 30% using SQL optimization techniques."
+            ]
+          },
+          {
+            "company": "WebSolutions LLC",
+            "role": "Software Developer",
+            "start_date": "Jun 2017",
+            "end_date": "Dec 2019",
+            "achievements": [
+              "Developed RESTful APIs using Python.",
+              "Collaborated with frontend teams to integrate React components."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "State University",
+            "degree": "B.S.",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2017"
+          }
+        ]
+      },
+      "layout": "single-column",
+      "files": {
+        "text": "dev_en_01.txt",
+        "image": "dev_en_01.png",
+        "scanned_pdf": "dev_en_01-scan.pdf",
+        "digital_pdf": "dev_en_01-digital.pdf"
+      },
+      "sha256": {
+        "text": "507c115390f665c55a93972adaba9575ce04045dc36552ca17c16b7bb6e3c6d3",
+        "image": "26740bd4897f08c9550d113a59830fea10fe6588bb90d939110d1d9064edfc02",
+        "scanned_pdf": "40634ea3f2a39f15f8e9183721d7289a0a57423b2c73dbd21324e7a4a422947b",
+        "digital_pdf": "4a9dd74b4e7441330ca57696817fba651c9772c16ede4c582a0226a540e3b196"
+      }
+    },
+    {
+      "id": "dev_th_01",
+      "split": "development",
+      "language": "th",
+      "text": "# สมชาย ใจดี\n**อีเมล:** somchai.j@example.co.th\n**เบอร์โทร:** 081-234-5678\n\n## ทักษะ\nData Engineering, Apache Spark, Airflow, Python, SQL, Hadoop, AWS\n\n## ประสบการณ์การทำงาน\n\n### Data Engineer\n**บริษัท ข้อมูลไทย จำกัด**\n*มี.ค. 2564 - ปัจจุบัน*\n- สร้างและดูแล Data Pipeline ด้วย Apache Airflow และ Spark\n- จัดการข้อมูลขนาดใหญ่บน Hadoop และ AWS\n\n### Junior Data Analyst\n**บริษัท วิเคราะห์ธุรกิจ จำกัด**\n*ก.ค. 2561 - ก.พ. 2564*\n- วิเคราะห์ข้อมูลยอดขายด้วย SQL และ Python\n- สร้าง Dashboard สำหรับผู้บริหาร\n\n## การศึกษา\n\n### ปริญญาตรี วิศวกรรมศาสตร์ (วิศวกรรมคอมพิวเตอร์)\n**มหาวิทยาลัยเทคโนโลยี**\n*2557 - 2561*\n",
+      "truth": {
+        "full_name": "สมชาย ใจดี",
+        "contact_email": "somchai.j@example.co.th",
+        "contact_phone": "081-234-5678",
+        "skills": [
+          "Data Engineering",
+          "Apache Spark",
+          "Airflow",
+          "Python",
+          "SQL",
+          "Hadoop",
+          "AWS"
+        ],
+        "experience": [
+          {
+            "company": "บริษัท ข้อมูลไทย จำกัด",
+            "role": "Data Engineer",
+            "start_date": "มี.ค. 2564",
+            "end_date": "ปัจจุบัน",
+            "achievements": [
+              "สร้างและดูแล Data Pipeline ด้วย Apache Airflow และ Spark",
+              "จัดการข้อมูลขนาดใหญ่บน Hadoop และ AWS"
+            ]
+          },
+          {
+            "company": "บริษัท วิเคราะห์ธุรกิจ จำกัด",
+            "role": "Junior Data Analyst",
+            "start_date": "ก.ค. 2561",
+            "end_date": "ก.พ. 2564",
+            "achievements": [
+              "วิเคราะห์ข้อมูลยอดขายด้วย SQL และ Python",
+              "สร้าง Dashboard สำหรับผู้บริหาร"
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "มหาวิทยาลัยเทคโนโลยี",
+            "degree": "ปริญญาตรี",
+            "field_of_study": "วิศวกรรมคอมพิวเตอร์",
+            "graduation_year": "2561"
+          }
+        ]
+      },
+      "layout": "single-column",
+      "files": {
+        "text": "dev_th_01.txt",
+        "image": "dev_th_01.png",
+        "scanned_pdf": "dev_th_01-scan.pdf",
+        "digital_pdf": "dev_th_01-digital.pdf"
+      },
+      "sha256": {
+        "text": "18c45b6ce44bdad5609b645f472978c21d5451d3f516c72955a7a8bdc2793b05",
+        "image": "e875eeb30a2e4bf6f91fa1140de690723f1373f008a593302fd5c78324b479d8",
+        "scanned_pdf": "061a9c4d836c7444678dfc102401db443d456c8f4cd0631fd9e5f5cc0a6709d9",
+        "digital_pdf": "5aa7f15344f25a50b1702701ea1c580f5f6b921b177bc846dd83b78320a24905"
+      }
+    },
+    {
+      "id": "dev_bi_01",
+      "split": "development",
+      "language": "bi",
+      "text": "# วรรณิภา สุขสมบูรณ์ (Wannipa Suksombun)\n**Email:** w.suksombun@ai-startup.com\n**Tel:** +66 90 987 6543\n\n## Objective\nMachine Learning Engineer passionate about NLP and Computer Vision. สนใจในการพัฒนา AI เพื่อแก้ปัญหาจริง\n\n## Skills / ทักษะ\n- Machine Learning: PyTorch, TensorFlow, Scikit-learn\n- Languages: Python, C++\n- Tools: Git, Docker, MLflow\n- ภาษา: Thai (Native), English (Fluent)\n\n## Work Experience\n\n### Machine Learning Engineer\n**AI Vision Co., Ltd.**\n*August 2021 - Present*\n- พัฒนาระบบ Image Recognition สำหรับโรงงานอุตสาหกรรม\n- Deployed models using Docker and optimized with TensorRT.\n\n### AI Researcher (Intern)\n**National Research Lab**\n*Jan 2021 - May 2021*\n- วิจัยและทดลองโมเดล NLP ภาษาไทย (Thai NLP)\n- Published a paper on Thai Sentiment Analysis.\n\n## Education\n\n### Master of Science in Artificial Intelligence\n**Global Tech University**\n*2019 - 2021*\n\n### Bachelor of Science in Mathematics\n**Local Science College**\n*2015 - 2019*\n",
+      "truth": {
+        "full_name": "วรรณิภา สุขสมบูรณ์ (Wannipa Suksombun)",
+        "contact_email": "w.suksombun@ai-startup.com",
+        "contact_phone": "+66 90 987 6543",
+        "skills": [
+          "PyTorch",
+          "TensorFlow",
+          "Scikit-learn",
+          "Python",
+          "C++",
+          "Git",
+          "Docker",
+          "MLflow"
+        ],
+        "experience": [
+          {
+            "company": "AI Vision Co., Ltd.",
+            "role": "Machine Learning Engineer",
+            "start_date": "August 2021",
+            "end_date": "Present",
+            "achievements": [
+              "พัฒนาระบบ Image Recognition สำหรับโรงงานอุตสาหกรรม",
+              "Deployed models using Docker and optimized with TensorRT."
+            ]
+          },
+          {
+            "company": "National Research Lab",
+            "role": "AI Researcher (Intern)",
+            "start_date": "Jan 2021",
+            "end_date": "May 2021",
+            "achievements": [
+              "วิจัยและทดลองโมเดล NLP ภาษาไทย (Thai NLP)",
+              "Published a paper on Thai Sentiment Analysis."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Global Tech University",
+            "degree": "Master of Science",
+            "field_of_study": "Artificial Intelligence",
+            "graduation_year": "2021"
+          },
+          {
+            "institution": "Local Science College",
+            "degree": "Bachelor of Science",
+            "field_of_study": "Mathematics",
+            "graduation_year": "2019"
+          }
+        ]
+      },
+      "layout": "single-column",
+      "files": {
+        "text": "dev_bi_01.txt",
+        "image": "dev_bi_01.png",
+        "scanned_pdf": "dev_bi_01-scan.pdf",
+        "digital_pdf": "dev_bi_01-digital.pdf"
+      },
+      "sha256": {
+        "text": "e2381795298c7dc187318159b7387bc16cfc1099a28bcbe3775472c2a6626157",
+        "image": "261880aecd13fe646db8689922a36a8266f5226b417fa5bb5f50ab2ff8c2d6b3",
+        "scanned_pdf": "71349754ced5930afdb30a5d004527ae848ec6677c46477c2acdc276f1ad5018",
+        "digital_pdf": "4a978733d1f872d836e68e14913f04f01ebd78869acd3bbd1cf6d8a2736ed6d7"
+      }
+    },
+    {
+      "id": "dev_en_02_lead",
+      "split": "development",
+      "language": "en",
+      "text": "# David Miller\n**Email:** david.miller@cloudarch.io\n**Phone:** +1-415-555-0899\n**Location:** San Francisco, CA\n\n## Executive Summary\nPrincipal Cloud Architect with 10+ years driving digital transformation across Fortune 500 enterprises. Expert in Kubernetes cluster governance, multi-cloud architecture, and leading cross-functional engineering teams.\n\n## Technical Skills\n- Cloud & Infrastructure: AWS, Azure, GCP, Terraform, Kubernetes, Helm, Docker\n- Observability: Prometheus, Grafana, Datadog\n- Languages & Frameworks: Go, Python, Bash\n- Methodologies: GitOps, DevSecOps, SRE, Agile Leadership\n\n## Professional Experience\n\n### Principal Cloud Architect — CloudScale Systems\n*March 2020 – Present*\n- Spearheaded enterprise migration of 120+ microservices to multi-region AWS EKS clusters, reducing downtime to 99.99%.\n- Formulated FinOps cost-governance strategy yielding $1.4M in annual cloud infrastructure savings.\n- Mentored a global team of 14 DevOps and Platform engineers.\n\n### Lead DevOps Engineer — FinTech Horizons\n*January 2016 – February 2020*\n- Architected zero-trust CI/CD deployment pipeline handling 500+ production releases per month.\n- Implemented automated compliance auditing for PCI-DSS using Terraform and Open Policy Agent.\n\n## Education\n### M.S. in Software Engineering — Carnegie Mellon University (2015)\n### B.S. in Computer Science — University of California, Berkeley (2013)\n",
+      "truth": {
+        "full_name": "David Miller",
+        "contact_email": "david.miller@cloudarch.io",
+        "contact_phone": "+1-415-555-0899",
+        "skills": [
+          "AWS",
+          "Azure",
+          "GCP",
+          "Terraform",
+          "Kubernetes",
+          "Helm",
+          "Docker",
+          "Prometheus",
+          "Grafana",
+          "Datadog",
+          "Go",
+          "Python",
+          "Bash",
+          "GitOps",
+          "DevSecOps",
+          "SRE",
+          "Agile Leadership"
+        ],
+        "seniority_level": "Lead/Principal",
+        "total_years_experience": 10.0,
+        "experience": [
+          {
+            "company": "CloudScale Systems",
+            "role": "Principal Cloud Architect",
+            "start_date": "March 2020",
+            "end_date": "Present"
+          },
+          {
+            "company": "FinTech Horizons",
+            "role": "Lead DevOps Engineer",
+            "start_date": "January 2016",
+            "end_date": "February 2020"
+          }
+        ],
+        "education": [
+          {
+            "institution": "Carnegie Mellon University",
+            "degree": "M.S.",
+            "field_of_study": "Software Engineering",
+            "graduation_year": "2015"
+          },
+          {
+            "institution": "University of California, Berkeley",
+            "degree": "B.S.",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2013"
+          }
+        ]
+      },
+      "layout": "single-column",
+      "files": {
+        "text": "dev_en_02_lead.txt",
+        "image": "dev_en_02_lead.png",
+        "scanned_pdf": "dev_en_02_lead-scan.pdf",
+        "digital_pdf": "dev_en_02_lead-digital.pdf"
+      },
+      "sha256": {
+        "text": "6f66559ed7bc5b24043a40ea8d45de4e82844d9ea5b51b5025d3a839fcd369f9",
+        "image": "d9cd3cef18c98113214b1d6a8270096c27beb1aedebdfa2cb26aecb127a89db9",
+        "scanned_pdf": "a07341fe0c47513e2e41038092aa9009a42c61b953978a7a1a87aad45afd6d8c",
+        "digital_pdf": "dbbdd37d2bfddf0c81f8e66cba57694c907ba5523367ebb6251400ffaecc3834"
+      }
+    },
+    {
+      "id": "dev_th_02_gov",
+      "split": "development",
+      "language": "th",
+      "text": "# ดร. ธีรพัฒน์ วงศ์สวัสดิ์\n**อีเมล:** teerapat.w@nectec.or.th\n**โทรศัพท์:** 02-564-6900 ต่อ 2341\n**ที่อยู่:** ปทุมธานี, ประเทศไทย\n\n## ประวัติโดยย่อ\nนักวิทยาศาสตร์ข้อมูลอาวุโสและหัวหน้าโครงการวิจัย มีความเชี่ยวชาญด้าน Large Language Model สำหรับภาษาไทย, การประมวลผลสัญญาณเสียง และระบบปัญญาประดิษฐ์เพื่อการแพทย์\n\n## ความเชี่ยวชาญและทักษะ\n- การสร้างและปรับแต่งโมเดล: PyTorch, Hugging Face Transformers, DeepSpeed, LoRA, QLoRA\n- ภาษาโปรแกรม: Python, C++, SQL, R\n- การประมวลผลภาษาธรรมชาติ (NLP): Thai Word Segmentation, Named Entity Recognition, Machine Translation\n- การบริหารจัดการ: การบริหารโครงการวิจัย (Project Management), การให้คำปรึกษาภาครัฐ\n\n## ประวัติการทำงาน\n\n### นักวิทยาศาสตร์ข้อมูลอาวุโส — ศูนย์เทคโนโลยีอิเล็กทรอนิกส์และคอมพิวเตอร์แห่งชาติ (NECTEC)\n*พฤศจิกายน 2562 – ปัจจุบัน*\n- หัวหน้าโครงการพัฒนา Thai LLM Foundation Model สำหรับบริการภาครัฐ\n- ออกแบบ Data Pipeline สำหรับคัดกรองชุดข้อมูลภาษาไทยขนาด 100 พันล้านคำ\n- ควบคุมทีมวิจัยจำนวน 8 ท่าน และจัดทำรายงานเสนอต่อกระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม\n\n### นักวิจัยหลังปริญญาเอก (Postdoctoral Researcher) — สถาบันวิทยสิริเมธี (VISTEC)\n*พฤษภาคม 2560 – ตุลาคม 2562*\n- วิจัยโมเดล Deep Learning สำหรับการวิเคราะห์ภาพถ่ายทางการแพทย์ (Medical Imaging)\n- เผยแพร่ผลงานวิจัยในระดับนานาชาติ 6 บทความใน IEEE และ ACL\n\n## ประวัติการศึกษา\n- ปริญญาเอก (Ph.D.) วิศวกรรมคอมพิวเตอร์ — จุฬาลงกรณ์มหาวิทยาลัย (พ.ศ. 2560)\n- ปริญญาตรี (เกียรตินิยมอันดับหนึ่ง) วิศวกรรมคอมพิวเตอร์ — มหาวิทยาลัยเกษตรศาสตร์ (พ.ศ. 2555)\n",
+      "truth": {
+        "full_name": "ดร. ธีรพัฒน์ วงศ์สวัสดิ์",
+        "contact_email": "teerapat.w@nectec.or.th",
+        "contact_phone": "02-564-6900 ต่อ 2341",
+        "skills": [
+          "PyTorch",
+          "Hugging Face Transformers",
+          "DeepSpeed",
+          "LoRA",
+          "QLoRA",
+          "Python",
+          "C++",
+          "SQL",
+          "R",
+          "Thai Word Segmentation",
+          "Named Entity Recognition",
+          "Machine Translation",
+          "การบริหารโครงการวิจัย (Project Management)",
+          "การให้คำปรึกษาภาครัฐ"
+        ],
+        "seniority_level": "Lead/Principal",
+        "total_years_experience": 8.0,
+        "experience": [
+          {
+            "company": "ศูนย์เทคโนโลยีอิเล็กทรอนิกส์และคอมพิวเตอร์แห่งชาติ (NECTEC)",
+            "role": "นักวิทยาศาสตร์ข้อมูลอาวุโส",
+            "start_date": "พฤศจิกายน 2562",
+            "end_date": "ปัจจุบัน"
+          },
+          {
+            "company": "สถาบันวิทยสิริเมธี (VISTEC)",
+            "role": "นักวิจัยหลังปริญญาเอก (Postdoctoral Researcher)",
+            "start_date": "พฤษภาคม 2560",
+            "end_date": "ตุลาคม 2562"
+          }
+        ],
+        "education": [
+          {
+            "institution": "จุฬาลงกรณ์มหาวิทยาลัย",
+            "degree": "ปริญญาเอก (Ph.D.)",
+            "field_of_study": "วิศวกรรมคอมพิวเตอร์",
+            "graduation_year": "2560"
+          },
+          {
+            "institution": "มหาวิทยาลัยเกษตรศาสตร์",
+            "degree": "ปริญญาตรี (เกียรตินิยมอันดับหนึ่ง)",
+            "field_of_study": "วิศวกรรมคอมพิวเตอร์",
+            "graduation_year": "2555"
+          }
+        ]
+      },
+      "layout": "single-column",
+      "files": {
+        "text": "dev_th_02_gov.txt",
+        "image": "dev_th_02_gov.png",
+        "scanned_pdf": "dev_th_02_gov-scan.pdf",
+        "digital_pdf": "dev_th_02_gov-digital.pdf"
+      },
+      "sha256": {
+        "text": "05f9f345e8903d0170bf21f54c6ecd9f97d007c1646ff76b7a64143f0c9acb5b",
+        "image": "2dbd4371d784b8f23e9c5f965d26afb1361aa8118fa5b285c49151af60f7ef50",
+        "scanned_pdf": "54913d4d2d8d91207c070f88e622aa57d9994c37ff7bdc1f98a5ddca713f46ee",
+        "digital_pdf": "39d823bc94203d9a428e036a338688bb4435dc51072a45ad44e7f84883f96de7"
+      }
+    },
+    {
+      "id": "dev2_en_0",
+      "split": "development",
+      "language": "en",
+      "layout": "single-column",
+      "text": "Taylor Practice\nPhone: +1-555-2000\n\nSkills\nPython, SQLite, Git\n\nEmployment history\nPractice Software 1\nSoftware Engineer\n2017 - 2020\n- Built services using Python.\n\nEducation\nPractice College\nBSc / Computer Science\n2014",
+      "truth": {
+        "full_name": "Taylor Practice",
+        "contact_email": null,
+        "contact_phone": "+1-555-2000",
+        "skills": [
+          "Python",
+          "SQLite",
+          "Git"
+        ],
+        "experience": [
+          {
+            "company": "Practice Software 1",
+            "role": "Software Engineer",
+            "start_date": "2017",
+            "end_date": "2020",
+            "achievements": [
+              "Built services using Python."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Practice College",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2014"
+          }
+        ]
+      },
+      "files": {
+        "text": "dev2_en_0.txt",
+        "image": "dev2_en_0.png",
+        "scanned_pdf": "dev2_en_0-scan.pdf",
+        "digital_pdf": "dev2_en_0-digital.pdf"
+      },
+      "sha256": {
+        "text": "775958ece069819503f081daa6ba9417e44c85a23e14ebeaf16825749a872e6b",
+        "image": "49291c9218b20b7d5e500f5f1ffcbe0959120184277a16f5aecb31cca011447a",
+        "scanned_pdf": "65016daaacd86616b6acdaafdce17cd09ce148ec28cf237cf40beeb664b7f20d",
+        "digital_pdf": "074def0d5ffba2ec2ba2722ce5ed7e13b410ce7bc875b11a19f8434f81db97fa"
+      }
+    },
+    {
+      "id": "dev2_en_1",
+      "split": "development",
+      "language": "en",
+      "layout": "two-column",
+      "text": "Dr. Casey Lane (C. Lane)\nEmail: practice_1@example.com\n\nSkills\nJava, JUnit, Maven\n\nEmployment history\nSoftware Engineer | Practice Software 2\nFeb 2021 – Current\n- Built services using Java.\n\nEducation\nPractice College\nBSc / Computer Science\n2014\n\nLearning Academy 1\nDiploma in Information Technology\n2010",
+      "truth": {
+        "full_name": "Dr. Casey Lane (C. Lane)",
+        "contact_email": "practice_1@example.com",
+        "contact_phone": null,
+        "skills": [
+          "Java",
+          "JUnit",
+          "Maven"
+        ],
+        "experience": [
+          {
+            "company": "Practice Software 2",
+            "role": "Software Engineer",
+            "start_date": "Feb 2021",
+            "end_date": "Current",
+            "achievements": [
+              "Built services using Java."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Practice College",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2014"
+          },
+          {
+            "institution": "Learning Academy 1",
+            "degree": "Diploma",
+            "field_of_study": "Information Technology",
+            "graduation_year": "2010"
+          }
+        ]
+      },
+      "files": {
+        "text": "dev2_en_1.txt",
+        "image": "dev2_en_1.png",
+        "scanned_pdf": "dev2_en_1-scan.pdf",
+        "digital_pdf": "dev2_en_1-digital.pdf"
+      },
+      "sha256": {
+        "text": "002b3f6516c01fb873ca68e4af8818477c9f4b033bc7f0d874e94d6458442e87",
+        "image": "ab127a800bcd3ec4eec302550e92c4ede9adec17e7f5de1bbd91916220943b78",
+        "scanned_pdf": "dc81b284b1f0f2d3c7c429209c972ace5e78763a8f0e831aff5a358af00ce257",
+        "digital_pdf": "3bdd3049b92e350056435c9ea4e98a7dfb8b4796f3d3949a18a83e3438e14829"
+      }
+    },
+    {
+      "id": "dev2_th_2",
+      "split": "development",
+      "language": "th",
+      "layout": "single-column",
+      "text": "ชลิต ฝึกฝน\nEmail: practice_2@example.com\nPhone: 080-700-2002\n\nทักษะ\nSQL, Excel, Power BI\n\nประสบการณ์ทำงาน\nบริษัท ฝึกงานข้อมูล 3\nวิศวกรซอฟต์แวร์\nม.ค. 2560 - ธ.ค. 2563\n- พัฒนาระบบด้วย SQL.\n\nผู้ช่วยนักพัฒนา\nบริษัท เริ่มต้น 2\n2556 - 2558\n- ดูแลระบบภายใน\n\nการศึกษา\nมหาวิทยาลัยฝึกฝน\nปริญญาตรี / วิทยาการคอมพิวเตอร์\n2558",
+      "truth": {
+        "full_name": "ชลิต ฝึกฝน",
+        "contact_email": "practice_2@example.com",
+        "contact_phone": "080-700-2002",
+        "skills": [
+          "SQL",
+          "Excel",
+          "Power BI"
+        ],
+        "experience": [
+          {
+            "company": "บริษัท ฝึกงานข้อมูล 3",
+            "role": "วิศวกรซอฟต์แวร์",
+            "start_date": "ม.ค. 2560",
+            "end_date": "ธ.ค. 2563",
+            "achievements": [
+              "พัฒนาระบบด้วย SQL."
+            ]
+          },
+          {
+            "company": "บริษัท เริ่มต้น 2",
+            "role": "ผู้ช่วยนักพัฒนา",
+            "start_date": "2556",
+            "end_date": "2558",
+            "achievements": [
+              "ดูแลระบบภายใน"
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "มหาวิทยาลัยฝึกฝน",
+            "degree": "ปริญญาตรี",
+            "field_of_study": "วิทยาการคอมพิวเตอร์",
+            "graduation_year": "2558"
+          }
+        ]
+      },
+      "files": {
+        "text": "dev2_th_2.txt",
+        "image": "dev2_th_2.png",
+        "scanned_pdf": "dev2_th_2-scan.pdf",
+        "digital_pdf": "dev2_th_2-digital.pdf"
+      },
+      "sha256": {
+        "text": "eff2fd54779ca61e522d7d26f550bb0f612bd5bf9686b64c5aa890737c0e7d6c",
+        "image": "0162906fb670ccb2a2269b6cb839f4a9c2c652432e1d9ae467b5f00226cfdd5b",
+        "scanned_pdf": "e0e09567d5e92750c07a1d7e7184dfd909fe0b103723bae39ff4eeac9eea6a82",
+        "digital_pdf": "edba17e0cc2866dd1a80eb038e3b9b641c969764f181e39182433c012f07865c"
+      }
+    },
+    {
+      "id": "dev2_th_3",
+      "split": "development",
+      "language": "th",
+      "layout": "two-column",
+      "text": "ดร. มาลี ทดลอง\nPhone: 080-700-2003\n\nทักษะ\nDocker, Linux, Bash\n\nประสบการณ์ทำงาน\nวิศวกรซอฟต์แวร์ | บริษัท ฝึกงานข้อมูล 4\n2564 – ปัจจุบัน\n- พัฒนาระบบด้วย Docker.\n\nการศึกษา\nมหาวิทยาลัยฝึกฝน\nปริญญาตรี / วิทยาการคอมพิวเตอร์\n2558",
+      "truth": {
+        "full_name": "ดร. มาลี ทดลอง",
+        "contact_email": null,
+        "contact_phone": "080-700-2003",
+        "skills": [
+          "Docker",
+          "Linux",
+          "Bash"
+        ],
+        "experience": [
+          {
+            "company": "บริษัท ฝึกงานข้อมูล 4",
+            "role": "วิศวกรซอฟต์แวร์",
+            "start_date": "2564",
+            "end_date": "ปัจจุบัน",
+            "achievements": [
+              "พัฒนาระบบด้วย Docker."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "มหาวิทยาลัยฝึกฝน",
+            "degree": "ปริญญาตรี",
+            "field_of_study": "วิทยาการคอมพิวเตอร์",
+            "graduation_year": "2558"
+          }
+        ]
+      },
+      "files": {
+        "text": "dev2_th_3.txt",
+        "image": "dev2_th_3.png",
+        "scanned_pdf": "dev2_th_3-scan.pdf",
+        "digital_pdf": "dev2_th_3-digital.pdf"
+      },
+      "sha256": {
+        "text": "1a402796157eca4f85712eac3251adcf6804a583a7f7375693055de47a5a6ed9",
+        "image": "539c80332a0e719ac1262db7c9cba1a5d622ef0bb1042495085c31a09193089d",
+        "scanned_pdf": "d52b9552e76f43546c1909065f57ffe3473565308faa2ac8b05658aa88d00ec5",
+        "digital_pdf": "1b17e6c29ac5f3efa6deba55ab4292dd5e336041a68de97c06e3fbf65746c4c1"
+      }
+    },
+    {
+      "id": "dev2_bi_4",
+      "split": "development",
+      "language": "bi",
+      "layout": "single-column",
+      "text": "พิชญ์ ทดสอบ (Pitch Test)\nEmail: practice_4@example.com\n\nSkills\nTypeScript, Vue, CSS\n\nEmployment history\nPractice Software 5\nSoftware Engineer\n04/2019 - 11/2022\n- Built services using TypeScript.\n\nEducation\nPractice College\nBSc / Computer Science\n2014\n\nLearning Academy 4\nDiploma in Information Technology\n2010",
+      "truth": {
+        "full_name": "พิชญ์ ทดสอบ (Pitch Test)",
+        "contact_email": "practice_4@example.com",
+        "contact_phone": null,
+        "skills": [
+          "TypeScript",
+          "Vue",
+          "CSS"
+        ],
+        "experience": [
+          {
+            "company": "Practice Software 5",
+            "role": "Software Engineer",
+            "start_date": "04/2019",
+            "end_date": "11/2022",
+            "achievements": [
+              "Built services using TypeScript."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Practice College",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2014"
+          },
+          {
+            "institution": "Learning Academy 4",
+            "degree": "Diploma",
+            "field_of_study": "Information Technology",
+            "graduation_year": "2010"
+          }
+        ]
+      },
+      "files": {
+        "text": "dev2_bi_4.txt",
+        "image": "dev2_bi_4.png",
+        "scanned_pdf": "dev2_bi_4-scan.pdf",
+        "digital_pdf": "dev2_bi_4-digital.pdf"
+      },
+      "sha256": {
+        "text": "f4b1e9fc252c6b71c8ce9395d066f1c35c92ab80437bc3550a6977bef1d72bad",
+        "image": "2c9ec9bef52c74ba0180d21e9a01761dc7421cdd8cbefb2ec7ad456c5ccfa0a0",
+        "scanned_pdf": "39fcf4d776c0ee9541745d9b28c74f0441ceb3f66cd63733928939c19802c324",
+        "digital_pdf": "88447e0df4ffff001274e9a966fab36943452c4e4e956eb88754d121accdc2b3"
+      }
+    },
+    {
+      "id": "dev2_bi_5",
+      "split": "development",
+      "language": "bi",
+      "layout": "two-column",
+      "text": "Robin Practice (รวิ ฝึกฝน)\nEmail: practice_5@example.com\nPhone: +1-555-2005\n\nSkills\nGo, PostgreSQL, Redis\n\nEmployment history\nSoftware Engineer | Practice Software 6\nSeptember 2022 – Present\n- Built services using Go.\n\nJunior Developer\nEarlier Studio 5\n2012 - 2014\n- Maintained internal software.\n\nEducation\nPractice College\nBSc / Computer Science\n2014",
+      "truth": {
+        "full_name": "Robin Practice (รวิ ฝึกฝน)",
+        "contact_email": "practice_5@example.com",
+        "contact_phone": "+1-555-2005",
+        "skills": [
+          "Go",
+          "PostgreSQL",
+          "Redis"
+        ],
+        "experience": [
+          {
+            "company": "Practice Software 6",
+            "role": "Software Engineer",
+            "start_date": "September 2022",
+            "end_date": "Present",
+            "achievements": [
+              "Built services using Go."
+            ]
+          },
+          {
+            "company": "Earlier Studio 5",
+            "role": "Junior Developer",
+            "start_date": "2012",
+            "end_date": "2014",
+            "achievements": [
+              "Maintained internal software."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Practice College",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2014"
+          }
+        ]
+      },
+      "files": {
+        "text": "dev2_bi_5.txt",
+        "image": "dev2_bi_5.png",
+        "scanned_pdf": "dev2_bi_5-scan.pdf",
+        "digital_pdf": "dev2_bi_5-digital.pdf"
+      },
+      "sha256": {
+        "text": "79c2760042ac5a7638d5f87b3df9c17963c9b62520c59e34879fe79230f1db0b",
+        "image": "b41a6c4488a8867386d733f10e223e0039f9f54bde2dc029e5d7129fd92171b2",
+        "scanned_pdf": "a941bdce6bede445cec06c4055f33f2fff47f4e38079bf4e1ec49df8718b16d8",
+        "digital_pdf": "ca9977b3f3f70e81da5716b180e75074c236f6a04aae96772b04baeb85b15fb1"
+      }
+    },
+    {
+      "id": "hold2_en_0",
+      "split": "holdout",
+      "language": "en",
+      "layout": "single-column",
+      "text": "Jordan Hart\nPhone: +1-555-2000\n\nSkills\nRust, Linux, Git\n\nEmployment history\nReserved Solutions 1\nSoftware Engineer\n2015 - 2019\n- Built services using Rust.\n\nEducation\nReserved Technical College\nBSc / Computer Science\n2014",
+      "truth": {
+        "full_name": "Jordan Hart",
+        "contact_email": null,
+        "contact_phone": "+1-555-2000",
+        "skills": [
+          "Rust",
+          "Linux",
+          "Git"
+        ],
+        "experience": [
+          {
+            "company": "Reserved Solutions 1",
+            "role": "Software Engineer",
+            "start_date": "2015",
+            "end_date": "2019",
+            "achievements": [
+              "Built services using Rust."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Reserved Technical College",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2014"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold2_en_0.txt",
+        "image": "hold2_en_0.png",
+        "scanned_pdf": "hold2_en_0-scan.pdf",
+        "digital_pdf": "hold2_en_0-digital.pdf"
+      },
+      "sha256": {
+        "text": "786de034c9ca02797c9b5ef1c8a2fce87d2d150f80f9383a789a6e2a62023fd3",
+        "image": "30949259d23380326d46a8e12c4658406ebda1a4540baa0dd0eaa066da8ad399",
+        "scanned_pdf": "124e608797d0a9a16bb6aab7f55042faf4aed1ec8ba6c34dcb11a3cffc0b50b2",
+        "digital_pdf": "f6e900e2d89796bd7b6b6d5c114f1acaabfde14489cc149eef86a0311687caec"
+      }
+    },
+    {
+      "id": "hold2_en_1",
+      "split": "holdout",
+      "language": "en",
+      "layout": "two-column",
+      "text": "Dr. Drew Wells\nEmail: reserved_1@example.com\n\nSkills\nC#, SQL Server, Azure\n\nEmployment history\nSoftware Engineer | Reserved Solutions 2\nJul 2020 – Dec 2023\n- Built services using C#.\n\nEducation\nReserved Technical College\nBSc / Computer Science\n2014\n\nLearning Academy 1\nDiploma in Information Technology\n2010",
+      "truth": {
+        "full_name": "Dr. Drew Wells",
+        "contact_email": "reserved_1@example.com",
+        "contact_phone": null,
+        "skills": [
+          "C#",
+          "SQL Server",
+          "Azure"
+        ],
+        "experience": [
+          {
+            "company": "Reserved Solutions 2",
+            "role": "Software Engineer",
+            "start_date": "Jul 2020",
+            "end_date": "Dec 2023",
+            "achievements": [
+              "Built services using C#."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Reserved Technical College",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2014"
+          },
+          {
+            "institution": "Learning Academy 1",
+            "degree": "Diploma",
+            "field_of_study": "Information Technology",
+            "graduation_year": "2010"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold2_en_1.txt",
+        "image": "hold2_en_1.png",
+        "scanned_pdf": "hold2_en_1-scan.pdf",
+        "digital_pdf": "hold2_en_1-digital.pdf"
+      },
+      "sha256": {
+        "text": "b02b0148c81824eb0289e5dc920c78bf5d9c4d5479d274cbe735f08610fcfca4",
+        "image": "0967af43eb38c15898447b35391ddd343a80078bb55d626a9e103a78a06161c6",
+        "scanned_pdf": "95f2e45080f579e4e8f797d6fa04ad44bd57e1d00c91edfb9f16313a79fb5c1a",
+        "digital_pdf": "a9164227c8f328c565aab2e1225482d31059eb40820a2ac526dd89136c573d52"
+      }
+    },
+    {
+      "id": "hold2_th_2",
+      "split": "holdout",
+      "language": "th",
+      "layout": "single-column",
+      "text": "กิตติ วัฒนชัย\nEmail: reserved_2@example.com\nPhone: 080-700-2002\n\nทักษะ\nPython, Pandas, SQL\n\nประสบการณ์ทำงาน\nบริษัท ทดสอบระบบ 3\nวิศวกรซอฟต์แวร์\nก.พ. 2559 - พ.ย. 2562\n- พัฒนาระบบด้วย Python.\n\nผู้ช่วยนักพัฒนา\nบริษัท เริ่มต้น 2\n2556 - 2558\n- ดูแลระบบภายใน\n\nการศึกษา\nมหาวิทยาลัยตัวอย่างใหม่\nปริญญาตรี / วิทยาการคอมพิวเตอร์\n2558",
+      "truth": {
+        "full_name": "กิตติ วัฒนชัย",
+        "contact_email": "reserved_2@example.com",
+        "contact_phone": "080-700-2002",
+        "skills": [
+          "Python",
+          "Pandas",
+          "SQL"
+        ],
+        "experience": [
+          {
+            "company": "บริษัท ทดสอบระบบ 3",
+            "role": "วิศวกรซอฟต์แวร์",
+            "start_date": "ก.พ. 2559",
+            "end_date": "พ.ย. 2562",
+            "achievements": [
+              "พัฒนาระบบด้วย Python."
+            ]
+          },
+          {
+            "company": "บริษัท เริ่มต้น 2",
+            "role": "ผู้ช่วยนักพัฒนา",
+            "start_date": "2556",
+            "end_date": "2558",
+            "achievements": [
+              "ดูแลระบบภายใน"
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "มหาวิทยาลัยตัวอย่างใหม่",
+            "degree": "ปริญญาตรี",
+            "field_of_study": "วิทยาการคอมพิวเตอร์",
+            "graduation_year": "2558"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold2_th_2.txt",
+        "image": "hold2_th_2.png",
+        "scanned_pdf": "hold2_th_2-scan.pdf",
+        "digital_pdf": "hold2_th_2-digital.pdf"
+      },
+      "sha256": {
+        "text": "64cc458ca0df8aef2516d6bf3d7b4ebc6fb3ac6e3e65bc868d9d607fae2366d6",
+        "image": "f64ee3839014d5a54cb514f637b668cfcbaeaf48e752e234467537a364485f68",
+        "scanned_pdf": "19873cda40332cdb77c749bb32c3ef69c48a58ed59bb7bff81fcebebbd9f1750",
+        "digital_pdf": "b4951dfaed7e7c4b73bd09ec1846c76c1ec2ca336a595983b7d35c1d61516f7b"
+      }
+    },
+    {
+      "id": "hold2_th_3",
+      "split": "holdout",
+      "language": "th",
+      "layout": "two-column",
+      "text": "นางสาว วารี ใจกล้า\nPhone: 080-700-2003\n\nทักษะ\nJavaScript, HTML, CSS\n\nประสบการณ์ทำงาน\nวิศวกรซอฟต์แวร์ | บริษัท ทดสอบระบบ 4\n2563 – 2567\n- พัฒนาระบบด้วย JavaScript.\n\nการศึกษา\nมหาวิทยาลัยตัวอย่างใหม่\nปริญญาตรี / วิทยาการคอมพิวเตอร์\n2558",
+      "truth": {
+        "full_name": "นางสาว วารี ใจกล้า",
+        "contact_email": null,
+        "contact_phone": "080-700-2003",
+        "skills": [
+          "JavaScript",
+          "HTML",
+          "CSS"
+        ],
+        "experience": [
+          {
+            "company": "บริษัท ทดสอบระบบ 4",
+            "role": "วิศวกรซอฟต์แวร์",
+            "start_date": "2563",
+            "end_date": "2567",
+            "achievements": [
+              "พัฒนาระบบด้วย JavaScript."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "มหาวิทยาลัยตัวอย่างใหม่",
+            "degree": "ปริญญาตรี",
+            "field_of_study": "วิทยาการคอมพิวเตอร์",
+            "graduation_year": "2558"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold2_th_3.txt",
+        "image": "hold2_th_3.png",
+        "scanned_pdf": "hold2_th_3-scan.pdf",
+        "digital_pdf": "hold2_th_3-digital.pdf"
+      },
+      "sha256": {
+        "text": "64afb283fdc9697b0f9b99a6789d4d49d321608539338822f805e0e6212e8748",
+        "image": "32dc795521b69608b1f155e614c6041fa6aba7a16f06ec42b13267c59aa4dc85",
+        "scanned_pdf": "80ac739cbd2cd02e5717efdcd611ae297e1769eb807bda091bc2ecbb968acb2e",
+        "digital_pdf": "cfaf38ac2d3238eee56a5de0f94bbb967966151a012dcc04a4b71a91822c12d6"
+      }
+    },
+    {
+      "id": "hold2_bi_4",
+      "split": "holdout",
+      "language": "bi",
+      "layout": "single-column",
+      "text": "ณัฐธิดา ตั้งใจ (Nattida Tangjai)\nEmail: reserved_4@example.com\n\nSkills\nJava, Spring, Docker\n\nEmployment history\nReserved Solutions 5\nSoftware Engineer\n02/2018 - 08/2021\n- Built services using Java.\n\nEducation\nReserved Technical College\nBSc / Computer Science\n2014\n\nLearning Academy 4\nDiploma in Information Technology\n2010",
+      "truth": {
+        "full_name": "ณัฐธิดา ตั้งใจ (Nattida Tangjai)",
+        "contact_email": "reserved_4@example.com",
+        "contact_phone": null,
+        "skills": [
+          "Java",
+          "Spring",
+          "Docker"
+        ],
+        "experience": [
+          {
+            "company": "Reserved Solutions 5",
+            "role": "Software Engineer",
+            "start_date": "02/2018",
+            "end_date": "08/2021",
+            "achievements": [
+              "Built services using Java."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Reserved Technical College",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2014"
+          },
+          {
+            "institution": "Learning Academy 4",
+            "degree": "Diploma",
+            "field_of_study": "Information Technology",
+            "graduation_year": "2010"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold2_bi_4.txt",
+        "image": "hold2_bi_4.png",
+        "scanned_pdf": "hold2_bi_4-scan.pdf",
+        "digital_pdf": "hold2_bi_4-digital.pdf"
+      },
+      "sha256": {
+        "text": "3b21b1b69ddd6b0d2c7b4c1e40bc382d71b9b39db474e48d5cf492950cf6154d",
+        "image": "f2d891260bddbac5cea395c0ea7d8a071fa53e435697e4c8c116548807645e70",
+        "scanned_pdf": "9a87f85e55b0eb42a9d237ea58c9cb1db21904f6bf3f2b6c93c567c32198141c",
+        "digital_pdf": "de1aee02d3a637efbe3671c8dd8b1d573cde80d4d2ac9d7c24e51b3e862d5f57"
+      }
+    },
+    {
+      "id": "hold2_bi_5",
+      "split": "holdout",
+      "language": "bi",
+      "layout": "two-column",
+      "text": "Evan Finch (อีวาน ฟินช์)\nEmail: reserved_5@example.com\nPhone: +1-555-2005\n\nSkills\nKotlin, Gradle, Git\n\nEmployment history\nSoftware Engineer | Reserved Solutions 6\nOctober 2021 – Present\n- Built services using Kotlin.\n\nJunior Developer\nEarlier Studio 5\n2012 - 2014\n- Maintained internal software.\n\nEducation\nReserved Technical College\nBSc / Computer Science\n2014",
+      "truth": {
+        "full_name": "Evan Finch (อีวาน ฟินช์)",
+        "contact_email": "reserved_5@example.com",
+        "contact_phone": "+1-555-2005",
+        "skills": [
+          "Kotlin",
+          "Gradle",
+          "Git"
+        ],
+        "experience": [
+          {
+            "company": "Reserved Solutions 6",
+            "role": "Software Engineer",
+            "start_date": "October 2021",
+            "end_date": "Present",
+            "achievements": [
+              "Built services using Kotlin."
+            ]
+          },
+          {
+            "company": "Earlier Studio 5",
+            "role": "Junior Developer",
+            "start_date": "2012",
+            "end_date": "2014",
+            "achievements": [
+              "Maintained internal software."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Reserved Technical College",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2014"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold2_bi_5.txt",
+        "image": "hold2_bi_5.png",
+        "scanned_pdf": "hold2_bi_5-scan.pdf",
+        "digital_pdf": "hold2_bi_5-digital.pdf"
+      },
+      "sha256": {
+        "text": "7e1091d3d96b21b42ace56f26e4ee3e80fe7834a721ef623dcef12bed42b8566",
+        "image": "41019e2eba3f5750ac7e002085c7a292152e4491fdcc8ed2b9d7d45c7d7d350a",
+        "scanned_pdf": "e9935b1d0a3f8d00959234517cb2ac5e249fbba4d4faa00e86888782925c5cad",
+        "digital_pdf": "716df42e134378fb643f51567e70c2aa14927169d14c07a68a6a3ba0cc7d5a85"
+      }
+    },
+    {
+      "id": "hold2_en_6",
+      "split": "holdout",
+      "language": "en",
+      "layout": "single-column",
+      "text": "Sam Arden (S. Arden)\nPhone: +1-555-2006\n\nSkills\nExcel, SQL, Tableau\n\nEmployment history\nReserved Solutions 7\nSoftware Engineer\n2016 - 2024\n- Built services using Excel.\n\nEducation\nReserved Technical College\nBSc / Computer Science\n2014",
+      "truth": {
+        "full_name": "Sam Arden (S. Arden)",
+        "contact_email": null,
+        "contact_phone": "+1-555-2006",
+        "skills": [
+          "Excel",
+          "SQL",
+          "Tableau"
+        ],
+        "experience": [
+          {
+            "company": "Reserved Solutions 7",
+            "role": "Software Engineer",
+            "start_date": "2016",
+            "end_date": "2024",
+            "achievements": [
+              "Built services using Excel."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Reserved Technical College",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2014"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold2_en_6.txt",
+        "image": "hold2_en_6.png",
+        "scanned_pdf": "hold2_en_6-scan.pdf",
+        "digital_pdf": "hold2_en_6-digital.pdf"
+      },
+      "sha256": {
+        "text": "eed2c3cbc65d007418d2bc88aa2e0fd493f788d0bb634bdeac7497e931ab3c1d",
+        "image": "5f83d6f5dce6bf3492b44c11a30473989e1199207de84bb400b1dba41b8b6160",
+        "scanned_pdf": "2c49c2262e2334f290f8fbe89f8778bf4c118f09a3babfb324d1f8dae56dbbeb",
+        "digital_pdf": "95717c0731674983b4d7bd955949c4bdde6123c1f7a3f991652a797fa77290f9"
+      }
+    },
+    {
+      "id": "hold2_th_7",
+      "split": "holdout",
+      "language": "th",
+      "layout": "two-column",
+      "text": "ดร. สุภา แสงทอง\nEmail: reserved_7@example.com\n\nทักษะ\nPython, FastAPI, PostgreSQL\n\nประสบการณ์ทำงาน\nวิศวกรซอฟต์แวร์ | บริษัท ทดสอบระบบ 8\nเมษายน 2561 – ปัจจุบัน\n- พัฒนาระบบด้วย Python.\n\nการศึกษา\nมหาวิทยาลัยตัวอย่างใหม่\nปริญญาตรี / วิทยาการคอมพิวเตอร์\n2558\n\nLearning Academy 7\nDiploma in Information Technology\n2010",
+      "truth": {
+        "full_name": "ดร. สุภา แสงทอง",
+        "contact_email": "reserved_7@example.com",
+        "contact_phone": null,
+        "skills": [
+          "Python",
+          "FastAPI",
+          "PostgreSQL"
+        ],
+        "experience": [
+          {
+            "company": "บริษัท ทดสอบระบบ 8",
+            "role": "วิศวกรซอฟต์แวร์",
+            "start_date": "เมษายน 2561",
+            "end_date": "ปัจจุบัน",
+            "achievements": [
+              "พัฒนาระบบด้วย Python."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "มหาวิทยาลัยตัวอย่างใหม่",
+            "degree": "ปริญญาตรี",
+            "field_of_study": "วิทยาการคอมพิวเตอร์",
+            "graduation_year": "2558"
+          },
+          {
+            "institution": "Learning Academy 7",
+            "degree": "Diploma",
+            "field_of_study": "Information Technology",
+            "graduation_year": "2010"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold2_th_7.txt",
+        "image": "hold2_th_7.png",
+        "scanned_pdf": "hold2_th_7-scan.pdf",
+        "digital_pdf": "hold2_th_7-digital.pdf"
+      },
+      "sha256": {
+        "text": "35d895cb539a0beb1b4aeab414a2f549feb7d3442a27dd93d5291f19fda40574",
+        "image": "65e61b6fa736baff8c7e12dd47b83dca1af52aee4c58960a5d9396eec57c174a",
+        "scanned_pdf": "96e73008004ebfa35007f2f241e0e76eba6c1df190969850372bec98cdb9dc00",
+        "digital_pdf": "b5ea880ee8df93bd6e867f842438df3e040d8c908ae37ed919e94948ff697fa8"
+      }
+    },
+    {
+      "id": "hold2_bi_8",
+      "split": "holdout",
+      "language": "bi",
+      "layout": "single-column",
+      "text": "อรุณ พัฒนกิจ (Arun Pattanakit)\nEmail: reserved_8@example.com\nPhone: +1-555-2008\n\nSkills\nGo, Linux, Kubernetes\n\nEmployment history\nReserved Solutions 9\nSoftware Engineer\nJun 2017 - Jan 2022\n- Built services using Go.\n\nJunior Developer\nEarlier Studio 8\n2012 - 2014\n- Maintained internal software.\n\nEducation\nReserved Technical College\nBSc / Computer Science\n2014",
+      "truth": {
+        "full_name": "อรุณ พัฒนกิจ (Arun Pattanakit)",
+        "contact_email": "reserved_8@example.com",
+        "contact_phone": "+1-555-2008",
+        "skills": [
+          "Go",
+          "Linux",
+          "Kubernetes"
+        ],
+        "experience": [
+          {
+            "company": "Reserved Solutions 9",
+            "role": "Software Engineer",
+            "start_date": "Jun 2017",
+            "end_date": "Jan 2022",
+            "achievements": [
+              "Built services using Go."
+            ]
+          },
+          {
+            "company": "Earlier Studio 8",
+            "role": "Junior Developer",
+            "start_date": "2012",
+            "end_date": "2014",
+            "achievements": [
+              "Maintained internal software."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Reserved Technical College",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2014"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold2_bi_8.txt",
+        "image": "hold2_bi_8.png",
+        "scanned_pdf": "hold2_bi_8-scan.pdf",
+        "digital_pdf": "hold2_bi_8-digital.pdf"
+      },
+      "sha256": {
+        "text": "c8e8d0f024231e90a3e9fcf349ce0255e012a20fb041fd0a0f942f3e8461f9c1",
+        "image": "8d6ff259e161fe772346a6cdb1f71ce5e2ab6984c3ec230ffb99d6441147f079",
+        "scanned_pdf": "a8576437d4904a27cac24a55d3d2604f505b1bc72d37394b8de049153a02d6d7",
+        "digital_pdf": "1b6ae0e8971f931138b12a1d1fb2a9f81e1c7f63c7687f4287d074e3dfa14093"
+      }
+    }
+  ]
+}

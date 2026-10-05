@@ -1,0 +1,465 @@
+{
+  "configuration": {
+    "stage": "extraction",
+    "split": "development",
+    "corpus_sha256": "54c8b8288604007a942715a7a92ca76927ea5d8c2ec6e9d114b5ec576cc4e576",
+    "server_sha256": "c25e3ca0e906b84989248c0b75a99e51123787922ceed1d60be4d6840bdea945",
+    "schema_sha256": "c60bebba1b180efd8ad65eee72ed2f6499e6ac8a81a0bfa0a0fab5cf0fea4f75",
+    "runtime": {
+      "ollama": {
+        "version": "0.34.0"
+      },
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "evaluator_sha256": "3026b1b337470a2f83ec488c478ce5f89361847430fc3d71cac1b19f7f9f5435",
+    "models": [
+      {
+        "name": "deepseek-r1:8b",
+        "digest": "6995872bfe4c521a67b32da386cd21d5c6e819b6e0d62f79f64ec83be99f5763",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "8.2B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 131072,
+          "embedding_length": 4096
+        },
+        "capabilities": [
+          "completion",
+          "thinking"
+        ]
+      },
+      {
+        "name": "llama3.1:8b",
+        "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "llama",
+          "families": [
+            "llama"
+          ],
+          "parameter_size": "8.0B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 131072,
+          "embedding_length": 4096
+        },
+        "capabilities": [
+          "completion",
+          "tools"
+        ]
+      },
+      {
+        "name": "qwen2.5:7b",
+        "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen2",
+          "families": [
+            "qwen2"
+          ],
+          "parameter_size": "7.6B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 32768,
+          "embedding_length": 3584
+        },
+        "capabilities": [
+          "completion",
+          "tools"
+        ]
+      },
+      {
+        "name": "scb10x/typhoon-ocr-3b:latest",
+        "digest": "fb500215fa866d400513c0f4b7f68b9e865594c7b6c18ac224d3d4394bb09e91",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen25vl",
+          "families": [
+            "qwen25vl"
+          ],
+          "parameter_size": "3.8B",
+          "quantization_level": "F16",
+          "context_length": 128000,
+          "embedding_length": 2048
+        },
+        "capabilities": [
+          "vision",
+          "completion"
+        ]
+      },
+      {
+        "name": "typhoon-fast:latest",
+        "digest": "4aeab094b040881a4547a766ce6ff5f78693b3874f43ecfea1f82947a67a27bf",
+        "details": {
+          "parent_model": "scb10x/typhoon-ocr-3b:latest",
+          "format": "gguf",
+          "family": "qwen25vl",
+          "families": [
+            "qwen25vl"
+          ],
+          "parameter_size": "3.8B",
+          "quantization_level": "F16",
+          "context_length": 128000,
+          "embedding_length": 2048
+        },
+        "capabilities": [
+          "vision",
+          "completion"
+        ]
+      },
+      {
+        "name": "typhoon-ocr-finetuned:latest",
+        "digest": "d331d514cd3d2ccfbf51e8d8d93d381afaf5ff536543cc8c4fc879f6318373f4",
+        "details": {
+          "parent_model": "scb10x/typhoon-ocr-3b:latest",
+          "format": "gguf",
+          "family": "qwen25vl",
+          "families": [
+            "qwen25vl"
+          ],
+          "parameter_size": "3.8B",
+          "quantization_level": "F16",
+          "context_length": 128000,
+          "embedding_length": 2048
+        },
+        "capabilities": [
+          "vision",
+          "completion"
+        ]
+      }
+    ]
+  },
+  "summary": [
+    {
+      "model": "deepseek-r1:8b",
+      "attempts": 5,
+      "success_rate": 0.2,
+      "mean_seconds": 42.281566960003694,
+      "observed_p95_seconds": 48.80747060000431,
+      "identity_exact": 0.2,
+      "skill_precision": 0.2,
+      "skill_recall": 0.2,
+      "skill_f1": 0.2,
+      "employment_education_exact": 0.08333333333333334,
+      "date_exact": 0.0,
+      "record_precision": 0.2,
+      "literal_evidence_rate": 0.2,
+      "by_language": {
+        "bi": {
+          "attempts": 1,
+          "success_rate": 0.0,
+          "identity_exact": 0.0,
+          "skill_precision": 0.0,
+          "skill_recall": 0.0,
+          "skill_f1": 0.0,
+          "employment_education_exact": 0.0,
+          "date_exact": 0.0,
+          "record_precision": 0.0,
+          "literal_evidence_rate": 0.0
+        },
+        "en": {
+          "attempts": 2,
+          "success_rate": 0.0,
+          "identity_exact": 0.0,
+          "skill_precision": 0.0,
+          "skill_recall": 0.0,
+          "skill_f1": 0.0,
+          "employment_education_exact": 0.0,
+          "date_exact": 0.0,
+          "record_precision": 0.0,
+          "literal_evidence_rate": 0.0
+        },
+        "th": {
+          "attempts": 2,
+          "success_rate": 0.5,
+          "identity_exact": 0.5,
+          "skill_precision": 0.5,
+          "skill_recall": 0.5,
+          "skill_f1": 0.5,
+          "employment_education_exact": 0.20833333333333334,
+          "date_exact": 0.0,
+          "record_precision": 0.5,
+          "literal_evidence_rate": 0.5
+        }
+      }
+    },
+    {
+      "model": "llama3.1:8b",
+      "attempts": 5,
+      "success_rate": 1.0,
+      "mean_seconds": 4.966863680002279,
+      "observed_p95_seconds": 8.459276900000987,
+      "identity_exact": 0.8,
+      "skill_precision": 0.9634920634920634,
+      "skill_recall": 0.9857142857142858,
+      "skill_f1": 0.9739495798319329,
+      "employment_education_exact": 0.925,
+      "date_exact": 0.96,
+      "record_precision": 0.6,
+      "literal_evidence_rate": 0.9830151415404872,
+      "by_language": {
+        "bi": {
+          "attempts": 1,
+          "success_rate": 1.0,
+          "identity_exact": 0.6666666666666666,
+          "skill_precision": 0.8888888888888888,
+          "skill_recall": 1.0,
+          "skill_f1": 0.9411764705882353,
+          "employment_education_exact": 0.875,
+          "date_exact": 1.0,
+          "record_precision": 1.0,
+          "literal_evidence_rate": 0.935483870967742
+        },
+        "en": {
+          "attempts": 2,
+          "success_rate": 1.0,
+          "identity_exact": 1.0,
+          "skill_precision": 1.0,
+          "skill_recall": 1.0,
+          "skill_f1": 1.0,
+          "employment_education_exact": 0.9583333333333333,
+          "date_exact": 1.0,
+          "record_precision": 0.5,
+          "literal_evidence_rate": 1.0
+        },
+        "th": {
+          "attempts": 2,
+          "success_rate": 1.0,
+          "identity_exact": 0.6666666666666666,
+          "skill_precision": 0.9642857142857143,
+          "skill_recall": 0.9642857142857143,
+          "skill_f1": 0.9642857142857143,
+          "employment_education_exact": 0.9166666666666667,
+          "date_exact": 0.9,
+          "record_precision": 0.5,
+          "literal_evidence_rate": 0.9897959183673469
+        }
+      }
+    },
+    {
+      "model": "qwen2.5:7b",
+      "attempts": 5,
+      "success_rate": 1.0,
+      "mean_seconds": 5.035427320000599,
+      "observed_p95_seconds": 7.88862510000763,
+      "identity_exact": 0.9333333333333333,
+      "skill_precision": 0.9714285714285713,
+      "skill_recall": 0.9714285714285713,
+      "skill_f1": 0.9714285714285713,
+      "employment_education_exact": 0.7833333333333334,
+      "date_exact": 0.7866666666666666,
+      "record_precision": 0.5333333333333333,
+      "literal_evidence_rate": 0.9923076923076923,
+      "by_language": {
+        "bi": {
+          "attempts": 1,
+          "success_rate": 1.0,
+          "identity_exact": 0.6666666666666666,
+          "skill_precision": 1.0,
+          "skill_recall": 1.0,
+          "skill_f1": 1.0,
+          "employment_education_exact": 0.5,
+          "date_exact": 0.3333333333333333,
+          "record_precision": 1.0,
+          "literal_evidence_rate": 1.0
+        },
+        "en": {
+          "attempts": 2,
+          "success_rate": 1.0,
+          "identity_exact": 1.0,
+          "skill_precision": 1.0,
+          "skill_recall": 1.0,
+          "skill_f1": 1.0,
+          "employment_education_exact": 0.9166666666666667,
+          "date_exact": 1.0,
+          "record_precision": 0.5,
+          "literal_evidence_rate": 1.0
+        },
+        "th": {
+          "attempts": 2,
+          "success_rate": 1.0,
+          "identity_exact": 1.0,
+          "skill_precision": 0.9285714285714286,
+          "skill_recall": 0.9285714285714286,
+          "skill_f1": 0.9285714285714286,
+          "employment_education_exact": 0.7916666666666667,
+          "date_exact": 0.8,
+          "record_precision": 0.3333333333333333,
+          "literal_evidence_rate": 0.9807692307692308
+        }
+      }
+    },
+    {
+      "model": "scb10x/typhoon-ocr-3b:latest",
+      "attempts": 5,
+      "success_rate": 0.6,
+      "mean_seconds": 25.8191191800026,
+      "observed_p95_seconds": 54.45186069999181,
+      "identity_exact": 0.0,
+      "skill_precision": 0.0,
+      "skill_recall": 0.0,
+      "skill_f1": 0.0,
+      "employment_education_exact": 0.2,
+      "date_exact": 0.2,
+      "record_precision": 0.0,
+      "literal_evidence_rate": 0.06666666666666668,
+      "by_language": {
+        "bi": {
+          "attempts": 1,
+          "success_rate": 1.0,
+          "identity_exact": 0.0,
+          "skill_precision": 0.0,
+          "skill_recall": 0.0,
+          "skill_f1": 0.0,
+          "employment_education_exact": 0.0,
+          "date_exact": 0.0,
+          "record_precision": 0.0,
+          "literal_evidence_rate": 0.0
+        },
+        "en": {
+          "attempts": 2,
+          "success_rate": 1.0,
+          "identity_exact": 0.0,
+          "skill_precision": 0.0,
+          "skill_recall": 0.0,
+          "skill_f1": 0.0,
+          "employment_education_exact": 0.5,
+          "date_exact": 0.5,
+          "record_precision": 0.0,
+          "literal_evidence_rate": 0.16666666666666669
+        },
+        "th": {
+          "attempts": 2,
+          "success_rate": 0.0,
+          "identity_exact": 0.0,
+          "skill_precision": 0.0,
+          "skill_recall": 0.0,
+          "skill_f1": 0.0,
+          "employment_education_exact": 0.0,
+          "date_exact": 0.0,
+          "record_precision": 0.0,
+          "literal_evidence_rate": 0.0
+        }
+      }
+    },
+    {
+      "model": "typhoon-fast:latest",
+      "attempts": 5,
+      "success_rate": 0.6,
+      "mean_seconds": 22.34546504000027,
+      "observed_p95_seconds": 49.41245689999778,
+      "identity_exact": 0.0,
+      "skill_precision": 0.0,
+      "skill_recall": 0.0,
+      "skill_f1": 0.0,
+      "employment_education_exact": 0.2,
+      "date_exact": 0.2,
+      "record_precision": 0.2,
+      "literal_evidence_rate": 0.2,
+      "by_language": {
+        "bi": {
+          "attempts": 1,
+          "success_rate": 1.0,
+          "identity_exact": 0.0,
+          "skill_precision": 0.0,
+          "skill_recall": 0.0,
+          "skill_f1": 0.0,
+          "employment_education_exact": 0.0,
+          "date_exact": 0.0,
+          "record_precision": 0.0,
+          "literal_evidence_rate": 0.0
+        },
+        "en": {
+          "attempts": 2,
+          "success_rate": 1.0,
+          "identity_exact": 0.0,
+          "skill_precision": 0.0,
+          "skill_recall": 0.0,
+          "skill_f1": 0.0,
+          "employment_education_exact": 0.5,
+          "date_exact": 0.5,
+          "record_precision": 0.5,
+          "literal_evidence_rate": 0.5
+        },
+        "th": {
+          "attempts": 2,
+          "success_rate": 0.0,
+          "identity_exact": 0.0,
+          "skill_precision": 0.0,
+          "skill_recall": 0.0,
+          "skill_f1": 0.0,
+          "employment_education_exact": 0.0,
+          "date_exact": 0.0,
+          "record_precision": 0.0,
+          "literal_evidence_rate": 0.0
+        }
+      }
+    },
+    {
+      "model": "typhoon-ocr-finetuned:latest",
+      "attempts": 5,
+      "success_rate": 0.6,
+      "mean_seconds": 22.62365814000368,
+      "observed_p95_seconds": 52.38680849999946,
+      "identity_exact": 0.0,
+      "skill_precision": 0.0,
+      "skill_recall": 0.0,
+      "skill_f1": 0.0,
+      "employment_education_exact": 0.2,
+      "date_exact": 0.2,
+      "record_precision": 0.2,
+      "literal_evidence_rate": 0.2,
+      "by_language": {
+        "bi": {
+          "attempts": 1,
+          "success_rate": 1.0,
+          "identity_exact": 0.0,
+          "skill_precision": 0.0,
+          "skill_recall": 0.0,
+          "skill_f1": 0.0,
+          "employment_education_exact": 0.0,
+          "date_exact": 0.0,
+          "record_precision": 0.0,
+          "literal_evidence_rate": 0.0
+        },
+        "en": {
+          "attempts": 2,
+          "success_rate": 1.0,
+          "identity_exact": 0.0,
+          "skill_precision": 0.0,
+          "skill_recall": 0.0,
+          "skill_f1": 0.0,
+          "employment_education_exact": 0.5,
+          "date_exact": 0.5,
+          "record_precision": 0.5,
+          "literal_evidence_rate": 0.5
+        },
+        "th": {
+          "attempts": 2,
+          "success_rate": 0.0,
+          "identity_exact": 0.0,
+          "skill_precision": 0.0,
+          "skill_recall": 0.0,
+          "skill_f1": 0.0,
+          "employment_education_exact": 0.0,
+          "date_exact": 0.0,
+          "record_precision": 0.0,
+          "literal_evidence_rate": 0.0
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Synthetic pilot corpus, not population-wide accuracy.",
+    "Literal evidence is not semantic factuality.",
+    "OCR error attempts receive CER=1; character insertion errors can exceed 1.",
+    "Observed p95 is unstable with small samples.",
+    "Latency/token counts are cost proxies; no energy or monetary cost measured."
+  ]
+}

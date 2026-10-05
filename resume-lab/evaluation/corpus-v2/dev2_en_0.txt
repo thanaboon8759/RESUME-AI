@@ -1,0 +1,16 @@
+Taylor Practice
+Phone: +1-555-2000
+
+Skills
+Python, SQLite, Git
+
+Employment history
+Practice Software 1
+Software Engineer
+2017 - 2020
+- Built services using Python.
+
+Education
+Practice College
+BSc / Computer Science
+2014

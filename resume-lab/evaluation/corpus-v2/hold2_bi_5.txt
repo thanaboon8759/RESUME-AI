@@ -1,0 +1,21 @@
+Evan Finch (อีวาน ฟินช์)
+Email: reserved_5@example.com
+Phone: +1-555-2005
+
+Skills
+Kotlin, Gradle, Git
+
+Employment history
+Software Engineer | Reserved Solutions 6
+October 2021 – Present
+- Built services using Kotlin.
+
+Junior Developer
+Earlier Studio 5
+2012 - 2014
+- Maintained internal software.
+
+Education
+Reserved Technical College
+BSc / Computer Science
+2014

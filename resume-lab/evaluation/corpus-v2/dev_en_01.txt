@@ -1,0 +1,29 @@
+# Alice Smith
+**Email:** alice.smith@example.com
+**Phone:** +1-555-0199
+
+## Summary
+Experienced software engineer specializing in backend development and scalable microservices.
+
+## Skills
+Python, FastAPI, React, Docker, Kubernetes, SQL, Agile
+
+## Experience
+
+### Senior Software Engineer
+**TechCorp Inc.**
+*Jan 2020 - Present*
+- Architected and deployed microservices using FastAPI and Docker.
+- Improved database query performance by 30% using SQL optimization techniques.
+
+### Software Developer
+**WebSolutions LLC**
+*Jun 2017 - Dec 2019*
+- Developed RESTful APIs using Python.
+- Collaborated with frontend teams to integrate React components.
+
+## Education
+
+### B.S. Computer Science
+**State University**
+*2013 - 2017*

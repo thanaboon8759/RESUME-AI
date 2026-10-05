@@ -1,0 +1,18 @@
+ปวีณา สายใจ (Paweena Saijai)
+Email: paweena@example.com
+Phone: 080-555-0101
+
+Skills
+Java, Spring, PostgreSQL
+
+Experience
+Backend Engineer
+Example Services
+Mar 2022 - Present
+Built APIs using Java and Spring.
+
+Education
+Example University
+BSc
+Computer Science
+2021

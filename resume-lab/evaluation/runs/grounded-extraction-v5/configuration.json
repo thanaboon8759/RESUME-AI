@@ -1,0 +1,59 @@
+{
+  "stage": "extraction",
+  "split": "development",
+  "corpus_sha256": "ccad7aff918f5f59b055619a0ff3cde998570b8480cffc5c33d1706699580332",
+  "corpus_directory": "corpus-v2",
+  "annotation_sha256": "de048cfe4375519696c7b7506d83ebeb19d2990d618b5e75ee30a5b20d3562af",
+  "server_sha256": "61c99c7aac5794e634419887c88abf83fe13e6fb5a79c6cf09254d96a5072716",
+  "schema_sha256": "c60bebba1b180efd8ad65eee72ed2f6499e6ac8a81a0bfa0a0fab5cf0fea4f75",
+  "source_facts_sha256": "aefd44a093b87dd41a149fe2dc0fd5ea98b97142049ebac18e3d5a548fa83c0d",
+  "runtime": {
+    "ollama": {
+      "version": "0.34.0"
+    },
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "evaluator_sha256": "ecc536a2250bd2af3df764feb8830a18684389ea9b5e114cf3db7c68a74d767b",
+  "models": [
+    {
+      "name": "llama3.1:8b",
+      "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "8.0B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 131072,
+        "embedding_length": 4096
+      },
+      "capabilities": [
+        "completion",
+        "tools"
+      ]
+    },
+    {
+      "name": "qwen2.5:7b",
+      "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "7.6B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 32768,
+        "embedding_length": 3584
+      },
+      "capabilities": [
+        "completion",
+        "tools"
+      ]
+    }
+  ]
+}

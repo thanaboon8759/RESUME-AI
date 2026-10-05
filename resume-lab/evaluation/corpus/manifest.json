@@ -1,0 +1,579 @@
+{
+  "version": "synthetic-resume-v1",
+  "purpose": "Development fixes and a separately frozen final evaluation; not population-level validation.",
+  "rendering": "Tahoma raster text via Pillow without RAQM; complex Thai shaping may differ from native documents. Inspect images and report this limitation.",
+  "font_sha256": "9af03d4ad44a3b413d92f7de48b94aa7cc8a1471a75d498406eae837f62ee1d1",
+  "samples": [
+    {
+      "id": "dev_en_01",
+      "split": "development",
+      "language": "en",
+      "text": "# Alice Smith\n**Email:** alice.smith@example.com\n**Phone:** +1-555-0199\n\n## Summary\nExperienced software engineer specializing in backend development and scalable microservices.\n\n## Skills\nPython, FastAPI, React, Docker, Kubernetes, SQL, Agile\n\n## Experience\n\n### Senior Software Engineer\n**TechCorp Inc.**\n*Jan 2020 - Present*\n- Architected and deployed microservices using FastAPI and Docker.\n- Improved database query performance by 30% using SQL optimization techniques.\n\n### Software Developer\n**WebSolutions LLC**\n*Jun 2017 - Dec 2019*\n- Developed RESTful APIs using Python.\n- Collaborated with frontend teams to integrate React components.\n\n## Education\n\n### B.S. Computer Science\n**State University**\n*2013 - 2017*\n",
+      "truth": {
+        "full_name": "Alice Smith",
+        "contact_email": "alice.smith@example.com",
+        "contact_phone": "+1-555-0199",
+        "skills": [
+          "Python",
+          "FastAPI",
+          "React",
+          "Docker",
+          "Kubernetes",
+          "SQL",
+          "Agile"
+        ],
+        "experience": [
+          {
+            "company": "TechCorp Inc.",
+            "role": "Senior Software Engineer",
+            "start_date": "Jan 2020",
+            "end_date": "Present",
+            "achievements": [
+              "Architected and deployed microservices using FastAPI and Docker.",
+              "Improved database query performance by 30% using SQL optimization techniques."
+            ]
+          },
+          {
+            "company": "WebSolutions LLC",
+            "role": "Software Developer",
+            "start_date": "Jun 2017",
+            "end_date": "Dec 2019",
+            "achievements": [
+              "Developed RESTful APIs using Python.",
+              "Collaborated with frontend teams to integrate React components."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "State University",
+            "degree": "B.S.",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2017"
+          }
+        ]
+      },
+      "layout": "single-column",
+      "files": {
+        "text": "dev_en_01.txt",
+        "image": "dev_en_01.png",
+        "scanned_pdf": "dev_en_01-scan.pdf",
+        "digital_pdf": "dev_en_01-digital.pdf"
+      },
+      "sha256": {
+        "text": "507c115390f665c55a93972adaba9575ce04045dc36552ca17c16b7bb6e3c6d3",
+        "image": "26740bd4897f08c9550d113a59830fea10fe6588bb90d939110d1d9064edfc02",
+        "scanned_pdf": "40634ea3f2a39f15f8e9183721d7289a0a57423b2c73dbd21324e7a4a422947b",
+        "digital_pdf": "4a9dd74b4e7441330ca57696817fba651c9772c16ede4c582a0226a540e3b196"
+      }
+    },
+    {
+      "id": "dev_th_01",
+      "split": "development",
+      "language": "th",
+      "text": "# สมชาย ใจดี\n**อีเมล:** somchai.j@example.co.th\n**เบอร์โทร:** 081-234-5678\n\n## ทักษะ\nData Engineering, Apache Spark, Airflow, Python, SQL, Hadoop, AWS\n\n## ประสบการณ์การทำงาน\n\n### Data Engineer\n**บริษัท ข้อมูลไทย จำกัด**\n*มี.ค. 2564 - ปัจจุบัน*\n- สร้างและดูแล Data Pipeline ด้วย Apache Airflow และ Spark\n- จัดการข้อมูลขนาดใหญ่บน Hadoop และ AWS\n\n### Junior Data Analyst\n**บริษัท วิเคราะห์ธุรกิจ จำกัด**\n*ก.ค. 2561 - ก.พ. 2564*\n- วิเคราะห์ข้อมูลยอดขายด้วย SQL และ Python\n- สร้าง Dashboard สำหรับผู้บริหาร\n\n## การศึกษา\n\n### ปริญญาตรี วิศวกรรมศาสตร์ (วิศวกรรมคอมพิวเตอร์)\n**มหาวิทยาลัยเทคโนโลยี**\n*2557 - 2561*\n",
+      "truth": {
+        "full_name": "สมชาย ใจดี",
+        "contact_email": "somchai.j@example.co.th",
+        "contact_phone": "081-234-5678",
+        "skills": [
+          "Data Engineering",
+          "Apache Spark",
+          "Airflow",
+          "Python",
+          "SQL",
+          "Hadoop",
+          "AWS"
+        ],
+        "experience": [
+          {
+            "company": "บริษัท ข้อมูลไทย จำกัด",
+            "role": "Data Engineer",
+            "start_date": "มี.ค. 2564",
+            "end_date": "ปัจจุบัน",
+            "achievements": [
+              "สร้างและดูแล Data Pipeline ด้วย Apache Airflow และ Spark",
+              "จัดการข้อมูลขนาดใหญ่บน Hadoop และ AWS"
+            ]
+          },
+          {
+            "company": "บริษัท วิเคราะห์ธุรกิจ จำกัด",
+            "role": "Junior Data Analyst",
+            "start_date": "ก.ค. 2561",
+            "end_date": "ก.พ. 2564",
+            "achievements": [
+              "วิเคราะห์ข้อมูลยอดขายด้วย SQL และ Python",
+              "สร้าง Dashboard สำหรับผู้บริหาร"
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "มหาวิทยาลัยเทคโนโลยี",
+            "degree": "ปริญญาตรี",
+            "field_of_study": "วิศวกรรมคอมพิวเตอร์",
+            "graduation_year": "2561"
+          }
+        ]
+      },
+      "layout": "single-column",
+      "files": {
+        "text": "dev_th_01.txt",
+        "image": "dev_th_01.png",
+        "scanned_pdf": "dev_th_01-scan.pdf",
+        "digital_pdf": "dev_th_01-digital.pdf"
+      },
+      "sha256": {
+        "text": "18c45b6ce44bdad5609b645f472978c21d5451d3f516c72955a7a8bdc2793b05",
+        "image": "e875eeb30a2e4bf6f91fa1140de690723f1373f008a593302fd5c78324b479d8",
+        "scanned_pdf": "061a9c4d836c7444678dfc102401db443d456c8f4cd0631fd9e5f5cc0a6709d9",
+        "digital_pdf": "5aa7f15344f25a50b1702701ea1c580f5f6b921b177bc846dd83b78320a24905"
+      }
+    },
+    {
+      "id": "dev_bi_01",
+      "split": "development",
+      "language": "bi",
+      "text": "# วรรณิภา สุขสมบูรณ์ (Wannipa Suksombun)\n**Email:** w.suksombun@ai-startup.com\n**Tel:** +66 90 987 6543\n\n## Objective\nMachine Learning Engineer passionate about NLP and Computer Vision. สนใจในการพัฒนา AI เพื่อแก้ปัญหาจริง\n\n## Skills / ทักษะ\n- Machine Learning: PyTorch, TensorFlow, Scikit-learn\n- Languages: Python, C++\n- Tools: Git, Docker, MLflow\n- ภาษา: Thai (Native), English (Fluent)\n\n## Work Experience\n\n### Machine Learning Engineer\n**AI Vision Co., Ltd.**\n*August 2021 - Present*\n- พัฒนาระบบ Image Recognition สำหรับโรงงานอุตสาหกรรม\n- Deployed models using Docker and optimized with TensorRT.\n\n### AI Researcher (Intern)\n**National Research Lab**\n*Jan 2021 - May 2021*\n- วิจัยและทดลองโมเดล NLP ภาษาไทย (Thai NLP)\n- Published a paper on Thai Sentiment Analysis.\n\n## Education\n\n### Master of Science in Artificial Intelligence\n**Global Tech University**\n*2019 - 2021*\n\n### Bachelor of Science in Mathematics\n**Local Science College**\n*2015 - 2019*\n",
+      "truth": {
+        "full_name": "วรรณิภา สุขสมบูรณ์",
+        "contact_email": "w.suksombun@ai-startup.com",
+        "contact_phone": "+66 90 987 6543",
+        "skills": [
+          "PyTorch",
+          "TensorFlow",
+          "Scikit-learn",
+          "Python",
+          "C++",
+          "Git",
+          "Docker",
+          "MLflow"
+        ],
+        "experience": [
+          {
+            "company": "AI Vision Co., Ltd.",
+            "role": "Machine Learning Engineer",
+            "start_date": "August 2021",
+            "end_date": "Present",
+            "achievements": [
+              "พัฒนาระบบ Image Recognition สำหรับโรงงานอุตสาหกรรม",
+              "Deployed models using Docker and optimized with TensorRT."
+            ]
+          },
+          {
+            "company": "National Research Lab",
+            "role": "AI Researcher (Intern)",
+            "start_date": "Jan 2021",
+            "end_date": "May 2021",
+            "achievements": [
+              "วิจัยและทดลองโมเดล NLP ภาษาไทย (Thai NLP)",
+              "Published a paper on Thai Sentiment Analysis."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Global Tech University",
+            "degree": "Master of Science",
+            "field_of_study": "Artificial Intelligence",
+            "graduation_year": "2021"
+          },
+          {
+            "institution": "Local Science College",
+            "degree": "Bachelor of Science",
+            "field_of_study": "Mathematics",
+            "graduation_year": "2019"
+          }
+        ]
+      },
+      "layout": "single-column",
+      "files": {
+        "text": "dev_bi_01.txt",
+        "image": "dev_bi_01.png",
+        "scanned_pdf": "dev_bi_01-scan.pdf",
+        "digital_pdf": "dev_bi_01-digital.pdf"
+      },
+      "sha256": {
+        "text": "e2381795298c7dc187318159b7387bc16cfc1099a28bcbe3775472c2a6626157",
+        "image": "261880aecd13fe646db8689922a36a8266f5226b417fa5bb5f50ab2ff8c2d6b3",
+        "scanned_pdf": "71349754ced5930afdb30a5d004527ae848ec6677c46477c2acdc276f1ad5018",
+        "digital_pdf": "4a978733d1f872d836e68e14913f04f01ebd78869acd3bbd1cf6d8a2736ed6d7"
+      }
+    },
+    {
+      "id": "dev_en_02_lead",
+      "split": "development",
+      "language": "en",
+      "text": "# David Miller\n**Email:** david.miller@cloudarch.io\n**Phone:** +1-415-555-0899\n**Location:** San Francisco, CA\n\n## Executive Summary\nPrincipal Cloud Architect with 10+ years driving digital transformation across Fortune 500 enterprises. Expert in Kubernetes cluster governance, multi-cloud architecture, and leading cross-functional engineering teams.\n\n## Technical Skills\n- Cloud & Infrastructure: AWS, Azure, GCP, Terraform, Kubernetes, Helm, Docker\n- Observability: Prometheus, Grafana, Datadog\n- Languages & Frameworks: Go, Python, Bash\n- Methodologies: GitOps, DevSecOps, SRE, Agile Leadership\n\n## Professional Experience\n\n### Principal Cloud Architect — CloudScale Systems\n*March 2020 – Present*\n- Spearheaded enterprise migration of 120+ microservices to multi-region AWS EKS clusters, reducing downtime to 99.99%.\n- Formulated FinOps cost-governance strategy yielding $1.4M in annual cloud infrastructure savings.\n- Mentored a global team of 14 DevOps and Platform engineers.\n\n### Lead DevOps Engineer — FinTech Horizons\n*January 2016 – February 2020*\n- Architected zero-trust CI/CD deployment pipeline handling 500+ production releases per month.\n- Implemented automated compliance auditing for PCI-DSS using Terraform and Open Policy Agent.\n\n## Education\n### M.S. in Software Engineering — Carnegie Mellon University (2015)\n### B.S. in Computer Science — University of California, Berkeley (2013)\n",
+      "truth": {
+        "full_name": "David Miller",
+        "contact_email": "david.miller@cloudarch.io",
+        "contact_phone": "+1-415-555-0899",
+        "skills": [
+          "AWS",
+          "Azure",
+          "GCP",
+          "Terraform",
+          "Kubernetes",
+          "Helm",
+          "Docker",
+          "Prometheus",
+          "Grafana",
+          "Datadog",
+          "Go",
+          "Python",
+          "Bash",
+          "GitOps",
+          "DevSecOps",
+          "SRE",
+          "Agile Leadership"
+        ],
+        "seniority_level": "Lead/Principal",
+        "total_years_experience": 10.0
+      },
+      "layout": "single-column",
+      "files": {
+        "text": "dev_en_02_lead.txt",
+        "image": "dev_en_02_lead.png",
+        "scanned_pdf": "dev_en_02_lead-scan.pdf",
+        "digital_pdf": "dev_en_02_lead-digital.pdf"
+      },
+      "sha256": {
+        "text": "6f66559ed7bc5b24043a40ea8d45de4e82844d9ea5b51b5025d3a839fcd369f9",
+        "image": "d9cd3cef18c98113214b1d6a8270096c27beb1aedebdfa2cb26aecb127a89db9",
+        "scanned_pdf": "a07341fe0c47513e2e41038092aa9009a42c61b953978a7a1a87aad45afd6d8c",
+        "digital_pdf": "dbbdd37d2bfddf0c81f8e66cba57694c907ba5523367ebb6251400ffaecc3834"
+      }
+    },
+    {
+      "id": "dev_th_02_gov",
+      "split": "development",
+      "language": "th",
+      "text": "# ดร. ธีรพัฒน์ วงศ์สวัสดิ์\n**อีเมล:** teerapat.w@nectec.or.th\n**โทรศัพท์:** 02-564-6900 ต่อ 2341\n**ที่อยู่:** ปทุมธานี, ประเทศไทย\n\n## ประวัติโดยย่อ\nนักวิทยาศาสตร์ข้อมูลอาวุโสและหัวหน้าโครงการวิจัย มีความเชี่ยวชาญด้าน Large Language Model สำหรับภาษาไทย, การประมวลผลสัญญาณเสียง และระบบปัญญาประดิษฐ์เพื่อการแพทย์\n\n## ความเชี่ยวชาญและทักษะ\n- การสร้างและปรับแต่งโมเดล: PyTorch, Hugging Face Transformers, DeepSpeed, LoRA, QLoRA\n- ภาษาโปรแกรม: Python, C++, SQL, R\n- การประมวลผลภาษาธรรมชาติ (NLP): Thai Word Segmentation, Named Entity Recognition, Machine Translation\n- การบริหารจัดการ: การบริหารโครงการวิจัย (Project Management), การให้คำปรึกษาภาครัฐ\n\n## ประวัติการทำงาน\n\n### นักวิทยาศาสตร์ข้อมูลอาวุโส — ศูนย์เทคโนโลยีอิเล็กทรอนิกส์และคอมพิวเตอร์แห่งชาติ (NECTEC)\n*พฤศจิกายน 2562 – ปัจจุบัน*\n- หัวหน้าโครงการพัฒนา Thai LLM Foundation Model สำหรับบริการภาครัฐ\n- ออกแบบ Data Pipeline สำหรับคัดกรองชุดข้อมูลภาษาไทยขนาด 100 พันล้านคำ\n- ควบคุมทีมวิจัยจำนวน 8 ท่าน และจัดทำรายงานเสนอต่อกระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม\n\n### นักวิจัยหลังปริญญาเอก (Postdoctoral Researcher) — สถาบันวิทยสิริเมธี (VISTEC)\n*พฤษภาคม 2560 – ตุลาคม 2562*\n- วิจัยโมเดล Deep Learning สำหรับการวิเคราะห์ภาพถ่ายทางการแพทย์ (Medical Imaging)\n- เผยแพร่ผลงานวิจัยในระดับนานาชาติ 6 บทความใน IEEE และ ACL\n\n## ประวัติการศึกษา\n- ปริญญาเอก (Ph.D.) วิศวกรรมคอมพิวเตอร์ — จุฬาลงกรณ์มหาวิทยาลัย (พ.ศ. 2560)\n- ปริญญาตรี (เกียรตินิยมอันดับหนึ่ง) วิศวกรรมคอมพิวเตอร์ — มหาวิทยาลัยเกษตรศาสตร์ (พ.ศ. 2555)\n",
+      "truth": {
+        "full_name": "ดร. ธีรพัฒน์ วงศ์สวัสดิ์",
+        "contact_email": "teerapat.w@nectec.or.th",
+        "contact_phone": "02-564-6900 ต่อ 2341",
+        "skills": [
+          "PyTorch",
+          "Hugging Face Transformers",
+          "DeepSpeed",
+          "LoRA",
+          "QLoRA",
+          "Python",
+          "C++",
+          "SQL",
+          "R",
+          "NLP",
+          "Thai Word Segmentation",
+          "Named Entity Recognition",
+          "Machine Translation",
+          "Project Management"
+        ],
+        "seniority_level": "Lead/Principal",
+        "total_years_experience": 8.0
+      },
+      "layout": "single-column",
+      "files": {
+        "text": "dev_th_02_gov.txt",
+        "image": "dev_th_02_gov.png",
+        "scanned_pdf": "dev_th_02_gov-scan.pdf",
+        "digital_pdf": "dev_th_02_gov-digital.pdf"
+      },
+      "sha256": {
+        "text": "05f9f345e8903d0170bf21f54c6ecd9f97d007c1646ff76b7a64143f0c9acb5b",
+        "image": "2dbd4371d784b8f23e9c5f965d26afb1361aa8118fa5b285c49151af60f7ef50",
+        "scanned_pdf": "54913d4d2d8d91207c070f88e622aa57d9994c37ff7bdc1f98a5ddca713f46ee",
+        "digital_pdf": "39d823bc94203d9a428e036a338688bb4435dc51072a45ad44e7f84883f96de7"
+      }
+    },
+    {
+      "id": "hold_en_missing",
+      "split": "holdout",
+      "language": "en",
+      "layout": "single-column",
+      "text": "Morgan Reed\n\nSkills\nRust, Linux, Git\n\nExperience\nTooling Developer\nNorth Workshop\n2021 - 2023\nBuilt command-line tools using Rust and Git.\n\nEducation\nExample Institute\nDiploma\nSoftware Development\n2020",
+      "truth": {
+        "full_name": "Morgan Reed",
+        "contact_email": null,
+        "contact_phone": null,
+        "skills": [
+          "Rust",
+          "Linux",
+          "Git"
+        ],
+        "experience": [
+          {
+            "company": "North Workshop",
+            "role": "Tooling Developer",
+            "start_date": "2021",
+            "end_date": "2023",
+            "achievements": [
+              "Built command-line tools using Rust and Git."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Example Institute",
+            "degree": "Diploma",
+            "field_of_study": "Software Development",
+            "graduation_year": "2020"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold_en_missing.txt",
+        "image": "hold_en_missing.png",
+        "scanned_pdf": "hold_en_missing-scan.pdf",
+        "digital_pdf": "hold_en_missing-digital.pdf"
+      },
+      "sha256": {
+        "text": "7923c1e7bdac8113a80514f7e469b923f92cc9149526216738399867b2bcbe52",
+        "image": "595ac7f8db9debb9c6c93328b12745faa632613693fccc83c798d7aa009bb415",
+        "scanned_pdf": "429cffedc930f1865d064061379877eef81a1d560e5499285536cda2263ec2b0",
+        "digital_pdf": "177933e11693acbbf8a02f962aa8f99c2f27a5ea3ee7111ceca3ff0f46621c49"
+      }
+    },
+    {
+      "id": "hold_th_missing",
+      "split": "holdout",
+      "language": "th",
+      "layout": "single-column",
+      "text": "กมล ชัยดี\n\nทักษะ\nPython, SQL, Docker\n\nประสบการณ์ทำงาน\nนักพัฒนาระบบ\nบริษัท ระบบตัวอย่าง จำกัด\n2563 - 2566\nพัฒนาระบบรายงานด้วย Python และ SQL\n\nการศึกษา\nมหาวิทยาลัยตัวอย่าง\nปริญญาตรี\nวิทยาการคอมพิวเตอร์\n2562",
+      "truth": {
+        "full_name": "กมล ชัยดี",
+        "contact_email": null,
+        "contact_phone": null,
+        "skills": [
+          "Python",
+          "SQL",
+          "Docker"
+        ],
+        "experience": [
+          {
+            "company": "บริษัท ระบบตัวอย่าง จำกัด",
+            "role": "นักพัฒนาระบบ",
+            "start_date": "2563",
+            "end_date": "2566",
+            "achievements": [
+              "พัฒนาระบบรายงานด้วย Python และ SQL"
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "มหาวิทยาลัยตัวอย่าง",
+            "degree": "ปริญญาตรี",
+            "field_of_study": "วิทยาการคอมพิวเตอร์",
+            "graduation_year": "2562"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold_th_missing.txt",
+        "image": "hold_th_missing.png",
+        "scanned_pdf": "hold_th_missing-scan.pdf",
+        "digital_pdf": "hold_th_missing-digital.pdf"
+      },
+      "sha256": {
+        "text": "dd3ab682d0cf0fd01ab44e5a504c7fd2e4d7cc46cd674bd7272e0b007cd64d18",
+        "image": "5683d7c36869bb286b181f0715570033840ab0b37520f2521223a9043a6a125e",
+        "scanned_pdf": "a2274f2bdef060a0055615c4672cf533d56cf3874bae655f77a6d1b9b8ab588e",
+        "digital_pdf": "f4ad69aabb2a35aef19a30e18982d9b216f90e0cf346d421dd6558e9056e1d3a"
+      }
+    },
+    {
+      "id": "hold_bi_columns",
+      "split": "holdout",
+      "language": "bi",
+      "layout": "two-column",
+      "text": "ปวีณา สายใจ (Paweena Saijai)\nEmail: paweena@example.com\nPhone: 080-555-0101\n\nSkills\nJava, Spring, PostgreSQL\n\nExperience\nBackend Engineer\nExample Services\nMar 2022 - Present\nBuilt APIs using Java and Spring.\n\nEducation\nExample University\nBSc\nComputer Science\n2021",
+      "truth": {
+        "full_name": "ปวีณา สายใจ (Paweena Saijai)",
+        "contact_email": "paweena@example.com",
+        "contact_phone": "080-555-0101",
+        "skills": [
+          "Java",
+          "Spring",
+          "PostgreSQL"
+        ],
+        "experience": [
+          {
+            "company": "Example Services",
+            "role": "Backend Engineer",
+            "start_date": "Mar 2022",
+            "end_date": "Present",
+            "achievements": [
+              "Built APIs using Java and Spring."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Example University",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2021"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold_bi_columns.txt",
+        "image": "hold_bi_columns.png",
+        "scanned_pdf": "hold_bi_columns-scan.pdf",
+        "digital_pdf": "hold_bi_columns-digital.pdf"
+      },
+      "sha256": {
+        "text": "ff3f5232a78a014eec5b524b2ef69fc0e26249fb2191ce5f341b7bcd5506a5bf",
+        "image": "9199c676ed45354444bb48e46014de164dce14c1ac5d6a378ea6f23b9c2f60ee",
+        "scanned_pdf": "72917447cb92efef6a82de01a0edb1378ed6c1c22c7446af71174694fdcdb6ff",
+        "digital_pdf": "3a1f8569aa62be1e5c6f33ee8616a6594f037e3ad04b782ccdaf34641552bdc6"
+      }
+    },
+    {
+      "id": "hold_en_columns",
+      "split": "holdout",
+      "language": "en",
+      "layout": "two-column",
+      "text": "Alex Rowan\nEmail: alex.rowan@example.com\nPhone: +1-555-0142\n\nSkills\nTypeScript, React, CSS\n\nExperience\nFrontend Developer\nExample Design\nJune 2020 - May 2024\nBuilt accessible interfaces with React and CSS.\n\nEducation\nExample College\nBSc\nComputing\n2019",
+      "truth": {
+        "full_name": "Alex Rowan",
+        "contact_email": "alex.rowan@example.com",
+        "contact_phone": "+1-555-0142",
+        "skills": [
+          "TypeScript",
+          "React",
+          "CSS"
+        ],
+        "experience": [
+          {
+            "company": "Example Design",
+            "role": "Frontend Developer",
+            "start_date": "June 2020",
+            "end_date": "May 2024",
+            "achievements": [
+              "Built accessible interfaces with React and CSS."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Example College",
+            "degree": "BSc",
+            "field_of_study": "Computing",
+            "graduation_year": "2019"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold_en_columns.txt",
+        "image": "hold_en_columns.png",
+        "scanned_pdf": "hold_en_columns-scan.pdf",
+        "digital_pdf": "hold_en_columns-digital.pdf"
+      },
+      "sha256": {
+        "text": "3b12ddc24ea4eb1b3a4d23328af17f1561ea27a26fd24345dcfb32d1ca9957bb",
+        "image": "8b6e341a5423764dcdf150992c3e552f2bc6c5268490df176d29204b7f121e2a",
+        "scanned_pdf": "56890ea3a7e45e5008b102b54a8c793c71ce78bc00ef3ff3ae2fe3bc00b48117",
+        "digital_pdf": "5dad1c8c4eb7ef091acea5f193449a18211eacfa477fc2b1bb9cc2acd6f0ccb3"
+      }
+    },
+    {
+      "id": "hold_th_columns",
+      "split": "holdout",
+      "language": "th",
+      "layout": "two-column",
+      "text": "อรทัย พูนสุข\nEmail: orathai@example.com\nPhone: 089-555-0123\n\nทักษะ\nExcel, Power BI, SQL\n\nประสบการณ์ทำงาน\nนักวิเคราะห์ข้อมูล\nบริษัท ข้อมูลสาธิต จำกัด\nมกราคม 2562 - ธันวาคม 2565\nสร้างรายงานด้วย Power BI และ SQL\n\nการศึกษา\nมหาวิทยาลัยสาธิต\nปริญญาโท\nสถิติ\n2561",
+      "truth": {
+        "full_name": "อรทัย พูนสุข",
+        "contact_email": "orathai@example.com",
+        "contact_phone": "089-555-0123",
+        "skills": [
+          "Excel",
+          "Power BI",
+          "SQL"
+        ],
+        "experience": [
+          {
+            "company": "บริษัท ข้อมูลสาธิต จำกัด",
+            "role": "นักวิเคราะห์ข้อมูล",
+            "start_date": "มกราคม 2562",
+            "end_date": "ธันวาคม 2565",
+            "achievements": [
+              "สร้างรายงานด้วย Power BI และ SQL"
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "มหาวิทยาลัยสาธิต",
+            "degree": "ปริญญาโท",
+            "field_of_study": "สถิติ",
+            "graduation_year": "2561"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold_th_columns.txt",
+        "image": "hold_th_columns.png",
+        "scanned_pdf": "hold_th_columns-scan.pdf",
+        "digital_pdf": "hold_th_columns-digital.pdf"
+      },
+      "sha256": {
+        "text": "895bb3bd6216d5da7b2e5457728751ebffec4b6a986397b31e28ec16458772e1",
+        "image": "b96c1787d7a6e98e8e09429059d2be0c62b9b37b305d3f9e7dd17a7c3d8e9ae7",
+        "scanned_pdf": "8f6217c1c03dd031900397754ee64b4c70a0bca6509988ec73e5a5409eaeddf5",
+        "digital_pdf": "95430616f8210acf5c6436038ec2ae2586da97f08e64c8f1ad8dc6adfbe23ed2"
+      }
+    },
+    {
+      "id": "hold_bi_missing",
+      "split": "holdout",
+      "language": "bi",
+      "layout": "single-column",
+      "text": "Narin Demo (นรินทร์ สาธิต)\nPhone: 081-555-0199\n\nSkills\nGo, Kubernetes, Linux\n\nExperience\nPlatform Engineer\nบริษัท Example Cloud\n2020 - 2024\nดูแลบริการบน Kubernetes และ Linux\n\nEducation\nDemo University\nBEng\nComputer Engineering\n2019",
+      "truth": {
+        "full_name": "Narin Demo (นรินทร์ สาธิต)",
+        "contact_email": null,
+        "contact_phone": "081-555-0199",
+        "skills": [
+          "Go",
+          "Kubernetes",
+          "Linux"
+        ],
+        "experience": [
+          {
+            "company": "บริษัท Example Cloud",
+            "role": "Platform Engineer",
+            "start_date": "2020",
+            "end_date": "2024",
+            "achievements": [
+              "ดูแลบริการบน Kubernetes และ Linux"
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Demo University",
+            "degree": "BEng",
+            "field_of_study": "Computer Engineering",
+            "graduation_year": "2019"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold_bi_missing.txt",
+        "image": "hold_bi_missing.png",
+        "scanned_pdf": "hold_bi_missing-scan.pdf",
+        "digital_pdf": "hold_bi_missing-digital.pdf"
+      },
+      "sha256": {
+        "text": "23fbce7468cf1781d72f68c7caad37773571bc770b36f15d07bebd1d62518dde",
+        "image": "4b8561563fd85a8c4fb9b05b9f8d24e894a5f7ccc5b0bd9b207efa2f15142221",
+        "scanned_pdf": "39fdcc6e29c3e77a5e4b5e0b6ebf4005a921ad1fd3382e8fa817a3b9c4be3813",
+        "digital_pdf": "ffcf6d9d4efa4796066546b741f6b998a44b6082561d1ea113036f0485fdeb0b"
+      }
+    }
+  ]
+}

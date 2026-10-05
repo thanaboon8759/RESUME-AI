@@ -1,0 +1,52 @@
+{
+  "status": "awaiting-holdout",
+  "created_at": "2026-10-04T08:51:51.774544+00:00",
+  "engine_sha256": "5492eef4e631fc6aa63b768adce51a26a2577a0c87c1aa3c95142d4f6c71b0b2",
+  "extraction_gates": {
+    "success_rate": 1.0,
+    "identity_exact": 0.95,
+    "skill_f1": 0.9,
+    "employment_education_exact": 0.85,
+    "date_exact": 0.9,
+    "record_precision": 0.95,
+    "literal_evidence_rate": 0.95
+  },
+  "ocr_gates": {
+    "success_rate": 1,
+    "cer_max": 0.05,
+    "per_language_cer_max": 0.08
+  },
+  "evidence": {
+    "extraction": {
+      "run": "refined-extraction-v4",
+      "summary_sha256": "1b16dc1cfeabb8f0bb4669e1737d8b24481a9348d31412c369819b140c86ae07"
+    },
+    "ocr": {
+      "run": "improved-ocr-v4",
+      "summary_sha256": "d55c32e7938f284df589accea98e26cbf5d4e0a6d5b1c1958b6d432fe182755d"
+    },
+    "corpus/manifest.json": "54c8b8288604007a942715a7a92ca76927ea5d8c2ec6e9d114b5ec576cc4e576",
+    "development-labels-v2.json": "de048cfe4375519696c7b7506d83ebeb19d2990d618b5e75ee30a5b20d3562af",
+    "SELECTION-PROTOCOL.md": "1313f7bd087fc8189de01704b203c2ab3c262cbc10bfe77d07edbf6ee09c16c2"
+  },
+  "extraction": [
+    {
+      "name": "qwen2.5:7b",
+      "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e"
+    }
+  ],
+  "ocr": [
+    {
+      "name": "typhoon-ocr-finetuned:latest",
+      "digest": "d331d514cd3d2ccfbf51e8d8d93d381afaf5ff536543cc8c4fc879f6318373f4"
+    },
+    {
+      "name": "typhoon-fast:latest",
+      "digest": "4aeab094b040881a4547a766ce6ff5f78693b3874f43ecfea1f82947a67a27bf"
+    },
+    {
+      "name": "scb10x/typhoon-ocr-3b:latest",
+      "digest": "fb500215fa866d400513c0f4b7f68b9e865594c7b6c18ac224d3d4394bb09e91"
+    }
+  ]
+}

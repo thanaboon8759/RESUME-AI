@@ -1,0 +1,64 @@
+{
+  "configuration": {
+    "server.py": "a28ebb95dd315f968fd9357f5fdf6428fcc4bdadd3aec954b0c0dbeafe0441ef",
+    "automatic_scan.py": "a1a3cec2b3dca93bf78993805af858eb12697f07937a18f8a454dfc11a522333",
+    "auto_policy.py": "f68cc0c53d7c3a2443a577216fafb984661df8d8f966fa495a11ec73c0973ce5",
+    "source_facts.py": "681785ffd28b093ce00bac9d57af6d0361f8b4591d02877f72019897b31d5ac6",
+    "model-policy.json": "d3a7557b248f00033bb69227b367f4ef58e19de71cc361e3f4e05b7ad769e277",
+    "evaluation/corpus-v2/manifest.json": "ccad7aff918f5f59b055619a0ff3cde998570b8480cffc5c33d1706699580332"
+  },
+  "summary": [
+    {
+      "format": "text",
+      "attempts": 9,
+      "success_rate": 1.0,
+      "identity_exact": 1.0,
+      "skill_f1": 1.0,
+      "employment_education_exact": 0.9675925925925927,
+      "date_exact": 0.9074074074074073,
+      "record_precision": 1.0,
+      "literal_evidence_rate": 0.9797178130511465,
+      "source_cer": 0.0,
+      "mean_seconds": 2.938613222229631
+    },
+    {
+      "format": "digital_pdf",
+      "attempts": 9,
+      "success_rate": 1.0,
+      "identity_exact": 1.0,
+      "skill_f1": 1.0,
+      "employment_education_exact": 0.9629629629629629,
+      "date_exact": 0.9722222222222222,
+      "record_precision": 0.9629629629629629,
+      "literal_evidence_rate": 1.0,
+      "source_cer": 0.0,
+      "mean_seconds": 2.9125863111112267
+    },
+    {
+      "format": "image",
+      "attempts": 9,
+      "success_rate": 1.0,
+      "identity_exact": 0.925925925925926,
+      "skill_f1": 1.0,
+      "employment_education_exact": 0.875,
+      "date_exact": 0.8407407407407407,
+      "record_precision": 0.8888888888888888,
+      "literal_evidence_rate": 0.9630511463844798,
+      "source_cer": 0.007798443235143022,
+      "mean_seconds": 12.888929033335039
+    },
+    {
+      "format": "scanned_pdf",
+      "attempts": 9,
+      "success_rate": 1.0,
+      "identity_exact": 0.925925925925926,
+      "skill_f1": 1.0,
+      "employment_education_exact": 0.9398148148148149,
+      "date_exact": 0.9074074074074073,
+      "record_precision": 0.9629629629629629,
+      "literal_evidence_rate": 0.9741622574955908,
+      "source_cer": 0.011164264787590295,
+      "mean_seconds": 9.965501177774664
+    }
+  ]
+}

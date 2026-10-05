@@ -1,0 +1,129 @@
+{
+  "stage": "extraction",
+  "split": "development",
+  "corpus_sha256": "54c8b8288604007a942715a7a92ca76927ea5d8c2ec6e9d114b5ec576cc4e576",
+  "server_sha256": "14acf77dc7a0e3c92075f83cc44f2006801819e4f3e89bf13123c55ffa7822a4",
+  "evaluator_sha256": "7b545992bdab9be0d0638f247e15f62913bc3f9592e2647b35b0300e60686401",
+  "models": [
+    {
+      "name": "typhoon-ocr-finetuned:latest",
+      "digest": "d331d514cd3d2ccfbf51e8d8d93d381afaf5ff536543cc8c4fc879f6318373f4",
+      "details": {
+        "parent_model": "scb10x/typhoon-ocr-3b:latest",
+        "format": "gguf",
+        "family": "qwen25vl",
+        "families": [
+          "qwen25vl"
+        ],
+        "parameter_size": "3.8B",
+        "quantization_level": "F16",
+        "context_length": 128000,
+        "embedding_length": 2048
+      },
+      "capabilities": [
+        "vision",
+        "completion"
+      ]
+    },
+    {
+      "name": "typhoon-fast:latest",
+      "digest": "4aeab094b040881a4547a766ce6ff5f78693b3874f43ecfea1f82947a67a27bf",
+      "details": {
+        "parent_model": "scb10x/typhoon-ocr-3b:latest",
+        "format": "gguf",
+        "family": "qwen25vl",
+        "families": [
+          "qwen25vl"
+        ],
+        "parameter_size": "3.8B",
+        "quantization_level": "F16",
+        "context_length": 128000,
+        "embedding_length": 2048
+      },
+      "capabilities": [
+        "vision",
+        "completion"
+      ]
+    },
+    {
+      "name": "llama3.1:8b",
+      "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "8.0B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 131072,
+        "embedding_length": 4096
+      },
+      "capabilities": [
+        "completion",
+        "tools"
+      ]
+    },
+    {
+      "name": "deepseek-r1:8b",
+      "digest": "6995872bfe4c521a67b32da386cd21d5c6e819b6e0d62f79f64ec83be99f5763",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "8.2B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 131072,
+        "embedding_length": 4096
+      },
+      "capabilities": [
+        "completion",
+        "thinking"
+      ]
+    },
+    {
+      "name": "qwen2.5:7b",
+      "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "7.6B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 32768,
+        "embedding_length": 3584
+      },
+      "capabilities": [
+        "completion",
+        "tools"
+      ]
+    },
+    {
+      "name": "scb10x/typhoon-ocr-3b:latest",
+      "digest": "fb500215fa866d400513c0f4b7f68b9e865594c7b6c18ac224d3d4394bb09e91",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen25vl",
+        "families": [
+          "qwen25vl"
+        ],
+        "parameter_size": "3.8B",
+        "quantization_level": "F16",
+        "context_length": 128000,
+        "embedding_length": 2048
+      },
+      "capabilities": [
+        "vision",
+        "completion"
+      ]
+    }
+  ]
+}

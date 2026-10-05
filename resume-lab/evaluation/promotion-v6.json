@@ -1,0 +1,40 @@
+{
+  "policy_id": "v6",
+  "passing": {
+    "extraction": [
+      {
+        "name": "qwen2.5:7b",
+        "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e"
+      }
+    ],
+    "ocr": [
+      {
+        "name": "typhoon-ocr-finetuned:latest",
+        "digest": "d331d514cd3d2ccfbf51e8d8d93d381afaf5ff536543cc8c4fc879f6318373f4"
+      },
+      {
+        "name": "typhoon-fast:latest",
+        "digest": "4aeab094b040881a4547a766ce6ff5f78693b3874f43ecfea1f82947a67a27bf"
+      },
+      {
+        "name": "scb10x/typhoon-ocr-3b:latest",
+        "digest": "fb500215fa866d400513c0f4b7f68b9e865594c7b6c18ac224d3d4394bb09e91"
+      }
+    ]
+  },
+  "holdout": {
+    "extraction": {
+      "run": "fresh-holdout-extraction-v6",
+      "summary_sha256": "d3dba2fda8a25da640151251e2abd8243ae3a3d592ab8e9e61159bdbd909b1f5",
+      "attempts_sha256": "e87c2adde38d7ec063afceb0d327402c87c1550c3b69dc30a25a30fb15921b8e",
+      "stage_contract_sha256": "0cfd1ffad9333fe481ad2e40104ef94e05828deeb75bd4706415814914c4ab28"
+    },
+    "ocr": {
+      "run": "fresh-holdout-ocr-v6",
+      "summary_sha256": "c6750b0f5e8649b33b69a6cc7fabd2eb02250c86a3c05e32584f44c6c5105974",
+      "attempts_sha256": "d28e5a5ea43ea0085691767887b6ca3895b4c3ee91510ba8f05b1799777fd0e5",
+      "stage_contract_sha256": "73e37d3e37b1dc388cbeae2bb6c9304bee4155e7d7681ed8a19f7a41fa28afb5"
+    }
+  },
+  "approved": true
+}

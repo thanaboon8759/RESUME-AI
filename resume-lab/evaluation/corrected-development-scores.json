@@ -1,0 +1,1404 @@
+{
+  "purpose": "Corrected development labels only; original responses, timing and failures retained. Not a held-out result.",
+  "manifest_sha256": "54c8b8288604007a942715a7a92ca76927ea5d8c2ec6e9d114b5ec576cc4e576",
+  "annotation_sha256": "d7008530de8b9f71bcb8da8c10e87236abf13c9ec81574822896d37355a0000a",
+  "scorer_sha256": "96bba8fb3f24a3a6f1145054c358ea513b140b5522adb7238c676aaa55e9060a",
+  "runs": [
+    {
+      "original_run": "baseline-extraction-v2",
+      "original_configuration": {
+        "stage": "extraction",
+        "split": "development",
+        "corpus_sha256": "54c8b8288604007a942715a7a92ca76927ea5d8c2ec6e9d114b5ec576cc4e576",
+        "server_sha256": "14acf77dc7a0e3c92075f83cc44f2006801819e4f3e89bf13123c55ffa7822a4",
+        "evaluator_sha256": "7b545992bdab9be0d0638f247e15f62913bc3f9592e2647b35b0300e60686401",
+        "models": [
+          {
+            "name": "typhoon-ocr-finetuned:latest",
+            "digest": "d331d514cd3d2ccfbf51e8d8d93d381afaf5ff536543cc8c4fc879f6318373f4",
+            "details": {
+              "parent_model": "scb10x/typhoon-ocr-3b:latest",
+              "format": "gguf",
+              "family": "qwen25vl",
+              "families": [
+                "qwen25vl"
+              ],
+              "parameter_size": "3.8B",
+              "quantization_level": "F16",
+              "context_length": 128000,
+              "embedding_length": 2048
+            },
+            "capabilities": [
+              "vision",
+              "completion"
+            ]
+          },
+          {
+            "name": "typhoon-fast:latest",
+            "digest": "4aeab094b040881a4547a766ce6ff5f78693b3874f43ecfea1f82947a67a27bf",
+            "details": {
+              "parent_model": "scb10x/typhoon-ocr-3b:latest",
+              "format": "gguf",
+              "family": "qwen25vl",
+              "families": [
+                "qwen25vl"
+              ],
+              "parameter_size": "3.8B",
+              "quantization_level": "F16",
+              "context_length": 128000,
+              "embedding_length": 2048
+            },
+            "capabilities": [
+              "vision",
+              "completion"
+            ]
+          },
+          {
+            "name": "llama3.1:8b",
+            "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "llama",
+              "families": [
+                "llama"
+              ],
+              "parameter_size": "8.0B",
+              "quantization_level": "Q4_K_M",
+              "context_length": 131072,
+              "embedding_length": 4096
+            },
+            "capabilities": [
+              "completion",
+              "tools"
+            ]
+          },
+          {
+            "name": "deepseek-r1:8b",
+            "digest": "6995872bfe4c521a67b32da386cd21d5c6e819b6e0d62f79f64ec83be99f5763",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3",
+              "families": [
+                "qwen3"
+              ],
+              "parameter_size": "8.2B",
+              "quantization_level": "Q4_K_M",
+              "context_length": 131072,
+              "embedding_length": 4096
+            },
+            "capabilities": [
+              "completion",
+              "thinking"
+            ]
+          },
+          {
+            "name": "qwen2.5:7b",
+            "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen2",
+              "families": [
+                "qwen2"
+              ],
+              "parameter_size": "7.6B",
+              "quantization_level": "Q4_K_M",
+              "context_length": 32768,
+              "embedding_length": 3584
+            },
+            "capabilities": [
+              "completion",
+              "tools"
+            ]
+          },
+          {
+            "name": "scb10x/typhoon-ocr-3b:latest",
+            "digest": "fb500215fa866d400513c0f4b7f68b9e865594c7b6c18ac224d3d4394bb09e91",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen25vl",
+              "families": [
+                "qwen25vl"
+              ],
+              "parameter_size": "3.8B",
+              "quantization_level": "F16",
+              "context_length": 128000,
+              "embedding_length": 2048
+            },
+            "capabilities": [
+              "vision",
+              "completion"
+            ]
+          }
+        ]
+      },
+      "source_attempts_sha256": "e22ed5e2640ba37368f30c482109a190b44aabbf078440cea3216edadcb98f3f",
+      "rows": [
+        {
+          "model": "typhoon-ocr-finetuned:latest",
+          "sample_id": "dev_en_01",
+          "status": "ok",
+          "elapsed_seconds": 42.94739139999729,
+          "metrics": {
+            "identity_exact": 0.3333333333333333,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "7233eaf3a8760a4d9437de06df6490baf1cfa93e0fe10f1d3a92a4ba9ba54bd6"
+        },
+        {
+          "model": "typhoon-ocr-finetuned:latest",
+          "sample_id": "dev_th_01",
+          "status": "ok",
+          "elapsed_seconds": 2.2192881999944802,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 0.0,
+            "unmatched_facts": [
+              "สมชาย ใจดี\n\n## ข้อมูลเพิ่มเติม\n- **ชื่อภาษาไทย:** สมชาย ใจดี\n- **ชื่อภาษาอังกฤษ:** Somchai J.\n- **วันเกิด:** 15 ม.ค. 2534\n- **อายุ:** 49 ปี\n- **ที่อยู่:** 78/9 หมู่ 2 ถนนสุขุมวิท ตำบลบางตลาด อำเภอเมืองสมุทรปราการ จังหวัดสมุทรปราการ 10250\n"
+            ]
+          },
+          "source_record_sha256": "cc52a2d99f69a550f651e04ca32e705ab7f2985443287d69447069cabdc5685d"
+        },
+        {
+          "model": "typhoon-ocr-finetuned:latest",
+          "sample_id": "dev_bi_01",
+          "status": "ok",
+          "elapsed_seconds": 0.9348808999930043,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 0.0,
+            "unmatched_facts": [
+              "วรรณิภา สุขสมบูรณ์\n\n## Contact Information\n- **Email:** w.suksombun@ai-startup.com\n- **Tel:** +66 90 987 6543"
+            ]
+          },
+          "source_record_sha256": "dd5700f6d8bbd8ae31eff9d5b8360943d76fe80ddd6de7c986c1ef4c6fe5b59b"
+        },
+        {
+          "model": "typhoon-ocr-finetuned:latest",
+          "sample_id": "dev_en_02_lead",
+          "status": "ok",
+          "elapsed_seconds": 2.882317099996726,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 0.0,
+            "unmatched_facts": [
+              "David Miller\n\n**Email:** david.miller@cloudarch.io\n**Phone:** +1-415-555-0899\n**Location:** San Francisco, CA\n\n## Professional Experience\n### Principal Cloud Architect — CloudScale Systems\n*March 2020 – Present*\n- Spearheaded enterprise migration of 120+ microservices to multi-region AWS EKS clusters, reducing downtime to 99.99%.\n- Formulated FinOps cost-governance strategy yielding $1.4M in annual cloud infrastructure savings.\n- Mentored a global team of 14 DevOps and Platform engineers.\n\n### Lead DevOps Engineer — FinTech Horizons\n*January 2016 – February 2020*\n- Architected zero-trust CI/CD deployment pipeline handling 500+ production releases per month.\n- Implemented automated compliance auditing for PCI-DSS using Terraform and Open Policy Agent."
+            ]
+          },
+          "source_record_sha256": "2dfc90e02fb7b6bf0d30e5e0b77ff53e2178f49e2e0669f1a8275fa9d392749b"
+        },
+        {
+          "model": "typhoon-ocr-finetuned:latest",
+          "sample_id": "dev_th_02_gov",
+          "status": "ok",
+          "elapsed_seconds": 7.928196400011075,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "99439f7f6e4875113a812699d21462e01318bff2a0e0cff62b776d30504bd598"
+        },
+        {
+          "model": "typhoon-fast:latest",
+          "sample_id": "dev_en_01",
+          "status": "ok",
+          "elapsed_seconds": 4.971983600000385,
+          "metrics": {
+            "identity_exact": 0.3333333333333333,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "63fb0282df48fa9534438469be113af7773f9c8eaeab5aa9ba964f01ab534686"
+        },
+        {
+          "model": "typhoon-fast:latest",
+          "sample_id": "dev_th_01",
+          "status": "ok",
+          "elapsed_seconds": 1.5464289000083227,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 0.0,
+            "unmatched_facts": [
+              "สมชาย ใจดี\n\n## ข้อมูลเพิ่มเติม\n- **เกิด:** ม.ค. 2534\n- **อายุ:** 40 ปี\n- **ที่อยู่:** 123/45 หมู่บ้านสุขใจ ซอย 6, แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพมหานคร 10110\n"
+            ]
+          },
+          "source_record_sha256": "4f4b93c371b6ecebd8a3ff1641c97cb4382021219c2f7072b70045fd3bf9774a"
+        },
+        {
+          "model": "typhoon-fast:latest",
+          "sample_id": "dev_bi_01",
+          "status": "ok",
+          "elapsed_seconds": 3.2749635000072885,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 0.0,
+            "unmatched_facts": [
+              "วรรณิภา สุขสมบูรณ์\n\n## Contact Information\n- **Email:** w.suksombun@ai-startup.com\n- **Tel:** +66 90 987 6543\n\n## Work Experience\n### Machine Learning Engineer\n**AI Vision Co., Ltd.**\n*August 2021 - Present*\n- พัฒนาระบบ Image Recognition สำหรับโรงงานอุตสาหกรรม\n- Deployed models using Docker and optimized with TensorRT.\n\n### AI Researcher (Intern)\n**National Research Lab**\n*Jan 2021 - May 2021*\n- วิจัยและทดลองโมเดล NLP ภาษาไทย (Thai NLP)\n- Published a paper on Thai Sentiment Analysis.\n\n## Education\n### Master of Science in Artificial Intelligence\n**Global Tech University**\n*2019 - 2021*\n\n### Bachelor of Science in Mathematics\n**Local Science College**\n*2015 - 2019*"
+            ]
+          },
+          "source_record_sha256": "ffe18eba4dbd9f152d02090db2a0b25a6cfd39fb1cca5b92feab61bfa064d838"
+        },
+        {
+          "model": "typhoon-fast:latest",
+          "sample_id": "dev_en_02_lead",
+          "status": "ok",
+          "elapsed_seconds": 3.32104920000711,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 0.0,
+            "unmatched_facts": [
+              "David Miller\n\n**Email:** david.miller@cloudarch.io\n**Phone:** +1-415-555-0899\n**Location:** San Francisco, CA\n\n## Professional Experience\n### Principal Cloud Architect — CloudScale Systems\n*March 2020 – Present*\n- Spearheaded enterprise migration of 120+ microservices to multi-region AWS EKS clusters, reducing downtime to 99.99%.\n- Formulated FinOps cost-governance strategy yielding $1.4M in annual cloud infrastructure savings.\n- Mentored a global team of 14 DevOps and Platform engineers.\n\n### Lead DevOps Engineer — FinTech Horizons\n*January 2016 – February 2020*\n- Architected zero-trust CI/CD deployment pipeline handling 500+ production releases per month.\n- Implemented automated compliance auditing for PCI-DSS using Terraform and Open Policy Agent.\n\n## Education\n### M.S. in Software Engineering — Carnegie Mellon University (2015)\n### B.S. in Computer Science — University of California, Berkeley (2013)"
+            ]
+          },
+          "source_record_sha256": "6624a50972db154657d17b28ad4fdb1ff3310dfd7360cbdb142dedd2ba30cb44"
+        },
+        {
+          "model": "typhoon-fast:latest",
+          "sample_id": "dev_th_02_gov",
+          "status": "ok",
+          "elapsed_seconds": 7.797593199997209,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "752c95ae63c3ddbbcbc2d2ff78e5bd56320ab4eaf04cd6478724f42fa5fb951e"
+        },
+        {
+          "model": "llama3.1:8b",
+          "sample_id": "dev_en_01",
+          "status": "ok",
+          "elapsed_seconds": 57.89677560000564,
+          "metrics": {
+            "identity_exact": 1.0,
+            "skill_precision": 1.0,
+            "skill_recall": 1.0,
+            "skill_f1": 1.0,
+            "employment_education_exact": 0.9166666666666666,
+            "date_exact": 1.0,
+            "record_precision": 1.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "b59333b94de53b09891c546caf14e700f4d48cdf30c4be673fa18f95b478510c"
+        },
+        {
+          "model": "llama3.1:8b",
+          "sample_id": "dev_th_01",
+          "status": "error",
+          "elapsed_seconds": 40.77897169999778,
+          "metrics": {},
+          "source_record_sha256": "0dd6df2847867e01883960e4851c97c72f8239b816c71266131b93dab40389b8"
+        },
+        {
+          "model": "llama3.1:8b",
+          "sample_id": "dev_bi_01",
+          "status": "ok",
+          "elapsed_seconds": 3.6312351999949897,
+          "metrics": {
+            "identity_exact": 0.6666666666666666,
+            "skill_precision": 0.8888888888888888,
+            "skill_recall": 1.0,
+            "skill_f1": 0.9411764705882353,
+            "employment_education_exact": 0.875,
+            "date_exact": 1.0,
+            "record_precision": 1.0,
+            "literal_evidence_rate": 0.935483870967742,
+            "unmatched_facts": [
+              "Developed systems for Image Recognition for industrial factories",
+              "Conducted research and experimented with Thai NLP models"
+            ]
+          },
+          "source_record_sha256": "56c072ac306c7f4ca7371ae06cdc0e3f4bffe853295b0544966a826bf83329f9"
+        },
+        {
+          "model": "llama3.1:8b",
+          "sample_id": "dev_en_02_lead",
+          "status": "ok",
+          "elapsed_seconds": 4.157858799997484,
+          "metrics": {
+            "identity_exact": 0.6666666666666666,
+            "skill_precision": 1.0,
+            "skill_recall": 1.0,
+            "skill_f1": 1.0,
+            "employment_education_exact": 0.875,
+            "date_exact": 1.0,
+            "record_precision": 1.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "1e55521bac4ec7972bb6834ed72ab1bd16caa9c6ba03fe4e511ca4ba7a39641a"
+        },
+        {
+          "model": "llama3.1:8b",
+          "sample_id": "dev_th_02_gov",
+          "status": "error",
+          "elapsed_seconds": 41.4104803000082,
+          "metrics": {},
+          "source_record_sha256": "eb9c4b7096ee38a8ba164051de092005d509c79d5671f92b1bbddbec590e7c61"
+        },
+        {
+          "model": "deepseek-r1:8b",
+          "sample_id": "dev_en_01",
+          "status": "ok",
+          "elapsed_seconds": 26.658059399997,
+          "metrics": {
+            "identity_exact": 1.0,
+            "skill_precision": 1.0,
+            "skill_recall": 1.0,
+            "skill_f1": 1.0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "275b20a90ff3c9f53bb4f7ebe465095502b7a8f311ff41fb0dad75cb5c79dadd"
+        },
+        {
+          "model": "deepseek-r1:8b",
+          "sample_id": "dev_th_01",
+          "status": "ok",
+          "elapsed_seconds": 34.17607390000194,
+          "metrics": {
+            "identity_exact": 1.0,
+            "skill_precision": 1.0,
+            "skill_recall": 1.0,
+            "skill_f1": 1.0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "e4003b050ec20390777edbcb6712973cb34f0b935b9a52e762371dfc0d2f4486"
+        },
+        {
+          "model": "deepseek-r1:8b",
+          "sample_id": "dev_bi_01",
+          "status": "error",
+          "elapsed_seconds": 42.82359040000301,
+          "metrics": {},
+          "source_record_sha256": "20f9c7101e7bf7c525789c00dac404efb2814576504409748a1e1a08a9b13d66"
+        },
+        {
+          "model": "deepseek-r1:8b",
+          "sample_id": "dev_en_02_lead",
+          "status": "ok",
+          "elapsed_seconds": 42.46211150000454,
+          "metrics": {
+            "identity_exact": 1.0,
+            "skill_precision": 1.0,
+            "skill_recall": 1.0,
+            "skill_f1": 1.0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "3174d755792b97564eae33f80ee3a632122da41a7b13dfff0e6fa77934ba4aa5"
+        },
+        {
+          "model": "deepseek-r1:8b",
+          "sample_id": "dev_th_02_gov",
+          "status": "error",
+          "elapsed_seconds": 45.596820400009165,
+          "metrics": {},
+          "source_record_sha256": "e18e55358e5473645a5c0646874b16cab446df1eb8255bd54b40d435903eae3d"
+        },
+        {
+          "model": "qwen2.5:7b",
+          "sample_id": "dev_en_01",
+          "status": "ok",
+          "elapsed_seconds": 9.79942700000538,
+          "metrics": {
+            "identity_exact": 1.0,
+            "skill_precision": 1.0,
+            "skill_recall": 1.0,
+            "skill_f1": 1.0,
+            "employment_education_exact": 0.8333333333333334,
+            "date_exact": 1.0,
+            "record_precision": 1.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "1d217afddcb51cf19a2dcc4f837276ea9619e8894134770403d23cc61814293f"
+        },
+        {
+          "model": "qwen2.5:7b",
+          "sample_id": "dev_th_01",
+          "status": "ok",
+          "elapsed_seconds": 4.713119000007282,
+          "metrics": {
+            "identity_exact": 1.0,
+            "skill_precision": 1.0,
+            "skill_recall": 1.0,
+            "skill_f1": 1.0,
+            "employment_education_exact": 0.9166666666666666,
+            "date_exact": 1.0,
+            "record_precision": 1.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "9a8bfa1c6c5541f1cd5e9b932fb688e9a09ddf536d52cf4a41d99e5f70c37581"
+        },
+        {
+          "model": "qwen2.5:7b",
+          "sample_id": "dev_bi_01",
+          "status": "ok",
+          "elapsed_seconds": 5.220331400007126,
+          "metrics": {
+            "identity_exact": 1.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.5,
+            "date_exact": 0.3333333333333333,
+            "record_precision": 1.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "dd12ed3708983a700bfedd6955f26a02ae7de1d2b02b993a4545a37084d5b501"
+        },
+        {
+          "model": "qwen2.5:7b",
+          "sample_id": "dev_en_02_lead",
+          "status": "ok",
+          "elapsed_seconds": 5.153707399993436,
+          "metrics": {
+            "identity_exact": 1.0,
+            "skill_precision": 1.0,
+            "skill_recall": 1.0,
+            "skill_f1": 1.0,
+            "employment_education_exact": 0.75,
+            "date_exact": 1.0,
+            "record_precision": 1.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "f193e85f2766cf17bd1c9564ada533fbf543f920158c1c15c11753f3f20fea96"
+        },
+        {
+          "model": "qwen2.5:7b",
+          "sample_id": "dev_th_02_gov",
+          "status": "ok",
+          "elapsed_seconds": 7.802503600003547,
+          "metrics": {
+            "identity_exact": 1.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.625,
+            "date_exact": 0.6666666666666666,
+            "record_precision": 1.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "ab97201d862326baf0d1a8e9598bf158c86d0f5e0449b8681c414655d28e3176"
+        },
+        {
+          "model": "scb10x/typhoon-ocr-3b:latest",
+          "sample_id": "dev_en_01",
+          "status": "ok",
+          "elapsed_seconds": 10.008925800008,
+          "metrics": {
+            "identity_exact": 0.3333333333333333,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "8d628d63fb00714ea68f8bb22433e3dd73971a27bf247a9abb5c56b1063e489c"
+        },
+        {
+          "model": "scb10x/typhoon-ocr-3b:latest",
+          "sample_id": "dev_th_01",
+          "status": "ok",
+          "elapsed_seconds": 2.0666691999940667,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 0.0,
+            "unmatched_facts": [
+              "สมชาย ใจดี\n\n## ข้อมูลเพิ่มเติม\n- **เกิด:** ม.ค. 2534\n- **อายุ:** 40 ปี\n- **ที่อยู่:** 123/45 หมู่บ้านสุขใจ เลขที่ 678 ซอย 9, แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพมหานคร 10110\n- **ชื่อเจ้าหน้าที่ HR:** นางสาวสมหญิง สุวรรณรัตน์"
+            ]
+          },
+          "source_record_sha256": "6faf594f152b658195ae64059ff85c30a1fdbb74d30e912ddaf7ed5435d64438"
+        },
+        {
+          "model": "scb10x/typhoon-ocr-3b:latest",
+          "sample_id": "dev_bi_01",
+          "status": "ok",
+          "elapsed_seconds": 0.8838101999863284,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 0.0,
+            "unmatched_facts": [
+              "วรรณิภา สุขสมบูรณ์\n\n## Contact Information\n- **Email:** w.suksombun@ai-startup.com\n- **Tel:** +66 90 987 6543"
+            ]
+          },
+          "source_record_sha256": "89d9144e67b07456be688946e6762e9d034cf8de68eb4ff036257ac4af899555"
+        },
+        {
+          "model": "scb10x/typhoon-ocr-3b:latest",
+          "sample_id": "dev_en_02_lead",
+          "status": "ok",
+          "elapsed_seconds": 2.9036805000068853,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 0.0,
+            "unmatched_facts": [
+              "David Miller\n\n**Email:** david.miller@cloudarch.io\n**Phone:** +1-415-555-0899\n**Location:** San Francisco, CA\n\n## Professional Experience\n### Principal Cloud Architect — CloudScale Systems\n*March 2020 – Present*\n- Spearheaded enterprise migration of 120+ microservices to multi-region AWS EKS clusters, reducing downtime to 99.99%.\n- Formulated FinOps cost-governance strategy yielding $1.4M in annual cloud infrastructure savings.\n- Mentored a global team of 14 DevOps and Platform engineers.\n\n### Lead DevOps Engineer — FinTech Horizons\n*January 2016 – February 2020*\n- Architected zero-trust CI/CD deployment pipeline handling 500+ production releases per month.\n- Implemented automated compliance auditing for PCI-DSS using Terraform and Open Policy Agent."
+            ]
+          },
+          "source_record_sha256": "890ad2cd7f024a4f6d71c54c81f3b26ae8529a87fb6702c65a6710b459804bf2"
+        },
+        {
+          "model": "scb10x/typhoon-ocr-3b:latest",
+          "sample_id": "dev_th_02_gov",
+          "status": "ok",
+          "elapsed_seconds": 8.289975199993933,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "ddcbf9855672d8abbfb6af40b33bf774c33dfe0bc2fe5b8ae34700783ba250c3"
+        }
+      ],
+      "summary": [
+        {
+          "model": "deepseek-r1:8b",
+          "attempts": 5,
+          "success_rate": 0.6,
+          "identity_exact": 0.6,
+          "skill_f1": 0.6,
+          "employment_education_exact": 0.0,
+          "date_exact": 0.0,
+          "record_precision": 0.0,
+          "literal_evidence_rate": 0.6
+        },
+        {
+          "model": "llama3.1:8b",
+          "attempts": 5,
+          "success_rate": 0.6,
+          "identity_exact": 0.4666666666666666,
+          "skill_f1": 0.5882352941176471,
+          "employment_education_exact": 0.5333333333333333,
+          "date_exact": 0.6,
+          "record_precision": 0.6,
+          "literal_evidence_rate": 0.5870967741935484
+        },
+        {
+          "model": "qwen2.5:7b",
+          "attempts": 5,
+          "success_rate": 1.0,
+          "identity_exact": 1.0,
+          "skill_f1": 0.6,
+          "employment_education_exact": 0.725,
+          "date_exact": 0.8,
+          "record_precision": 1.0,
+          "literal_evidence_rate": 1.0
+        },
+        {
+          "model": "scb10x/typhoon-ocr-3b:latest",
+          "attempts": 5,
+          "success_rate": 1.0,
+          "identity_exact": 0.06666666666666667,
+          "skill_f1": 0.0,
+          "employment_education_exact": 0.0,
+          "date_exact": 0.0,
+          "record_precision": 0.0,
+          "literal_evidence_rate": 0.4
+        },
+        {
+          "model": "typhoon-fast:latest",
+          "attempts": 5,
+          "success_rate": 1.0,
+          "identity_exact": 0.06666666666666667,
+          "skill_f1": 0.0,
+          "employment_education_exact": 0.0,
+          "date_exact": 0.0,
+          "record_precision": 0.0,
+          "literal_evidence_rate": 0.4
+        },
+        {
+          "model": "typhoon-ocr-finetuned:latest",
+          "attempts": 5,
+          "success_rate": 1.0,
+          "identity_exact": 0.06666666666666667,
+          "skill_f1": 0.0,
+          "employment_education_exact": 0.0,
+          "date_exact": 0.0,
+          "record_precision": 0.0,
+          "literal_evidence_rate": 0.4
+        }
+      ]
+    },
+    {
+      "original_run": "improved-extraction-v3",
+      "original_configuration": {
+        "stage": "extraction",
+        "split": "development",
+        "corpus_sha256": "54c8b8288604007a942715a7a92ca76927ea5d8c2ec6e9d114b5ec576cc4e576",
+        "server_sha256": "c25e3ca0e906b84989248c0b75a99e51123787922ceed1d60be4d6840bdea945",
+        "schema_sha256": "c60bebba1b180efd8ad65eee72ed2f6499e6ac8a81a0bfa0a0fab5cf0fea4f75",
+        "runtime": {
+          "ollama": {
+            "version": "0.34.0"
+          },
+          "platform": "Windows-11-10.0.26200-SP0"
+        },
+        "evaluator_sha256": "3026b1b337470a2f83ec488c478ce5f89361847430fc3d71cac1b19f7f9f5435",
+        "models": [
+          {
+            "name": "deepseek-r1:8b",
+            "digest": "6995872bfe4c521a67b32da386cd21d5c6e819b6e0d62f79f64ec83be99f5763",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3",
+              "families": [
+                "qwen3"
+              ],
+              "parameter_size": "8.2B",
+              "quantization_level": "Q4_K_M",
+              "context_length": 131072,
+              "embedding_length": 4096
+            },
+            "capabilities": [
+              "completion",
+              "thinking"
+            ]
+          },
+          {
+            "name": "llama3.1:8b",
+            "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "llama",
+              "families": [
+                "llama"
+              ],
+              "parameter_size": "8.0B",
+              "quantization_level": "Q4_K_M",
+              "context_length": 131072,
+              "embedding_length": 4096
+            },
+            "capabilities": [
+              "completion",
+              "tools"
+            ]
+          },
+          {
+            "name": "qwen2.5:7b",
+            "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen2",
+              "families": [
+                "qwen2"
+              ],
+              "parameter_size": "7.6B",
+              "quantization_level": "Q4_K_M",
+              "context_length": 32768,
+              "embedding_length": 3584
+            },
+            "capabilities": [
+              "completion",
+              "tools"
+            ]
+          },
+          {
+            "name": "scb10x/typhoon-ocr-3b:latest",
+            "digest": "fb500215fa866d400513c0f4b7f68b9e865594c7b6c18ac224d3d4394bb09e91",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen25vl",
+              "families": [
+                "qwen25vl"
+              ],
+              "parameter_size": "3.8B",
+              "quantization_level": "F16",
+              "context_length": 128000,
+              "embedding_length": 2048
+            },
+            "capabilities": [
+              "vision",
+              "completion"
+            ]
+          },
+          {
+            "name": "typhoon-fast:latest",
+            "digest": "4aeab094b040881a4547a766ce6ff5f78693b3874f43ecfea1f82947a67a27bf",
+            "details": {
+              "parent_model": "scb10x/typhoon-ocr-3b:latest",
+              "format": "gguf",
+              "family": "qwen25vl",
+              "families": [
+                "qwen25vl"
+              ],
+              "parameter_size": "3.8B",
+              "quantization_level": "F16",
+              "context_length": 128000,
+              "embedding_length": 2048
+            },
+            "capabilities": [
+              "vision",
+              "completion"
+            ]
+          },
+          {
+            "name": "typhoon-ocr-finetuned:latest",
+            "digest": "d331d514cd3d2ccfbf51e8d8d93d381afaf5ff536543cc8c4fc879f6318373f4",
+            "details": {
+              "parent_model": "scb10x/typhoon-ocr-3b:latest",
+              "format": "gguf",
+              "family": "qwen25vl",
+              "families": [
+                "qwen25vl"
+              ],
+              "parameter_size": "3.8B",
+              "quantization_level": "F16",
+              "context_length": 128000,
+              "embedding_length": 2048
+            },
+            "capabilities": [
+              "vision",
+              "completion"
+            ]
+          }
+        ]
+      },
+      "source_attempts_sha256": "22f553f0df92f9e89a012d3a5d433e39a220654f007de060e9146ec55e4389e3",
+      "rows": [
+        {
+          "model": "deepseek-r1:8b",
+          "sample_id": "dev_en_01",
+          "status": "error",
+          "elapsed_seconds": 48.80747060000431,
+          "metrics": {},
+          "source_record_sha256": "e6544d1ef9d9876508d65caf1488f21c856aa7474124cb5a6252d6f32fa8213d"
+        },
+        {
+          "model": "deepseek-r1:8b",
+          "sample_id": "dev_th_01",
+          "status": "ok",
+          "elapsed_seconds": 36.41115189999982,
+          "metrics": {
+            "identity_exact": 1.0,
+            "skill_precision": 1.0,
+            "skill_recall": 1.0,
+            "skill_f1": 1.0,
+            "employment_education_exact": 0.4166666666666667,
+            "date_exact": 0.0,
+            "record_precision": 1.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "3e77b37dec0b213dac2ac97992a908349d175f792ee0c61d93133387cf5629ee"
+        },
+        {
+          "model": "deepseek-r1:8b",
+          "sample_id": "dev_bi_01",
+          "status": "error",
+          "elapsed_seconds": 41.89507890000823,
+          "metrics": {},
+          "source_record_sha256": "f0cdf8ff688741a0ad52db29a9bfb704d26cfedce03f03edb48031dc144907cf"
+        },
+        {
+          "model": "deepseek-r1:8b",
+          "sample_id": "dev_en_02_lead",
+          "status": "error",
+          "elapsed_seconds": 41.86817080000765,
+          "metrics": {},
+          "source_record_sha256": "2677f7a778a4906716cce928bf56089a345e7acf2dbe2780f388f7ca6362097a"
+        },
+        {
+          "model": "deepseek-r1:8b",
+          "sample_id": "dev_th_02_gov",
+          "status": "error",
+          "elapsed_seconds": 42.425962599998456,
+          "metrics": {},
+          "source_record_sha256": "e520d1b622daaf3c6ff46bb7f5be771510316d676c3e838689b02074722e37c5"
+        },
+        {
+          "model": "llama3.1:8b",
+          "sample_id": "dev_en_01",
+          "status": "ok",
+          "elapsed_seconds": 8.459276900000987,
+          "metrics": {
+            "identity_exact": 1.0,
+            "skill_precision": 1.0,
+            "skill_recall": 1.0,
+            "skill_f1": 1.0,
+            "employment_education_exact": 0.9166666666666666,
+            "date_exact": 1.0,
+            "record_precision": 1.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "f42e813e43768be2a612e0aec0b7d24543049cb49c6cef33fa7338297ce23464"
+        },
+        {
+          "model": "llama3.1:8b",
+          "sample_id": "dev_th_01",
+          "status": "ok",
+          "elapsed_seconds": 2.736290699991514,
+          "metrics": {
+            "identity_exact": 0.6666666666666666,
+            "skill_precision": 1.0,
+            "skill_recall": 1.0,
+            "skill_f1": 1.0,
+            "employment_education_exact": 0.8333333333333334,
+            "date_exact": 0.8,
+            "record_precision": 1.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "58012dac3fa3ca8d4827e3f2156bbc6be2d8e9a07fde33a4d0076b405b39875d"
+        },
+        {
+          "model": "llama3.1:8b",
+          "sample_id": "dev_bi_01",
+          "status": "ok",
+          "elapsed_seconds": 2.901721699992777,
+          "metrics": {
+            "identity_exact": 0.6666666666666666,
+            "skill_precision": 0.8888888888888888,
+            "skill_recall": 1.0,
+            "skill_f1": 0.9411764705882353,
+            "employment_education_exact": 0.875,
+            "date_exact": 1.0,
+            "record_precision": 1.0,
+            "literal_evidence_rate": 0.935483870967742,
+            "unmatched_facts": [
+              "Developed Image Recognition system for industrial factory",
+              "Conducted research and experimented with Thai NLP models"
+            ]
+          },
+          "source_record_sha256": "5830a967b44d70f4338e65d4e1596c9aa7345c841c3e44e7cf02c130b9af23ff"
+        },
+        {
+          "model": "llama3.1:8b",
+          "sample_id": "dev_en_02_lead",
+          "status": "ok",
+          "elapsed_seconds": 3.7933374000131153,
+          "metrics": {
+            "identity_exact": 1.0,
+            "skill_precision": 1.0,
+            "skill_recall": 1.0,
+            "skill_f1": 1.0,
+            "employment_education_exact": 0.875,
+            "date_exact": 1.0,
+            "record_precision": 1.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "08c51ac033d3516c7816fe3f8b37daaca39358188e4052755be4708d2b119d46"
+        },
+        {
+          "model": "llama3.1:8b",
+          "sample_id": "dev_th_02_gov",
+          "status": "ok",
+          "elapsed_seconds": 6.943691700013005,
+          "metrics": {
+            "identity_exact": 0.6666666666666666,
+            "skill_precision": 0.8571428571428571,
+            "skill_recall": 0.8571428571428571,
+            "skill_f1": 0.8571428571428571,
+            "employment_education_exact": 0.875,
+            "date_exact": 0.6666666666666666,
+            "record_precision": 0.6666666666666666,
+            "literal_evidence_rate": 0.9795918367346939,
+            "unmatched_facts": [
+              "Consulting"
+            ]
+          },
+          "source_record_sha256": "634b845093c54b8672e0d90357b89497ee035943f4703ea451d318829b1d3ae6"
+        },
+        {
+          "model": "qwen2.5:7b",
+          "sample_id": "dev_en_01",
+          "status": "ok",
+          "elapsed_seconds": 7.88862510000763,
+          "metrics": {
+            "identity_exact": 1.0,
+            "skill_precision": 1.0,
+            "skill_recall": 1.0,
+            "skill_f1": 1.0,
+            "employment_education_exact": 0.8333333333333334,
+            "date_exact": 1.0,
+            "record_precision": 1.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "3de4d458e5458cfbb284a4ac7ec92c58808ffaed5a2ee2a880b62aeb204fb762"
+        },
+        {
+          "model": "qwen2.5:7b",
+          "sample_id": "dev_th_01",
+          "status": "ok",
+          "elapsed_seconds": 3.3923366999952123,
+          "metrics": {
+            "identity_exact": 1.0,
+            "skill_precision": 1.0,
+            "skill_recall": 1.0,
+            "skill_f1": 1.0,
+            "employment_education_exact": 0.5833333333333334,
+            "date_exact": 0.6,
+            "record_precision": 0.6666666666666666,
+            "literal_evidence_rate": 0.9615384615384616,
+            "unmatched_facts": [
+              "บริษัท วิเคราะหิ์ธุรกิจ จำกัด"
+            ]
+          },
+          "source_record_sha256": "3b3b14f1ff9023d572dc13878757d5ea4b219ed66e93d28fd448dadaf4d63253"
+        },
+        {
+          "model": "qwen2.5:7b",
+          "sample_id": "dev_bi_01",
+          "status": "ok",
+          "elapsed_seconds": 3.568960100004915,
+          "metrics": {
+            "identity_exact": 1.0,
+            "skill_precision": 1.0,
+            "skill_recall": 1.0,
+            "skill_f1": 1.0,
+            "employment_education_exact": 0.5,
+            "date_exact": 0.3333333333333333,
+            "record_precision": 1.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "5159c5e4005eb3b838dbda63af53458cc24295de0b182ff92db0fe5f66b86bfd"
+        },
+        {
+          "model": "qwen2.5:7b",
+          "sample_id": "dev_en_02_lead",
+          "status": "ok",
+          "elapsed_seconds": 4.1283876999950735,
+          "metrics": {
+            "identity_exact": 1.0,
+            "skill_precision": 1.0,
+            "skill_recall": 1.0,
+            "skill_f1": 1.0,
+            "employment_education_exact": 0.5,
+            "date_exact": 0.3333333333333333,
+            "record_precision": 1.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "08660e54579d9b81604095c9c550fc94ad5485c4f9bd036ed14bf406c026fd52"
+        },
+        {
+          "model": "qwen2.5:7b",
+          "sample_id": "dev_th_02_gov",
+          "status": "ok",
+          "elapsed_seconds": 6.198827000000165,
+          "metrics": {
+            "identity_exact": 1.0,
+            "skill_precision": 1.0,
+            "skill_recall": 1.0,
+            "skill_f1": 1.0,
+            "employment_education_exact": 0.625,
+            "date_exact": 0.6666666666666666,
+            "record_precision": 1.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "e381316787e71a914ad570febac9f9b4c8bc537eb30facf6f23e407e3849eb56"
+        },
+        {
+          "model": "scb10x/typhoon-ocr-3b:latest",
+          "sample_id": "dev_en_01",
+          "status": "ok",
+          "elapsed_seconds": 10.651242100007948,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 0.0,
+            "unmatched_facts": [
+              "Alice Smith\n\nEmail: alice.smith@example.com\nPhone: +1-555-0199\n\nSummary:\nExperienced software engineer specializing in backend development and scalable microservices.\n\nSkills:\nPython, FastAPI, React, Docker, Kubernetes, SQL, Agile\n\nExperience:\nSenior Software Engineer at TechCorp Inc. (Jan 2020 - Present)\n- Architected and deployed microservices using FastAPI and Docker.\n- Improved database query performance by 30% using SQL optimization techniques.\n\nSoftware Developer at WebSolutions LLC (Jun 2017 - Dec 2019)\n- Developed RESTful APIs using Python.\n- Collaborated with frontend teams to integrate React components."
+            ]
+          },
+          "source_record_sha256": "65ed935b965f502fcd667236fe6dea4be1c6ce9a71ebf8f98fb35573fc1ba466"
+        },
+        {
+          "model": "scb10x/typhoon-ocr-3b:latest",
+          "sample_id": "dev_th_01",
+          "status": "error",
+          "elapsed_seconds": 54.45186069999181,
+          "metrics": {},
+          "source_record_sha256": "acc9b05fc5d16a9f062a998e9c78d19cea6a1ac5fc9d0339770e2627f52dc669"
+        },
+        {
+          "model": "scb10x/typhoon-ocr-3b:latest",
+          "sample_id": "dev_bi_01",
+          "status": "ok",
+          "elapsed_seconds": 3.7973549000016646,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 0.0,
+            "unmatched_facts": [
+              "วรรณิภา สุขสมบูรณ์\n\n## Contact Information\n- **Email:** w.suksombun@ai-startup.com\n- **Tel:** +66 90 987 6543\n\n## Work Experience\n### Machine Learning Engineer at AI Vision Co., Ltd.\n*August 2021 - Present*\n- Develops Image Recognition systems for industrial processes\n- Models are deployed using Docker and optimized with TensorRT\n\n### Intern at National Research Lab\n*Jan 2021 - May 2021*\n- Conducts research and experiments in Thai NLP (Thai Natural Language Processing)\n- Published a paper on Thai Sentiment Analysis\n\n## Education\n### Master of Science in Artificial Intelligence\n**Global Tech University**\n*2019 - 2021*\n\n### Bachelor of Science in Mathematics\n**Local Science College**\n*2015 - 2019*."
+            ]
+          },
+          "source_record_sha256": "c6b18a718ec431767be614eb535135855ec848546d2b39f13c6d0a165df22a14"
+        },
+        {
+          "model": "scb10x/typhoon-ocr-3b:latest",
+          "sample_id": "dev_en_02_lead",
+          "status": "ok",
+          "elapsed_seconds": 6.824903700005962,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 0.33333333333333337,
+            "unmatched_facts": [
+              "David Miller\n\n**Email:** david.miller@cloudarch.io\n\n**Phone:** +1-415-555-0899\n\n**Location:** San Francisco, CA\n\n## Professional Experience\n### Principal Cloud Architect — CloudScale Systems\n*March 2020 – Present*\n- Spearheaded enterprise migration of 120+ microservices to multi-region AWS EKS clusters, reducing downtime to 99.99%.\n- Formulated FinOps cost-governance strategy yielding $1.4M in annual cloud infrastructure savings.\n- Mentored a global team of 14 DevOps and Platform engineers.\n\n### Lead DevOps Engineer — FinTech Horizons\n*January 2016 – February 2020*\n- Architected zero-trust CI/CD deployment pipeline handling 500+ production releases per month.\n- Implemented automated compliance auditing for PCI-DSS using Terraform and Open Policy Agent.",
+              "# CloudScale Systems\n## Principal Cloud Architect\n*March 2020 – Present*\n### Responsibilities:\n- Designing microservices-based applications using Docker and Kubernetes.\n- Implementing DevOps processes for application development, staging, and production environments.\n- Managing code quality through automated testing and code review.\n- Leading cross-functional teams to deliver high-quality software products on time and within budget.\n\n### Key Achievements:\n- Migrated 120+ microservices from-premium VMware vSphere clusters running ESXi to a multi-region AWS EKS architecture, resulting in a 99.99% Uptime Index.\n- Developed the FinOps cost-governance strategy that led to $1.4M in annual cloud infrastructure savings.\n\n### Education:\n- M.S. in Computer Science — Carnegie Mellon University (2015)\n- B.S. in Computer Science — UC Berkeley (2013)  \n\n### Certifications & Awards:\n- Certified Cloud Architect, AWS, Google Cloud Platform, Microsoft Azure\n- DevOps Certification, Red Hat, Oracle\n- ISO 9001: Quality Management System\n\n## Contact Information\n**Email:** david.miller@cloudarch.io\n**Phone:** +1-415-555-0899\n**Address:** San Francisco, CA\n\n### Additional Notes:\n- This is a blank page.\n- End Line."
+            ]
+          },
+          "source_record_sha256": "57a0405803e473a7378ddac44936395ce853b07bf26b39d3879c8e64c244ed5f"
+        },
+        {
+          "model": "scb10x/typhoon-ocr-3b:latest",
+          "sample_id": "dev_th_02_gov",
+          "status": "error",
+          "elapsed_seconds": 53.37023450000561,
+          "metrics": {},
+          "source_record_sha256": "48a4243c5697e19735dc5e9487984739b425e3566ca411268ec91cf5f7997e06"
+        },
+        {
+          "model": "typhoon-fast:latest",
+          "sample_id": "dev_en_01",
+          "status": "ok",
+          "elapsed_seconds": 7.28741259999515,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "3458b2804f7dabb310542371610cbb7d930386d6ce3dcc330f7c056b5d9d6d8c"
+        },
+        {
+          "model": "typhoon-fast:latest",
+          "sample_id": "dev_th_01",
+          "status": "error",
+          "elapsed_seconds": 49.41245689999778,
+          "metrics": {},
+          "source_record_sha256": "3e91f1ce217be30728e5e6b0e0fac269b5caf6550dd76a51641c2ae558bdc69b"
+        },
+        {
+          "model": "typhoon-fast:latest",
+          "sample_id": "dev_bi_01",
+          "status": "ok",
+          "elapsed_seconds": 3.5457190000015544,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 0.0,
+            "unmatched_facts": [
+              "วรรณิภา สุขสมบูรณ์\n\n## Contact Information\n- **Email:** w.suksombun@ai-startup.com\n- **Tel:** +66 90 987 6543\n\n## Work Experience\n### Machine Learning Engineer\n**AI Vision Co., Ltd.**\n*August 2021 - Present*\n- พัฒนาระบบ Image Recognition สำหรับโรงงานอุตสาหกรรม\n- Deployed models using Docker and optimized with TensorRT.\n\n### AI Researcher (Intern)\n**National Research Lab**\n*Jan 2021 - May 2021*\n- วิจัยและทดลองโมเดล NLP ภาษาไทย (Thai NLP)\n- Published a paper on Thai Sentiment Analysis.\n\n## Education\n### Master of Science in Artificial Intelligence\n**Global Tech University**\n*2019 - 2021*\n\n### Bachelor of Science in Mathematics\n**Local Science College**\n*2015 - 2019*."
+            ]
+          },
+          "source_record_sha256": "affedc69c02819211f388d9778f574f3a4a273b55487984dff3df2d8bfe9cc2f"
+        },
+        {
+          "model": "typhoon-fast:latest",
+          "sample_id": "dev_en_02_lead",
+          "status": "ok",
+          "elapsed_seconds": 2.8889230000058888,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 0.0,
+            "unmatched_facts": [
+              "David Miller\n\n**Email:** david.miller@cloudarch.io\n\n**Phone:** +1-415-555-0899\n\n**Location:** San Francisco, CA\n\n## Professional Experience\n### Principal Cloud Architect — CloudScale Systems\n*March 2020 – Present*\n- Spearheaded enterprise migration of 120+ microservices to multi-region AWS EKS clusters, reducing downtime to 99.99%.\n- Formulated FinOps cost-governance strategy yielding $1.4M in annual cloud infrastructure savings.\n- Mentored a global team of 14 DevOps and Platform engineers.\n\n### Lead DevOps Engineer — FinTech Horizons\n*January 2016 – February 2020*\n- Architected zero-trust CI/CD deployment pipeline handling 500+ production releases per month.\n- Implemented automated compliance auditing for PCI-DSS using Terraform and Open Policy Agent."
+            ]
+          },
+          "source_record_sha256": "16bcd14c10857732dbb399cb6945902d0ee9acaa2113e0e1357edc9c4c35a167"
+        },
+        {
+          "model": "typhoon-fast:latest",
+          "sample_id": "dev_th_02_gov",
+          "status": "error",
+          "elapsed_seconds": 48.59281370000099,
+          "metrics": {},
+          "source_record_sha256": "6d0e9cd4beb55aba912bc9cb2cd0b18d91714062f50e7626ba98c14156758a0b"
+        },
+        {
+          "model": "typhoon-ocr-finetuned:latest",
+          "sample_id": "dev_en_01",
+          "status": "ok",
+          "elapsed_seconds": 2.907117399998242,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 1.0,
+            "unmatched_facts": []
+          },
+          "source_record_sha256": "d57f2d25e06b53a87ea6841033a0c8560997fb6b052d081adf93e924febbd6cc"
+        },
+        {
+          "model": "typhoon-ocr-finetuned:latest",
+          "sample_id": "dev_th_01",
+          "status": "error",
+          "elapsed_seconds": 51.185238700010814,
+          "metrics": {},
+          "source_record_sha256": "f9bf23b6c7bf7d31e2adde057b5de3f731271e5f4b94c012b0901712d09576c0"
+        },
+        {
+          "model": "typhoon-ocr-finetuned:latest",
+          "sample_id": "dev_bi_01",
+          "status": "ok",
+          "elapsed_seconds": 3.260953500008327,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 0.0,
+            "unmatched_facts": [
+              "วรรณิภา สุขสมบูรณ์\n\n## Contact Information\n- **Email:** w.suksombun@ai-startup.com\n- **Tel:** +66 90 987 6543\n\n## Work Experience\n### Machine Learning Engineer at AI Vision Co., Ltd.\n*August 2021 - Present*\n- Develops Image Recognition systems for industrial processes\n- Models are deployed using Docker and optimized with TensorRT\n\n### Intern at National Research Lab\n*Jan 2021 - May 2021*\n- Conducts research and experiments in Thai NLP\n- Published a paper on Thai Sentiment Analysis\n\n## Education\n### Master of Science in Artificial Intelligence\n**Global Tech University**\n*2019 - 2021*\n\n### Bachelor of Science in Mathematics\n**Local Science College**\n*2015 - 2019*."
+            ]
+          },
+          "source_record_sha256": "3ed0a6ab5b11db8a38e3b457856ff1faf68789d3b9a2d23cec1661e25200449e"
+        },
+        {
+          "model": "typhoon-ocr-finetuned:latest",
+          "sample_id": "dev_en_02_lead",
+          "status": "ok",
+          "elapsed_seconds": 3.3781726000015624,
+          "metrics": {
+            "identity_exact": 0.0,
+            "skill_precision": 0.0,
+            "skill_recall": 0.0,
+            "skill_f1": 0,
+            "employment_education_exact": 0.0,
+            "date_exact": 0.0,
+            "record_precision": 0.0,
+            "literal_evidence_rate": 0.0,
+            "unmatched_facts": [
+              "David Miller\n\n**Email:** david.miller@cloudarch.io\n\n**Phone:** +1-415-555-0899\n\n**Location:** San Francisco, CA\n\n## Professional Experience\n### Principal Cloud Architect — CloudScale Systems\n*March 2020 – Present*\n- Spearheaded enterprise migration of 120+ microservices to multi-region AWS EKS clusters, reducing downtime to 99.99%.\n- Formulated FinOps cost-governance strategy yielding $1.4M in annual cloud infrastructure savings.\n- Mentored a global team of 14 DevOps and Platform engineers.\n\n### Lead DevOps Engineer — FinTech Horizons\n*January 2016 – February 2020*\n- Architected zero-trust CI/CD deployment pipeline handling 500+ production releases per month.\n- Implemented automated compliance auditing for PCI-DSS using Terraform and Open Policy Agent."
+            ]
+          },
+          "source_record_sha256": "d4c3dbf19953b07685c45f1060586036c6797dbf07435fbb8b664703f0d0ef20"
+        },
+        {
+          "model": "typhoon-ocr-finetuned:latest",
+          "sample_id": "dev_th_02_gov",
+          "status": "error",
+          "elapsed_seconds": 52.38680849999946,
+          "metrics": {},
+          "source_record_sha256": "32569656395644b65fbd9cdfd2d7c8680c2630dd7c2d3ed85150c256fe890641"
+        }
+      ],
+      "summary": [
+        {
+          "model": "deepseek-r1:8b",
+          "attempts": 5,
+          "success_rate": 0.2,
+          "identity_exact": 0.2,
+          "skill_f1": 0.2,
+          "employment_education_exact": 0.08333333333333334,
+          "date_exact": 0.0,
+          "record_precision": 0.2,
+          "literal_evidence_rate": 0.2
+        },
+        {
+          "model": "llama3.1:8b",
+          "attempts": 5,
+          "success_rate": 1.0,
+          "identity_exact": 0.8,
+          "skill_f1": 0.9596638655462184,
+          "employment_education_exact": 0.875,
+          "date_exact": 0.8933333333333333,
+          "record_precision": 0.9333333333333333,
+          "literal_evidence_rate": 0.9830151415404872
+        },
+        {
+          "model": "qwen2.5:7b",
+          "attempts": 5,
+          "success_rate": 1.0,
+          "identity_exact": 1.0,
+          "skill_f1": 1.0,
+          "employment_education_exact": 0.6083333333333334,
+          "date_exact": 0.5866666666666667,
+          "record_precision": 0.9333333333333333,
+          "literal_evidence_rate": 0.9923076923076923
+        },
+        {
+          "model": "scb10x/typhoon-ocr-3b:latest",
+          "attempts": 5,
+          "success_rate": 0.6,
+          "identity_exact": 0.0,
+          "skill_f1": 0.0,
+          "employment_education_exact": 0.0,
+          "date_exact": 0.0,
+          "record_precision": 0.0,
+          "literal_evidence_rate": 0.06666666666666668
+        },
+        {
+          "model": "typhoon-fast:latest",
+          "attempts": 5,
+          "success_rate": 0.6,
+          "identity_exact": 0.0,
+          "skill_f1": 0.0,
+          "employment_education_exact": 0.0,
+          "date_exact": 0.0,
+          "record_precision": 0.0,
+          "literal_evidence_rate": 0.2
+        },
+        {
+          "model": "typhoon-ocr-finetuned:latest",
+          "attempts": 5,
+          "success_rate": 0.6,
+          "identity_exact": 0.0,
+          "skill_f1": 0.0,
+          "employment_education_exact": 0.0,
+          "date_exact": 0.0,
+          "record_precision": 0.0,
+          "literal_evidence_rate": 0.2
+        }
+      ]
+    }
+  ]
+}

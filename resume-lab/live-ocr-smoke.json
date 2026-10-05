@@ -1,0 +1,49 @@
+{
+  "mode": "live",
+  "sample": "synthetic-scan.png",
+  "limitations": "One simple English image; no Thai accuracy claim. Configured variant uses same weights.",
+  "records": [
+    {
+      "model": "scb10x/typhoon-ocr-3b:latest",
+      "status": "ok",
+      "result": {
+        "filename": "synthetic-scan.png",
+        "route": "Image OCR",
+        "source_text": "{\"text\": \"SCANNED RESUME Jane Doe\\nEmail jane@example.com\\nSkills Python, AWS Docker\"}",
+        "mode": "parse-only",
+        "model": null,
+        "ocr_model": "scb10x/typhoon-ocr-3b:latest",
+        "ocr_used": true,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 11.092,
+        "profile": null,
+        "schema_valid": null,
+        "warnings": [],
+        "elapsed_seconds": 11.092
+      },
+      "phrase_recall": 1.0,
+      "elapsed_seconds": 11.092387699998653
+    },
+    {
+      "model": "typhoon-ocr-finetuned:latest",
+      "status": "ok",
+      "result": {
+        "filename": "synthetic-scan.png",
+        "route": "Image OCR",
+        "source_text": "{\"text\": \"SCANNED RESUME Jane Doe\\nEmail: jane@example.com\\nSkills: Python, AWS, Docker\"}",
+        "mode": "parse-only",
+        "model": null,
+        "ocr_model": "typhoon-ocr-finetuned:latest",
+        "ocr_used": true,
+        "prompt_version": "resume-facts-v2",
+        "parse_seconds": 5.918,
+        "profile": null,
+        "schema_valid": null,
+        "warnings": [],
+        "elapsed_seconds": 5.918
+      },
+      "phrase_recall": 1.0,
+      "elapsed_seconds": 5.918033300000388
+    }
+  ]
+}
