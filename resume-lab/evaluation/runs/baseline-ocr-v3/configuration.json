@@ -1,0 +1,76 @@
+{
+  "stage": "ocr",
+  "split": "development",
+  "corpus_sha256": "54c8b8288604007a942715a7a92ca76927ea5d8c2ec6e9d114b5ec576cc4e576",
+  "server_sha256": "c25e3ca0e906b84989248c0b75a99e51123787922ceed1d60be4d6840bdea945",
+  "schema_sha256": "c60bebba1b180efd8ad65eee72ed2f6499e6ac8a81a0bfa0a0fab5cf0fea4f75",
+  "runtime": {
+    "ollama": {
+      "version": "0.34.0"
+    },
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "evaluator_sha256": "3026b1b337470a2f83ec488c478ce5f89361847430fc3d71cac1b19f7f9f5435",
+  "models": [
+    {
+      "name": "scb10x/typhoon-ocr-3b:latest",
+      "digest": "fb500215fa866d400513c0f4b7f68b9e865594c7b6c18ac224d3d4394bb09e91",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen25vl",
+        "families": [
+          "qwen25vl"
+        ],
+        "parameter_size": "3.8B",
+        "quantization_level": "F16",
+        "context_length": 128000,
+        "embedding_length": 2048
+      },
+      "capabilities": [
+        "vision",
+        "completion"
+      ]
+    },
+    {
+      "name": "typhoon-fast:latest",
+      "digest": "4aeab094b040881a4547a766ce6ff5f78693b3874f43ecfea1f82947a67a27bf",
+      "details": {
+        "parent_model": "scb10x/typhoon-ocr-3b:latest",
+        "format": "gguf",
+        "family": "qwen25vl",
+        "families": [
+          "qwen25vl"
+        ],
+        "parameter_size": "3.8B",
+        "quantization_level": "F16",
+        "context_length": 128000,
+        "embedding_length": 2048
+      },
+      "capabilities": [
+        "vision",
+        "completion"
+      ]
+    },
+    {
+      "name": "typhoon-ocr-finetuned:latest",
+      "digest": "d331d514cd3d2ccfbf51e8d8d93d381afaf5ff536543cc8c4fc879f6318373f4",
+      "details": {
+        "parent_model": "scb10x/typhoon-ocr-3b:latest",
+        "format": "gguf",
+        "family": "qwen25vl",
+        "families": [
+          "qwen25vl"
+        ],
+        "parameter_size": "3.8B",
+        "quantization_level": "F16",
+        "context_length": 128000,
+        "embedding_length": 2048
+      },
+      "capabilities": [
+        "vision",
+        "completion"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+Robin Practice (รวิ ฝึกฝน)
+Email: practice_5@example.com
+Phone: +1-555-2005
+
+Skills
+Go, PostgreSQL, Redis
+
+Employment history
+Software Engineer | Practice Software 6
+September 2022 – Present
+- Built services using Go.
+
+Junior Developer
+Earlier Studio 5
+2012 - 2014
+- Maintained internal software.
+
+Education
+Practice College
+BSc / Computer Science
+2014

@@ -1,0 +1,17 @@
+Narin Demo (นรินทร์ สาธิต)
+Phone: 081-555-0199
+
+Skills
+Go, Kubernetes, Linux
+
+Experience
+Platform Engineer
+บริษัท Example Cloud
+2020 - 2024
+ดูแลบริการบน Kubernetes และ Linux
+
+Education
+Demo University
+BEng
+Computer Engineering
+2019

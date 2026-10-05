@@ -1,0 +1,18 @@
+Alex Rowan
+Email: alex.rowan@example.com
+Phone: +1-555-0142
+
+Skills
+TypeScript, React, CSS
+
+Experience
+Frontend Developer
+Example Design
+June 2020 - May 2024
+Built accessible interfaces with React and CSS.
+
+Education
+Example College
+BSc
+Computing
+2019

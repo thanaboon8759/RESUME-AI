@@ -1,0 +1,86 @@
+{
+  "purpose": "Source-only annotation corrections after discovering incomplete inherited development labels. Original manifest and historical reports remain immutable. No held-out labels or inputs are changed.",
+  "changes": {
+    "dev_bi_01": {
+      "full_name": "วรรณิภา สุขสมบูรณ์ (Wannipa Suksombun)"
+    },
+    "dev_en_02_lead": {
+      "experience": [
+        {
+          "company": "CloudScale Systems",
+          "role": "Principal Cloud Architect",
+          "start_date": "March 2020",
+          "end_date": "Present"
+        },
+        {
+          "company": "FinTech Horizons",
+          "role": "Lead DevOps Engineer",
+          "start_date": "January 2016",
+          "end_date": "February 2020"
+        }
+      ],
+      "education": [
+        {
+          "institution": "Carnegie Mellon University",
+          "degree": "M.S.",
+          "field_of_study": "Software Engineering",
+          "graduation_year": "2015"
+        },
+        {
+          "institution": "University of California, Berkeley",
+          "degree": "B.S.",
+          "field_of_study": "Computer Science",
+          "graduation_year": "2013"
+        }
+      ]
+    },
+    "dev_th_02_gov": {
+      "skills": [
+        "PyTorch",
+        "Hugging Face Transformers",
+        "DeepSpeed",
+        "LoRA",
+        "QLoRA",
+        "Python",
+        "C++",
+        "SQL",
+        "R",
+        "Thai Word Segmentation",
+        "Named Entity Recognition",
+        "Machine Translation",
+        "การบริหารโครงการวิจัย (Project Management)",
+        "การให้คำปรึกษาภาครัฐ"
+      ],
+      "experience": [
+        {
+          "company": "ศูนย์เทคโนโลยีอิเล็กทรอนิกส์และคอมพิวเตอร์แห่งชาติ (NECTEC)",
+          "role": "นักวิทยาศาสตร์ข้อมูลอาวุโส",
+          "start_date": "พฤศจิกายน 2562",
+          "end_date": "ปัจจุบัน"
+        },
+        {
+          "company": "สถาบันวิทยสิริเมธี (VISTEC)",
+          "role": "นักวิจัยหลังปริญญาเอก (Postdoctoral Researcher)",
+          "start_date": "พฤษภาคม 2560",
+          "end_date": "ตุลาคม 2562"
+        }
+      ],
+      "education": [
+        {
+          "institution": "จุฬาลงกรณ์มหาวิทยาลัย",
+          "degree": "ปริญญาเอก (Ph.D.)",
+          "field_of_study": "วิศวกรรมคอมพิวเตอร์",
+          "graduation_year": "2560"
+        },
+        {
+          "institution": "มหาวิทยาลัยเกษตรศาสตร์",
+          "degree": "ปริญญาตรี (เกียรตินิยมอันดับหนึ่ง)",
+          "field_of_study": "วิศวกรรมคอมพิวเตอร์",
+          "graduation_year": "2555"
+        }
+      ]
+    }
+  },
+  "source_manifest_sha256": "54c8b8288604007a942715a7a92ca76927ea5d8c2ec6e9d114b5ec576cc4e576",
+  "annotation_policy": "Copy complete names including aliases and skill phrases verbatim; exclude category headings. Label both sides of employment date ranges separately, final education years, degree type separately from major. Changes correct omissions and inconsistencies in inherited labels based only on source documents."
+}

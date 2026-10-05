@@ -1,0 +1,12 @@
+{
+  "extraction": {
+    "run": "refined-extraction-v4",
+    "stage_fingerprint": "554c5bdc52ad811af8cbc2c4f3f17d73513264923b7524152f92c66abba54fea",
+    "matches": true
+  },
+  "ocr": {
+    "run": "improved-ocr-v4",
+    "stage_fingerprint": "73e37d3e37b1dc388cbeae2bb6c9304bee4155e7d7681ed8a19f7a41fa28afb5",
+    "matches": true
+  }
+}

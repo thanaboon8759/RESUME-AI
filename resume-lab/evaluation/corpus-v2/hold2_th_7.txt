@@ -1,0 +1,19 @@
+ดร. สุภา แสงทอง
+Email: reserved_7@example.com
+
+ทักษะ
+Python, FastAPI, PostgreSQL
+
+ประสบการณ์ทำงาน
+วิศวกรซอฟต์แวร์ | บริษัท ทดสอบระบบ 8
+เมษายน 2561 – ปัจจุบัน
+- พัฒนาระบบด้วย Python.
+
+การศึกษา
+มหาวิทยาลัยตัวอย่างใหม่
+ปริญญาตรี / วิทยาการคอมพิวเตอร์
+2558
+
+Learning Academy 7
+Diploma in Information Technology
+2010

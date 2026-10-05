@@ -1,0 +1,45 @@
+test_digital_pdf (test_lab.ResumeLabTests.test_digital_pdf) ... ok
+test_docx_table_text_is_preserved (test_lab.ResumeLabTests.test_docx_table_text_is_preserved) ... ok
+test_empty_and_unsupported_files_rejected (test_lab.ResumeLabTests.test_empty_and_unsupported_files_rejected) ... ok
+test_grouped_skill_lists_are_split_without_new_terms (test_lab.ResumeLabTests.test_grouped_skill_lists_are_split_without_new_terms) ... ok
+test_incomplete_profile_is_not_schema_valid (test_lab.ResumeLabTests.test_incomplete_profile_is_not_schema_valid) ... ok
+test_invalid_model_output_never_creates_candidate (test_lab.ResumeLabTests.test_invalid_model_output_never_creates_candidate) ... ok
+test_large_text_rejected_without_truncation (test_lab.ResumeLabTests.test_large_text_rejected_without_truncation) ... ok
+test_live_result_is_validated_and_inferences_removed (test_lab.ResumeLabTests.test_live_result_is_validated_and_inferences_removed) ... ok
+test_model_failure_propagates (test_lab.ResumeLabTests.test_model_failure_propagates) ... ok
+test_natural_text_wrapper_and_ocr_budget (test_lab.ResumeLabTests.test_natural_text_wrapper_and_ocr_budget) ... ok
+test_ocr_preview_records_model_without_creating_profile (test_lab.ResumeLabTests.test_ocr_preview_records_model_without_creating_profile) ... ok
+test_scanned_pdf_renders_before_ocr (test_lab.ResumeLabTests.test_scanned_pdf_renders_before_ocr) ... ok
+test_truncated_ocr_is_not_success (test_lab.ResumeLabTests.test_truncated_ocr_is_not_success) ... ok
+test_typhoon_json_wrapper_is_unwrapped (test_lab.ResumeLabTests.test_typhoon_json_wrapper_is_unwrapped) ... ok
+test_utf8_thai_preview_never_calls_model (test_lab.ResumeLabTests.test_utf8_thai_preview_never_calls_model) ... ok
+test_cer_counts_substitution (test_evaluation.EvaluationTests.test_cer_counts_substitution) ... ok
+test_completed_corruption_is_rejected (test_evaluation.EvaluationTests.test_completed_corruption_is_rejected) ... ok
+test_extra_job_reduces_record_precision (test_evaluation.EvaluationTests.test_extra_job_reduces_record_precision) ... ok
+test_invented_achievements_are_not_grounded (test_evaluation.EvaluationTests.test_invented_achievements_are_not_grounded) ... ok
+test_multiple_roles_at_same_company_match_once_each (test_evaluation.EvaluationTests.test_multiple_roles_at_same_company_match_once_each) ... ok
+test_torn_append_recovered (test_evaluation.EvaluationTests.test_torn_append_recovered) ... ok
+test_all_failures_raise_instead_of_returning_fake_profile (test_auto_policy.SelectionTests.test_all_failures_raise_instead_of_returning_fake_profile) ... ok
+test_failed_validation_retries_and_records_actual_model (test_auto_policy.SelectionTests.test_failed_validation_retries_and_records_actual_model) ... ok
+test_malformed_policy_and_null_digests_are_rejected (test_auto_policy.SelectionTests.test_malformed_policy_and_null_digests_are_rejected) ... ok
+test_missing_identity_is_allowed_if_other_facts_exist (test_auto_policy.SelectionTests.test_missing_identity_is_allowed_if_other_facts_exist) ... ok
+test_missing_primary_uses_only_validated_fallback (test_auto_policy.SelectionTests.test_missing_primary_uses_only_validated_fallback) ... ok
+test_unknown_changed_and_incompatible_models_are_not_promoted (test_auto_policy.SelectionTests.test_unknown_changed_and_incompatible_models_are_not_promoted) ... ok
+test_absent_dates_not_taken_from_next_job (test_source_facts.SourceRepairTests.test_absent_dates_not_taken_from_next_job) ... ok
+test_alias_restored_only_from_exact_name_line (test_source_facts.SourceRepairTests.test_alias_restored_only_from_exact_name_line) ... ok
+test_company_suffix_and_dates_preserve_printed_spelling (test_source_facts.SourceRepairTests.test_company_suffix_and_dates_preserve_printed_spelling) ... ok
+test_degree_not_repaired_from_unsupported_model_text (test_source_facts.SourceRepairTests.test_degree_not_repaired_from_unsupported_model_text) ... ok
+test_degree_requires_local_nonconflicting_source (test_source_facts.SourceRepairTests.test_degree_requires_local_nonconflicting_source) ... ok
+test_existing_company_not_changed_to_other_employer (test_source_facts.SourceRepairTests.test_existing_company_not_changed_to_other_employer) ... ok
+test_missing_degree_repaired_from_combined_source_field (test_source_facts.SourceRepairTests.test_missing_degree_repaired_from_combined_source_field) ... ok
+test_numeric_achievement_is_not_date_range (test_source_facts.SourceRepairTests.test_numeric_achievement_is_not_date_range) ... ok
+test_ocr_fallback_keeps_actual_page_model_and_extracts_once (test_automatic_scan.PipelineTests.test_ocr_fallback_keeps_actual_page_model_and_extracts_once) ... ok
+test_text_preview_works_without_policy_or_ollama (test_automatic_scan.PipelineTests.test_text_preview_works_without_policy_or_ollama) ... ok
+test_changed_gates_and_protocol_cannot_promote (test_policy_evidence.EvidenceTests.test_changed_gates_and_protocol_cannot_promote) ... ok
+test_configuration_change_rejects_policy_before_model_use (test_policy_evidence.EvidenceTests.test_configuration_change_rejects_policy_before_model_use) ... ok
+test_stale_summary_is_rejected_against_actual_text (test_policy_evidence.EvidenceTests.test_stale_summary_is_rejected_against_actual_text) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 0.477s
+
+OK

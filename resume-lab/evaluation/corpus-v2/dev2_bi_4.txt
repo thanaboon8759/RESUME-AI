@@ -1,0 +1,20 @@
+พิชญ์ ทดสอบ (Pitch Test)
+Email: practice_4@example.com
+
+Skills
+TypeScript, Vue, CSS
+
+Employment history
+Practice Software 5
+Software Engineer
+04/2019 - 11/2022
+- Built services using TypeScript.
+
+Education
+Practice College
+BSc / Computer Science
+2014
+
+Learning Academy 4
+Diploma in Information Technology
+2010

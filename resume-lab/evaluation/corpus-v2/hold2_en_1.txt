@@ -1,0 +1,19 @@
+Dr. Drew Wells
+Email: reserved_1@example.com
+
+Skills
+C#, SQL Server, Azure
+
+Employment history
+Software Engineer | Reserved Solutions 2
+Jul 2020 – Dec 2023
+- Built services using C#.
+
+Education
+Reserved Technical College
+BSc / Computer Science
+2014
+
+Learning Academy 1
+Diploma in Information Technology
+2010

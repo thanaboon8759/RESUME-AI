@@ -1,0 +1,162 @@
+{
+  "configuration": {
+    "stage": "ocr",
+    "split": "development",
+    "corpus_sha256": "54c8b8288604007a942715a7a92ca76927ea5d8c2ec6e9d114b5ec576cc4e576",
+    "server_sha256": "068d769c7ac04c4b89b998b48bc841843f1b86c0590f0a82ac2ecff44b44f620",
+    "schema_sha256": "c60bebba1b180efd8ad65eee72ed2f6499e6ac8a81a0bfa0a0fab5cf0fea4f75",
+    "runtime": {
+      "ollama": {
+        "version": "0.34.0"
+      },
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "evaluator_sha256": "3026b1b337470a2f83ec488c478ce5f89361847430fc3d71cac1b19f7f9f5435",
+    "models": [
+      {
+        "name": "scb10x/typhoon-ocr-3b:latest",
+        "digest": "fb500215fa866d400513c0f4b7f68b9e865594c7b6c18ac224d3d4394bb09e91",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen25vl",
+          "families": [
+            "qwen25vl"
+          ],
+          "parameter_size": "3.8B",
+          "quantization_level": "F16",
+          "context_length": 128000,
+          "embedding_length": 2048
+        },
+        "capabilities": [
+          "vision",
+          "completion"
+        ]
+      },
+      {
+        "name": "typhoon-fast:latest",
+        "digest": "4aeab094b040881a4547a766ce6ff5f78693b3874f43ecfea1f82947a67a27bf",
+        "details": {
+          "parent_model": "scb10x/typhoon-ocr-3b:latest",
+          "format": "gguf",
+          "family": "qwen25vl",
+          "families": [
+            "qwen25vl"
+          ],
+          "parameter_size": "3.8B",
+          "quantization_level": "F16",
+          "context_length": 128000,
+          "embedding_length": 2048
+        },
+        "capabilities": [
+          "vision",
+          "completion"
+        ]
+      },
+      {
+        "name": "typhoon-ocr-finetuned:latest",
+        "digest": "d331d514cd3d2ccfbf51e8d8d93d381afaf5ff536543cc8c4fc879f6318373f4",
+        "details": {
+          "parent_model": "scb10x/typhoon-ocr-3b:latest",
+          "format": "gguf",
+          "family": "qwen25vl",
+          "families": [
+            "qwen25vl"
+          ],
+          "parameter_size": "3.8B",
+          "quantization_level": "F16",
+          "context_length": 128000,
+          "embedding_length": 2048
+        },
+        "capabilities": [
+          "vision",
+          "completion"
+        ]
+      }
+    ]
+  },
+  "summary": [
+    {
+      "model": "scb10x/typhoon-ocr-3b:latest",
+      "attempts": 5,
+      "success_rate": 1.0,
+      "mean_seconds": 8.626013419998344,
+      "observed_p95_seconds": 12.174037599994335,
+      "cer": 0.03931245039071259,
+      "by_language": {
+        "bi": {
+          "attempts": 1,
+          "success_rate": 1.0,
+          "cer": 0.07724867724867725
+        },
+        "en": {
+          "attempts": 2,
+          "success_rate": 1.0,
+          "cer": 0.025801698301698303
+        },
+        "th": {
+          "attempts": 2,
+          "success_rate": 1.0,
+          "cer": 0.03385508905074456
+        }
+      }
+    },
+    {
+      "model": "typhoon-fast:latest",
+      "attempts": 5,
+      "success_rate": 1.0,
+      "mean_seconds": 7.951350180004374,
+      "observed_p95_seconds": 11.098081500007538,
+      "cer": 0.010144358391356094,
+      "by_language": {
+        "bi": {
+          "attempts": 1,
+          "success_rate": 1.0,
+          "cer": 0.027513227513227514
+        },
+        "en": {
+          "attempts": 2,
+          "success_rate": 1.0,
+          "cer": 0.0035714285714285713
+        },
+        "th": {
+          "attempts": 2,
+          "success_rate": 1.0,
+          "cer": 0.008032853650347907
+        }
+      }
+    },
+    {
+      "model": "typhoon-ocr-finetuned:latest",
+      "attempts": 5,
+      "success_rate": 1.0,
+      "mean_seconds": 7.074977300001774,
+      "observed_p95_seconds": 11.189496499995585,
+      "cer": 0.009201446965750062,
+      "by_language": {
+        "bi": {
+          "attempts": 1,
+          "success_rate": 1.0,
+          "cer": 0.01904761904761905
+        },
+        "en": {
+          "attempts": 2,
+          "success_rate": 1.0,
+          "cer": 0.0010714285714285715
+        },
+        "th": {
+          "attempts": 2,
+          "success_rate": 1.0,
+          "cer": 0.012408379319137054
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Synthetic pilot corpus, not population-wide accuracy.",
+    "Literal evidence is not semantic factuality.",
+    "OCR error attempts receive CER=1; character insertion errors can exceed 1.",
+    "Observed p95 is unstable with small samples.",
+    "Latency/token counts are cost proxies; no energy or monetary cost measured."
+  ]
+}

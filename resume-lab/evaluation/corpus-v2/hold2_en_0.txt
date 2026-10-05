@@ -1,0 +1,16 @@
+Jordan Hart
+Phone: +1-555-2000
+
+Skills
+Rust, Linux, Git
+
+Employment history
+Reserved Solutions 1
+Software Engineer
+2015 - 2019
+- Built services using Rust.
+
+Education
+Reserved Technical College
+BSc / Computer Science
+2014

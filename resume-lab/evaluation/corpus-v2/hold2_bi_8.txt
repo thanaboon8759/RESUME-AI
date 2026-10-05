@@ -1,0 +1,22 @@
+อรุณ พัฒนกิจ (Arun Pattanakit)
+Email: reserved_8@example.com
+Phone: +1-555-2008
+
+Skills
+Go, Linux, Kubernetes
+
+Employment history
+Reserved Solutions 9
+Software Engineer
+Jun 2017 - Jan 2022
+- Built services using Go.
+
+Junior Developer
+Earlier Studio 8
+2012 - 2014
+- Maintained internal software.
+
+Education
+Reserved Technical College
+BSc / Computer Science
+2014

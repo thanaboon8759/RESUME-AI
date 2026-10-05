@@ -1,0 +1,65 @@
+Browser tab: 1, Title: "Dumb Dog · Resume Lab", URL: "http://127.0.0.1:8765/".
+0 AXWebArea Dumb Dog · Resume Lab, URL: 127.0.0.1:8765/
+	1 container
+		2 link Description: D / D DUMB DOG AI, Value: 127.0.0.1:8765/
+		3 text LOCAL TESTING LAB
+	4 container
+		5 text DOCUMENT INTELLIGENCE / 01
+		6 heading From resume. To structured facts., Value: 1
+			7 text From resume.
+			8 text To structured facts.
+		9 container
+			10 text Upload a resume. We select the tested local extraction and OCR models automatically.
+			11 text Review the readable result alongside its source.
+		12 container
+			13 heading Start a scan, Value: 2
+				14 text Start a scan
+			15 text Automatic scanning is ready. All processing stays local.
+			16 button Refresh models, ID: refresh
+			17 text Choose a resume
+			18 text PDF, DOCX, PNG, JPEG, TXT or MD · up to 8 MB
+			19 button Choose a resume PDF, DOCX, PNG, JPEG, TXT or MD · up to 8 MB, ID: file
+			20 text Model selection is automatic. Images and scanned pages use OCR; readable documents use their embedded text.
+			21 checkbox (settable, integer) Description: Text preview only · skip profile extraction, Value: 0, ID: parse
+			22 button Scan resume ↗, ID: run
+				23 text Scan resume
+				42 text ↗
+			25 button Try a synthetic text sample, ID: sample
+			26 text Scanning starts when you choose a file. Uploaded documents are processed in memory and are not saved by this app.
+		27 container
+			28 heading Inspection desk, Value: 2
+				29 text Inspection desk
+			30 button Export JSON ↓, ID: download
+			43 text Finished: hold2_th_2-scan.pdf
+			44 container metrics
+				45 text PDF text + OCR 24.123s Live extraction · schema valid
+			32 container Result view
+				33 checkbox Source text, Value: 0, ID: source-tab
+				34 checkbox Readable resume, Value: 1, ID: profile-tab
+				35 checkbox JSON, Value: 0, ID: json-tab
+				36 checkbox Run history, Value: 0, ID: history-tab
+			37 button (collapsed) Scan diagnostics, Secondary Actions: Expand
+				38 text Scan diagnostics
+			46 text กิตติ วัฒนชัย
+Email: reserved_2@example.com
+Phone: 080-700-2002
+
+Skills
+Python, Pandas, SQL
+
+Experience
+วิศวกรซอฟต์แวร์, บริษัท ทดสอบระบบ 3
+ก.พ. 2559 – พ.ย. 2562
+• พัฒนาระบบด้วย Python.
+
+ผู้ช่วยนักพัฒนา, บริษัท เริ่มต้น 2
+2556 – 2558
+• ดูแลระบบภายใน
+
+
+Education
+มหาวิทยาลัยตัวอย่างใหม่, ปริญญาตรี, วิทยาการคอมพิวเตอร์, 2558
+			47 text Schema validity does not prove factual accuracy. Review against the source before use. OCR can change characters and dates. Compare the source text with the original document.
+		41 text PRIVATE BY DEFAULT. EVIDENCE BEFORE DECISIONS. English + Thai · Local Ollama
+
+The focused UI element is 0 AXWebArea Dumb Dog · Resume Lab, URL: 127.0.0.1:8765/

@@ -1,0 +1,13 @@
+{
+  "ready": true,
+  "policy_id": "v6",
+  "extraction": [
+    "qwen2.5:7b"
+  ],
+  "ocr": [
+    "typhoon-ocr-finetuned:latest",
+    "typhoon-fast:latest",
+    "scb10x/typhoon-ocr-3b:latest"
+  ],
+  "ocr_error": null
+}

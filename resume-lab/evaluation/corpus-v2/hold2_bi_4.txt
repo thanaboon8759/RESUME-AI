@@ -1,0 +1,20 @@
+ณัฐธิดา ตั้งใจ (Nattida Tangjai)
+Email: reserved_4@example.com
+
+Skills
+Java, Spring, Docker
+
+Employment history
+Reserved Solutions 5
+Software Engineer
+02/2018 - 08/2021
+- Built services using Java.
+
+Education
+Reserved Technical College
+BSc / Computer Science
+2014
+
+Learning Academy 4
+Diploma in Information Technology
+2010

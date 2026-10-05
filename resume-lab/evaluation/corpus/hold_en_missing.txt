@@ -1,0 +1,16 @@
+Morgan Reed
+
+Skills
+Rust, Linux, Git
+
+Experience
+Tooling Developer
+North Workshop
+2021 - 2023
+Built command-line tools using Rust and Git.
+
+Education
+Example Institute
+Diploma
+Software Development
+2020

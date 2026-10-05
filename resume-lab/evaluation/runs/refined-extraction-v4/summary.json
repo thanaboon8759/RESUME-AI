@@ -1,0 +1,247 @@
+{
+  "configuration": {
+    "stage": "extraction",
+    "split": "development",
+    "corpus_sha256": "54c8b8288604007a942715a7a92ca76927ea5d8c2ec6e9d114b5ec576cc4e576",
+    "annotation_sha256": "d7008530de8b9f71bcb8da8c10e87236abf13c9ec81574822896d37355a0000a",
+    "server_sha256": "3100a7750a954d5d65d05e47d2e48266e60a47c015d1a1f8149a7bacd62384c9",
+    "schema_sha256": "c60bebba1b180efd8ad65eee72ed2f6499e6ac8a81a0bfa0a0fab5cf0fea4f75",
+    "runtime": {
+      "ollama": {
+        "version": "0.34.0"
+      },
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "evaluator_sha256": "96bba8fb3f24a3a6f1145054c358ea513b140b5522adb7238c676aaa55e9060a",
+    "models": [
+      {
+        "name": "deepseek-r1:8b",
+        "digest": "6995872bfe4c521a67b32da386cd21d5c6e819b6e0d62f79f64ec83be99f5763",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "8.2B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 131072,
+          "embedding_length": 4096
+        },
+        "capabilities": [
+          "completion",
+          "thinking"
+        ]
+      },
+      {
+        "name": "llama3.1:8b",
+        "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "llama",
+          "families": [
+            "llama"
+          ],
+          "parameter_size": "8.0B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 131072,
+          "embedding_length": 4096
+        },
+        "capabilities": [
+          "completion",
+          "tools"
+        ]
+      },
+      {
+        "name": "qwen2.5:7b",
+        "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen2",
+          "families": [
+            "qwen2"
+          ],
+          "parameter_size": "7.6B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 32768,
+          "embedding_length": 3584
+        },
+        "capabilities": [
+          "completion",
+          "tools"
+        ]
+      }
+    ]
+  },
+  "summary": [
+    {
+      "model": "deepseek-r1:8b",
+      "attempts": 5,
+      "success_rate": 0.2,
+      "mean_seconds": 41.71301290000265,
+      "observed_p95_seconds": 42.79820460001065,
+      "identity_exact": 0.2,
+      "skill_precision": 0.2,
+      "skill_recall": 0.2,
+      "skill_f1": 0.2,
+      "employment_education_exact": 0.2,
+      "date_exact": 0.2,
+      "record_precision": 0.2,
+      "literal_evidence_rate": 0.2,
+      "by_language": {
+        "bi": {
+          "attempts": 1,
+          "success_rate": 0.0,
+          "identity_exact": 0.0,
+          "skill_precision": 0.0,
+          "skill_recall": 0.0,
+          "skill_f1": 0.0,
+          "employment_education_exact": 0.0,
+          "date_exact": 0.0,
+          "record_precision": 0.0,
+          "literal_evidence_rate": 0.0
+        },
+        "en": {
+          "attempts": 2,
+          "success_rate": 0.5,
+          "identity_exact": 0.5,
+          "skill_precision": 0.5,
+          "skill_recall": 0.5,
+          "skill_f1": 0.5,
+          "employment_education_exact": 0.5,
+          "date_exact": 0.5,
+          "record_precision": 0.5,
+          "literal_evidence_rate": 0.5
+        },
+        "th": {
+          "attempts": 2,
+          "success_rate": 0.0,
+          "identity_exact": 0.0,
+          "skill_precision": 0.0,
+          "skill_recall": 0.0,
+          "skill_f1": 0.0,
+          "employment_education_exact": 0.0,
+          "date_exact": 0.0,
+          "record_precision": 0.0,
+          "literal_evidence_rate": 0.0
+        }
+      }
+    },
+    {
+      "model": "llama3.1:8b",
+      "attempts": 5,
+      "success_rate": 0.8,
+      "mean_seconds": 11.722167739999714,
+      "observed_p95_seconds": 39.58202259999234,
+      "identity_exact": 0.8,
+      "skill_precision": 0.7777777777777778,
+      "skill_recall": 0.8,
+      "skill_f1": 0.7882352941176471,
+      "employment_education_exact": 0.7166666666666666,
+      "date_exact": 0.8,
+      "record_precision": 0.7333333333333333,
+      "literal_evidence_rate": 0.8,
+      "by_language": {
+        "bi": {
+          "attempts": 1,
+          "success_rate": 1.0,
+          "identity_exact": 1.0,
+          "skill_precision": 0.8888888888888888,
+          "skill_recall": 1.0,
+          "skill_f1": 0.9411764705882353,
+          "employment_education_exact": 0.875,
+          "date_exact": 1.0,
+          "record_precision": 0.6666666666666666,
+          "literal_evidence_rate": 1.0
+        },
+        "en": {
+          "attempts": 2,
+          "success_rate": 1.0,
+          "identity_exact": 1.0,
+          "skill_precision": 1.0,
+          "skill_recall": 1.0,
+          "skill_f1": 1.0,
+          "employment_education_exact": 0.8958333333333333,
+          "date_exact": 1.0,
+          "record_precision": 1.0,
+          "literal_evidence_rate": 1.0
+        },
+        "th": {
+          "attempts": 2,
+          "success_rate": 0.5,
+          "identity_exact": 0.5,
+          "skill_precision": 0.5,
+          "skill_recall": 0.5,
+          "skill_f1": 0.5,
+          "employment_education_exact": 0.4583333333333333,
+          "date_exact": 0.5,
+          "record_precision": 0.5,
+          "literal_evidence_rate": 0.5
+        }
+      }
+    },
+    {
+      "model": "qwen2.5:7b",
+      "attempts": 5,
+      "success_rate": 1.0,
+      "mean_seconds": 5.231389240000863,
+      "observed_p95_seconds": 8.291261899998062,
+      "identity_exact": 1.0,
+      "skill_precision": 1.0,
+      "skill_recall": 1.0,
+      "skill_f1": 1.0,
+      "employment_education_exact": 0.8833333333333334,
+      "date_exact": 1.0,
+      "record_precision": 1.0,
+      "literal_evidence_rate": 1.0,
+      "by_language": {
+        "bi": {
+          "attempts": 1,
+          "success_rate": 1.0,
+          "identity_exact": 1.0,
+          "skill_precision": 1.0,
+          "skill_recall": 1.0,
+          "skill_f1": 1.0,
+          "employment_education_exact": 0.75,
+          "date_exact": 1.0,
+          "record_precision": 1.0,
+          "literal_evidence_rate": 1.0
+        },
+        "en": {
+          "attempts": 2,
+          "success_rate": 1.0,
+          "identity_exact": 1.0,
+          "skill_precision": 1.0,
+          "skill_recall": 1.0,
+          "skill_f1": 1.0,
+          "employment_education_exact": 0.875,
+          "date_exact": 1.0,
+          "record_precision": 1.0,
+          "literal_evidence_rate": 1.0
+        },
+        "th": {
+          "attempts": 2,
+          "success_rate": 1.0,
+          "identity_exact": 1.0,
+          "skill_precision": 1.0,
+          "skill_recall": 1.0,
+          "skill_f1": 1.0,
+          "employment_education_exact": 0.9583333333333333,
+          "date_exact": 1.0,
+          "record_precision": 1.0,
+          "literal_evidence_rate": 1.0
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Synthetic pilot corpus, not population-wide accuracy.",
+    "Literal evidence is not semantic factuality.",
+    "OCR error attempts receive CER=1; character insertion errors can exceed 1.",
+    "Observed p95 is unstable with small samples.",
+    "Latency/token counts are cost proxies; no energy or monetary cost measured."
+  ]
+}

@@ -1,0 +1,36 @@
+# วรรณิภา สุขสมบูรณ์ (Wannipa Suksombun)
+**Email:** w.suksombun@ai-startup.com
+**Tel:** +66 90 987 6543
+
+## Objective
+Machine Learning Engineer passionate about NLP and Computer Vision. สนใจในการพัฒนา AI เพื่อแก้ปัญหาจริง
+
+## Skills / ทักษะ
+- Machine Learning: PyTorch, TensorFlow, Scikit-learn
+- Languages: Python, C++
+- Tools: Git, Docker, MLflow
+- ภาษา: Thai (Native), English (Fluent)
+
+## Work Experience
+
+### Machine Learning Engineer
+**AI Vision Co., Ltd.**
+*August 2021 - Present*
+- พัฒนาระบบ Image Recognition สำหรับโรงงานอุตสาหกรรม
+- Deployed models using Docker and optimized with TensorRT.
+
+### AI Researcher (Intern)
+**National Research Lab**
+*Jan 2021 - May 2021*
+- วิจัยและทดลองโมเดล NLP ภาษาไทย (Thai NLP)
+- Published a paper on Thai Sentiment Analysis.
+
+## Education
+
+### Master of Science in Artificial Intelligence
+**Global Tech University**
+*2019 - 2021*
+
+### Bachelor of Science in Mathematics
+**Local Science College**
+*2015 - 2019*
