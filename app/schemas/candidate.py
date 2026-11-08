@@ -46,11 +46,6 @@ class CandidateCreate(BaseModel):
     resume_text: str
     resume_url: Optional[str] = None
 
-class ResumeAIResponse(BaseModel):
-    score: int
-    decision: DecisionEnum
-    reasons: List[str]
-
 class EvidenceResponse(BaseModel):
     quote: str
     block_ids: List[str] = []
