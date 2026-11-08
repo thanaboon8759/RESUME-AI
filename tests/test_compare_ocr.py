@@ -73,3 +73,19 @@ def test_write_report_escapes_and_lists_models(tmp_path, fake_runner):
 
 def test_report_dir_is_gitignored():
     assert subprocess.run(["git", "check-ignore", "-q", "compare-reports/x.html"]).returncode == 0
+
+
+def test_rows_show_when_ocr_never_ran(tmp_path, fake_runner):
+    (tmp_path / "cv.txt").write_text("plain text resume", encoding="utf-8")
+    rows = compare([png(tmp_path / "a.png"), tmp_path / "cv.txt"], ["A"], runner=fake_runner)
+    assert rows[0]["route"] == "Image OCR" and rows[1]["route"] == "Text extraction"
+    html = write_report(rows, tmp_path / "r.html").read_text(encoding="utf-8")
+    assert "no OCR used" in html
+
+
+def test_default_models_compare_policy_default_with_previous_default(monkeypatch, tmp_path):
+    import json
+    import compare_ocr
+    (tmp_path / "model-policy.json").write_text(json.dumps({"ocr": [{"name": compare_ocr.FINETUNED}]}))
+    monkeypatch.setattr(compare_ocr, "ROOT", tmp_path)
+    assert compare_ocr._default_models() == [compare_ocr.PREVIOUS_DEFAULT, compare_ocr.FINETUNED]
