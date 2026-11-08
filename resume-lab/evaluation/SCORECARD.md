@@ -99,3 +99,17 @@ The `typhoon-ocr-finetuned` tag never contained trained weights. `typhoon-ocr-ql
 - Formats remain correlated copies.
 - Nothing here shows a gain on real resumes.
 - `model-policy.json` remains v6 until the owner approves.
+
+**Formatting share** (`format_share.py`; Markdown and JSON wrappers stripped from both reference and output). On dev, the training effect is 0.614% → 0.321% with formatting removed, against 0.672% → 0.327% raw. The gain is reading accuracy, not output format. corpus-v3 has no markup, so its raw and stripped numbers are identical.
+
+**Independence.**
+- **No out-of-distribution data stayed untouched.** corpus-v3 is disjoint from training by identity and exact text, but it comes from the same generator: every name token also appears in training, and each corpus-v3 text is 0.86–0.92 character-similar to its nearest training text. `frozen-candidates-v7.json` calls it "fresh, disjoint", which overstates it.
+- **corpus-v2 dev was used to choose the serving option.** It comes from a different generator, but those same 11 samples selected `repeat_penalty 1.0`.
+- **On holdout, `repeat_penalty 1.2` scored marginally lower** for the trained weights (0.074% vs 0.087%). The protocol ignores holdout for ordering, as it should.
+
+**Export gate override.** Re-exporting the base model through Ollama missed the predeclared 0.001 round-trip tolerance (0.02178 vs 0.01953).
+- 9 of 11 outputs were byte-identical.
+- In `dev_en_01` and `dev_en_02_lead`, the differences include bold markers and heading levels. One company name also changed: base "Cloudbase", round-trip "ClouScale", reference "CloudScale".
+- Every training comparison above uses the round-trip export (`typhoon-ocr-roundtrip`, `-rp1`) as its baseline, so export effects are not counted as training gains. This override needs the owner's explicit acceptance.
+
+**Serving configs.** The serving Modelfiles for `-rp1` variants are in `resume-lab/modelfiles/`.
