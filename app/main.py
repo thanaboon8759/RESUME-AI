@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api import preferences, jobs, candidates, decisions, uploads
 
-app = FastAPI(title="DumbdogAI Backend")
+app = FastAPI(title="Resume AI Backend")
 
 app.add_middleware(
     CORSMiddleware,

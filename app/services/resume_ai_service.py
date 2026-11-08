@@ -1,19 +1,19 @@
 import os
 from dotenv import load_dotenv
 import asyncio
-from app.schemas.candidate import DumbdogAIResponse
+from app.schemas.candidate import ResumeAIResponse
 from app.schemas.core import DecisionEnum
 
 load_dotenv()
 
-class DumbdogAIClient:
+class ResumeAIClient:
     def __init__(self):
-        self.api_url = os.getenv("DUMBDOGAI_API_URL", "https://api.dumbdog.ai")
-        self.api_key = os.getenv("DUMBDOGAI_API_KEY")
+        self.api_url = os.getenv("RESUMEAI_API_URL", "https://api.dumbdog.ai")
+        self.api_key = os.getenv("RESUMEAI_API_KEY")
         
-    async def evaluate_candidate(self, candidate_name: str, position: str, resume_text: str) -> DumbdogAIResponse:
+    async def evaluate_candidate(self, candidate_name: str, position: str, resume_text: str) -> ResumeAIResponse:
         """
-        Calls the DumbdogAI API to evaluate a candidate based on their resume.
+        Calls the ResumeAI API to evaluate a candidate based on their resume.
         Currently using mock data if the real API is not connected.
         """
         # If no API key is set, or if we want to mock it for development
@@ -30,7 +30,7 @@ class DumbdogAIClient:
             elif "senior" in position.lower():
                 score = 90
                 
-            return DumbdogAIResponse(
+            return ResumeAIResponse(
                 score=score,
                 decision=decision,
                 reasons=[
@@ -49,9 +49,9 @@ class DumbdogAIClient:
         #         headers={"Authorization": f"Bearer {self.api_key}"}
         #     )
         #     data = response.json()
-        #     return DumbdogAIResponse(**data)
+        #     return ResumeAIResponse(**data)
         
-        raise NotImplementedError("Real DumbdogAI API integration not yet implemented")
+        raise NotImplementedError("Real ResumeAI API integration not yet implemented")
 
 # Singleton instance
-dumbdog_client = DumbdogAIClient()
+resume_ai_client = ResumeAIClient()

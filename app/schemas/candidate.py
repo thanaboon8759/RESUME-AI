@@ -46,7 +46,7 @@ class CandidateCreate(BaseModel):
     resume_text: str
     resume_url: Optional[str] = None
 
-class DumbdogAIResponse(BaseModel):
+class ResumeAIResponse(BaseModel):
     score: int
     decision: DecisionEnum
     reasons: List[str]
