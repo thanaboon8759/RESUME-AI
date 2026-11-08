@@ -2,7 +2,7 @@
 
 Reports go to compare-reports/ (git-ignored): user resumes are private and never committed.
 Usage: python resume-lab/compare_ocr.py FILE [FILE ...] [--models A B] [--out compare-reports/x.html]
-Default models: the current policy's first OCR model and typhoon-ocr-qlora-v1-rp1:latest.
+Default models: the v6 default (typhoon-ocr-finetuned) and the current policy's first OCR model.
 """
 import argparse
 import difflib
@@ -17,6 +17,7 @@ from evaluate_models import cer
 
 ROOT = Path(__file__).resolve().parent
 FINETUNED = 'typhoon-ocr-qlora-v1-rp1:latest'
+PREVIOUS_DEFAULT = 'typhoon-ocr-finetuned:latest'  # v6 default (base weights)
 
 
 def _reference(path: Path):
@@ -36,11 +37,11 @@ def compare(files, models, references=None, runner=None):
         ref = (references or {}).get(str(path), _reference(path))
         for model in models:
             started = time.perf_counter()
-            row = {'file': str(path), 'model': model, 'ok': False, 'text': '', 'cer': None, 'error': None}
+            row = {'file': str(path), 'model': model, 'ok': False, 'text': '', 'cer': None, 'error': None, 'route': None}
             try:
-                text, _route = server.parse_document(path.name, data, ocr_model=model,
+                text, route = server.parse_document(path.name, data, ocr_model=model,
                                                      ocr_runner=lambda image, m=model: runner(image, m))
-                row.update(ok=True, text=text, cer=cer(ref, text) if ref is not None else None)
+                row.update(ok=True, text=text, route=route, cer=cer(ref, text) if ref is not None else None)
             except Exception as e:  # one model failing must not hide the other's result
                 row['error'] = f'{type(e).__name__}: {e}'
             row['seconds'] = round(time.perf_counter() - started, 2)
@@ -86,6 +87,7 @@ def write_report(rows, out):
                 parts.append(f'<td class="err">{html.escape((r or {}).get("error") or "not run")}</td>')
                 continue
             stats = f'{r["seconds"]} s' + (f' · CER {r["cer"]:.3%}' if r['cer'] is not None else '')
+            stats += ' · ' + html.escape(r['route'] or '') + ('' if 'OCR' in (r['route'] or '') else ' (no OCR used: models cannot differ)')
             body = html.escape(r['text']) if i == 0 else _diff_html(first, r['text'])
             parts.append(f'<td><b>{stats}</b><pre>{body}</pre></td>')
         parts.append('</tr>')
@@ -97,7 +99,7 @@ def write_report(rows, out):
 def _default_models():
     policy = json.loads((ROOT / 'model-policy.json').read_text(encoding='utf-8'))
     first = policy['ocr'][0]['name']
-    return [first, FINETUNED] if first != FINETUNED else [first]
+    return [PREVIOUS_DEFAULT, first] if first != PREVIOUS_DEFAULT else [first, FINETUNED]
 
 
 if __name__ == '__main__':
