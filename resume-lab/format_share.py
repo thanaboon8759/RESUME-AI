@@ -1,7 +1,7 @@
 """How much of an OCR CER change is formatting (Markdown / JSON wrapper) rather than reading accuracy.
 
 Usage: python resume-lab/format_share.py <run_id>
-Prints per model: raw CER (as scored) and CER after stripping markup from the model output.
+Prints per model: raw CER (as scored) and CER after stripping markup from both reference and output.
 """
 import json
 import re
@@ -23,6 +23,11 @@ def strip_markup(text: str) -> str:
     return text.strip()
 
 
+def markup_free_cer(reference: str, output: str) -> float:
+    """CER with Markdown/JSON formatting removed from BOTH sides (corpus-v2 references contain literal Markdown)."""
+    return cer(strip_markup(reference), strip_markup(output))
+
+
 def main(run_id):
     run = ROOT / 'evaluation/runs' / run_id
     config = json.loads((run / 'configuration.json').read_text(encoding='utf-8'))
@@ -33,7 +38,7 @@ def main(run_id):
     for line in (run / 'attempts.jsonl').read_text(encoding='utf-8').splitlines():
         r = json.loads(line)
         out = r['raw_responses'][-1].get('message', {}).get('content', '') if r.get('raw_responses') else ''
-        by_model.setdefault(r['model'], []).append((r['metrics'].get('cer', 1.0), cer(refs[r['sample_id']], strip_markup(out))))
+        by_model.setdefault(r['model'], []).append((r['metrics'].get('cer', 1.0), markup_free_cer(refs[r['sample_id']], out)))
     for model, pairs in sorted(by_model.items()):
         raw = sum(a for a, _ in pairs) / len(pairs)
         clean = sum(b for _, b in pairs) / len(pairs)
