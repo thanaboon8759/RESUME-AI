@@ -1,4 +1,4 @@
-# DUMB DOG AI - Backend
+# Resume AI - Backend
 
 An intelligent recruitment and candidate evaluation platform designed to help HR teams parse, analyze, and rank candidate resumes using AI.
 
