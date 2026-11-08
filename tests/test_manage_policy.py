@@ -34,7 +34,9 @@ def test_default_ocr_holdout_corpus_keeps_v6_behaviour(lab):
     p = freeze_and_promote(lab, "t6", "expanded-ocr-v5", "fresh-holdout-ocr-v6")
     assert p.returncode == 0, p.stderr + p.stdout
     new = json.loads((lab / "model-policy.json").read_text())
-    old = json.loads((LAB / "model-policy.json").read_text())
+    # The validated v6 policy as published on origin/benchmark (the live file is now v7-qlora).
+    old = json.loads(subprocess.run(["git", "show", "origin/benchmark:resume-lab/model-policy.json"],
+                                    capture_output=True, text=True, check=True).stdout)
     assert "ocr_holdout_corpus" not in new
     for key in ["ocr", "extraction", "development", "holdout", "corpus_sha256", "engine_sha256"]:
         assert new[key] == old[key], key
