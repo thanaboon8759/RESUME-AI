@@ -101,3 +101,12 @@ def test_reworded_duplicates_all_unmet_still_block():
     crit = [c("Python", "unmet"), c("Python 3", "unmet"), c("SQL", "met"), c("Docker", "met")]
     out = evaluate(crit, job(mandatory=["Python"]), ai_score=90)
     assert out.has_blocker and out.decision == DecisionEnum.rejected
+
+
+def test_apply_job_rules_overrides_ai_decision():
+    from app.schemas.candidate import ScreeningResult
+    from app.services.scoring import apply_job_rules
+    s = ScreeningResult(score=95, decision=DecisionEnum.shortlisted, criteria=[c("Python", "unmet")])
+    final, out = apply_job_rules(s, job(mandatory=["Python"]))
+    assert final.decision == DecisionEnum.rejected and final.score == 0 and out.has_blocker
+    assert s.decision == DecisionEnum.shortlisted  # input not mutated

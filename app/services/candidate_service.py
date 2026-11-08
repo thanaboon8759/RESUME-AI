@@ -8,7 +8,7 @@ from app.repositories import candidate_repository, job_repository
 from app.services.document_extraction_service import extract_document
 from app.services.resume_extraction_service import analyze_resume_facts_with_qwen
 from app.services.screening_service import screen_candidate_with_qwen
-from app.services.scoring import criterion_weight, evaluate, is_mandatory
+from app.services.scoring import apply_job_rules, criterion_weight, is_mandatory
 from app.database.supabase.client import supabase
 
 logger = logging.getLogger(__name__)
@@ -48,8 +48,7 @@ async def create_candidate(job_id: str, candidate_data: CandidateCreate, user_id
     logger.info("Screening candidate against job requirements (Qwen #2)")
     screening = await screen_candidate_with_qwen(profile, job)
     # The job's weights and mandatory items decide the final score/decision, not the AI's guess.
-    outcome = evaluate(screening.criteria, job, screening.score)
-    screening = screening.model_copy(update={"score": outcome.score, "decision": outcome.decision})
+    screening, outcome = apply_job_rules(screening, job)
 
     candidate_id = str(uuid.uuid4())
     criteria = []

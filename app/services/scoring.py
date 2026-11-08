@@ -2,7 +2,7 @@
 import re
 from dataclasses import dataclass
 
-from app.schemas.candidate import CriterionEvaluation
+from app.schemas.candidate import CriterionEvaluation, ScreeningResult
 from app.schemas.core import CriterionStatusEnum, DecisionEnum
 from app.schemas.job import Job
 
@@ -86,3 +86,9 @@ def evaluate(criteria: list[CriterionEvaluation], job: Job, ai_score: int) -> Ou
     if score < REJECT_BELOW:
         return Outcome(score, DecisionEnum.rejected, False)
     return Outcome(score, DecisionEnum.undecided, False)
+
+
+def apply_job_rules(screening: ScreeningResult, job: Job) -> tuple[ScreeningResult, Outcome]:
+    """The AI's own score/decision are replaced by the job rules; used by the app and the live tests."""
+    outcome = evaluate(screening.criteria, job, screening.score)
+    return screening.model_copy(update={"score": outcome.score, "decision": outcome.decision}), outcome
