@@ -1,0 +1,16 @@
+อัญชลี ใจดี (Anchalee Hollis)
+Email: train.bi.56@example.com
+Phone: +1-555-9823
+
+Skills
+Excel, Rust, Tableau, PostgreSQL, SQL
+
+Employment history
+Data Analyst | Harbor Analytics 6
+Mar 2019 – Present
+- Built services using Excel.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2011

@@ -1,0 +1,15 @@
+Blake Fairbanks
+Phone: +1-555-5810
+
+Skills
+Terraform, React, Power BI
+
+Employment history
+Backend Developer | Ironleaf Software 9
+Jul 2016 – Present
+- Built services using Terraform.
+
+Education
+Lakeside University
+BSc / Computer Science
+2012

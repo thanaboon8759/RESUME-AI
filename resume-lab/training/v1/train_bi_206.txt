@@ -1,0 +1,16 @@
+ปวีณา วงศ์ไทย (Paweena Whitaker)
+Phone: +1-555-5816
+
+Skills
+MySQL, Excel, Docker, Linux, Rust
+
+Employment history
+Bluegate Systems 4
+Software Engineer
+November 2019 - Present
+- Built services using MySQL.
+
+Education
+Lakeside University
+BSc / Computer Science
+2009

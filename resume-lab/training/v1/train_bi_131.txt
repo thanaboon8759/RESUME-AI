@@ -1,0 +1,16 @@
+ศุภชัย มั่นคง (Supachai Ellison)
+Email: train.bi.131@example.com
+Phone: +1-555-6790
+
+Skills
+Terraform, Kubernetes, Django
+
+Employment history
+Software Engineer | Northwind Labs 6
+2017 – Present
+- Built services using Terraform.
+
+Education
+Lakeside University
+BSc / Computer Science
+2009

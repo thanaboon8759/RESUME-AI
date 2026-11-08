@@ -1,0 +1,15 @@
+ชนินทร์ ประเสริฐวงศ์ (Chanin Radcliffe)
+Email: train.bi.170@example.com
+
+Skills
+Azure, AWS, Spring, Tableau, Excel
+
+Employment history
+Software Engineer | Bluegate Systems 9
+Feb 2018 – Current
+- Built services using Azure.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2018

@@ -1,0 +1,17 @@
+Kendall Norwood
+Email: train.en.201@example.com
+Phone: +1-555-8310
+
+Skills
+Rust, Linux, FastAPI, Git, Pandas
+
+Employment history
+Copperline Tech 9
+Software Engineer
+Sep 2014 - Jun 2020
+- Built services using Rust.
+
+Education
+Lakeside University
+BSc / Computer Science
+2018

@@ -1,0 +1,17 @@
+ธีรวัฒน์ สมบูรณ์ชัย (Teerawat Merritt)
+Email: train.bi.119@example.com
+Phone: +1-555-7390
+
+Skills
+Redis, Git, Docker
+
+Employment history
+Copperline Tech 8
+Software Engineer
+2012 - Present
+- Built services using Redis.
+
+Education
+Lakeside University
+BSc / Computer Science
+2018

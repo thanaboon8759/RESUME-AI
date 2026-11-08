@@ -1,0 +1,16 @@
+Rowan Kingsley
+Phone: +1-555-4969
+
+Skills
+JavaScript, TypeScript, AWS, Azure
+
+Employment history
+Maplewood Digital 7
+Software Engineer
+May 2015 - April 2021
+- Built services using JavaScript.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2010

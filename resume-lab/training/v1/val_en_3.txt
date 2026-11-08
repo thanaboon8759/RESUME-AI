@@ -1,0 +1,15 @@
+Tatum Ellison
+Phone: +1-555-8437
+
+Skills
+GraphQL, Spring, Vue, Linux, TypeScript
+
+Employment history
+Software Engineer | Ironleaf Software 4
+2016 – Current
+- Built services using GraphQL.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2010

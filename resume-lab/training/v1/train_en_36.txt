@@ -1,0 +1,17 @@
+Emerson Thornton
+Email: train.en.36@example.com
+Phone: +1-555-2846
+
+Skills
+Redis, JavaScript, Git, GraphQL, Docker
+
+Employment history
+Northwind Labs 3
+Software Engineer
+Jun 2019 - Jul 2023
+- Built services using Redis.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2018

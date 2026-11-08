@@ -1,0 +1,15 @@
+ธีรวัฒน์ ประเสริฐวงศ์ (Teerawat Iverson)
+Email: train.bi.125@example.com
+
+Skills
+C#, Vue, Django
+
+Employment history
+Software Engineer | Summit Data Works 5
+05/2020 – Current
+- Built services using C#.
+
+Education
+Lakeside University
+BSc / Computer Science
+2009

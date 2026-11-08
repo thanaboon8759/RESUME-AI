@@ -1,0 +1,16 @@
+Finley Ellison
+Email: hold3.en.12@example.com
+
+Skills
+Redis, C#, Go
+
+Employment history
+Northwind Labs 2
+Data Analyst
+July 2013 - May 2025
+- Built services using Redis.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2012

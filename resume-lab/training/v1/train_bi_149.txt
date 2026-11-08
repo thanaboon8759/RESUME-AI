@@ -1,0 +1,17 @@
+รัฐพล นาคสวัสดิ์ (Rattapol Norwood)
+Email: train.bi.149@example.com
+Phone: +1-555-7605
+
+Skills
+Go, Rust, Kubernetes, Tableau, Flutter
+
+Employment history
+Ironleaf Software 9
+Software Engineer
+Jan 2019 - May 2022
+- Built services using Go.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2011

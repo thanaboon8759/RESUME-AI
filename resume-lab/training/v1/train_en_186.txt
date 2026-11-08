@@ -1,0 +1,16 @@
+Noel Whitaker
+Email: train.en.186@example.com
+Phone: +1-555-3513
+
+Skills
+Vue, React, MySQL, JavaScript, Pandas
+
+Employment history
+Software Engineer | Harbor Analytics 8
+03/2020 – 05/2024
+- Built services using Vue.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2018

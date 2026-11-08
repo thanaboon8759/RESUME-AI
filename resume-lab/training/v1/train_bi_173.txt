@@ -1,0 +1,16 @@
+สิรินทร์ บุญมา (Sirin Merritt)
+Email: train.bi.173@example.com
+
+Skills
+Power BI, Vue, Rust, Java
+
+Employment history
+Summit Data Works 5
+Data Analyst
+2019 - 2020
+- Built services using Power BI.
+
+Education
+Lakeside University
+BSc / Computer Science
+2019

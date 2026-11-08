@@ -1,0 +1,17 @@
+Reese Radcliffe
+Email: train.en.3@example.com
+Phone: +1-555-5911
+
+Skills
+Power BI, Kotlin, Spring
+
+Employment history
+Summit Data Works 2
+Backend Developer
+02/2019 - 09/2022
+- Built services using Power BI.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2016

@@ -1,0 +1,16 @@
+มนัสนันท์ ศรีสุข (Manatsanan Sterling)
+Email: val.bi.29@example.com
+Phone: +1-555-1527
+
+Skills
+FastAPI, JavaScript, Excel, Git, Django
+
+Employment history
+Software Engineer | Copperline Tech 6
+Jan 2017 – Oct 2018
+- Built services using FastAPI.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2020

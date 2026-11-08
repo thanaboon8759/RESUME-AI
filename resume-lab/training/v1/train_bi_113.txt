@@ -1,0 +1,15 @@
+ภูริ เพชรรัตน์ (Phuri Abbott)
+Phone: +1-555-8532
+
+Skills
+Go, Azure, Power BI, Redis, Excel
+
+Employment history
+Data Analyst | Bluegate Systems 4
+Apr 2017 – Present
+- Built services using Go.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2016

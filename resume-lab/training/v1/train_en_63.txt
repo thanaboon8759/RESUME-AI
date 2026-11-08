@@ -1,0 +1,15 @@
+Finley Thornton
+Email: train.en.63@example.com
+
+Skills
+Rust, Docker, Git
+
+Employment history
+Software Engineer | Summit Data Works 5
+2017 – 2018
+- Built services using Rust.
+
+Education
+Lakeside University
+BSc / Computer Science
+2015

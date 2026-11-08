@@ -1,0 +1,15 @@
+ชนินทร์ ประเสริฐวงศ์ (Chanin Garland)
+Phone: +1-555-4702
+
+Skills
+Redis, Django, FastAPI
+
+Employment history
+Data Analyst | Maplewood Digital 8
+11/2019 – Current
+- Built services using Redis.
+
+Education
+Lakeside University
+BSc / Computer Science
+2020

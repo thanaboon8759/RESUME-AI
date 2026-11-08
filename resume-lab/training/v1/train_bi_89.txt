@@ -1,0 +1,15 @@
+วรเมธ วงศ์ไทย (Woramet Iverson)
+Email: train.bi.89@example.com
+
+Skills
+FastAPI, Flutter, Rust
+
+Employment history
+Data Analyst | Harbor Analytics 4
+Aug 2012 – Jan 2019
+- Built services using FastAPI.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2008

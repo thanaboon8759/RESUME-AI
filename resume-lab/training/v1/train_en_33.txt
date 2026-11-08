@@ -1,0 +1,17 @@
+Kendall Calloway
+Email: train.en.33@example.com
+Phone: +1-555-4846
+
+Skills
+Excel, TypeScript, JavaScript, Pandas, FastAPI
+
+Employment history
+Silverpine Cloud 8
+Data Analyst
+2016 - Present
+- Built services using Excel.
+
+Education
+Lakeside University
+BSc / Computer Science
+2015

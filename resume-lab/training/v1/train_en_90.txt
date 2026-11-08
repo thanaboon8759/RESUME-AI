@@ -1,0 +1,16 @@
+Emerson Iverson
+Email: train.en.90@example.com
+
+Skills
+Docker, Python, Pandas, JavaScript, Flutter
+
+Employment history
+Maplewood Digital 7
+Software Engineer
+June 2014 - Current
+- Built services using Docker.
+
+Education
+Lakeside University
+BSc / Computer Science
+2018

@@ -1,0 +1,15 @@
+ศุภชัย มั่นคง (Supachai Langford)
+Email: train.bi.29@example.com
+
+Skills
+GraphQL, PostgreSQL, TypeScript
+
+Employment history
+Software Engineer | Ironleaf Software 3
+Sep 2013 – Jan 2021
+- Built services using GraphQL.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2014

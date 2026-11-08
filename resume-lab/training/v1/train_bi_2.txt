@@ -1,0 +1,16 @@
+อัญชลี แก้วประเสริฐ (Anchalee Whitaker)
+Phone: +1-555-6054
+
+Skills
+Tableau, Django, Kotlin, Rust, React
+
+Employment history
+Summit Data Works 6
+Software Engineer
+June 2012 - Current
+- Built services using Tableau.
+
+Education
+Lakeside University
+BSc / Computer Science
+2017

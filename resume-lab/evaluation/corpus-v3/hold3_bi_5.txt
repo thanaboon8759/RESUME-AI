@@ -1,0 +1,16 @@
+ภูริ ใจดี (Phuri Langford)
+Email: hold3.bi.5@example.com
+Phone: +1-555-8601
+
+Skills
+PostgreSQL, Python, TypeScript, Azure, Power BI
+
+Employment history
+Backend Developer | Summit Data Works 2
+2018 – 2019
+- Built services using PostgreSQL.
+
+Education
+Lakeside University
+BSc / Computer Science
+2011

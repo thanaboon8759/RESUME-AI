@@ -1,0 +1,16 @@
+Skyler Whitaker
+Email: train.en.12@example.com
+
+Skills
+FastAPI, JavaScript, Vue, Power BI
+
+Employment history
+Summit Data Works 4
+Data Analyst
+2020 - 2024
+- Built services using FastAPI.
+
+Education
+Lakeside University
+BSc / Computer Science
+2011

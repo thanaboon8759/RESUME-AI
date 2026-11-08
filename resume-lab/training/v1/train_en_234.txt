@@ -1,0 +1,16 @@
+Parker Merritt
+Email: train.en.234@example.com
+Phone: +1-555-4066
+
+Skills
+PostgreSQL, GraphQL, Git, TypeScript
+
+Employment history
+Data Analyst | Ironleaf Software 8
+08/2016 – 05/2022
+- Built services using PostgreSQL.
+
+Education
+Lakeside University
+BSc / Computer Science
+2018

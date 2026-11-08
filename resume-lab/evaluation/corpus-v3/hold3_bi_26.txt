@@ -1,0 +1,15 @@
+ศุภชัย สุขสวัสดิ์ (Supachai Fairbanks)
+Email: hold3.bi.26@example.com
+
+Skills
+Vue, Go, Azure
+
+Employment history
+Data Analyst | Ironleaf Software 9
+02/2017 – Current
+- Built services using Vue.
+
+Education
+Lakeside University
+BSc / Computer Science
+2014

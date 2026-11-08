@@ -1,0 +1,16 @@
+Harper Dalton
+Phone: +1-555-6922
+
+Skills
+Excel, PostgreSQL, TypeScript, Go, Spring
+
+Employment history
+Harbor Analytics 2
+Software Engineer
+November 2018 - November 2021
+- Built services using Excel.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2010

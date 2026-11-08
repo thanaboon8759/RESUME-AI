@@ -1,0 +1,17 @@
+สิรินทร์ ประเสริฐวงศ์ (Sirin Abbott)
+Email: train.bi.26@example.com
+Phone: +1-555-1605
+
+Skills
+Python, Pandas, AWS
+
+Employment history
+Summit Data Works 9
+Data Analyst
+September 2013 - May 2024
+- Built services using Python.
+
+Education
+Lakeside University
+BSc / Computer Science
+2015

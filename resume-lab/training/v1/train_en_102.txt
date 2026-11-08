@@ -1,0 +1,17 @@
+Dakota Merritt
+Email: train.en.102@example.com
+Phone: +1-555-8774
+
+Skills
+Azure, Excel, Flutter, TypeScript, PostgreSQL
+
+Employment history
+Maplewood Digital 6
+Data Analyst
+07/2012 - 06/2017
+- Built services using Azure.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2016

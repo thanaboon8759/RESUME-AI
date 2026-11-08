@@ -1,0 +1,17 @@
+Cameron Dalton
+Email: val.en.0@example.com
+Phone: +1-555-4578
+
+Skills
+Linux, FastAPI, Excel
+
+Employment history
+Copperline Tech 8
+Data Analyst
+August 2021 - Present
+- Built services using Linux.
+
+Education
+Lakeside University
+BSc / Computer Science
+2015

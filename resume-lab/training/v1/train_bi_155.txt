@@ -1,0 +1,15 @@
+อนุชา ศรีสุข (Anucha Fairbanks)
+Phone: +1-555-4245
+
+Skills
+C#, Docker, Pandas, Java
+
+Employment history
+Backend Developer | Harbor Analytics 3
+January 2019 – February 2025
+- Built services using C#.
+
+Education
+Lakeside University
+BSc / Computer Science
+2017

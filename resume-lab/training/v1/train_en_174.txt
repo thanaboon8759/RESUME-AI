@@ -1,0 +1,16 @@
+Rowan Dalton
+Phone: +1-555-5233
+
+Skills
+C#, Azure, Flutter
+
+Employment history
+Harbor Analytics 7
+Software Engineer
+2016 - Current
+- Built services using C#.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2016

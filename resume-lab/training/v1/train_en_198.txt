@@ -1,0 +1,16 @@
+Skyler Langford
+Email: train.en.198@example.com
+Phone: +1-555-8248
+
+Skills
+Django, MySQL, Linux, React, Python
+
+Employment history
+Backend Developer | Silverpine Cloud 8
+December 2020 – Current
+- Built services using Django.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2017

@@ -1,0 +1,17 @@
+จิราพร จันทร์เพ็ญ (Jiraporn Norwood)
+Email: train.bi.239@example.com
+Phone: +1-555-3150
+
+Skills
+Spring, GraphQL, Docker, Vue, SQL
+
+Employment history
+Bluegate Systems 9
+Data Analyst
+2016 - 2018
+- Built services using Spring.
+
+Education
+Lakeside University
+BSc / Computer Science
+2011

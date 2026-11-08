@@ -20,3 +20,12 @@ synthetic_dataset/**/images/
 # IDE
 .vscode/
 .idea/
+
+# QLoRA fine-tune artifacts (plan 2026-11-08-typhoon-ocr-qlora)
+resume-lab/training/**/*.png
+resume-lab/training/**/*.pdf
+resume-lab/evaluation/corpus-v3/*.png
+resume-lab/evaluation/corpus-v3/*.pdf
+models/
+*.gguf
+runs/

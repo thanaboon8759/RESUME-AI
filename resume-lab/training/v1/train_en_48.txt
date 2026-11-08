@@ -1,0 +1,15 @@
+Logan Garland
+Email: train.en.48@example.com
+
+Skills
+JavaScript, SQL, Excel, GraphQL
+
+Employment history
+Backend Developer | Harbor Analytics 2
+October 2014 – March 2018
+- Built services using JavaScript.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2017

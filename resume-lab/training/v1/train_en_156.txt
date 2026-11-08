@@ -1,0 +1,16 @@
+Logan Barrett
+Email: train.en.156@example.com
+
+Skills
+Spring, Java, JavaScript, Django, Rust
+
+Employment history
+Northwind Labs 6
+Software Engineer
+Sep 2013 - Feb 2020
+- Built services using Spring.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2019

@@ -1,0 +1,17 @@
+อนุชา สมบูรณ์ชัย (Anucha Ellison)
+Email: train.bi.71@example.com
+Phone: +1-555-6420
+
+Skills
+Linux, JavaScript, Kotlin
+
+Employment history
+Northwind Labs 5
+Backend Developer
+2021 - Present
+- Built services using Linux.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2012
