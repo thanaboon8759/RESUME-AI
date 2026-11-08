@@ -72,3 +72,13 @@ def test_word_match_does_not_cross_word_boundaries():
 def test_zero_weights_do_not_crash():
     out = evaluate([c("A", "met")], job(weights={"A": 0}), ai_score=42)
     assert out.score == 42
+
+
+def test_duplicate_labels_keep_worst_status():
+    out = evaluate([c("Python", "met"), c(" python", "unmet")], job(mandatory=["Python"]), ai_score=90)
+    assert out.has_blocker and out.decision == DecisionEnum.rejected
+
+
+def test_duplicate_labels_score_once():
+    out = evaluate([c("A", "met"), c("a", "met"), c("B", "unmet")], job(), ai_score=0)
+    assert out.score == 50

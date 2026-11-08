@@ -9,6 +9,7 @@ from app.schemas.job import Job
 DEFAULT_WEIGHT = 3
 SHORTLIST_AT = 70
 REJECT_BELOW = 50
+_WORST_FIRST = [CriterionStatusEnum.unmet, CriterionStatusEnum.partial, CriterionStatusEnum.unknown, CriterionStatusEnum.met]
 POINTS = {CriterionStatusEnum.met: 1.0, CriterionStatusEnum.partial: 0.5, CriterionStatusEnum.unmet: 0.0}
 
 
@@ -47,6 +48,13 @@ def is_mandatory(label: str, job: Job) -> bool:
 
 
 def evaluate(criteria: list[CriterionEvaluation], job: Job, ai_score: int) -> Outcome:
+    # The AI may list one item twice; keep it once, with its worst status, so a "met" copy can't hide an "unmet".
+    unique: dict[str, CriterionEvaluation] = {}
+    for c in criteria:
+        key, prev = _norm(c.label), unique.get(_norm(c.label))
+        if prev is None or _WORST_FIRST.index(CriterionStatusEnum(c.status)) < _WORST_FIRST.index(CriterionStatusEnum(prev.status)):
+            unique[key] = c if prev is None else prev.model_copy(update={"status": c.status})
+    criteria = list(unique.values())
     labels = [c.label for c in criteria]
 
     total = earned = 0.0
