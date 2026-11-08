@@ -134,13 +134,13 @@ async def create_candidate(job_id: str, candidate_data: CandidateCreate, user_id
             "evidence": mapped_evidence
         })
         
-    # Map raw reasons (legacy mapping fallback for reasons lacking explicit criteria)
+    # Fallback when the AI gave no criteria: show its reasons, but as unknown, since none was checked against the job.
     if not criteria and screening.reasons:
         for i, reason in enumerate(screening.reasons):
             criteria.append({
-                "id": f"crit-legacy-{i}", 
-                "label": reason, 
-                "status": CriterionStatusEnum.met,
+                "id": f"crit-legacy-{i}",
+                "label": reason,
+                "status": CriterionStatusEnum.unknown,
                 "weight": 3, 
                 "mandatory": False, 
                 "evidence": []
