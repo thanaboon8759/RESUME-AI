@@ -78,3 +78,23 @@ async def test_create_job(monkeypatch):
         response = await ac.post("/api/jobs/", json=new_job)
         assert response.status_code == 200
         assert response.json() == "job-2"
+
+
+async def _post_job_with_weights(monkeypatch, weights):
+    from app.services import job_service
+    monkeypatch.setattr(job_service, "create_job", lambda job, user_id: job.id)
+    body = {"id": "job-3", "title": "Dev", "jd": "", "required": ["Python"], "preferred": [],
+            "weights": weights, "experience": "", "education": "", "location": "", "salary": "",
+            "mandatory": []}
+    async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as ac:
+        return await ac.post("/api/jobs/", json=body)
+
+
+async def test_create_job_rejects_negative_weight(monkeypatch):
+    response = await _post_job_with_weights(monkeypatch, {"Python": -1})
+    assert response.status_code == 422
+
+
+async def test_create_job_accepts_zero_weight(monkeypatch):
+    response = await _post_job_with_weights(monkeypatch, {"Python": 0})
+    assert response.status_code == 200
