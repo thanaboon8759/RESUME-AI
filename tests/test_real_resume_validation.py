@@ -12,17 +12,20 @@ Architecture: we call Qwen #1 once and cache the result in a module-level
 dictionary so all test functions share the same profile object without
 async fixture scoping issues.
 """
+import os
 import re
 import json
 import pytest
 import asyncio
 from dotenv import load_dotenv
 load_dotenv()
+LIVE = os.getenv("DASHSCOPE_API_KEY") not in (None, "", "mock")  # without a key the services return fake data
 
 from app.services.resume_extraction_service import analyze_resume_facts_with_qwen
 from app.services.screening_service import screen_candidate_with_qwen
 from app.schemas.job import Job
 from app.schemas.core import DecisionEnum, CriterionStatusEnum
+from app.services.scoring import apply_job_rules
 
 
 # ---------------------------------------------------------------------------
@@ -229,6 +232,8 @@ _CACHE: dict = {}
 
 
 async def get_profile():
+    if not LIVE:
+        pytest.skip("needs DASHSCOPE_API_KEY")
     if "profile" not in _CACHE:
         _CACHE["profile"] = await analyze_resume_facts_with_qwen(REAL_RESUME, "Jakapan Ploensup")
     return _CACHE["profile"]
@@ -237,7 +242,8 @@ async def get_profile():
 async def get_result(job_key: str, job: Job):
     if job_key not in _CACHE:
         profile = await get_profile()
-        _CACHE[job_key] = await screen_candidate_with_qwen(profile, job)
+        # Assert on the decision HR sees: the job rules replace Qwen's own score/decision.
+        _CACHE[job_key] = apply_job_rules(await screen_candidate_with_qwen(profile, job), job)[0]
     return _CACHE[job_key]
 
 
