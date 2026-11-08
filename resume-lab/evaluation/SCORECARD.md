@@ -75,7 +75,9 @@ Exact model digests, corpus hashes, server/schema/evaluator/source-repair snapsh
 
 Forty unit tests cover parsing, schema failures, source repairs, digest/configuration mismatches, absent primary models, fallback provenance, total failure, offline text preview and promotion integrity. Browser verification is recorded separately in `BROWSER-VERIFICATION.md`. Latencies include local load effects; p95 on nine samples is unstable. CER normalizes Unicode, case and whitespace. Literal matching is not semantic factuality, and achievement recall is not measured. Thai rendering lacks RAQM. See `../README.md` for run commands and parser/security limits.
 
-## v7 candidate: real QLoRA fine-tune (2026-11-08), awaiting owner sign-off
+## v7-qlora: real QLoRA fine-tune (2026-11-08), validated policy
+
+Owner approved adoption on 2026-11-08. `manage_policy.py` froze and promoted `v7-qlora` with `--ocr-holdout-corpus corpus-v3`. The development run was `v7-qlora-dev-ocr`, a single combined run that reproduced every CER; the holdout run was `qlora-v1-holdout`. Policy fallback order is the tool's, set by latency tie-breaks within one run: qlora-v1-rp1, qlora-v1, typhoon-fast, typhoon-ocr-finetuned, roundtrip-rp1, roundtrip. `promotion-v7.json` and `frozen-candidates-v7.json` are the earlier hand-made records, kept for history; `frozen-candidates-v7-qlora.json` and `promotion-v7-qlora.json` are authoritative.
 
 The `typhoon-ocr-finetuned` tag never contained trained weights. `typhoon-ocr-qlora-v1` is a real 4-bit QLoRA fine-tune of `scb10x/typhoon-ocr-3b`:
 - **Training:** LoRA r=16, applied to the language model only, for 2 epochs. It used 240 training and 30 validation resumes rendered by `build_training_set.py`, none of whose identities appear in corpus-v2 or corpus-v3. Validation loss fell from 0.0163 to 0.0051. The log is in `runs/qlora-v1-train/`.
@@ -98,7 +100,7 @@ The `typhoon-ocr-finetuned` tag never contained trained weights. `typhoon-ocr-ql
 - corpus-v2, made by a different generator, is the more independent comparison, and the fine-tune also leads there.
 - Formats remain correlated copies.
 - Nothing here shows a gain on real resumes.
-- `model-policy.json` remains v6 until the owner approves.
+- `model-policy.json` is now `v7-qlora`.
 
 **Formatting share** (`format_share.py`; Markdown and JSON wrappers stripped from both reference and output). On dev, the training effect is 0.614% → 0.321% with formatting removed, against 0.672% → 0.327% raw. The gain is reading accuracy, not output format. corpus-v3 has no markup, so its raw and stripped numbers are identical.
 
