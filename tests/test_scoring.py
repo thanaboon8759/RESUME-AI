@@ -88,3 +88,16 @@ def test_stored_negative_weight_still_loads_and_counts_as_zero():
     j = job(weights={"A": -1, "B": 3})  # an old DB row from before weights were validated
     out = evaluate([c("A", "unmet"), c("B", "met")], j, ai_score=0)
     assert out.score == 100
+
+
+def test_reworded_duplicate_with_conflicting_status_is_undecided():
+    # "Python 3" may be the same must-have or a narrower skill: don't shortlist, don't auto-reject
+    crit = [c("Python", "met"), c("Python 3", "unmet"), c("SQL", "met"), c("Docker", "met")]
+    out = evaluate(crit, job(mandatory=["Python"]), ai_score=90)
+    assert out.score == 75 and out.decision == DecisionEnum.undecided and not out.has_blocker
+
+
+def test_reworded_duplicates_all_unmet_still_block():
+    crit = [c("Python", "unmet"), c("Python 3", "unmet"), c("SQL", "met"), c("Docker", "met")]
+    out = evaluate(crit, job(mandatory=["Python"]), ai_score=90)
+    assert out.has_blocker and out.decision == DecisionEnum.rejected

@@ -48,15 +48,23 @@ def is_mandatory(label: str, job: Job) -> bool:
     return any(_find(m, [label]) is not None for m in job.mandatory)
 
 
+def _mandatory_status(item: str, criteria: list[CriterionEvaluation]) -> CriterionStatusEnum | None:
+    """Status of a must-have across every criterion naming it ("Python" and "Python 3").
+    Conflicting statuses count as partial, so a person decides instead of a silent pass or reject."""
+    hits = {CriterionStatusEnum(c.status) for c in criteria if _find(item, [c.label]) is not None}
+    if not hits:
+        return None
+    return hits.pop() if len(hits) == 1 else CriterionStatusEnum.partial
+
+
 def evaluate(criteria: list[CriterionEvaluation], job: Job, ai_score: int) -> Outcome:
-    # The AI may list one item twice; keep it once, with its worst status, so a "met" copy can't hide an "unmet".
+    # The AI may list the exact same item twice; keep it once, with its worst status.
     unique: dict[str, CriterionEvaluation] = {}
     for c in criteria:
         key, prev = _norm(c.label), unique.get(_norm(c.label))
         if prev is None or _WORST_FIRST.index(CriterionStatusEnum(c.status)) < _WORST_FIRST.index(CriterionStatusEnum(prev.status)):
             unique[key] = c if prev is None else prev.model_copy(update={"status": c.status})
     criteria = list(unique.values())
-    labels = [c.label for c in criteria]
 
     total = earned = 0.0
     for c in criteria:
@@ -68,8 +76,7 @@ def evaluate(criteria: list[CriterionEvaluation], job: Job, ai_score: int) -> Ou
     # Nothing scorable (no criteria, all unknown, or all weight 0): keep the AI's own score.
     score = round(100 * earned / total) if total > 0 else ai_score
 
-    found = [_find(m, labels) for m in job.mandatory]
-    mandatory = [CriterionStatusEnum(criteria[i].status) if i is not None else None for i in found]
+    mandatory = [_mandatory_status(m, criteria) for m in job.mandatory]
     if CriterionStatusEnum.unmet in mandatory:
         return Outcome(score, DecisionEnum.rejected, True)
     if any(s != CriterionStatusEnum.met for s in mandatory):  # partial, unknown, or never evaluated (None)
