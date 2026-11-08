@@ -154,8 +154,17 @@ def merge(base_dir=BASE, adapter_dir=Path('runs/qlora-v1/adapter'), out_dir=Path
     model = Qwen2_5_VLForConditionalGeneration.from_pretrained(base_dir, dtype=torch.bfloat16, device_map={'': 'cpu'})
     model = PeftModel.from_pretrained(model, adapter_dir).merge_and_unload()
     model.save_pretrained(out_dir, safe_serialization=True)
-    AutoProcessor.from_pretrained(base_dir).save_pretrained(out_dir)
-    return Path(out_dir)
+    # Training changes weights only. Keep the base's original config/tokenizer files: newer transformers
+    # re-nests config.json (text_config), which Ollama's qwen25vl importer cannot read.
+    import shutil
+    out_dir = Path(out_dir)
+    for f in out_dir.iterdir():
+        if f.suffix != '.safetensors':
+            f.unlink()
+    for f in Path(base_dir).iterdir():
+        if f.is_file() and f.suffix not in ('.safetensors', '.md') and f.name != 'model.safetensors.index.json':
+            shutil.copy2(f, out_dir / f.name)
+    return out_dir
 
 
 def main():
