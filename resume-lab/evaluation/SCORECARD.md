@@ -42,6 +42,8 @@ Sources: `runs/grounded-extraction-v6/summary.json` and `runs/fresh-holdout-extr
 
 ## OCR configurations
 
+> The `typhoon-ocr-finetuned` tag is the base model; a real fine-tune is tracked in `docs/superpowers/plans/2026-11-08-typhoon-ocr-qlora.md`.
+
 Explicit 8192-token context and 4096-token output limits fixed context starvation. The scanner unwraps Typhoon's `natural_text`/`text` JSON and rejects truncated/invalid wrappers. All three configurations completed every expanded development and fresh held-out case.
 
 | OCR configuration | Development CER, 11 | Holdout CER, 9 | Thai holdout CER | Holdout mean seconds | Policy order |
