@@ -74,3 +74,28 @@ Fresh holdout average prompt/output tokens: Qwen 1166/243; base OCR 4094/128; fa
 Exact model digests, corpus hashes, server/schema/evaluator/source-repair snapshots, raw replies, token/load counters and failure records are retained. `manage_policy.py promote` verifies frozen protocol/gates and recomputes accuracy from saved outputs using the verified scorer; stale summaries, mismatched corpora and changed digests/configurations are rejected. Runtime policy also pins the engine fingerprint. A test-only changed digest or simulated failure never falls back to an untested model.
 
 Forty unit tests cover parsing, schema failures, source repairs, digest/configuration mismatches, absent primary models, fallback provenance, total failure, offline text preview and promotion integrity. Browser verification is recorded separately in `BROWSER-VERIFICATION.md`. Latencies include local load effects; p95 on nine samples is unstable. CER normalizes Unicode, case and whitespace. Literal matching is not semantic factuality, and achievement recall is not measured. Thai rendering lacks RAQM. See `../README.md` for run commands and parser/security limits.
+
+## v7 candidate: real QLoRA fine-tune (2026-11-08), awaiting owner sign-off
+
+The `typhoon-ocr-finetuned` tag never contained trained weights. `typhoon-ocr-qlora-v1` is a real 4-bit QLoRA fine-tune of `scb10x/typhoon-ocr-3b`:
+- **Training:** LoRA r=16, applied to the language model only, for 2 epochs. It used 240 training and 30 validation resumes rendered by `build_training_set.py`, none of whose identities appear in corpus-v2 or corpus-v3. Validation loss fell from 0.0163 to 0.0051. The log is in `runs/qlora-v1-train/`.
+- **Weights:** digest `eb51dae6…`, different from the base `2c2720a4…`.
+- **Serving variant:** `-rp1` is the same weights with `repeat_penalty 1.0`. It was chosen on development data only and frozen before the holdout run.
+
+| OCR configuration | Dev CER, corpus-v2 (11) | Dev Thai | Holdout CER, corpus-v3 (27) | Holdout Thai | Holdout mean seconds | Frozen rank |
+|---|---:|---:|---:|---:|---:|---:|
+| typhoon-ocr-qlora-v1-rp1 | 0.327% | 0.366% | 0.087% | 0.260% | 3.79 | 1 |
+| typhoon-ocr-finetuned (v6 #1) | 0.571% | 0.782% | 0.229% | 0.402% | 3.59 | 2 |
+| typhoon-fast | 0.585% | 0.483% | 0.599% | 1.625% | 3.94 | 3 |
+| typhoon-ocr-qlora-v1 (repeat_penalty 1.2) | 0.663% | 1.228% | 0.074% | 0.222% | 1.41 | 4 |
+| typhoon-ocr-roundtrip-rp1 (untrained) | 0.672% | 0.544% | 0.265% | 0.622% | 3.94 | 5 |
+| typhoon-ocr-roundtrip (untrained) | 1.953% | 2.211% | 0.444% | 0.667% | 1.52 | 6 |
+
+**Where the gain comes from.** On dev, with the same pipeline, the repeat-penalty setting alone took the untrained model from 1.953% to 0.672%. Training then took it from 0.672% to 0.327%. All candidates pass the gates. The protocol promotes rank 1 (`promotion-v7.json`). End to end, 3 of 3 corpus-v3 scanned PDFs gave an exact name and skills.
+
+**Caveats:**
+- corpus-v3 and the training data come from the same generator, so the holdout advantage is optimistic.
+- corpus-v2, made by a different generator, is the more independent comparison, and the fine-tune also leads there.
+- Formats remain correlated copies.
+- Nothing here shows a gain on real resumes.
+- `model-policy.json` remains v6 until the owner approves.
