@@ -40,7 +40,8 @@ def criterion_weight(label: str, job: Job) -> int:
     keys = list(job.weights)
     hit = next((k for k in keys if _norm(k) == _norm(label)), None) or \
         next((k for k in keys if _find(k, [label]) is not None), None)
-    return job.weights[hit] if hit is not None else DEFAULT_WEIGHT
+    # max(0, ...): job rows saved before weights were validated may hold negatives.
+    return max(0, job.weights[hit]) if hit is not None else DEFAULT_WEIGHT
 
 
 def is_mandatory(label: str, job: Job) -> bool:

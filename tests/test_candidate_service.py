@@ -53,3 +53,8 @@ async def test_fallback_reasons_are_unknown():
         cand = await create_candidate("job1", CandidateCreate(name="Ann Lee", resume_text="..."), "user1")
 
     assert [x.status for x in cand.criteria] == [CriterionStatusEnum.unknown]
+
+
+def test_job_row_with_negative_weight_still_loads():
+    # job_repository builds Job(**row); an old row must not crash job lists or resume uploads
+    assert Job(**{**make_job().model_dump(), "weights": {"Python": -1}}).weights == {"Python": -1}

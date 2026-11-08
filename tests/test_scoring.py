@@ -82,3 +82,9 @@ def test_duplicate_labels_keep_worst_status():
 def test_duplicate_labels_score_once():
     out = evaluate([c("A", "met"), c("a", "met"), c("B", "unmet")], job(), ai_score=0)
     assert out.score == 50
+
+
+def test_stored_negative_weight_still_loads_and_counts_as_zero():
+    j = job(weights={"A": -1, "B": 3})  # an old DB row from before weights were validated
+    out = evaluate([c("A", "unmet"), c("B", "met")], j, ai_score=0)
+    assert out.score == 100
