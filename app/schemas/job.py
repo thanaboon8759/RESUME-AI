@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, conint
 from typing import List, Dict, Optional
 
 class Job(BaseModel):
@@ -7,7 +7,7 @@ class Job(BaseModel):
     jd: str
     required: List[str]
     preferred: List[str]
-    weights: Dict[str, int]
+    weights: Dict[str, conint(ge=0)]  # negative weights would push scores above 100
     experience: str
     education: str
     location: str
