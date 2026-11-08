@@ -57,6 +57,18 @@ def test_no_scorable_criteria_keeps_ai_score():
     assert evaluate([c("A", "unknown")], job(), ai_score=64).score == 64
 
 
+def test_reworded_label_still_counts_as_job_item():
+    j = job(weights={"Python": 5}, mandatory=["Python"])
+    out = evaluate([c("Python programming", "unmet")], j, ai_score=90)
+    assert out.has_blocker and out.decision == DecisionEnum.rejected
+    assert criterion_weight("Python programming", j) == 5 and is_mandatory("Python programming", j)
+
+
+def test_word_match_does_not_cross_word_boundaries():
+    j = job(weights={"Java": 5}, mandatory=["Java"])
+    assert not is_mandatory("JavaScript", j) and criterion_weight("JavaScript", j) == 3
+
+
 def test_zero_weights_do_not_crash():
     out = evaluate([c("A", "met")], job(weights={"A": 0}), ai_score=42)
     assert out.score == 42
