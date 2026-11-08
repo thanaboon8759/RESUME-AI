@@ -1,0 +1,300 @@
+{
+  "configuration": {
+    "stage": "ocr",
+    "split": "holdout",
+    "corpus_sha256": "79a3f44512ba4a8f1604d0f2dab19a88fdcd52a62676eb1b6cc9871a47845566",
+    "corpus_directory": "corpus-v3",
+    "annotation_sha256": "de048cfe4375519696c7b7506d83ebeb19d2990d618b5e75ee30a5b20d3562af",
+    "server_sha256": "a28ebb95dd315f968fd9357f5fdf6428fcc4bdadd3aec954b0c0dbeafe0441ef",
+    "schema_sha256": "c60bebba1b180efd8ad65eee72ed2f6499e6ac8a81a0bfa0a0fab5cf0fea4f75",
+    "source_facts_sha256": "681785ffd28b093ce00bac9d57af6d0361f8b4591d02877f72019897b31d5ac6",
+    "runtime": {
+      "ollama": {
+        "version": "0.34.0"
+      },
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "evaluator_sha256": "c1daaa9d577d3cb53fd126f0e8e68f650de9a4013b5ecf5391c0e25f32f4ebea",
+    "models": [
+      {
+        "name": "typhoon-fast:latest",
+        "digest": "4aeab094b040881a4547a766ce6ff5f78693b3874f43ecfea1f82947a67a27bf",
+        "details": {
+          "parent_model": "scb10x/typhoon-ocr-3b:latest",
+          "format": "gguf",
+          "family": "qwen25vl",
+          "families": [
+            "qwen25vl"
+          ],
+          "parameter_size": "3.8B",
+          "quantization_level": "F16",
+          "context_length": 128000,
+          "embedding_length": 2048
+        },
+        "capabilities": [
+          "vision",
+          "completion"
+        ]
+      },
+      {
+        "name": "typhoon-ocr-finetuned:latest",
+        "digest": "d331d514cd3d2ccfbf51e8d8d93d381afaf5ff536543cc8c4fc879f6318373f4",
+        "details": {
+          "parent_model": "scb10x/typhoon-ocr-3b:latest",
+          "format": "gguf",
+          "family": "qwen25vl",
+          "families": [
+            "qwen25vl"
+          ],
+          "parameter_size": "3.8B",
+          "quantization_level": "F16",
+          "context_length": 128000,
+          "embedding_length": 2048
+        },
+        "capabilities": [
+          "vision",
+          "completion"
+        ]
+      },
+      {
+        "name": "typhoon-ocr-qlora-v1-rp1:latest",
+        "digest": "d8e264d0f030b585ee2a41aac7be5c8e555f7205dfb409177f667bc9aa3d78b6",
+        "details": {
+          "parent_model": "typhoon-ocr-qlora-v1:latest",
+          "format": "gguf",
+          "family": "qwen25vl",
+          "families": [
+            "qwen25vl"
+          ],
+          "parameter_size": "3.8B",
+          "quantization_level": "F16",
+          "context_length": 128000,
+          "embedding_length": 2048
+        },
+        "capabilities": [
+          "vision",
+          "completion"
+        ]
+      },
+      {
+        "name": "typhoon-ocr-qlora-v1:latest",
+        "digest": "eb51dae6f372317be9ab821a60e7532784ea9457ed5b51a7963ac2f8f25b2498",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen25vl",
+          "families": [
+            "qwen25vl"
+          ],
+          "parameter_size": "3.8B",
+          "quantization_level": "F16",
+          "context_length": 128000,
+          "embedding_length": 2048
+        },
+        "capabilities": [
+          "vision",
+          "completion"
+        ]
+      },
+      {
+        "name": "typhoon-ocr-roundtrip-rp1:latest",
+        "digest": "dd5fafbfec76502c95f5b80a11e55adcf0aa4692946ef568451b6fd93abf060d",
+        "details": {
+          "parent_model": "typhoon-ocr-roundtrip:latest",
+          "format": "gguf",
+          "family": "qwen25vl",
+          "families": [
+            "qwen25vl"
+          ],
+          "parameter_size": "3.8B",
+          "quantization_level": "F16",
+          "context_length": 128000,
+          "embedding_length": 2048
+        },
+        "capabilities": [
+          "vision",
+          "completion"
+        ]
+      },
+      {
+        "name": "typhoon-ocr-roundtrip:latest",
+        "digest": "310f0c5efac268f6e5b7bfb0681a38261f0fa9b029e9163164be1cd74dbf0a45",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen25vl",
+          "families": [
+            "qwen25vl"
+          ],
+          "parameter_size": "3.8B",
+          "quantization_level": "F16",
+          "context_length": 128000,
+          "embedding_length": 2048
+        },
+        "capabilities": [
+          "vision",
+          "completion"
+        ]
+      }
+    ]
+  },
+  "summary": [
+    {
+      "model": "typhoon-fast:latest",
+      "attempts": 27,
+      "success_rate": 1.0,
+      "mean_seconds": 3.943640707408863,
+      "observed_p95_seconds": 4.312378100003116,
+      "cer": 0.005988525769042136,
+      "by_language": {
+        "bi": {
+          "attempts": 9,
+          "success_rate": 1.0,
+          "cer": 0.0017148208315295233
+        },
+        "en": {
+          "attempts": 9,
+          "success_rate": 1.0,
+          "cer": 0.0
+        },
+        "th": {
+          "attempts": 9,
+          "success_rate": 1.0,
+          "cer": 0.016250756475596886
+        }
+      }
+    },
+    {
+      "model": "typhoon-ocr-finetuned:latest",
+      "attempts": 27,
+      "success_rate": 1.0,
+      "mean_seconds": 3.587036722224352,
+      "observed_p95_seconds": 4.362507600017125,
+      "cer": 0.002290687940238925,
+      "by_language": {
+        "bi": {
+          "attempts": 9,
+          "success_rate": 1.0,
+          "cer": 0.0028486076796020855
+        },
+        "en": {
+          "attempts": 9,
+          "success_rate": 1.0,
+          "cer": 0.0
+        },
+        "th": {
+          "attempts": 9,
+          "success_rate": 1.0,
+          "cer": 0.00402345614111469
+        }
+      }
+    },
+    {
+      "model": "typhoon-ocr-qlora-v1-rp1:latest",
+      "attempts": 27,
+      "success_rate": 1.0,
+      "mean_seconds": 3.79206286666751,
+      "observed_p95_seconds": 4.182120200013742,
+      "cer": 0.0008651406695560713,
+      "by_language": {
+        "bi": {
+          "attempts": 9,
+          "success_rate": 1.0,
+          "cer": 0.0
+        },
+        "en": {
+          "attempts": 9,
+          "success_rate": 1.0,
+          "cer": 0.0
+        },
+        "th": {
+          "attempts": 9,
+          "success_rate": 1.0,
+          "cer": 0.0025954220086682137
+        }
+      }
+    },
+    {
+      "model": "typhoon-ocr-qlora-v1:latest",
+      "attempts": 27,
+      "success_rate": 1.0,
+      "mean_seconds": 1.4149794925879515,
+      "observed_p95_seconds": 2.110676099982811,
+      "cer": 0.0007395913914644203,
+      "by_language": {
+        "bi": {
+          "attempts": 9,
+          "success_rate": 1.0,
+          "cer": 0.0
+        },
+        "en": {
+          "attempts": 9,
+          "success_rate": 1.0,
+          "cer": 0.0
+        },
+        "th": {
+          "attempts": 9,
+          "success_rate": 1.0,
+          "cer": 0.002218774174393261
+        }
+      }
+    },
+    {
+      "model": "typhoon-ocr-roundtrip-rp1:latest",
+      "attempts": 27,
+      "success_rate": 1.0,
+      "mean_seconds": 3.9367452074053557,
+      "observed_p95_seconds": 4.35055740000098,
+      "cer": 0.0026457083044180343,
+      "by_language": {
+        "bi": {
+          "attempts": 9,
+          "success_rate": 1.0,
+          "cer": 0.0017148208315295233
+        },
+        "en": {
+          "attempts": 9,
+          "success_rate": 1.0,
+          "cer": 0.0
+        },
+        "th": {
+          "attempts": 9,
+          "success_rate": 1.0,
+          "cer": 0.00622230408172458
+        }
+      }
+    },
+    {
+      "model": "typhoon-ocr-roundtrip:latest",
+      "attempts": 27,
+      "success_rate": 1.0,
+      "mean_seconds": 1.5204830444439452,
+      "observed_p95_seconds": 2.2105472999974154,
+      "cer": 0.004438456689520014,
+      "by_language": {
+        "bi": {
+          "attempts": 9,
+          "success_rate": 1.0,
+          "cer": 0.004501749764840091
+        },
+        "en": {
+          "attempts": 9,
+          "success_rate": 1.0,
+          "cer": 0.002145086860103361
+        },
+        "th": {
+          "attempts": 9,
+          "success_rate": 1.0,
+          "cer": 0.006668533443616592
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Synthetic pilot corpus, not population-wide accuracy.",
+    "Literal evidence is not semantic factuality.",
+    "OCR error attempts receive CER=1; character insertion errors can exceed 1.",
+    "Observed p95 is unstable with small samples.",
+    "Latency/token counts are cost proxies; no energy or monetary cost measured."
+  ]
+}
