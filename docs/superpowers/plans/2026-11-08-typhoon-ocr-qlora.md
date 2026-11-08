@@ -26,6 +26,40 @@ The protocol to follow is `resume-lab/evaluation/SELECTION-PROTOCOL.md`.
 - No cloud services. The only downloads are the base weights and llama.cpp.
 - Don't commit model weights, rendered images or `.gguf` files. Commit generators, configs, logs and summaries.
 
+## Status and remaining work (updated 2026-11-08, mid-execution)
+
+These decisions were made during Tasks 1-4 and recorded in the ledger. They override the original task text below where the two disagree.
+
+- **Tasks 1-3 are done.**
+- **Export route.** Ollama 0.34 imports the Hugging Face weights directly, keeping F16 like the base model. `export_to_ollama(hf_dir, tag, quant=None, base=...) -> digest` lives in `export_ollama_gguf.py`. llama.cpp/GGUF is not used.
+- **Baseline.** Conversion produced 9/11 byte-identical outputs. The other 2 differ by stray asterisks, so the gate missed 0.001 (0.02178 base vs 0.01953 round-trip). The baseline for every training comparison is therefore `typhoon-ocr-roundtrip:latest` (digest `310f0c5e…`), never `scb10x/typhoon-ocr-3b`.
+- **Training target.** Targets are plain text, matching the `.txt` references. The base model writes Markdown and JSON wrappers, which `server.ocr_image` accepts either way. Report what share of any CER gain is formatting, separately from reading accuracy.
+- **Task 4 functions.** `train()` and `merge()` exist in `train_typhoon_qlora.py`, and 16 tests pass. A 20-step smoke run is in progress at `runs/smoke`.
+
+The rest of the work, in order:
+
+1. **Smoke check** (`runs/smoke/train_log.jsonl`). The loss is finite at every sample, peak VRAM is ≤ 15.5 GB, and `runs/smoke/adapter/adapter_model.safetensors` is larger than 1 MB. If any of these fails, debug before the full run.
+2. **Full run.** Unload Ollama models first (`ollama stop` each tag in `ollama ps`). Then run `python train_typhoon_qlora.py --out runs/qlora-v1 --epochs 2` in the background.
+   - Expected: `best_val_loss` is logged, and the best epoch is copied to `runs/qlora-v1/adapter`.
+   - If epoch-2 val loss is higher than epoch-1, the epoch-1 adapter is kept automatically. Log that.
+   - Commit `config.json` and `train_log.jsonl` under `resume-lab/evaluation/runs/qlora-v1-train/`, but not the weights.
+3. **Merge and export.**
+   - `python train_typhoon_qlora.py --merge runs/qlora-v1/adapter --out models/typhoon-ocr-qlora-v1-hf`
+   - then `python export_ollama_gguf.py models/typhoon-ocr-qlora-v1-hf typhoon-ocr-qlora-v1`
+   - Expected: the digest differs from both `2c2720a4…` and `310f0c5e…`.
+4. **Development comparison** (Task 5). Run `evaluate_models.py --stage ocr --split development --corpus corpus-v2 --run qlora-v1-dev --models typhoon-ocr-qlora-v1:latest typhoon-ocr-roundtrip:latest typhoon-ocr-finetuned:latest typhoon-fast:latest`. Report:
+   - overall CER and CER per language
+   - the change against the round-trip copy, which is the training effect
+   - the formatting share of the change: re-score both outputs after removing `#`, `*` and `natural_text` JSON wrappers, then compare
+   
+   Freeze the order in `resume-lab/evaluation/frozen-candidates-v7.json`.
+5. **Holdout** (Task 6).
+   - First add `corpus-v3` to the `--corpus` choices in `evaluate_models.py`, with a test that `--corpus corpus-v3` resolves to `evaluation/corpus-v3`.
+   - Then run the frozen order on `--split holdout --corpus corpus-v3`.
+   - Promote under protocol §Holdout and promotion. If promoted, add a `v7` entry to `model-policy.json` and update SCORECARD with the caveats. If not, record the failed validation.
+6. **End-to-end check.** Run `automatic_scan.py` on 3 corpus-v3 scanned PDFs, one per language, under the chosen policy. All must succeed.
+7. **Final whole-branch review** by a fresh reviewer, plus one fix pass for critical and important findings. Pushing or opening a PR needs the owner's OK.
+
 ## Before building: what to expect
 
 The current OCR already scores 0.55–0.78% CER on the synthetic holdout (SCORECARD). The training data comes from the same renderer as the test data, so a gain here shows the model learned this template family. It does not show it handles real resumes better. Only real resumes would show that.
