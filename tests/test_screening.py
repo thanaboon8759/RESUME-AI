@@ -23,6 +23,11 @@ VALID_SCREENING_JSON = '''{
     ]
 }'''
 
+@pytest.fixture(autouse=True)
+def fake_api_key(monkeypatch):
+    # Without a key the service returns its built-in mock before calling the client.
+    monkeypatch.setattr("app.services.screening_service.DASHSCOPE_API_KEY", "test-key")
+
 @pytest.fixture
 def mock_qwen_screening():
     with patch('app.services.screening_service.qwen_client.chat.completions.create', new_callable=AsyncMock) as mock:

@@ -8,6 +8,7 @@ from app.repositories import candidate_repository, job_repository
 from app.services.document_extraction_service import extract_document
 from app.services.resume_extraction_service import analyze_resume_facts_with_qwen
 from app.services.screening_service import screen_candidate_with_qwen
+from app.services.scoring import criterion_weight, evaluate, is_mandatory
 from app.database.supabase.client import supabase
 
 logger = logging.getLogger(__name__)
@@ -46,7 +47,10 @@ async def create_candidate(job_id: str, candidate_data: CandidateCreate, user_id
     
     logger.info("Screening candidate against job requirements (Qwen #2)")
     screening = await screen_candidate_with_qwen(profile, job)
-    
+    # The job's weights and mandatory items decide the final score/decision, not the AI's guess.
+    outcome = evaluate(screening.criteria, job, screening.score)
+    screening = screening.model_copy(update={"score": outcome.score, "decision": outcome.decision})
+
     candidate_id = str(uuid.uuid4())
     criteria = []
     
@@ -125,8 +129,8 @@ async def create_candidate(job_id: str, candidate_data: CandidateCreate, user_id
             "id": f"crit-{i}", 
             "label": crit.label, 
             "status": crit.status,
-            "weight": 3, 
-            "mandatory": False, 
+            "weight": criterion_weight(crit.label, job),
+            "mandatory": is_mandatory(crit.label, job),
             "evidence": mapped_evidence
         })
         
@@ -155,7 +159,7 @@ async def create_candidate(job_id: str, candidate_data: CandidateCreate, user_id
         extractedText=extracted_text, 
         parseStatus="done", 
         failureReason=None, 
-        hasBlocker=False, 
+        hasBlocker=outcome.has_blocker,
         duplicateOf=None,
         criteria=criteria, 
         strengths=screening.strengths, 
