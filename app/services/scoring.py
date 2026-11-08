@@ -1,4 +1,5 @@
 """Turns per-criterion AI statuses plus the job's own rules into a score and decision."""
+import re
 from dataclasses import dataclass
 
 from app.schemas.candidate import CriterionEvaluation
@@ -22,17 +23,31 @@ def _norm(label: str) -> str:
     return label.strip().lower()
 
 
+def _find(item: str, labels: list[str]) -> int | None:
+    """Index of the label naming this job item: exact match first, else the item as whole words
+    inside a reworded label ("Python" in "Python programming", but not "Java" in "JavaScript")."""
+    norm = [_norm(l) for l in labels]
+    target = _norm(item)
+    if target in norm:
+        return norm.index(target)
+    word = re.compile(rf"(?<!\w){re.escape(target)}(?!\w)")
+    # shortcut: whole-word match misses translations and Thai (no spaces); upgrade to id-based matching if that shows up.
+    return next((i for i, l in enumerate(norm) if target and word.search(l)), None)
+
+
 def criterion_weight(label: str, job: Job) -> int:
-    weights = {_norm(k): v for k, v in job.weights.items()}
-    return weights.get(_norm(label), DEFAULT_WEIGHT)
+    keys = list(job.weights)
+    hit = next((k for k in keys if _norm(k) == _norm(label)), None) or \
+        next((k for k in keys if _find(k, [label]) is not None), None)
+    return job.weights[hit] if hit is not None else DEFAULT_WEIGHT
 
 
 def is_mandatory(label: str, job: Job) -> bool:
-    return _norm(label) in {_norm(m) for m in job.mandatory}
+    return any(_find(m, [label]) is not None for m in job.mandatory)
 
 
 def evaluate(criteria: list[CriterionEvaluation], job: Job, ai_score: int) -> Outcome:
-    statuses = {_norm(c.label): CriterionStatusEnum(c.status) for c in criteria}
+    labels = [c.label for c in criteria]
 
     total = earned = 0.0
     for c in criteria:
@@ -44,7 +59,8 @@ def evaluate(criteria: list[CriterionEvaluation], job: Job, ai_score: int) -> Ou
     # Nothing scorable (no criteria, all unknown, or all weight 0): keep the AI's own score.
     score = round(100 * earned / total) if total > 0 else ai_score
 
-    mandatory = [statuses.get(_norm(m)) for m in job.mandatory]
+    found = [_find(m, labels) for m in job.mandatory]
+    mandatory = [CriterionStatusEnum(criteria[i].status) if i is not None else None for i in found]
     if CriterionStatusEnum.unmet in mandatory:
         return Outcome(score, DecisionEnum.rejected, True)
     if any(s != CriterionStatusEnum.met for s in mandatory):  # partial, unknown, or never evaluated (None)
