@@ -28,4 +28,4 @@ resume-lab/evaluation/corpus-v3/*.png
 resume-lab/evaluation/corpus-v3/*.pdf
 models/
 *.gguf
-runs/
+/runs/
