@@ -1,0 +1,17 @@
+Reese Dalton
+Email: train.en.129@example.com
+Phone: +1-555-2538
+
+Skills
+Kotlin, Java, SQL, Rust, Linux
+
+Employment history
+Silverpine Cloud 9
+Data Analyst
+Mar 2013 - Present
+- Built services using Kotlin.
+
+Education
+Lakeside University
+BSc / Computer Science
+2009

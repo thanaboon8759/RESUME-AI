@@ -1,0 +1,16 @@
+รัฐพล ศรีสุข (Rattapol Fairbanks)
+Email: train.bi.182@example.com
+Phone: +1-555-5391
+
+Skills
+Spring, Python, TypeScript
+
+Employment history
+Data Analyst | Northwind Labs 7
+Dec 2016 – Present
+- Built services using Spring.
+
+Education
+Lakeside University
+BSc / Computer Science
+2017

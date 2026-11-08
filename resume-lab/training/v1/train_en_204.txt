@@ -1,0 +1,15 @@
+Kendall Merritt
+Email: train.en.204@example.com
+
+Skills
+Terraform, React, C#, Flutter
+
+Employment history
+Software Engineer | Summit Data Works 6
+September 2013 – July 2015
+- Built services using Terraform.
+
+Education
+Lakeside University
+BSc / Computer Science
+2013

@@ -1,0 +1,16 @@
+Kendall Prescott
+Email: train.en.96@example.com
+Phone: +1-555-4045
+
+Skills
+Python, Power BI, Pandas, SQL
+
+Employment history
+Backend Developer | Ironleaf Software 4
+2019 – 2023
+- Built services using Python.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2013

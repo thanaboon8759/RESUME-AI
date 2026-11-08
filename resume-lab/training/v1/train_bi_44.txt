@@ -1,0 +1,16 @@
+พิมพ์ชนก แก้วประเสริฐ (Pimchanok Ellison)
+Email: train.bi.44@example.com
+
+Skills
+Rust, Tableau, Pandas, Spring, FastAPI
+
+Employment history
+Silverpine Cloud 2
+Backend Developer
+11/2014 - Present
+- Built services using Rust.
+
+Education
+Lakeside University
+BSc / Computer Science
+2008

@@ -1,0 +1,16 @@
+อนุชา ใจดี (Anucha Merritt)
+Email: train.bi.233@example.com
+Phone: +1-555-5546
+
+Skills
+Kotlin, Tableau, React, Git
+
+Employment history
+Data Analyst | Northwind Labs 9
+11/2020 – Present
+- Built services using Kotlin.
+
+Education
+Lakeside University
+BSc / Computer Science
+2011

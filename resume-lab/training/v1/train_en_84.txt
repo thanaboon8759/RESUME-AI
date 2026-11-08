@@ -1,0 +1,16 @@
+Noel Sterling
+Phone: +1-555-9052
+
+Skills
+Power BI, Tableau, Kotlin, Git, React
+
+Employment history
+Ironleaf Software 9
+Data Analyst
+Nov 2015 - Feb 2019
+- Built services using Power BI.
+
+Education
+Lakeside University
+BSc / Computer Science
+2012

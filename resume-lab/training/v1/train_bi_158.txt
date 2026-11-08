@@ -1,0 +1,15 @@
+พิมพ์ชนก มั่นคง (Pimchanok Iverson)
+Email: train.bi.158@example.com
+
+Skills
+Kotlin, Redis, Kubernetes
+
+Employment history
+Backend Developer | Bluegate Systems 4
+December 2014 – April 2025
+- Built services using Kotlin.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2010

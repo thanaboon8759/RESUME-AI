@@ -1,0 +1,15 @@
+ธนพร ใจดี (Thanaporn Abbott)
+Phone: +1-555-2700
+
+Skills
+Rust, Kotlin, C#, Power BI, AWS
+
+Employment history
+Data Analyst | Copperline Tech 9
+2018 – Present
+- Built services using Rust.
+
+Education
+Lakeside University
+BSc / Computer Science
+2016

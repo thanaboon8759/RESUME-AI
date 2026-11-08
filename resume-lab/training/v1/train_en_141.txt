@@ -1,0 +1,16 @@
+Avery Calloway
+Email: train.en.141@example.com
+
+Skills
+Rust, Kubernetes, Redis
+
+Employment history
+Maplewood Digital 9
+Backend Developer
+December 2018 - September 2022
+- Built services using Rust.
+
+Education
+Lakeside University
+BSc / Computer Science
+2011

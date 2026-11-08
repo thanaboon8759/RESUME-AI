@@ -1,0 +1,15 @@
+อัญชลี บุญมา (Anchalee Norwood)
+Phone: +1-555-6177
+
+Skills
+Django, JavaScript, Kubernetes
+
+Employment history
+Backend Developer | Bluegate Systems 4
+Mar 2013 – Aug 2016
+- Built services using Django.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2020

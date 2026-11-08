@@ -1,0 +1,15 @@
+สิรินทร์ ใจดี (Sirin Thornton)
+Phone: +1-555-9219
+
+Skills
+Azure, C#, AWS
+
+Employment history
+Software Engineer | Northwind Labs 8
+September 2014 – Present
+- Built services using Azure.
+
+Education
+Lakeside University
+BSc / Computer Science
+2020

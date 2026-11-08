@@ -1,0 +1,15 @@
+อนุชา เพชรรัตน์ (Anucha Ellison)
+Phone: +1-555-7757
+
+Skills
+Rust, Go, FastAPI, Git, TypeScript
+
+Employment history
+Data Analyst | Copperline Tech 1
+2013 – Present
+- Built services using Rust.
+
+Education
+Lakeside University
+BSc / Computer Science
+2008

@@ -1,0 +1,16 @@
+Cameron Prescott
+Email: train.en.210@example.com
+
+Skills
+Java, SQL, JavaScript, Power BI
+
+Employment history
+Silverpine Cloud 5
+Software Engineer
+April 2021 - January 2025
+- Built services using Java.
+
+Education
+Lakeside University
+BSc / Computer Science
+2020

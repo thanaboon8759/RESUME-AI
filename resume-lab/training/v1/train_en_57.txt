@@ -1,0 +1,15 @@
+Morgan Calloway
+Phone: +1-555-5123
+
+Skills
+AWS, JavaScript, FastAPI
+
+Employment history
+Software Engineer | Bluegate Systems 8
+05/2019 – 04/2021
+- Built services using AWS.
+
+Education
+Lakeside University
+BSc / Computer Science
+2008

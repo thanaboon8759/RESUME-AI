@@ -1,0 +1,15 @@
+Avery Garland
+Email: train.en.144@example.com
+
+Skills
+Excel, Azure, React, SQL
+
+Employment history
+Data Analyst | Copperline Tech 4
+2014 – Present
+- Built services using Excel.
+
+Education
+Lakeside University
+BSc / Computer Science
+2010

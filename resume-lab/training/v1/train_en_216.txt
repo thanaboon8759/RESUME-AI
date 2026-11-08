@@ -1,0 +1,16 @@
+Tatum Kingsley
+Phone: +1-555-2649
+
+Skills
+Redis, TypeScript, C#
+
+Employment history
+Harbor Analytics 1
+Software Engineer
+03/2019 - Current
+- Built services using Redis.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2013

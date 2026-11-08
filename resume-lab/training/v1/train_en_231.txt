@@ -1,0 +1,16 @@
+Logan Norwood
+Email: train.en.231@example.com
+
+Skills
+Java, Flutter, FastAPI, Git, Redis
+
+Employment history
+Northwind Labs 1
+Backend Developer
+Jan 2018 - Jun 2022
+- Built services using Java.
+
+Education
+Lakeside University
+BSc / Computer Science
+2016

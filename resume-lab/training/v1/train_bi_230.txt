@@ -1,0 +1,16 @@
+สิรินทร์ สุขสวัสดิ์ (Sirin Dalton)
+Email: train.bi.230@example.com
+
+Skills
+Terraform, Excel, AWS, Django, Docker
+
+Employment history
+Copperline Tech 5
+Backend Developer
+May 2020 - June 2025
+- Built services using Terraform.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2009

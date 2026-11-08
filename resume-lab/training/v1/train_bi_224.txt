@@ -1,0 +1,16 @@
+สิรินทร์ ประเสริฐวงศ์ (Sirin Prescott)
+Phone: +1-555-6721
+
+Skills
+Kotlin, Power BI, Git, Django, Excel
+
+Employment history
+Silverpine Cloud 3
+Data Analyst
+November 2019 - Current
+- Built services using Kotlin.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2008

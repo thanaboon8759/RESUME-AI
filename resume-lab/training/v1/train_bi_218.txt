@@ -1,0 +1,16 @@
+ธนพร วงศ์ไทย (Thanaporn Merritt)
+Phone: +1-555-7139
+
+Skills
+Django, Pandas, Kotlin, Redis, Go
+
+Employment history
+Ironleaf Software 1
+Backend Developer
+2014 - Present
+- Built services using Django.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2012

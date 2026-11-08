@@ -1,0 +1,17 @@
+Noel Thornton
+Email: train.en.93@example.com
+Phone: +1-555-7723
+
+Skills
+Linux, TypeScript, Django, Kotlin, Docker
+
+Employment history
+Bluegate Systems 6
+Backend Developer
+2016 - 2023
+- Built services using Linux.
+
+Education
+Lakeside University
+BSc / Computer Science
+2012

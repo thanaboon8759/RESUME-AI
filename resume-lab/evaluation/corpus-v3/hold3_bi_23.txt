@@ -1,0 +1,16 @@
+ศุภชัย จันทร์เพ็ญ (Supachai Sterling)
+Email: hold3.bi.23@example.com
+Phone: +1-555-1653
+
+Skills
+TypeScript, Excel, SQL, Redis, MySQL
+
+Employment history
+Software Engineer | Summit Data Works 3
+Sep 2015 – Present
+- Built services using TypeScript.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2017

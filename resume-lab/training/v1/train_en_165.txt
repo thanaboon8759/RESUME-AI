@@ -1,0 +1,15 @@
+Blake Radcliffe
+Phone: +1-555-4126
+
+Skills
+Pandas, Redis, Python
+
+Employment history
+Data Analyst | Northwind Labs 9
+February 2013 – Current
+- Built services using Pandas.
+
+Education
+Lakeside University
+BSc / Computer Science
+2012

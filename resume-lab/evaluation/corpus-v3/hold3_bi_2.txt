@@ -1,0 +1,16 @@
+รัฐพล วงศ์ไทย (Rattapol Thornton)
+Phone: +1-555-2409
+
+Skills
+Spring, Power BI, FastAPI, Redis, Java
+
+Employment history
+Harbor Analytics 8
+Software Engineer
+11/2020 - Current
+- Built services using Spring.
+
+Education
+Lakeside University
+BSc / Computer Science
+2012

@@ -1,0 +1,16 @@
+Skyler Dalton
+Email: val.en.21@example.com
+Phone: +1-555-9088
+
+Skills
+AWS, Spring, GraphQL, SQL, Flutter
+
+Employment history
+Software Engineer | Silverpine Cloud 3
+August 2018 – Present
+- Built services using AWS.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2012

@@ -1,0 +1,16 @@
+ภูริ วงศ์ไทย (Phuri Whitaker)
+Email: train.bi.86@example.com
+
+Skills
+Docker, GraphQL, FastAPI
+
+Employment history
+Summit Data Works 8
+Software Engineer
+March 2021 - Current
+- Built services using Docker.
+
+Education
+Lakeside University
+BSc / Computer Science
+2013

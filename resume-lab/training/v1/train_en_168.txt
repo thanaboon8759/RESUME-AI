@@ -1,0 +1,16 @@
+Tatum Merritt
+Email: train.en.168@example.com
+
+Skills
+Kubernetes, Redis, AWS, JavaScript, React
+
+Employment history
+Silverpine Cloud 7
+Data Analyst
+Nov 2014 - Current
+- Built services using Kubernetes.
+
+Education
+Lakeside University
+BSc / Computer Science
+2011

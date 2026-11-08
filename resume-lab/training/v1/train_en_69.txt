@@ -1,0 +1,15 @@
+Sage Sterling
+Email: train.en.69@example.com
+
+Skills
+SQL, Vue, AWS, JavaScript, MySQL
+
+Employment history
+Software Engineer | Ironleaf Software 1
+03/2014 – 05/2025
+- Built services using SQL.
+
+Education
+Lakeside University
+BSc / Computer Science
+2014

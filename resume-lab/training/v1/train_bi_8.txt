@@ -1,0 +1,16 @@
+กมล แก้วประเสริฐ (Kamol Prescott)
+Email: train.bi.8@example.com
+
+Skills
+Vue, React, MySQL, C#
+
+Employment history
+Northwind Labs 8
+Backend Developer
+January 2018 - Current
+- Built services using Vue.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2014

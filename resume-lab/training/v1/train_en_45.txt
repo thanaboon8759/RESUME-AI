@@ -1,0 +1,16 @@
+Kendall Thornton
+Email: train.en.45@example.com
+Phone: +1-555-8166
+
+Skills
+Excel, Rust, Go, PostgreSQL, AWS
+
+Employment history
+Data Analyst | Summit Data Works 7
+05/2021 – Current
+- Built services using Excel.
+
+Education
+Lakeside University
+BSc / Computer Science
+2020

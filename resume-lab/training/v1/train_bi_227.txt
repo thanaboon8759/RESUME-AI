@@ -1,0 +1,16 @@
+ธีรวัฒน์ วงศ์ไทย (Teerawat Prescott)
+Email: train.bi.227@example.com
+
+Skills
+Linux, C#, MySQL, Azure
+
+Employment history
+Summit Data Works 2
+Data Analyst
+05/2021 - 03/2022
+- Built services using Linux.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2015

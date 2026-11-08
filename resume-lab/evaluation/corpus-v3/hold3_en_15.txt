@@ -1,0 +1,15 @@
+Tatum Barrett
+Phone: +1-555-4034
+
+Skills
+Tableau, Vue, PostgreSQL
+
+Employment history
+Data Analyst | Ironleaf Software 9
+06/2013 – Present
+- Built services using Tableau.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2015

@@ -1,0 +1,15 @@
+สิรินทร์ จันทร์เพ็ญ (Sirin Ellison)
+Email: train.bi.188@example.com
+
+Skills
+Terraform, Flutter, Excel, Kotlin, AWS
+
+Employment history
+Backend Developer | Northwind Labs 6
+April 2019 – June 2021
+- Built services using Terraform.
+
+Education
+Lakeside University
+BSc / Computer Science
+2015

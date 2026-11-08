@@ -1,0 +1,17 @@
+อัญชลี มั่นคง (Anchalee Dalton)
+Email: train.bi.83@example.com
+Phone: +1-555-8683
+
+Skills
+Java, Azure, React, TypeScript, Spring
+
+Employment history
+Bluegate Systems 5
+Software Engineer
+2020 - 2022
+- Built services using Java.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2008

@@ -1,0 +1,17 @@
+Jamie Hollis
+Email: train.en.180@example.com
+Phone: +1-555-3470
+
+Skills
+TypeScript, Python, GraphQL
+
+Employment history
+Silverpine Cloud 7
+Data Analyst
+Dec 2016 - Current
+- Built services using TypeScript.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2017

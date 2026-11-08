@@ -1,0 +1,15 @@
+Morgan Ellison
+Phone: +1-555-1791
+
+Skills
+Tableau, Azure, Rust
+
+Employment history
+Backend Developer | Ironleaf Software 1
+2013 – 2020
+- Built services using Tableau.
+
+Education
+Lakeside University
+BSc / Computer Science
+2008

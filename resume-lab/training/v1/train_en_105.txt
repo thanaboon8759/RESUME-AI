@@ -1,0 +1,16 @@
+Reese Fairbanks
+Phone: +1-555-3970
+
+Skills
+Kubernetes, Excel, Rust
+
+Employment history
+Northwind Labs 6
+Software Engineer
+June 2016 - Present
+- Built services using Kubernetes.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2016

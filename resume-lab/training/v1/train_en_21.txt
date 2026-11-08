@@ -1,0 +1,15 @@
+Jamie Dalton
+Phone: +1-555-8983
+
+Skills
+Django, Tableau, JavaScript
+
+Employment history
+Backend Developer | Copperline Tech 7
+12/2018 – 06/2020
+- Built services using Django.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2013

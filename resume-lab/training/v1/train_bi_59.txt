@@ -1,0 +1,17 @@
+สิรินทร์ ทองดี (Sirin Barrett)
+Email: train.bi.59@example.com
+Phone: +1-555-6570
+
+Skills
+Java, TypeScript, SQL
+
+Employment history
+Northwind Labs 4
+Software Engineer
+2017 - 2020
+- Built services using Java.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2014

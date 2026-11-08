@@ -1,0 +1,15 @@
+มนัสนันท์ แก้วประเสริฐ (Manatsanan Kingsley)
+Phone: +1-555-5723
+
+Skills
+JavaScript, Pandas, Go, Azure
+
+Employment history
+Backend Developer | Harbor Analytics 8
+October 2018 – August 2020
+- Built services using JavaScript.
+
+Education
+Lakeside University
+BSc / Computer Science
+2018

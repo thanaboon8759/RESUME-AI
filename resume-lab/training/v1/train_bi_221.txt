@@ -1,0 +1,16 @@
+อัญชลี วงศ์ไทย (Anchalee Thornton)
+Phone: +1-555-5783
+
+Skills
+GraphQL, Rust, Go, Django, React
+
+Employment history
+Summit Data Works 4
+Software Engineer
+2013 - 2023
+- Built services using GraphQL.
+
+Education
+Lakeside University
+BSc / Computer Science
+2011

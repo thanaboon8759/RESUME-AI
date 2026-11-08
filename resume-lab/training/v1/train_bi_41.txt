@@ -1,0 +1,16 @@
+เกียรติ วงศ์ไทย (Kiat Ellison)
+Email: train.bi.41@example.com
+
+Skills
+JavaScript, Go, Kotlin
+
+Employment history
+Ironleaf Software 9
+Software Engineer
+2017 - Current
+- Built services using JavaScript.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2011

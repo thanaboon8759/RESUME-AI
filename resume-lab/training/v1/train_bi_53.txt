@@ -1,0 +1,17 @@
+ภูริ สมบูรณ์ชัย (Phuri Barrett)
+Email: train.bi.53@example.com
+Phone: +1-555-6185
+
+Skills
+PostgreSQL, Python, Pandas, Excel
+
+Employment history
+Bluegate Systems 1
+Software Engineer
+March 2019 - August 2023
+- Built services using PostgreSQL.
+
+Education
+Lakeside University
+BSc / Computer Science
+2015

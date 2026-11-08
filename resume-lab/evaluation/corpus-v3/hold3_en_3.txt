@@ -1,0 +1,16 @@
+Harper Barrett
+Phone: +1-555-9405
+
+Skills
+Pandas, Azure, Redis, Power BI, Rust
+
+Employment history
+Copperline Tech 5
+Data Analyst
+2020 - 2024
+- Built services using Pandas.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2010

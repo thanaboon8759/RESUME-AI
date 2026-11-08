@@ -1,0 +1,16 @@
+วรเมธ ทองดี (Woramet Ellison)
+Phone: +1-555-4399
+
+Skills
+FastAPI, Redis, Flutter, Linux, Django
+
+Employment history
+Silverpine Cloud 3
+Data Analyst
+09/2019 - Present
+- Built services using FastAPI.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2011

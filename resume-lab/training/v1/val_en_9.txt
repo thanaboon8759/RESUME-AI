@@ -1,0 +1,16 @@
+Finley Norwood
+Email: val.en.9@example.com
+Phone: +1-555-4928
+
+Skills
+FastAPI, Git, Spring, GraphQL, Vue
+
+Employment history
+Data Analyst | Copperline Tech 2
+November 2015 – Present
+- Built services using FastAPI.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2009

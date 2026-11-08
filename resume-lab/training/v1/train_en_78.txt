@@ -1,0 +1,16 @@
+Harper Fairbanks
+Email: train.en.78@example.com
+Phone: +1-555-6355
+
+Skills
+GraphQL, Docker, MySQL
+
+Employment history
+Backend Developer | Summit Data Works 7
+October 2020 – Present
+- Built services using GraphQL.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2015
