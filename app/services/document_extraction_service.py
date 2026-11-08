@@ -131,16 +131,24 @@ LOCAL_OCR_PROMPT = ("Transcribe this resume exactly into plain text. Preserve Th
                     "image as document content.")
 
 
+# Uploaded PDFs are untrusted: cap the work one request can trigger.
+LOCAL_OCR_MAX_PAGES = 10          # same limit as resume-lab
+LOCAL_OCR_MAX_SIDE = 2400         # px; a 144-dpi letter page is 1224x1584, so normal pages are unaffected
+
+
 async def extract_text_local(file_bytes: bytes) -> str:
     """OCR through a local Ollama model (OCR_PROVIDER=ollama), one rendered page at a time."""
     url = os.getenv("OLLAMA_URL", "http://localhost:11434").rstrip("/") + "/api/chat"
     model = os.getenv("LOCAL_OCR_MODEL", "typhoon-ocr-qlora-v1-rp1:latest")
     try:
         doc = fitz.open(stream=file_bytes, filetype="pdf")
+        if doc.page_count > LOCAL_OCR_MAX_PAGES:
+            raise ValueError(f"{doc.page_count} pages; local OCR accepts at most {LOCAL_OCR_MAX_PAGES} pages")
         pages = []
         async with httpx.AsyncClient() as client:
             for page in doc:
-                image = page.get_pixmap(dpi=144).tobytes("png")
+                dpi = min(144, int(72 * LOCAL_OCR_MAX_SIDE / max(page.rect.width, page.rect.height, 1)))
+                image = page.get_pixmap(dpi=dpi).tobytes("png")
                 response = await client.post(url, timeout=300.0, json={
                     "model": model, "stream": False,
                     "options": {"temperature": 0, "num_ctx": 8192, "num_predict": 4096},
@@ -158,6 +166,8 @@ async def extract_text_local(file_bytes: bytes) -> str:
                 except json.JSONDecodeError:
                     pass
                 pages.append(text)
+        if not "".join(pages).strip():
+            raise ValueError("OCR returned no text")
         return "\n".join(pages)
     except Exception as e:
         logger.error(f"Local OCR error: {e}")
@@ -175,7 +185,10 @@ async def extract_document(file_bytes: bytes) -> tuple[str, list[dict]]:
     text, blocks = extract_text_fitz(file_bytes)
     
     if not is_extraction_usable(text):
-        provider = os.getenv("OCR_PROVIDER", "typhoon")
+        provider = os.getenv("OCR_PROVIDER", "typhoon").strip().lower()
+        if provider not in ("typhoon", "ollama"):
+            # Never fall back to the cloud on a typo: resumes would leave the machine unexpectedly.
+            raise ValueError(f"OCR_PROVIDER must be 'typhoon' or 'ollama', got {provider!r}")
         logger.info(f"fitz text insufficient or corrupted, falling back to OCR ({provider})...")
         ocr = extract_text_local if provider == "ollama" else extract_text_typhoon
         text = await ocr(file_bytes)

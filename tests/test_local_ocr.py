@@ -58,3 +58,42 @@ async def test_provider_switch(monkeypatch):
     assert (await svc.extract_document(pdf))[0] == "cloud"
     monkeypatch.setenv("OCR_PROVIDER", "ollama")
     assert (await svc.extract_document(pdf))[0] == "local"
+
+
+async def test_local_ocr_rejects_empty_output():
+    with patch("httpx.AsyncClient.post", AsyncMock(return_value=reply(json.dumps({"foo": 1})))):
+        with pytest.raises(Exception, match="^OCR processing error.*no text"):
+            await svc.extract_text_local(image_pdf(1))
+
+
+async def test_local_ocr_rejects_too_many_pages():
+    post = AsyncMock(return_value=reply("x"))
+    with patch("httpx.AsyncClient.post", post):
+        with pytest.raises(Exception, match="^OCR processing error.*pages"):
+            await svc.extract_text_local(image_pdf(svc.LOCAL_OCR_MAX_PAGES + 1))
+    assert post.call_count == 0
+
+
+async def test_local_ocr_clamps_huge_pages():
+    import base64
+    import fitz
+    doc = fitz.open()
+    doc.new_page(width=14400, height=14400)  # 200-inch page: ~28800 px at 144 dpi without a clamp
+    post = AsyncMock(return_value=reply("x"))
+    with patch("httpx.AsyncClient.post", post):
+        await svc.extract_text_local(doc.tobytes())
+    png = base64.b64decode(post.call_args.kwargs["json"]["messages"][0]["images"][0])
+    assert max(Image.open(io.BytesIO(png)).size) <= svc.LOCAL_OCR_MAX_SIDE
+
+
+async def test_provider_value_is_strict(monkeypatch):
+    pdf = image_pdf(1)
+    typhoon, local = AsyncMock(return_value="cloud"), AsyncMock(return_value="local")
+    monkeypatch.setattr(svc, "extract_text_typhoon", typhoon)
+    monkeypatch.setattr(svc, "extract_text_local", local)
+    monkeypatch.setenv("OCR_PROVIDER", " Ollama ")
+    assert (await svc.extract_document(pdf))[0] == "local"
+    monkeypatch.setenv("OCR_PROVIDER", "local")  # a typo must never fall back to the cloud
+    with pytest.raises(ValueError, match="OCR_PROVIDER"):
+        await svc.extract_document(pdf)
+    typhoon.assert_not_called()
