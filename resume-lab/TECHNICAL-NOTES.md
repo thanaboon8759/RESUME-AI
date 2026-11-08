@@ -1,6 +1,6 @@
 # Resume Lab — automatic local scanning
 
-Upload a resume to get readable text, structured facts and optional diagnostics. Models are selected automatically from evaluated local configurations. Based on DUMB-DOG-AI benchmark branch commit d608f5ae8a862988e09177b07d696b2bf2bdb626; the original repository is preserved under work/repo.
+Upload a resume to get readable text, structured facts and optional diagnostics. Models are selected automatically from evaluated local configurations. Based on Resume AI benchmark branch commit d608f5ae8a862988e09177b07d696b2bf2bdb626; the original repository is preserved under work/repo.
 
 ## Run
 
