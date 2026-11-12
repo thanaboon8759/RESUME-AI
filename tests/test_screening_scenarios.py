@@ -1,13 +1,16 @@
+import os
 import pytest
 import re
 import asyncio
 from dotenv import load_dotenv
 load_dotenv() # Load API keys BEFORE importing services
+LIVE = os.getenv("DASHSCOPE_API_KEY") not in (None, "", "mock")  # without a key the services return fake data
 
 from app.services.resume_extraction_service import analyze_resume_facts_with_qwen
 from app.services.screening_service import screen_candidate_with_qwen
 from app.schemas.job import Job
 from app.schemas.core import DecisionEnum
+from app.services.scoring import apply_job_rules
 
 
 def normalize_evidence_text(text: str) -> str:
@@ -224,6 +227,8 @@ SCENARIOS = [
 @pytest.mark.asyncio
 @pytest.mark.parametrize("scenario", SCENARIOS, ids=[s["name"] for s in SCENARIOS])
 async def test_ai_screening_scenario(scenario):
+    if not LIVE:
+        pytest.skip("needs DASHSCOPE_API_KEY")
     # 1. Resume Extraction
     profile = await analyze_resume_facts_with_qwen(scenario["resume_text"], "Test Candidate")
     
@@ -234,6 +239,7 @@ async def test_ai_screening_scenario(scenario):
     # 3. Screening
     job = Job(**scenario["job"])
     result = await screen_candidate_with_qwen(profile, job)
+    result = apply_job_rules(result, job)[0]  # the decision HR sees, not Qwen's own
     
     expected = scenario["expected"]
     
@@ -314,9 +320,9 @@ async def test_ai_screening_scenario(scenario):
     if "unmatched_reqs" in expected:
         for req in expected["unmatched_reqs"]:
             c = find_criterion(req)
-            # It might be unmet or not even listed, both are acceptable as failure
+            # Unmet, unknown (allowed since the job-rules prompt) or not listed: all mean "not met"
             if c is not None:
-                assert c.status.value == "unmet", f"Expected '{req}' to be 'unmet', got {c.status.value}"
+                assert c.status.value in ("unmet", "unknown"), f"Expected '{req}' not to be met, got {c.status.value}"
                 
     if "check_reason_mentions" in expected:
         mention = expected["check_reason_mentions"].lower()

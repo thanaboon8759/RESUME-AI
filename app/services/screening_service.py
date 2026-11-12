@@ -44,16 +44,17 @@ async def screen_candidate_with_qwen(profile: CandidateProfile, job: Job) -> Scr
         "Rules:\n"
         "1. Screen ONLY based on the provided Candidate Profile data and the Job Requirements.\n"
         "2. Do not invent, guess, or hallucinate missing information.\n"
-        "3. Evaluate Required criteria, Preferred criteria, and Mandatory criteria as defined in the Job Requirements.\n"
+        "3. Evaluate EVERY item in the Job Requirements' 'required', 'preferred' and 'mandatory' lists as its own criterion, using the item's exact text as the criterion 'label'. "
+        "Use status 'unknown' when the profile has no information either way.\n"
         "4. Calculate a score (1-100) based on how well the candidate matches the job.\n"
-        "5. Output a decision: 'shortlisted' or 'rejected'.\n"
+        "5. Output a decision: 'shortlisted', 'rejected' or 'undecided'.\n"
         "6. Provide reasons, strengths, weaknesses, and a list of evaluated criteria.\n"
         "7. EVIDENCE: You MUST NOT invent or generate evidence quotes yourself. Instead, you must return an `evidence_refs` array pointing to the exact field and value in the CandidateProfile that supports the criterion. The `field` MUST be a top-level key (e.g., 'skills', 'experience', 'projects', 'education') and must NOT use dot or bracket notation.\n"
         "8. Do not make decisions based on arbitrary assumptions; strictly match the profile facts to the job needs.\n"
         "9. Return valid JSON only, matching the exact following schema structure:\n"
         '{\n'
         '  "score": 1-100,\n'
-        '  "decision": "shortlisted" | "rejected",\n'
+        '  "decision": "shortlisted" | "rejected" | "undecided",\n'
         '  "role": "...",\n'
         '  "headline": "...",\n'
         '  "experience_summary": "...",\n'
@@ -63,7 +64,7 @@ async def screen_candidate_with_qwen(profile: CandidateProfile, job: Job) -> Scr
         '  "missingInformation": ["...", "..."],\n'
         '  "detectedLanguages": ["...", "..."],\n'
         '  "reasons": ["...", "..."],\n'
-        '  "criteria": [{"label": "...", "status": "met" | "unmet" | "partial", "evidence_refs": [{"field": "skills", "value": "Python"}]}]\n'
+        '  "criteria": [{"label": "...", "status": "met" | "partial" | "unmet" | "unknown", "evidence_refs": [{"field": "skills", "value": "Python"}]}]\n'
         '}'
     )
 
