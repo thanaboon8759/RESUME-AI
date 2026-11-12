@@ -97,3 +97,30 @@ async def test_provider_value_is_strict(monkeypatch):
     with pytest.raises(ValueError, match="OCR_PROVIDER"):
         await svc.extract_document(pdf)
     typhoon.assert_not_called()
+
+
+async def test_local_ocr_rejects_malformed_json():
+    with patch("httpx.AsyncClient.post", AsyncMock(return_value=reply('{"natural_text": "abc'))):
+        with pytest.raises(Exception, match="^OCR processing error.*malformed JSON"):
+            await svc.extract_text_local(image_pdf(1))
+
+
+async def test_local_ocr_rejects_page_without_text():
+    for second in (json.dumps({"foo": 1}), "   "):
+        with patch("httpx.AsyncClient.post", AsyncMock(side_effect=[reply("page1"), reply(second)])):
+            with pytest.raises(Exception, match="^OCR processing error.*no text"):
+                await svc.extract_text_local(image_pdf(2))
+
+
+async def test_local_ocr_renders_off_event_loop(monkeypatch):
+    import asyncio
+    seen, real = [], asyncio.to_thread
+
+    async def spy(fn, *args, **kwargs):
+        seen.append(fn)
+        return await real(fn, *args, **kwargs)
+
+    monkeypatch.setattr(asyncio, "to_thread", spy)
+    with patch("httpx.AsyncClient.post", AsyncMock(return_value=reply("x"))):
+        assert await svc.extract_text_local(image_pdf(1)) == "x"
+    assert seen == [getattr(svc, "_render_pages", None)] and seen[0] is not None

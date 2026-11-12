@@ -1,4 +1,5 @@
 import os
+import asyncio
 import json
 import base64
 import httpx
@@ -136,19 +137,41 @@ LOCAL_OCR_MAX_PAGES = 10          # same limit as resume-lab
 LOCAL_OCR_MAX_SIDE = 2400         # px; a 144-dpi letter page is 1224x1584, so normal pages are unaffected
 
 
+def _render_pages(file_bytes: bytes) -> list[bytes]:
+    """PNG bytes per page, capped in count and size. CPU-bound: call through asyncio.to_thread."""
+    with fitz.open(stream=file_bytes, filetype="pdf") as doc:
+        if doc.page_count > LOCAL_OCR_MAX_PAGES:
+            raise ValueError(f"{doc.page_count} pages; local OCR accepts at most {LOCAL_OCR_MAX_PAGES} pages")
+        return [page.get_pixmap(dpi=min(144, int(72 * LOCAL_OCR_MAX_SIDE / max(page.rect.width, page.rect.height, 1))))
+                .tobytes("png") for page in doc]
+
+
+def _page_text(content: str) -> str:
+    """The page's text from an OCR reply; a broken or empty reply must fail, never drop the page."""
+    text = content
+    try:
+        wrapped = json.loads(content)
+        if isinstance(wrapped, dict):
+            if "natural_text" not in wrapped and "text" not in wrapped:
+                raise ValueError("OCR page had no text")
+            text = wrapped.get("natural_text", wrapped.get("text"))
+    except json.JSONDecodeError:
+        if content.lstrip().startswith("{"):
+            raise ValueError("OCR returned malformed JSON")
+    if not isinstance(text, str) or not text.strip():
+        raise ValueError("OCR page had no text")
+    return text
+
+
 async def extract_text_local(file_bytes: bytes) -> str:
     """OCR through a local Ollama model (OCR_PROVIDER=ollama), one rendered page at a time."""
     url = os.getenv("OLLAMA_URL", "http://localhost:11434").rstrip("/") + "/api/chat"
     model = os.getenv("LOCAL_OCR_MODEL", "typhoon-ocr-qlora-v1-rp1:latest")
     try:
-        doc = fitz.open(stream=file_bytes, filetype="pdf")
-        if doc.page_count > LOCAL_OCR_MAX_PAGES:
-            raise ValueError(f"{doc.page_count} pages; local OCR accepts at most {LOCAL_OCR_MAX_PAGES} pages")
+        images = await asyncio.to_thread(_render_pages, file_bytes)
         pages = []
         async with httpx.AsyncClient() as client:
-            for page in doc:
-                dpi = min(144, int(72 * LOCAL_OCR_MAX_SIDE / max(page.rect.width, page.rect.height, 1)))
-                image = page.get_pixmap(dpi=dpi).tobytes("png")
+            for image in images:
                 response = await client.post(url, timeout=300.0, json={
                     "model": model, "stream": False,
                     "options": {"temperature": 0, "num_ctx": 8192, "num_predict": 4096},
@@ -158,16 +181,7 @@ async def extract_text_local(file_bytes: bytes) -> str:
                 result = response.json()
                 if result.get("done_reason") == "length":
                     raise ValueError("OCR output was truncated")
-                text = result.get("message", {}).get("content", "")
-                try:
-                    wrapped = json.loads(text)
-                    if isinstance(wrapped, dict):
-                        text = wrapped.get("natural_text", wrapped.get("text", ""))
-                except json.JSONDecodeError:
-                    pass
-                pages.append(text)
-        if not "".join(pages).strip():
-            raise ValueError("OCR returned no text")
+                pages.append(_page_text(result.get("message", {}).get("content", "")))
         return "\n".join(pages)
     except Exception as e:
         logger.error(f"Local OCR error: {e}")
