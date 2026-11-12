@@ -90,23 +90,42 @@ def _val_loss(model, collate, samples):
     return sum(losses) / len(losses)
 
 
+def _check_train_inputs(out_dir, train_set, val_set):
+    """Refuse runs that would save an untrained adapter or mix with an earlier run's files."""
+    if not train_set:
+        raise ValueError("no training samples in split 'train'")
+    if not val_set:
+        raise ValueError("no validation samples in split 'val'")
+    if (Path(out_dir) / 'train_log.jsonl').exists():
+        raise ValueError(f"{out_dir} already holds a training run; choose a new --out")
+
+
+def _check_merge_out(base_dir, out_dir):
+    """merge() deletes non-weight files in out_dir, so it must be new or empty and never the base."""
+    if Path(out_dir).resolve() == Path(base_dir).resolve():
+        raise ValueError("--out must not be the base model directory")
+    if Path(out_dir).exists() and any(Path(out_dir).iterdir()):
+        raise ValueError(f"{out_dir} is not empty; merge deletes non-weight files there")
+
+
 def train(base_dir=BASE, data_dir=DATA, out_dir=Path('runs/qlora-v1'), epochs=2, lr=1e-4, max_steps=None,
           grad_accum=8, seed=7):
-    _require_cuda()
     out_dir = Path(out_dir)
+    train_set, val_set = load_samples('train', data_dir), load_samples('val', data_dir)
+    _check_train_inputs(out_dir, train_set, val_set)
+    _require_cuda()
     out_dir.mkdir(parents=True, exist_ok=True)
     random.seed(seed)
     torch.manual_seed(seed)
     processor, model = _load_quantized(base_dir)
     collate = make_collator(processor)
-    train_set, val_set = load_samples('train', data_dir), load_samples('val', data_dir)
     config = {'base': str(base_dir), 'data_manifest': str(Path(data_dir) / 'manifest.json'), 'epochs': epochs, 'lr': lr,
               'grad_accum': grad_accum, 'lora': {'r': 16, 'alpha': 32, 'dropout': 0.05, 'targets': LORA_TARGETS},
               'pixels': [MIN_PIXELS, MAX_PIXELS], 'n_train': len(train_set), 'n_val': len(val_set), 'seed': seed,
               'max_steps': max_steps, 'trainable_params': sum(p.numel() for p in model.parameters() if p.requires_grad)}
     (out_dir / 'config.json').write_text(json.dumps(config, indent=2), encoding='utf-8')
     optimizer = torch.optim.AdamW([p for p in model.parameters() if p.requires_grad], lr=lr)
-    log = (out_dir / 'train_log.jsonl').open('a', encoding='utf-8')
+    log = (out_dir / 'train_log.jsonl').open('w', encoding='utf-8')
     torch.cuda.reset_peak_memory_stats()
     step, best, started = 0, (math.inf, None), time.time()
     model.train()
@@ -149,6 +168,7 @@ def _copy_tree(src, dst):
 
 def merge(base_dir=BASE, adapter_dir=Path('runs/qlora-v1/adapter'), out_dir=Path('models/typhoon-ocr-qlora-v1-hf')):
     """Merge the LoRA adapter into full-precision base weights for Ollama import."""
+    _check_merge_out(base_dir, out_dir)
     from peft import PeftModel
     from transformers import AutoProcessor, Qwen2_5_VLForConditionalGeneration
     model = Qwen2_5_VLForConditionalGeneration.from_pretrained(base_dir, dtype=torch.bfloat16, device_map={'': 'cpu'})

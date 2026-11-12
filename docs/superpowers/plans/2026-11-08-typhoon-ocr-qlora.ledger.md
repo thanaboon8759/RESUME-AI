@@ -21,8 +21,8 @@ Final: fixed format_share stripped only outputs — test_markup_free_cer_strips_
 Final: fixed promoted serving config not committed — test_promoted_serving_config_is_committed RED→GREEN, suite 20/20
 Final: Ruling: corpus-v3 independence overstated — corrected in SCORECARD (frozen-candidates-v7.json left unedited because promotion-v7 hashes it) — cost if wrong: none, wording only.
 Final: Ruling: Task 3 ledger said the 2 round-trip diffs were only asterisks; dev_en_02_lead also changed heading levels and a company name (base Cloudbase, roundtrip ClouScale, ref CloudScale) — corrected in SCORECARD; override needs owner acceptance — cost if wrong: baseline choice already isolates export effects.
-Final: minor (deferred): trainer writes an untrained adapter if the train split is empty (add assert step > 0)
-Final: minor (deferred): merge() drops the index for sharded output and has no out==base guard; 824/824 tensor-name check not committed as a test
+Final: minor (deferred): trainer writes an untrained adapter if the train split is empty (add assert step > 0) — fixed on fix/finetune-guards (2026-11-13-finetune-guards.md)
+Final: minor (deferred): merge() drops the index for sharded output and has no out==base guard; 824/824 tensor-name check not committed as a test — fixed on fix/finetune-guards (2026-11-13-finetune-guards.md) [out==base guard only; sharded index and tensor-name test still deferred]
 Final: minor (deferred): build_training_set leaves build_corpus_v2.DEST mutated; overwrite guard only in __main__
-Final: minor (deferred): train_log opened in append mode mixes logs on re-run into same --out
+Final: minor (deferred): train_log opened in append mode mixes logs on re-run into same --out — fixed on fix/finetune-guards (2026-11-13-finetune-guards.md)
 Final: minor (deferred): qlora-v1 vs roundtrip-rp1 latency tie-break compares timings across runs (does not affect rank 1)
