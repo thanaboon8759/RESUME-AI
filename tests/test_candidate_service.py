@@ -88,3 +88,7 @@ async def test_text_only_candidate_skips_ownership():
          patch(f"{SVC}.candidate_repository.create_candidate", MagicMock()):
         cand = await create_candidate("job1", CandidateCreate(name="Ann Lee", resume_text="...", resume_url=None), "user1")
     assert cand.score == 61
+
+
+async def test_resume_path_traversal_is_404():
+    assert (await _create_with_url("job1/../otherjob/x_a.pdf", make_job())).status_code == 404
