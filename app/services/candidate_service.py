@@ -8,6 +8,7 @@ from app.repositories import candidate_repository, job_repository
 from app.services.document_extraction_service import extract_document
 from app.services.resume_extraction_service import analyze_resume_facts_with_qwen
 from app.services.screening_service import screen_candidate_with_qwen
+from app.services.scoring import apply_job_rules, criterion_weight, is_mandatory
 from app.database.supabase.client import supabase
 
 logger = logging.getLogger(__name__)
@@ -46,7 +47,9 @@ async def create_candidate(job_id: str, candidate_data: CandidateCreate, user_id
     
     logger.info("Screening candidate against job requirements (Qwen #2)")
     screening = await screen_candidate_with_qwen(profile, job)
-    
+    # The job's weights and mandatory items decide the final score/decision, not the AI's guess.
+    screening, outcome = apply_job_rules(screening, job)
+
     candidate_id = str(uuid.uuid4())
     criteria = []
     
@@ -125,18 +128,18 @@ async def create_candidate(job_id: str, candidate_data: CandidateCreate, user_id
             "id": f"crit-{i}", 
             "label": crit.label, 
             "status": crit.status,
-            "weight": 3, 
-            "mandatory": False, 
+            "weight": criterion_weight(crit.label, job),
+            "mandatory": is_mandatory(crit.label, job),
             "evidence": mapped_evidence
         })
         
-    # Map raw reasons (legacy mapping fallback for reasons lacking explicit criteria)
+    # Fallback when the AI gave no criteria: show its reasons, but as unknown, since none was checked against the job.
     if not criteria and screening.reasons:
         for i, reason in enumerate(screening.reasons):
             criteria.append({
-                "id": f"crit-legacy-{i}", 
-                "label": reason, 
-                "status": CriterionStatusEnum.met,
+                "id": f"crit-legacy-{i}",
+                "label": reason,
+                "status": CriterionStatusEnum.unknown,
                 "weight": 3, 
                 "mandatory": False, 
                 "evidence": []
@@ -155,7 +158,7 @@ async def create_candidate(job_id: str, candidate_data: CandidateCreate, user_id
         extractedText=extracted_text, 
         parseStatus="done", 
         failureReason=None, 
-        hasBlocker=False, 
+        hasBlocker=outcome.has_blocker,
         duplicateOf=None,
         criteria=criteria, 
         strengths=screening.strengths, 
