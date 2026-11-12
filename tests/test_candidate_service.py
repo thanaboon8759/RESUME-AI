@@ -58,3 +58,33 @@ async def test_fallback_reasons_are_unknown():
 def test_job_row_with_negative_weight_still_loads():
     # job_repository builds Job(**row); an old row must not crash job lists or resume uploads
     assert Job(**{**make_job().model_dump(), "weights": {"Python": -1}}).weights == {"Python": -1}
+
+
+async def _create_with_url(resume_url, job):
+    import pytest
+    from fastapi import HTTPException
+    storage = MagicMock()
+    with patch(f"{SVC}.supabase", storage), patch(f"{SVC}.job_repository.get_job", return_value=job), \
+         pytest.raises(HTTPException) as err:
+        await create_candidate("job1", CandidateCreate(name="Ann", resume_text="", resume_url=resume_url), "user1")
+    storage.storage.from_.return_value.download.assert_not_called()
+    return err.value
+
+
+async def test_resume_from_other_job_is_404():
+    assert (await _create_with_url("otherjob/x_a.pdf", make_job())).status_code == 404
+
+
+async def test_resume_for_unowned_job_is_404():
+    assert (await _create_with_url("job1/x_a.pdf", None)).status_code == 404
+
+
+async def test_text_only_candidate_skips_ownership():
+    screening = ScreeningResult(score=61, decision=DecisionEnum.shortlisted, criteria=[], reasons=["x"])
+    profile = CandidateProfile(personal_info=PersonalInfo(name="Ann Lee"))
+    with patch(f"{SVC}.analyze_resume_facts_with_qwen", AsyncMock(return_value=profile)), \
+         patch(f"{SVC}.screen_candidate_with_qwen", AsyncMock(return_value=screening)), \
+         patch(f"{SVC}.job_repository.get_job", return_value=None), \
+         patch(f"{SVC}.candidate_repository.create_candidate", MagicMock()):
+        cand = await create_candidate("job1", CandidateCreate(name="Ann Lee", resume_text="...", resume_url=None), "user1")
+    assert cand.score == 61
