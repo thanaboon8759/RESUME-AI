@@ -99,7 +99,7 @@ The `typhoon-ocr-finetuned` tag never contained trained weights. `typhoon-ocr-ql
 - corpus-v3 and the training data come from the same generator, so the holdout advantage is optimistic.
 - corpus-v2, made by a different generator, is the more independent comparison, and the fine-tune also leads there.
 - Formats remain correlated copies.
-- Nothing here shows a gain on real resumes.
+- Nothing in this section shows a gain on real resumes; see the real-document check below.
 - `model-policy.json` is now `v7-qlora`.
 
 **Formatting share** (`format_share.py`; Markdown and JSON wrappers stripped from both reference and output). On dev, the training effect is 0.614% → 0.321% with formatting removed, against 0.672% → 0.327% raw. The gain is reading accuracy, not output format. corpus-v3 has no markup, so its raw and stripped numbers are identical.
@@ -115,3 +115,31 @@ The `typhoon-ocr-finetuned` tag never contained trained weights. `typhoon-ocr-ql
 - Every training comparison above uses the round-trip export (`typhoon-ocr-roundtrip`, `-rp1`) as its baseline, so export effects are not counted as training gains. The owner accepted this override on 2026-11-08 by approving `docs/superpowers/plans/2026-11-08-ocr-compare-and-adopt.md`.
 
 **Serving configs.** The serving Modelfiles for `-rp1` variants are in `resume-lab/modelfiles/`.
+
+## Real-document check (2026-11-13)
+
+Two real documents, run with `compare_ocr.py`. The documents and model outputs contain personal data, so they are not committed; only these numbers are.
+- **A real English resume** with two columns. Its text PDF was rendered at 200 dpi into an image-only PDF, and its own text layer is the reference.
+- **A real Thai document**, an internet bill rather than a resume. It was already image-only (1653×2339), and its text-PDF twin is the reference.
+
+Both PDFs were re-saved with JPEG pages at quality 90 to fit the lab's 8 MB limit.
+
+The resume's reading order differs from its text layer, so raw CER is about 67% for every model and means nothing. It is scored instead by bag-of-words recall and precision (markup stripped, words of 2+ characters, order ignored). The Thai page is single-column, so CER applies.
+
+| OCR | Resume recall / precision | Resume words lost | Thai CER | Seconds per page |
+|---|---:|---:|---:|---:|
+| typhoon-ocr-qlora-v1-rp1 (v7) | 0.839 / 0.964 | 0 | **8.51%** | 14–16 |
+| scb10x/typhoon-ocr-3b (base, Ollama default) | 0.830 / 0.944 | 1 ("MySQL") | 9.42% | 8–12 |
+| typhoon-ocr-finetuned (v6 default) | 0.665 / 0.914 | 40 | 84.55% | 10–13 |
+
+Recall here also counts single letters, and the reference spells a heading out letter by letter, so no model can reach 1.0. The "words lost" column excludes that artifact and splits that only come from tokenizing.
+
+**Findings:**
+- **v6 was unsafe on real input.** It dropped the Skills, Soft Skills and Languages sections from the resume. On the Thai page it invented about ten lines of text that are not in the document. v6 serves base weights with the old repeat penalty, which agrees with the attribution above that the serving setting was the largest fix.
+- **v7 kept every resume fact:** name, contacts, skills, languages and years.
+- **Training adds little on real Thai.** v7 scored 8.51% against 9.42% for the untouched base. Both misread proper nouns such as company and district names, and v7 was worse than the base on one of them. The 0.087% synthetic holdout result does not transfer.
+
+**Limits:**
+- Only two documents, and only one is a resume.
+- Both are clean digital renders, not paper scans or phone photos.
+- The Thai document is not a resume.
