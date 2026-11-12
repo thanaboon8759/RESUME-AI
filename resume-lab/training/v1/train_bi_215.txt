@@ -1,0 +1,16 @@
+สิรินทร์ บุญมา (Sirin Garland)
+Email: train.bi.215@example.com
+Phone: +1-555-9590
+
+Skills
+Go, PostgreSQL, Git, Redis, Python
+
+Employment history
+Software Engineer | Silverpine Cloud 2
+Aug 2016 – Present
+- Built services using Go.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2012

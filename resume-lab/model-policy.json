@@ -1,7 +1,7 @@
 {
-  "id": "v6",
+  "id": "v7-qlora",
   "status": "validated",
-  "created_at": "2026-10-04T09:11:34.168433+00:00",
+  "created_at": "2026-11-08T12:18:44.079466+00:00",
   "engine_sha256": "2dd93729c7a5c99c32ac52d457886fc658eca7356e688f24e12866ab01efa634",
   "corpus_sha256": "ccad7aff918f5f59b055619a0ff3cde998570b8480cffc5c33d1706699580332",
   "corpus_directory": "corpus-v2",
@@ -28,12 +28,14 @@
       "stage_contract_sha256": "0cfd1ffad9333fe481ad2e40104ef94e05828deeb75bd4706415814914c4ab28"
     },
     "ocr": {
-      "run": "expanded-ocr-v5",
-      "summary_sha256": "06ea4f149c54471619415306b06fa068cefd2f79142038ce1a01dcb9b04969ba",
-      "attempts_sha256": "01869c711eef839dc99c7023b475f9d20dd3fa8c7b7cf7f195e0f9506acced88",
+      "run": "v7-qlora-dev-ocr",
+      "summary_sha256": "6ceef13fcfc4d529bbaee35b05c321f51a8bfe7393a55c745d8fcda20f1feaed",
+      "attempts_sha256": "0068ab3d05e31ae47bfe84b04c98dd4fe1401c8a7ec21ba504bdc6473a54b202",
       "stage_contract_sha256": "73e37d3e37b1dc388cbeae2bb6c9304bee4155e7d7681ed8a19f7a41fa28afb5"
     }
   },
+  "ocr_holdout_corpus": "corpus-v3",
+  "ocr_holdout_corpus_sha256": "79a3f44512ba4a8f1604d0f2dab19a88fdcd52a62676eb1b6cc9871a47845566",
   "extraction": [
     {
       "name": "qwen2.5:7b",
@@ -42,16 +44,28 @@
   ],
   "ocr": [
     {
-      "name": "typhoon-ocr-finetuned:latest",
-      "digest": "d331d514cd3d2ccfbf51e8d8d93d381afaf5ff536543cc8c4fc879f6318373f4"
+      "name": "typhoon-ocr-qlora-v1-rp1:latest",
+      "digest": "d8e264d0f030b585ee2a41aac7be5c8e555f7205dfb409177f667bc9aa3d78b6"
+    },
+    {
+      "name": "typhoon-ocr-qlora-v1:latest",
+      "digest": "eb51dae6f372317be9ab821a60e7532784ea9457ed5b51a7963ac2f8f25b2498"
     },
     {
       "name": "typhoon-fast:latest",
       "digest": "4aeab094b040881a4547a766ce6ff5f78693b3874f43ecfea1f82947a67a27bf"
     },
     {
-      "name": "scb10x/typhoon-ocr-3b:latest",
-      "digest": "fb500215fa866d400513c0f4b7f68b9e865594c7b6c18ac224d3d4394bb09e91"
+      "name": "typhoon-ocr-finetuned:latest",
+      "digest": "d331d514cd3d2ccfbf51e8d8d93d381afaf5ff536543cc8c4fc879f6318373f4"
+    },
+    {
+      "name": "typhoon-ocr-roundtrip-rp1:latest",
+      "digest": "dd5fafbfec76502c95f5b80a11e55adcf0aa4692946ef568451b6fd93abf060d"
+    },
+    {
+      "name": "typhoon-ocr-roundtrip:latest",
+      "digest": "310f0c5efac268f6e5b7bfb0681a38261f0fa9b029e9163164be1cd74dbf0a45"
     }
   ],
   "holdout": {
@@ -62,11 +76,11 @@
       "stage_contract_sha256": "0cfd1ffad9333fe481ad2e40104ef94e05828deeb75bd4706415814914c4ab28"
     },
     "ocr": {
-      "run": "fresh-holdout-ocr-v6",
-      "summary_sha256": "c6750b0f5e8649b33b69a6cc7fabd2eb02250c86a3c05e32584f44c6c5105974",
-      "attempts_sha256": "d28e5a5ea43ea0085691767887b6ca3895b4c3ee91510ba8f05b1799777fd0e5",
+      "run": "qlora-v1-holdout",
+      "summary_sha256": "96e29a2667cb70fd3d8f71ba4da09fcae3b0106527bf23fdee9dee6c64f2460e",
+      "attempts_sha256": "4ffd450251ebf14db4c0a51653c3f5e486e7d2124cc82ead4ad4ba67c024e9ef",
       "stage_contract_sha256": "73e37d3e37b1dc388cbeae2bb6c9304bee4155e7d7681ed8a19f7a41fa28afb5"
     }
   },
-  "validated_at": "2026-10-05T05:19:47.333716+00:00"
+  "validated_at": "2026-11-08T12:18:53.561952+00:00"
 }

@@ -1,0 +1,15 @@
+Rowan Barrett
+Email: train.en.6@example.com
+
+Skills
+C#, Pandas, JavaScript, Docker
+
+Employment history
+Software Engineer | Maplewood Digital 8
+Sep 2018 – May 2023
+- Built services using C#.
+
+Education
+Lakeside University
+BSc / Computer Science
+2015

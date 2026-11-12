@@ -1,0 +1,17 @@
+Tatum Fairbanks
+Email: train.en.147@example.com
+Phone: +1-555-1100
+
+Skills
+PostgreSQL, Kubernetes, Vue, SQL
+
+Employment history
+Silverpine Cloud 2
+Software Engineer
+12/2021 - 08/2023
+- Built services using PostgreSQL.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2018

@@ -1,0 +1,16 @@
+Morgan Hollis
+Email: train.en.117@example.com
+Phone: +1-555-2471
+
+Skills
+AWS, Docker, Kotlin, Linux, Terraform
+
+Employment history
+Software Engineer | Copperline Tech 6
+2012 – 2017
+- Built services using AWS.
+
+Education
+Lakeside University
+BSc / Computer Science
+2010

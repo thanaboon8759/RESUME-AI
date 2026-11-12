@@ -1,0 +1,16 @@
+ปวีณา แก้วประเสริฐ (Paweena Thornton)
+Email: train.bi.50@example.com
+Phone: +1-555-8661
+
+Skills
+PostgreSQL, Django, Pandas
+
+Employment history
+Data Analyst | Maplewood Digital 6
+06/2013 – Present
+- Built services using PostgreSQL.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2010

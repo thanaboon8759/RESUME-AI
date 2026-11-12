@@ -1,0 +1,16 @@
+Noel Radcliffe
+Email: train.en.66@example.com
+
+Skills
+Kotlin, Python, Vue, Git
+
+Employment history
+Silverpine Cloud 4
+Data Analyst
+2019 - Present
+- Built services using Kotlin.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2010

@@ -1,0 +1,15 @@
+Finley Prescott
+Email: train.en.192@example.com
+
+Skills
+Django, Python, Power BI, Rust
+
+Employment history
+Software Engineer | Copperline Tech 1
+Nov 2020 – Current
+- Built services using Django.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2010

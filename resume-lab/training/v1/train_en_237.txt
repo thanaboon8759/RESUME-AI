@@ -1,0 +1,15 @@
+Dakota Norwood
+Phone: +1-555-6599
+
+Skills
+Docker, Git, Power BI, MySQL
+
+Employment history
+Backend Developer | Ironleaf Software 3
+Jun 2020 – Nov 2024
+- Built services using Docker.
+
+Education
+Lakeside University
+BSc / Computer Science
+2016

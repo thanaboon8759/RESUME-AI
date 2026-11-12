@@ -1,0 +1,16 @@
+กมล วงศ์ไทย (Kamol Sterling)
+Phone: +1-555-1624
+
+Skills
+Azure, TypeScript, Kotlin, Spring
+
+Employment history
+Summit Data Works 9
+Data Analyst
+November 2019 - Present
+- Built services using Azure.
+
+Education
+Lakeside University
+BSc / Computer Science
+2017

@@ -1,0 +1,16 @@
+กมล ศรีสุข (Kamol Iverson)
+Email: train.bi.140@example.com
+
+Skills
+PostgreSQL, Flutter, Azure, Excel
+
+Employment history
+Harbor Analytics 9
+Backend Developer
+January 2020 - October 2024
+- Built services using PostgreSQL.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2016

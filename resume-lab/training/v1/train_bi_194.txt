@@ -1,0 +1,16 @@
+ณัฐพล จันทร์เพ็ญ (Nattapol Abbott)
+Phone: +1-555-6185
+
+Skills
+GraphQL, Rust, Git
+
+Employment history
+Copperline Tech 9
+Data Analyst
+2015 - Current
+- Built services using GraphQL.
+
+Education
+Lakeside University
+BSc / Computer Science
+2010

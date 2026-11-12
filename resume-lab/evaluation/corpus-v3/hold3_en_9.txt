@@ -1,0 +1,16 @@
+Jamie Merritt
+Email: hold3.en.9@example.com
+Phone: +1-555-8262
+
+Skills
+Terraform, Redis, Flutter, Rust, Kubernetes
+
+Employment history
+Backend Developer | Northwind Labs 6
+March 2015 – March 2023
+- Built services using Terraform.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2020

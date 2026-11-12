@@ -1,0 +1,15 @@
+ธีรวัฒน์ นาคสวัสดิ์ (Teerawat Calloway)
+Email: train.bi.203@example.com
+
+Skills
+Kubernetes, Power BI, PostgreSQL
+
+Employment history
+Backend Developer | Ironleaf Software 1
+November 2017 – October 2018
+- Built services using Kubernetes.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2014

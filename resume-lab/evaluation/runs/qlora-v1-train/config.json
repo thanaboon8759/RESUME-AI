@@ -1,0 +1,22 @@
+{
+  "base": "models\\typhoon-ocr-3b-hf",
+  "data_manifest": "resume-lab\\training\\v1\\manifest.json",
+  "epochs": 2,
+  "lr": 0.0001,
+  "grad_accum": 8,
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "targets": "^(?!.*visual).*\\.(q_proj|k_proj|v_proj|o_proj|gate_proj|up_proj|down_proj)$"
+  },
+  "pixels": [
+    200704,
+    1003520
+  ],
+  "n_train": 240,
+  "n_val": 30,
+  "seed": 7,
+  "max_steps": null,
+  "trainable_params": 29933568
+}

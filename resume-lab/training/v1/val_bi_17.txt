@@ -1,0 +1,17 @@
+ศุภชัย ทองดี (Supachai Whitaker)
+Email: val.bi.17@example.com
+Phone: +1-555-6385
+
+Skills
+Excel, JavaScript, GraphQL
+
+Employment history
+Ironleaf Software 2
+Backend Developer
+02/2012 - 09/2018
+- Built services using Excel.
+
+Education
+Lakeside University
+BSc / Computer Science
+2009

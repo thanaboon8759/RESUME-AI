@@ -1,0 +1,17 @@
+Rowan Abbott
+Email: train.en.108@example.com
+Phone: +1-555-4969
+
+Skills
+Pandas, Kotlin, Flutter, Java
+
+Employment history
+Ironleaf Software 3
+Backend Developer
+12/2020 - 01/2024
+- Built services using Pandas.
+
+Education
+Lakeside University
+BSc / Computer Science
+2012

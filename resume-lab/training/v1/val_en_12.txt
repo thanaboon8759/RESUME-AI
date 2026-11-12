@@ -1,0 +1,16 @@
+Sage Whitaker
+Email: val.en.12@example.com
+
+Skills
+Vue, Power BI, Azure, Go, Spring
+
+Employment history
+Northwind Labs 9
+Backend Developer
+Mar 2018 - Present
+- Built services using Vue.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2015

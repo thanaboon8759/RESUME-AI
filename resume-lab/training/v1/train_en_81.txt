@@ -1,0 +1,16 @@
+Harper Garland
+Phone: +1-555-1554
+
+Skills
+Terraform, Flutter, Power BI
+
+Employment history
+Bluegate Systems 5
+Data Analyst
+06/2013 - Current
+- Built services using Terraform.
+
+Education
+Lakeside University
+BSc / Computer Science
+2010

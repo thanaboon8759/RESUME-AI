@@ -1,0 +1,16 @@
+Avery Thornton
+Email: train.en.159@example.com
+Phone: +1-555-8291
+
+Skills
+Flutter, FastAPI, Redis
+
+Employment history
+Backend Developer | Harbor Analytics 3
+2021 – 2023
+- Built services using Flutter.
+
+Education
+Lakeside University
+BSc / Computer Science
+2017

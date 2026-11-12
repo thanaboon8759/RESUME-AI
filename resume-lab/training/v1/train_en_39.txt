@@ -1,0 +1,16 @@
+Parker Whitaker
+Email: train.en.39@example.com
+
+Skills
+Pandas, Go, Java
+
+Employment history
+Maplewood Digital 8
+Backend Developer
+Aug 2016 - Present
+- Built services using Pandas.
+
+Education
+Lakeside University
+BSc / Computer Science
+2018

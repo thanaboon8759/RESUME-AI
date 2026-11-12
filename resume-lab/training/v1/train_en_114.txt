@@ -1,0 +1,16 @@
+Cameron Fairbanks
+Email: train.en.114@example.com
+Phone: +1-555-5748
+
+Skills
+React, Redis, Docker, Excel
+
+Employment history
+Software Engineer | Copperline Tech 4
+2013 – 2019
+- Built services using React.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2013

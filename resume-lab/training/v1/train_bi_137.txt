@@ -1,0 +1,15 @@
+ศุภชัย สุขสวัสดิ์ (Supachai Merritt)
+Email: train.bi.137@example.com
+
+Skills
+TypeScript, Vue, Terraform, SQL, Tableau
+
+Employment history
+Data Analyst | Bluegate Systems 8
+2013 – 2014
+- Built services using TypeScript.
+
+Education
+Lakeside University
+BSc / Computer Science
+2014

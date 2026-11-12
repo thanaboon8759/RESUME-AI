@@ -1,0 +1,15 @@
+Quinn Hollis
+Phone: +1-555-7346
+
+Skills
+Docker, Vue, Excel, GraphQL, JavaScript
+
+Employment history
+Backend Developer | Silverpine Cloud 5
+May 2016 – Mar 2021
+- Built services using Docker.
+
+Education
+Lakeside University
+BSc / Computer Science
+2013

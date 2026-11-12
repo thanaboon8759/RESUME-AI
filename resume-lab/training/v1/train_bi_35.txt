@@ -1,0 +1,17 @@
+ณัฐพล มั่นคง (Nattapol Garland)
+Email: train.bi.35@example.com
+Phone: +1-555-2406
+
+Skills
+Python, PostgreSQL, Linux, Go
+
+Employment history
+Silverpine Cloud 5
+Data Analyst
+Jun 2013 - Current
+- Built services using Python.
+
+Education
+Lakeside University
+BSc / Computer Science
+2011

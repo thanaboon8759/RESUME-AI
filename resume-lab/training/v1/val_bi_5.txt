@@ -1,0 +1,17 @@
+รัฐพล รุ่งเรือง (Rattapol Whitaker)
+Email: val.bi.5@example.com
+Phone: +1-555-3681
+
+Skills
+FastAPI, MySQL, Redis, PostgreSQL, Rust
+
+Employment history
+Northwind Labs 3
+Backend Developer
+2012 - 2025
+- Built services using FastAPI.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2014

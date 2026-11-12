@@ -1,0 +1,192 @@
+{
+  "models": [
+    {
+      "name": "typhoon-ocr-qlora-v1:latest",
+      "model": "typhoon-ocr-qlora-v1:latest",
+      "modified_at": "2026-11-08T18:29:15.3138835+07:00",
+      "size": 7517350372,
+      "digest": "eb51dae6f372317be9ab821a60e7532784ea9457ed5b51a7963ac2f8f25b2498",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen25vl",
+        "families": [
+          "qwen25vl"
+        ],
+        "parameter_size": "3.8B",
+        "quantization_level": "F16",
+        "context_length": 128000,
+        "embedding_length": 2048
+      },
+      "capabilities": [
+        "vision",
+        "completion"
+      ]
+    },
+    {
+      "name": "typhoon-ocr-roundtrip:latest",
+      "model": "typhoon-ocr-roundtrip:latest",
+      "modified_at": "2026-11-08T17:21:06.5213269+07:00",
+      "size": 7517350372,
+      "digest": "310f0c5efac268f6e5b7bfb0681a38261f0fa9b029e9163164be1cd74dbf0a45",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen25vl",
+        "families": [
+          "qwen25vl"
+        ],
+        "parameter_size": "3.8B",
+        "quantization_level": "F16",
+        "context_length": 128000,
+        "embedding_length": 2048
+      },
+      "capabilities": [
+        "vision",
+        "completion"
+      ]
+    },
+    {
+      "name": "typhoon-ocr-finetuned:latest",
+      "model": "typhoon-ocr-finetuned:latest",
+      "modified_at": "2026-09-15T22:10:31.7174349+07:00",
+      "size": 7517361831,
+      "digest": "d331d514cd3d2ccfbf51e8d8d93d381afaf5ff536543cc8c4fc879f6318373f4",
+      "details": {
+        "parent_model": "scb10x/typhoon-ocr-3b:latest",
+        "format": "gguf",
+        "family": "qwen25vl",
+        "families": [
+          "qwen25vl"
+        ],
+        "parameter_size": "3.8B",
+        "quantization_level": "F16",
+        "context_length": 128000,
+        "embedding_length": 2048
+      },
+      "capabilities": [
+        "vision",
+        "completion"
+      ]
+    },
+    {
+      "name": "typhoon-fast:latest",
+      "model": "typhoon-fast:latest",
+      "modified_at": "2026-09-15T20:31:19.7744687+07:00",
+      "size": 7517361999,
+      "digest": "4aeab094b040881a4547a766ce6ff5f78693b3874f43ecfea1f82947a67a27bf",
+      "details": {
+        "parent_model": "scb10x/typhoon-ocr-3b:latest",
+        "format": "gguf",
+        "family": "qwen25vl",
+        "families": [
+          "qwen25vl"
+        ],
+        "parameter_size": "3.8B",
+        "quantization_level": "F16",
+        "context_length": 128000,
+        "embedding_length": 2048
+      },
+      "capabilities": [
+        "vision",
+        "completion"
+      ]
+    },
+    {
+      "name": "llama3.1:8b",
+      "model": "llama3.1:8b",
+      "modified_at": "2026-09-13T03:29:28.2543413+07:00",
+      "size": 4920753328,
+      "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "8.0B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 131072,
+        "embedding_length": 4096
+      },
+      "capabilities": [
+        "completion",
+        "tools"
+      ]
+    },
+    {
+      "name": "deepseek-r1:8b",
+      "model": "deepseek-r1:8b",
+      "modified_at": "2026-09-13T03:27:02.0492216+07:00",
+      "size": 5225376047,
+      "digest": "6995872bfe4c521a67b32da386cd21d5c6e819b6e0d62f79f64ec83be99f5763",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "8.2B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 131072,
+        "embedding_length": 4096
+      },
+      "capabilities": [
+        "completion",
+        "thinking"
+      ]
+    },
+    {
+      "name": "qwen2.5:7b",
+      "model": "qwen2.5:7b",
+      "modified_at": "2026-09-13T03:24:59.0423812+07:00",
+      "size": 4683087332,
+      "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "7.6B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 32768,
+        "embedding_length": 3584
+      },
+      "capabilities": [
+        "completion",
+        "tools"
+      ]
+    },
+    {
+      "name": "scb10x/typhoon-ocr-3b:latest",
+      "model": "scb10x/typhoon-ocr-3b:latest",
+      "modified_at": "2026-09-13T02:57:21.1668019+07:00",
+      "size": 7517362172,
+      "digest": "fb500215fa866d400513c0f4b7f68b9e865594c7b6c18ac224d3d4394bb09e91",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen25vl",
+        "families": [
+          "qwen25vl"
+        ],
+        "parameter_size": "3.8B",
+        "quantization_level": "F16",
+        "context_length": 128000,
+        "embedding_length": 2048
+      },
+      "capabilities": [
+        "vision",
+        "completion"
+      ]
+    }
+  ],
+  "ollama": {
+    "version": "0.34.0"
+  },
+  "platform": "Windows-11-10.0.26200-SP0"
+}

@@ -1,0 +1,16 @@
+ชนินทร์ สุขสวัสดิ์ (Chanin Ellison)
+Email: train.bi.74@example.com
+Phone: +1-555-5419
+
+Skills
+Power BI, SQL, Python, Java
+
+Employment history
+Backend Developer | Ironleaf Software 8
+2014 – Present
+- Built services using Power BI.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2011

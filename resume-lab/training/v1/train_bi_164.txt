@@ -1,0 +1,16 @@
+พิมพ์ชนก ศรีสุข (Pimchanok Barrett)
+Phone: +1-555-7606
+
+Skills
+TypeScript, Git, Kubernetes
+
+Employment history
+Silverpine Cloud 3
+Data Analyst
+February 2015 - Current
+- Built services using TypeScript.
+
+Education
+Lakeside University
+BSc / Computer Science
+2010

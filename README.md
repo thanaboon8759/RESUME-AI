@@ -1,4 +1,4 @@
-# DUMB DOG AI
+# Resume AI
 
 A local tool for turning English and Thai resumes into readable, structured information.
 

@@ -1,0 +1,16 @@
+Blake Sterling
+Email: train.en.60@example.com
+
+Skills
+Go, Kubernetes, Rust, Power BI
+
+Employment history
+Maplewood Digital 9
+Software Engineer
+November 2014 - May 2021
+- Built services using Go.
+
+Education
+Lakeside University
+BSc / Computer Science
+2018

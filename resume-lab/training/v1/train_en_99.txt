@@ -1,0 +1,16 @@
+Sage Calloway
+Email: train.en.99@example.com
+Phone: +1-555-8185
+
+Skills
+GraphQL, Rust, Azure, SQL, Kubernetes
+
+Employment history
+Data Analyst | Summit Data Works 3
+Apr 2012 – Aug 2020
+- Built services using GraphQL.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2016

@@ -1,0 +1,16 @@
+Logan Ellison
+Email: train.en.54@example.com
+
+Skills
+MySQL, Terraform, Linux
+
+Employment history
+Ironleaf Software 2
+Backend Developer
+2014 - 2018
+- Built services using MySQL.
+
+Education
+Lakeside University
+BSc / Computer Science
+2014

@@ -1,0 +1,16 @@
+ภูริ วงศ์ไทย (Phuri Thornton)
+Phone: +1-555-5266
+
+Skills
+Pandas, AWS, C#, Python
+
+Employment history
+Northwind Labs 7
+Backend Developer
+2016 - 2020
+- Built services using Pandas.
+
+Education
+Lakeside University
+BSc / Computer Science
+2013

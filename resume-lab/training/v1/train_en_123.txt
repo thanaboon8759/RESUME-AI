@@ -1,0 +1,17 @@
+Noel Prescott
+Email: train.en.123@example.com
+Phone: +1-555-4910
+
+Skills
+Rust, Docker, PostgreSQL
+
+Employment history
+Maplewood Digital 3
+Software Engineer
+Jan 2012 - Sep 2020
+- Built services using Rust.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2010

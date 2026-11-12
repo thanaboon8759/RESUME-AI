@@ -1,0 +1,16 @@
+ธนพร สุขสวัสดิ์ (Thanaporn Calloway)
+Email: val.bi.20@example.com
+
+Skills
+Spring, Docker, PostgreSQL
+
+Employment history
+Bluegate Systems 2
+Backend Developer
+2012 - 2014
+- Built services using Spring.
+
+Education
+Lakeside University
+BSc / Computer Science
+2016

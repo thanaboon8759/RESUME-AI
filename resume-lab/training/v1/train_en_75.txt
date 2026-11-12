@@ -1,0 +1,15 @@
+Parker Fairbanks
+Email: train.en.75@example.com
+
+Skills
+Java, Flutter, Excel
+
+Employment history
+Backend Developer | Bluegate Systems 1
+Feb 2018 – May 2020
+- Built services using Java.
+
+Education
+Lakeside University
+BSc / Computer Science
+2010

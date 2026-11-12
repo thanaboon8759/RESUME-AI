@@ -1,0 +1,15 @@
+Emerson Prescott
+Phone: +1-555-8433
+
+Skills
+Java, Power BI, GraphQL, Terraform, FastAPI
+
+Employment history
+Backend Developer | Harbor Analytics 5
+2013 – Current
+- Built services using Java.
+
+Education
+Lakeside University
+BSc / Computer Science
+2017

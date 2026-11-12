@@ -1,0 +1,16 @@
+Sage Kingsley
+Email: train.en.225@example.com
+Phone: +1-555-9710
+
+Skills
+FastAPI, Rust, Go, Power BI, SQL
+
+Employment history
+Software Engineer | Summit Data Works 4
+November 2015 – Current
+- Built services using FastAPI.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2016

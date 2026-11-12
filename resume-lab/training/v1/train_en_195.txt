@@ -1,0 +1,15 @@
+Noel Garland
+Email: train.en.195@example.com
+
+Skills
+Go, SQL, Spring, Kotlin, Python
+
+Employment history
+Software Engineer | Harbor Analytics 5
+01/2020 – 06/2021
+- Built services using Go.
+
+Education
+Lakeside University
+BSc / Computer Science
+2011

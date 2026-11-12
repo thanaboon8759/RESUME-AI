@@ -1,0 +1,16 @@
+ปวีณา ศรีสุข (Paweena Whitaker)
+Email: train.bi.65@example.com
+Phone: +1-555-1624
+
+Skills
+Tableau, MySQL, Rust, Docker, Vue
+
+Employment history
+Backend Developer | Silverpine Cloud 9
+November 2018 – Current
+- Built services using Tableau.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2018
