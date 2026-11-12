@@ -91,3 +91,32 @@ async def test_upload_size_limit(monkeypatch, storage, client):
     assert (await post_file(client, content=b"x" * 10)).status_code == 200
     assert (await post_file(client, content=b"x" * 11)).status_code == 413
     assert storage.upload.call_count == 1
+
+
+def body(upload_id):
+    return {"id": upload_id, "jobId": "j", "name": "a.pdf", "size": 1, "status": "queued", "reason": "", "attempts": 0}
+
+
+@pytest.fixture
+def saved(monkeypatch):
+    save = MagicMock()
+    monkeypatch.setattr("app.repositories.upload_repository.update_upload", save)
+    return save
+
+
+async def test_update_other_users_row_is_404(monkeypatch, storage, client, saved):
+    set_upload(monkeypatch, OTHER)
+    assert (await client.put("/api/uploads/x", json=body("x"))).status_code == 404
+    saved.assert_not_called()
+
+
+async def test_update_creates_new_row(monkeypatch, storage, client, saved):
+    set_upload(monkeypatch, None)
+    assert (await client.put("/api/uploads/x", json=body("x"))).status_code == 200
+    saved.assert_called_once()
+
+
+async def test_update_uses_path_id(monkeypatch, storage, client, saved):
+    set_upload(monkeypatch, OWN)
+    assert (await client.put("/api/uploads/x", json=body("y"))).status_code == 200
+    assert saved.call_args.args[0].id == "x"

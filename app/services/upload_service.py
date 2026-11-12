@@ -1,4 +1,5 @@
 from typing import List
+from fastapi import HTTPException
 from app.schemas.upload import Upload
 from app.repositories import upload_repository
 
@@ -10,4 +11,7 @@ def create_uploads(uploads: List[Upload], user_id: str) -> List[Upload]:
     return uploads
 
 def update_upload(upload_id: str, upload: Upload, user_id: str):
-    upload_repository.update_upload(upload, user_id)
+    existing = upload_repository.get_upload(upload_id)
+    if existing and existing["user_id"] != user_id:  # the upsert would otherwise take the row over
+        raise HTTPException(status_code=404, detail="Upload not found")
+    upload_repository.update_upload(upload.model_copy(update={"id": upload_id}), user_id)
