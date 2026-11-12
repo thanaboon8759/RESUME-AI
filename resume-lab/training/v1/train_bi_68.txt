@@ -1,0 +1,15 @@
+ชนินทร์ เพชรรัตน์ (Chanin Dalton)
+Email: train.bi.68@example.com
+
+Skills
+GraphQL, Git, PostgreSQL
+
+Employment history
+Software Engineer | Copperline Tech 4
+03/2016 – 05/2019
+- Built services using GraphQL.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2017

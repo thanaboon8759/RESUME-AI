@@ -1,0 +1,16 @@
+Blake Ellison
+Email: train.en.183@example.com
+
+Skills
+Go, Power BI, Tableau
+
+Employment history
+Ironleaf Software 3
+Software Engineer
+2020 - 2021
+- Built services using Go.
+
+Education
+Lakeside University
+BSc / Computer Science
+2012

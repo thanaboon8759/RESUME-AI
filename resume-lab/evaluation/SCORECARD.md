@@ -42,6 +42,8 @@ Sources: `runs/grounded-extraction-v6/summary.json` and `runs/fresh-holdout-extr
 
 ## OCR configurations
 
+> The `typhoon-ocr-finetuned` tag is the base model; a real fine-tune is tracked in `docs/superpowers/plans/2026-11-08-typhoon-ocr-qlora.md`.
+
 Explicit 8192-token context and 4096-token output limits fixed context starvation. The scanner unwraps Typhoon's `natural_text`/`text` JSON and rejects truncated/invalid wrappers. All three configurations completed every expanded development and fresh held-out case.
 
 | OCR configuration | Development CER, 11 | Holdout CER, 9 | Thai holdout CER | Holdout mean seconds | Policy order |
@@ -72,3 +74,44 @@ Fresh holdout average prompt/output tokens: Qwen 1166/243; base OCR 4094/128; fa
 Exact model digests, corpus hashes, server/schema/evaluator/source-repair snapshots, raw replies, token/load counters and failure records are retained. `manage_policy.py promote` verifies frozen protocol/gates and recomputes accuracy from saved outputs using the verified scorer; stale summaries, mismatched corpora and changed digests/configurations are rejected. Runtime policy also pins the engine fingerprint. A test-only changed digest or simulated failure never falls back to an untested model.
 
 Forty unit tests cover parsing, schema failures, source repairs, digest/configuration mismatches, absent primary models, fallback provenance, total failure, offline text preview and promotion integrity. Browser verification is recorded separately in `BROWSER-VERIFICATION.md`. Latencies include local load effects; p95 on nine samples is unstable. CER normalizes Unicode, case and whitespace. Literal matching is not semantic factuality, and achievement recall is not measured. Thai rendering lacks RAQM. See `../README.md` for run commands and parser/security limits.
+
+## v7-qlora: real QLoRA fine-tune (2026-11-08), validated policy
+
+Owner approved adoption on 2026-11-08. `manage_policy.py` froze and promoted `v7-qlora` with `--ocr-holdout-corpus corpus-v3`. The development run was `v7-qlora-dev-ocr`, a single combined run that reproduced every CER; the holdout run was `qlora-v1-holdout`. Policy fallback order is the tool's, set by latency tie-breaks within one run: qlora-v1-rp1, qlora-v1, typhoon-fast, typhoon-ocr-finetuned, roundtrip-rp1, roundtrip. `promotion-v7.json` and `frozen-candidates-v7.json` are the earlier hand-made records, kept for history; `frozen-candidates-v7-qlora.json` and `promotion-v7-qlora.json` are authoritative.
+
+The `typhoon-ocr-finetuned` tag never contained trained weights. `typhoon-ocr-qlora-v1` is a real 4-bit QLoRA fine-tune of `scb10x/typhoon-ocr-3b`:
+- **Training:** LoRA r=16, applied to the language model only, for 2 epochs. It used 240 training and 30 validation resumes rendered by `build_training_set.py`, none of whose identities appear in corpus-v2 or corpus-v3. Validation loss fell from 0.0163 to 0.0051. The log is in `runs/qlora-v1-train/`.
+- **Weights:** digest `eb51dae6…`, different from the base `2c2720a4…`.
+- **Serving variant:** `-rp1` is the same weights with `repeat_penalty 1.0`. It was chosen on development data only, and rank 1 was frozen before the holdout run. The fallback order below rank 1 was set by `manage_policy freeze` on `v7-qlora-dev-ocr`, a dev run made **after** the holdout had been seen. Its dev CERs are identical, but the latency tie-breaks were re-rolled, moving `qlora-v1` from 4 to 2. Rank 1 does not depend on this. The fallback order does, and it is not holdout-blind.
+
+| OCR configuration | Dev CER, corpus-v2 (11) | Dev Thai | Holdout CER, corpus-v3 (27) | Holdout Thai | Holdout mean seconds | Policy rank (v7-qlora) |
+|---|---:|---:|---:|---:|---:|---:|
+| typhoon-ocr-qlora-v1-rp1 | 0.327% | 0.366% | 0.087% | 0.260% | 3.79 | 1 |
+| typhoon-ocr-finetuned (v6 #1) | 0.571% | 0.782% | 0.229% | 0.402% | 3.59 | 4 |
+| typhoon-fast | 0.585% | 0.483% | 0.599% | 1.625% | 3.94 | 3 |
+| typhoon-ocr-qlora-v1 (repeat_penalty 1.2) | 0.663% | 1.228% | 0.074% | 0.222% | 1.41 | 2 |
+| typhoon-ocr-roundtrip-rp1 (untrained) | 0.672% | 0.544% | 0.265% | 0.622% | 3.94 | 5 |
+| typhoon-ocr-roundtrip (untrained) | 1.953% | 2.211% | 0.444% | 0.667% | 1.52 | 6 |
+
+**Where the gain comes from.** On dev, with the same pipeline, the repeat-penalty setting alone took the untrained model from 1.953% to 0.672%. Training then took it from 0.672% to 0.327%. All candidates pass the gates. The protocol promotes rank 1 (`promotion-v7-qlora.json`). End to end, 3 of 3 corpus-v3 scanned PDFs gave an exact name and skills.
+
+**Caveats:**
+- corpus-v3 and the training data come from the same generator, so the holdout advantage is optimistic.
+- corpus-v2, made by a different generator, is the more independent comparison, and the fine-tune also leads there.
+- Formats remain correlated copies.
+- Nothing here shows a gain on real resumes.
+- `model-policy.json` is now `v7-qlora`.
+
+**Formatting share** (`format_share.py`; Markdown and JSON wrappers stripped from both reference and output). On dev, the training effect is 0.614% → 0.321% with formatting removed, against 0.672% → 0.327% raw. The gain is reading accuracy, not output format. corpus-v3 has no markup, so its raw and stripped numbers are identical.
+
+**Independence.**
+- **No out-of-distribution data stayed untouched.** corpus-v3 is disjoint from training by identity and exact text, but it comes from the same generator: every name token also appears in training, and each corpus-v3 text is 0.86–0.92 character-similar to its nearest training text. `frozen-candidates-v7.json` calls it "fresh, disjoint", which overstates it.
+- **corpus-v2 dev was used to choose the serving option.** It comes from a different generator, but those same 11 samples selected `repeat_penalty 1.0`.
+- **On holdout, `repeat_penalty 1.2` scored marginally lower** for the trained weights (0.074% vs 0.087%). The protocol ignores holdout for ordering, as it should.
+
+**Export gate override.** Re-exporting the base model through Ollama missed the predeclared 0.001 round-trip tolerance (0.02178 vs 0.01953).
+- 9 of 11 outputs were byte-identical.
+- In `dev_en_01` and `dev_en_02_lead`, the differences include bold markers and heading levels. One company name also changed: base "Cloudbase", round-trip "ClouScale", reference "CloudScale".
+- Every training comparison above uses the round-trip export (`typhoon-ocr-roundtrip`, `-rp1`) as its baseline, so export effects are not counted as training gains. The owner accepted this override on 2026-11-08 by approving `docs/superpowers/plans/2026-11-08-ocr-compare-and-adopt.md`.
+
+**Serving configs.** The serving Modelfiles for `-rp1` variants are in `resume-lab/modelfiles/`.

@@ -1,0 +1,15 @@
+Morgan Radcliffe
+Email: hold3.en.0@example.com
+
+Skills
+Docker, Azure, Python, Excel
+
+Employment history
+Data Analyst | Maplewood Digital 2
+May 2017 – June 2022
+- Built services using Docker.
+
+Education
+Lakeside University
+BSc / Computer Science
+2008

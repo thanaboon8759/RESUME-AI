@@ -1,0 +1,16 @@
+ภูริ ใจดี (Phuri Abbott)
+Phone: +1-555-6191
+
+Skills
+FastAPI, MySQL, Java, Kubernetes, Vue
+
+Employment history
+Ironleaf Software 3
+Software Engineer
+07/2015 - Current
+- Built services using FastAPI.
+
+Education
+Lakeside University
+BSc / Computer Science
+2010

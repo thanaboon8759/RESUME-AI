@@ -1,0 +1,16 @@
+ชนินทร์ รุ่งเรือง (Chanin Iverson)
+Phone: +1-555-3974
+
+Skills
+Excel, C#, Tableau, Kubernetes
+
+Employment history
+Harbor Analytics 7
+Software Engineer
+2017 - 2019
+- Built services using Excel.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2019

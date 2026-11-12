@@ -1,0 +1,16 @@
+Blake Langford
+Email: train.en.18@example.com
+Phone: +1-555-9492
+
+Skills
+Azure, Git, Power BI, Excel, Rust
+
+Employment history
+Software Engineer | Northwind Labs 4
+2013 – 2022
+- Built services using Azure.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2008

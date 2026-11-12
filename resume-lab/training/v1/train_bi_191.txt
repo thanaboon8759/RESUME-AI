@@ -1,0 +1,17 @@
+ธนพร นาคสวัสดิ์ (Thanaporn Kingsley)
+Email: train.bi.191@example.com
+Phone: +1-555-2448
+
+Skills
+Python, Git, Terraform, GraphQL
+
+Employment history
+Summit Data Works 3
+Data Analyst
+08/2021 - Present
+- Built services using Python.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2011

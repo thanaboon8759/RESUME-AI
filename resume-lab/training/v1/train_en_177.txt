@@ -1,0 +1,17 @@
+Morgan Sterling
+Email: train.en.177@example.com
+Phone: +1-555-4712
+
+Skills
+JavaScript, Linux, GraphQL
+
+Employment history
+Northwind Labs 3
+Backend Developer
+10/2018 - Current
+- Built services using JavaScript.
+
+Education
+Lakeside University
+BSc / Computer Science
+2012

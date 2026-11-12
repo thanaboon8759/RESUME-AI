@@ -1,0 +1,16 @@
+สิรินทร์ สุขสวัสดิ์ (Sirin Fairbanks)
+Email: train.bi.110@example.com
+Phone: +1-555-7847
+
+Skills
+Docker, Excel, Power BI, Linux
+
+Employment history
+Data Analyst | Harbor Analytics 6
+Oct 2021 – Current
+- Built services using Docker.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2008

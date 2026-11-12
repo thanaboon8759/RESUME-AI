@@ -1,0 +1,15 @@
+Kendall Hollis
+Email: train.en.87@example.com
+
+Skills
+Linux, FastAPI, GraphQL, Spring
+
+Employment history
+Software Engineer | Summit Data Works 9
+Oct 2021 – Current
+- Built services using Linux.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2012

@@ -1,4 +1,4 @@
-# DUMB-DOG-AI: Air-Gapped AI Resume Parsing and Candidate Matching Pipeline
+# Resume AI: Air-Gapped AI Resume Parsing and Candidate Matching Pipeline
 
 A production-ready, fully self-hosted, air-gapped AI Resume Parsing and Candidate Matching Pipeline with ZERO external cloud APIs. All parsers, OCR engines, local language models, skill normalizers, and benchmarking suites execute 100% locally on user hardware.
 

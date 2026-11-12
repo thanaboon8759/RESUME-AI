@@ -1,0 +1,15 @@
+อนุชา บุญมา (Anucha Sterling)
+Phone: +1-555-3847
+
+Skills
+Kubernetes, Linux, Java
+
+Employment history
+Software Engineer | Bluegate Systems 4
+02/2019 – Present
+- Built services using Kubernetes.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2013

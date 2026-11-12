@@ -1,0 +1,2 @@
+FROM typhoon-ocr-roundtrip:latest
+PARAMETER repeat_penalty 1.0

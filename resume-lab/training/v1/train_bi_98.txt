@@ -1,0 +1,15 @@
+ณัฐพล เพชรรัตน์ (Nattapol Ellison)
+Email: train.bi.98@example.com
+
+Skills
+Excel, Linux, Redis
+
+Employment history
+Data Analyst | Copperline Tech 4
+Dec 2021 – Apr 2022
+- Built services using Excel.
+
+Education
+Lakeside University
+BSc / Computer Science
+2017

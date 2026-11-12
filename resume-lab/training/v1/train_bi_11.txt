@@ -1,0 +1,16 @@
+ธีรวัฒน์ นาคสวัสดิ์ (Teerawat Fairbanks)
+Email: train.bi.11@example.com
+
+Skills
+TypeScript, AWS, Redis
+
+Employment history
+Copperline Tech 9
+Software Engineer
+06/2013 - 04/2025
+- Built services using TypeScript.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2018

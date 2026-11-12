@@ -1,0 +1,16 @@
+ภูริ จันทร์เพ็ญ (Phuri Calloway)
+Email: val.bi.2@example.com
+
+Skills
+Docker, AWS, React
+
+Employment history
+Maplewood Digital 4
+Backend Developer
+2017 - 2023
+- Built services using Docker.
+
+Education
+Lakeside University
+BSc / Computer Science
+2020

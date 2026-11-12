@@ -1,0 +1,60 @@
+{
+  "version": "v7-candidates",
+  "frozen_at": "2026-11-08T11:36:30.484949+00:00",
+  "rule": "Rank by development CER on corpus-v2; CER within 0.001 broken by mean latency (SELECTION-PROTOCOL.md). Frozen before any corpus-v3 holdout run.",
+  "holdout": "corpus-v3 (fresh, disjoint from training and corpus-v2)",
+  "ties_broken": [
+    "typhoon-ocr-finetuned (4.93s) over typhoon-fast (5.61s): CER diff 0.00014",
+    "typhoon-ocr-qlora-v1 (5.31s) over typhoon-ocr-roundtrip-rp1 (5.32s): CER diff 0.00009"
+  ],
+  "candidates": [
+    {
+      "rank": 1,
+      "model": "typhoon-ocr-qlora-v1-rp1:latest",
+      "digest": "d8e264d0f030b585ee2a41aac7be5c8e555f7205dfb409177f667bc9aa3d78b6",
+      "dev_cer": 0.00327,
+      "dev_mean_seconds": 5.14,
+      "dev_run": "qlora-v1-rp1-dev"
+    },
+    {
+      "rank": 2,
+      "model": "typhoon-ocr-finetuned:latest",
+      "digest": "d331d514cd3d2ccfbf51e8d8d93d381afaf5ff536543cc8c4fc879f6318373f4",
+      "dev_cer": 0.00571,
+      "dev_mean_seconds": 4.93,
+      "dev_run": "qlora-v1-dev"
+    },
+    {
+      "rank": 3,
+      "model": "typhoon-fast:latest",
+      "digest": "4aeab094b040881a4547a766ce6ff5f78693b3874f43ecfea1f82947a67a27bf",
+      "dev_cer": 0.00585,
+      "dev_mean_seconds": 5.61,
+      "dev_run": "qlora-v1-dev"
+    },
+    {
+      "rank": 4,
+      "model": "typhoon-ocr-qlora-v1:latest",
+      "digest": "eb51dae6f372317be9ab821a60e7532784ea9457ed5b51a7963ac2f8f25b2498",
+      "dev_cer": 0.00663,
+      "dev_mean_seconds": 5.31,
+      "dev_run": "qlora-v1-dev"
+    },
+    {
+      "rank": 5,
+      "model": "typhoon-ocr-roundtrip-rp1:latest",
+      "digest": "dd5fafbfec76502c95f5b80a11e55adcf0aa4692946ef568451b6fd93abf060d",
+      "dev_cer": 0.00672,
+      "dev_mean_seconds": 5.32,
+      "dev_run": "roundtrip-rp1-dev"
+    },
+    {
+      "rank": 6,
+      "model": "typhoon-ocr-roundtrip:latest",
+      "digest": "310f0c5efac268f6e5b7bfb0681a38261f0fa9b029e9163164be1cd74dbf0a45",
+      "dev_cer": 0.01953,
+      "dev_mean_seconds": 5.71,
+      "dev_run": "qlora-v1-dev"
+    }
+  ]
+}

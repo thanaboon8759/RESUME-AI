@@ -1,0 +1,15 @@
+Harper Langford
+Phone: +1-555-1897
+
+Skills
+Spring, Pandas, Kubernetes, Tableau, React
+
+Employment history
+Software Engineer | Copperline Tech 7
+Sep 2017 – Current
+- Built services using Spring.
+
+Education
+Lakeside University
+BSc / Computer Science
+2013

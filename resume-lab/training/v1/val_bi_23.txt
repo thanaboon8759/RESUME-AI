@@ -1,0 +1,16 @@
+จิราพร วงศ์ไทย (Jiraporn Iverson)
+Email: val.bi.23@example.com
+Phone: +1-555-2457
+
+Skills
+React, JavaScript, Java, Go, PostgreSQL
+
+Employment history
+Software Engineer | Northwind Labs 5
+06/2020 – Current
+- Built services using React.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2013

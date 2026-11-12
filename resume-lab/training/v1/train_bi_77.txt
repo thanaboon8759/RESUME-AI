@@ -1,0 +1,16 @@
+ณัฐพล สมบูรณ์ชัย (Nattapol Iverson)
+Email: train.bi.77@example.com
+Phone: +1-555-1860
+
+Skills
+FastAPI, Azure, Django, Kubernetes
+
+Employment history
+Backend Developer | Harbor Analytics 5
+12/2020 – Present
+- Built services using FastAPI.
+
+Education
+Lakeside University
+BSc / Computer Science
+2009

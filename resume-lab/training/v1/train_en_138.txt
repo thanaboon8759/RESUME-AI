@@ -1,0 +1,15 @@
+Parker Ellison
+Phone: +1-555-5576
+
+Skills
+Vue, Rust, Docker, Terraform, Linux
+
+Employment history
+Backend Developer | Silverpine Cloud 5
+12/2017 – 08/2024
+- Built services using Vue.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2012

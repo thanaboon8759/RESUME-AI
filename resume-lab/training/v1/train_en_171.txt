@@ -1,0 +1,16 @@
+Emerson Merritt
+Email: train.en.171@example.com
+
+Skills
+Docker, JavaScript, Java
+
+Employment history
+Ironleaf Software 1
+Software Engineer
+October 2016 - Present
+- Built services using Docker.
+
+Education
+Lakeside University
+BSc / Computer Science
+2015

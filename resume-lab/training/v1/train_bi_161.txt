@@ -1,0 +1,16 @@
+วรเมธ ทองดี (Woramet Dalton)
+Email: train.bi.161@example.com
+Phone: +1-555-6061
+
+Skills
+Rust, Kotlin, MySQL, Linux
+
+Employment history
+Data Analyst | Silverpine Cloud 6
+February 2013 – Current
+- Built services using Rust.
+
+Education
+Lakeside University
+BSc / Computer Science
+2016

@@ -1,0 +1,16 @@
+Parker Prescott
+Email: train.en.42@example.com
+Phone: +1-555-9587
+
+Skills
+Docker, SQL, MySQL
+
+Employment history
+Data Analyst | Northwind Labs 8
+2020 – Current
+- Built services using Docker.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2010

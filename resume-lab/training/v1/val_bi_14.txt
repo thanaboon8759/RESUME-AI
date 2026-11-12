@@ -1,0 +1,17 @@
+ภูริ รุ่งเรือง (Phuri Kingsley)
+Email: val.bi.14@example.com
+Phone: +1-555-3421
+
+Skills
+Vue, React, MySQL, Excel
+
+Employment history
+Summit Data Works 1
+Software Engineer
+July 2013 - Current
+- Built services using Vue.
+
+Education
+Lakeside University
+BSc / Computer Science
+2008

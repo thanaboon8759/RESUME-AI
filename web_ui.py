@@ -1,5 +1,5 @@
 """
-Air-Gapped Web Testing Console for DUMB-DOG-AI Resume Intelligence Pipeline
+Air-Gapped Web Testing Console for Resume AI Resume Intelligence Pipeline
 Provides interactive single-document processing, batch directory scanning,
 real-time telemetry, and structured CandidateProfile visualization.
 Zero cloud APIs. 100% self-hosted on local RTX 4080 (16GB VRAM) via Ollama.
@@ -44,7 +44,7 @@ BENCHMARK_DATA_DIR = Path("benchmark_data")
 pdf_engine = OptimizedPDFEngine(garble_threshold=0.15, ocr_dpi=150)
 skill_matcher = SkillMatcher(model_name="BAAI/bge-m3", similarity_threshold=0.85)
 
-app = FastAPI(title="DUMB-DOG-AI Web Testing Console")
+app = FastAPI(title="Resume AI Web Testing Console")
 
 app.add_middleware(
     CORSMiddleware,
@@ -66,7 +66,7 @@ HTML_CONTENT = """<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DUMB-DOG-AI - Air-Gapped Resume Intelligence Console</title>
+  <title>Resume AI - Air-Gapped Resume Intelligence Console</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* Air-gapped fallback styles in case CDN is offline */
@@ -83,7 +83,7 @@ HTML_CONTENT = """<!DOCTYPE html>
       <div class="flex items-center gap-3">
         <div class="h-9 w-9 rounded-lg bg-blue-600 flex items-center justify-center font-black text-sm tracking-wider shadow">AI</div>
         <div>
-          <h1 class="text-base font-bold leading-tight tracking-wide">DUMB-DOG-AI</h1>
+          <h1 class="text-base font-bold leading-tight tracking-wide">Resume AI</h1>
           <p class="text-xs text-slate-400">Air-Gapped Resume Intelligence &amp; Benchmark Console</p>
         </div>
       </div>
@@ -990,5 +990,5 @@ def process_batch_directory(req: BatchRequest = Body(...)):
 
 
 if __name__ == "__main__":
-    print("[INFO] Starting DUMB-DOG-AI Web Testing Console on http://localhost:8000")
+    print("[INFO] Starting Resume AI Web Testing Console on http://localhost:8000")
     uvicorn.run(app, host="127.0.0.1", port=8000)

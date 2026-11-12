@@ -1,0 +1,16 @@
+อัญชลี แก้วประเสริฐ (Anchalee Barrett)
+Email: train.bi.143@example.com
+Phone: +1-555-2746
+
+Skills
+React, FastAPI, Pandas, Java
+
+Employment history
+Software Engineer | Maplewood Digital 1
+October 2020 – January 2021
+- Built services using React.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2019

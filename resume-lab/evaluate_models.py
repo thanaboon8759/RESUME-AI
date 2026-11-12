@@ -18,6 +18,7 @@ import server
 ROOT = Path(__file__).resolve().parent
 CORPUS = ROOT/'evaluation/corpus'
 LABELS = ROOT/'evaluation/development-labels-v2.json'
+CORPORA = ['corpus', 'corpus-v2', 'corpus-v3']
 
 
 def annotated_samples(manifest):
@@ -122,7 +123,7 @@ def main():
     parser.add_argument('--stage',choices=['extraction','ocr'],required=True)
     parser.add_argument('--run',required=True,help='Unique run identifier; an identical interrupted run resumes.')
     parser.add_argument('--models',nargs='+')
-    parser.add_argument('--corpus',default='corpus',choices=['corpus','corpus-v2'])
+    parser.add_argument('--corpus',default='corpus',choices=CORPORA)
     args=parser.parse_args()
     CORPUS=ROOT/'evaluation'/args.corpus
     if not re.fullmatch(r'[a-zA-Z0-9_-]+',args.run): parser.error('run must be a simple identifier')

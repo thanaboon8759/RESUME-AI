@@ -1,0 +1,15 @@
+Finley Abbott
+Email: hold3.en.18@example.com
+
+Skills
+C#, Pandas, Django, Flutter
+
+Employment history
+Backend Developer | Harbor Analytics 2
+February 2013 – Present
+- Built services using C#.
+
+Education
+Lakeside University
+BSc / Computer Science
+2011

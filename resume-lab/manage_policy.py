@@ -110,16 +110,22 @@ def main():
     parser.add_argument('--corpus',default='corpus-v2',choices=['corpus-v2'])
     parser.add_argument('--extraction',required=True)
     parser.add_argument('--ocr',required=True)
+    parser.add_argument('--ocr-holdout-corpus',choices=['corpus-v2','corpus-v3'],default=None,
+                        help='Holdout corpus for the OCR stage only (default: --corpus). Recorded at freeze time.')
     args=parser.parse_args()
     if not re.fullmatch(r'[a-zA-Z0-9_-]+',args.id):parser.error('Invalid policy identifier')
     manifest=ROOT/'evaluation'/args.corpus/'manifest.json'
     frozen_path=ROOT/'evaluation'/('frozen-candidates-'+args.id+'.json')
+    ocr_holdout=args.ocr_holdout_corpus if args.ocr_holdout_corpus not in (None,args.corpus) else None
     if args.action=='freeze':
         if frozen_path.exists():raise SystemExit('Frozen record already exists; never overwrite it')
         value={'id':args.id,'status':'awaiting-holdout','created_at':datetime.now(timezone.utc).isoformat(),
                'engine_sha256':engine_fingerprint(server),'corpus_sha256':sha(manifest),'corpus_directory':args.corpus,
                'protocol_sha256':sha(ROOT/'evaluation/SELECTION-PROTOCOL.md'),'extraction_gates':EXTRACTION_GATES,
                'ocr_gates':{'success_rate':1,'cer_max':.05,'per_language_cer_max':.08},'development':{}}
+        if ocr_holdout:
+            value['ocr_holdout_corpus']=ocr_holdout
+            value['ocr_holdout_corpus_sha256']=sha(ROOT/'evaluation'/ocr_holdout/'manifest.json')
         for stage,run in [('extraction',args.extraction),('ocr',args.ocr)]:
             report,evidence=checked_report(run,stage,'development',manifest)
             inventory={m['name']:m for m in report['configuration']['models']}
@@ -134,9 +140,15 @@ def main():
     enforce_frozen_gates(value,sha(ROOT/'evaluation/SELECTION-PROTOCOL.md'))
     if value['engine_sha256']!=engine_fingerprint(server) or value['corpus_sha256']!=sha(manifest):
         raise SystemExit('Frozen inference or corpus changed')
+    if value.get('ocr_holdout_corpus')!=ocr_holdout:
+        raise SystemExit('OCR holdout corpus differs from the frozen record')
+    manifests={'extraction':manifest,'ocr':manifest}
+    if ocr_holdout:
+        manifests['ocr']=ROOT/'evaluation'/ocr_holdout/'manifest.json'
+        if sha(manifests['ocr'])!=value['ocr_holdout_corpus_sha256']:raise SystemExit('Frozen OCR holdout corpus changed')
     holdout={};passing={}
     for stage,run in [('extraction',args.extraction),('ocr',args.ocr)]:
-        report,evidence=checked_report(run,stage,'holdout',manifest)
+        report,evidence=checked_report(run,stage,'holdout',manifests[stage])
         tested={m['name']:m['digest'] for m in report['configuration']['models']}
         if tested!={m['name']:m['digest'] for m in value[stage]}:raise SystemExit('Holdout candidates differ from frozen order/set')
         qualified={r['model'] for r in report['summary'] if frozen_qualifies(r,stage,value)}

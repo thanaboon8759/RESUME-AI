@@ -1,0 +1,15 @@
+Parker Dalton
+Phone: +1-555-4836
+
+Skills
+Kubernetes, Flutter, TypeScript, Rust
+
+Employment history
+Data Analyst | Silverpine Cloud 2
+December 2017 – Current
+- Built services using Kubernetes.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2008

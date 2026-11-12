@@ -1,0 +1,15 @@
+อนุชา จันทร์เพ็ญ (Anucha Whitaker)
+Phone: +1-555-9935
+
+Skills
+Java, Docker, PostgreSQL, Rust, Python
+
+Employment history
+Data Analyst | Northwind Labs 4
+Apr 2020 – Jan 2025
+- Built services using Java.
+
+Education
+Lakeside University
+BSc / Computer Science
+2020

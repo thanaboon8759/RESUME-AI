@@ -1,0 +1,16 @@
+พิมพ์ชนก บุญมา (Pimchanok Hollis)
+Email: train.bi.128@example.com
+
+Skills
+Kotlin, Rust, PostgreSQL
+
+Employment history
+Harbor Analytics 9
+Software Engineer
+December 2015 - Present
+- Built services using Kotlin.
+
+Education
+Lakeside University
+BSc / Computer Science
+2009

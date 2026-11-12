@@ -1,0 +1,16 @@
+Quinn Dalton
+Email: train.en.51@example.com
+
+Skills
+Docker, Redis, Excel
+
+Employment history
+Harbor Analytics 7
+Software Engineer
+June 2019 - June 2021
+- Built services using Docker.
+
+Education
+Lakeside University
+BSc / Computer Science
+2019

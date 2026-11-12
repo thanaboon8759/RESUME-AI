@@ -1,0 +1,16 @@
+Morgan Iverson
+Phone: +1-555-9009
+
+Skills
+Git, TypeScript, Power BI, Azure
+
+Employment history
+Ironleaf Software 1
+Data Analyst
+2016 - Present
+- Built services using Git.
+
+Education
+Lakeside University
+BSc / Computer Science
+2018

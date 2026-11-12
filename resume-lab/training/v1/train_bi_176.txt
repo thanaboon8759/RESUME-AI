@@ -1,0 +1,16 @@
+อนุชา ทองดี (Anucha Thornton)
+Phone: +1-555-6913
+
+Skills
+AWS, TypeScript, PostgreSQL, GraphQL
+
+Employment history
+Copperline Tech 1
+Software Engineer
+June 2019 - January 2022
+- Built services using AWS.
+
+Education
+Lakeside University
+BSc / Computer Science
+2013

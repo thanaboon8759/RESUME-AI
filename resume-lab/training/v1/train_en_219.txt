@@ -1,0 +1,15 @@
+Dakota Ellison
+Phone: +1-555-5431
+
+Skills
+Azure, Rust, MySQL, Linux, JavaScript
+
+Employment history
+Software Engineer | Copperline Tech 9
+Apr 2015 – Dec 2020
+- Built services using Azure.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2013

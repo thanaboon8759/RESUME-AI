@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dumb Dog · Resume Lab</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
-<body><header><a href="/" class="brand">D / D <span>DUMB DOG AI</span></a><span class="badge">LOCAL TESTING LAB</span></header>
-<main><section class="intro"><p class="eyebrow">DOCUMENT INTELLIGENCE / 01</p><h1>From resume.<br>To structured facts.</h1><p>Upload a resume. We select the tested local extraction and OCR models automatically.<br>Review the readable result alongside its source.</p></section>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Resume AI · Resume Lab</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body><header><a href="/" class="brand">R / A <span>Resume AI</span></a><span class="badge">Local testing lab</span></header>
+<main><section class="intro"><p class="eyebrow">Document intelligence / 01</p><h1>From resume.<br>To structured facts.</h1><p>Upload a resume. We select the tested local extraction and OCR models automatically.<br>Review the readable result alongside its source.</p></section>
 <section class="workspace"><aside><h2>Start a scan</h2><p id="connection" role="status">Checking local models…</p><button id="refresh" class="secondary">Refresh models</button>
-<label class="upload" for="file"><strong>Choose a resume</strong><span>PDF, DOCX, PNG, JPEG, TXT or MD · up to 8 MB</span><input id="file" type="file" accept=".pdf,.docx,.png,.jpg,.jpeg,.txt,.md"></label>
+<label class="upload" for="file"><strong>Choose a resume</strong><span>PDF, DOCX, PNG, JPEG, TXT or MD · up to 8&nbsp;MB</span><input id="file" type="file" accept=".pdf,.docx,.png,.jpg,.jpeg,.txt,.md"></label>
 <p class="note">Model selection is automatic. Images and scanned pages use OCR; readable documents use their embedded text.</p>
 <label class="check"><input id="parse" type="checkbox"> Text preview only · skip profile extraction</label>
-<button id="run">Scan resume <span>↗</span></button><button id="sample" class="secondary">Try a synthetic text sample</button>
+<button id="run">Scan resume <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></button><button id="sample" class="secondary">Try a synthetic text sample</button>
 <p class="note">Scanning starts when you choose a file. Uploaded documents are processed in memory and are not saved by this app.</p></aside>
-<article><div class="result-heading"><h2>Inspection desk</h2><button id="download" class="secondary" disabled>Export JSON ↓</button></div><p id="status" role="status" aria-live="polite">Ready for your first document.</p><p id="error" role="alert" hidden></p><div id="metrics" class="metrics"></div>
+<article><div class="result-heading"><h2>Inspection desk</h2><button id="download" class="secondary" disabled>Export JSON <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg></button></div><p id="status" role="status" aria-live="polite">Ready for your first document.</p><p id="error" role="alert" hidden></p><div id="metrics" class="metrics"></div>
 <div class="tabs" role="group" aria-label="Result view"><button id="source-tab" aria-pressed="true">Source text</button><button id="profile-tab" aria-pressed="false">Readable resume</button><button id="json-tab" aria-pressed="false">JSON</button><button id="history-tab" aria-pressed="false">Run history</button></div>
 <details><summary>Scan diagnostics</summary><pre id="diagnostics">Actual model choices and fallback attempts will appear after a scan.</pre></details>
 <pre id="result">Your resume text will appear here.
@@ -17,4 +17,4 @@
 02  Wait for automatic extraction
 03  Compare the readable resume with its source
 04  Review and export the result</pre><p id="warning" class="note">Model choices are based on a local synthetic benchmark. Review every result before use.</p></article></section>
-<footer><span>PRIVATE BY DEFAULT. EVIDENCE BEFORE DECISIONS.</span><span>English + Thai · Local Ollama</span></footer></main></body></html>
+<footer><span>Private by default · evidence before decisions</span><span>English + Thai · Local Ollama</span></footer></main></body></html>

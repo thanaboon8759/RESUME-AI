@@ -1,0 +1,16 @@
+Logan Langford
+Phone: +1-555-8565
+
+Skills
+Flutter, Kotlin, Python, MySQL, Kubernetes
+
+Employment history
+Maplewood Digital 1
+Software Engineer
+04/2020 - Present
+- Built services using Flutter.
+
+Education
+Lakeside University
+BSc / Computer Science
+2010

@@ -1,0 +1,16 @@
+มนัสนันท์ ทองดี (Manatsanan Ellison)
+Phone: +1-555-9405
+
+Skills
+Azure, Terraform, SQL
+
+Employment history
+Maplewood Digital 1
+Backend Developer
+Jun 2012 - Present
+- Built services using Azure.
+
+Education
+Lakeside University
+BSc / Computer Science
+2012

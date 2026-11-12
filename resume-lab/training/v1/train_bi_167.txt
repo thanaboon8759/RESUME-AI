@@ -1,0 +1,16 @@
+ธนพร วงศ์ไทย (Thanaporn Calloway)
+Phone: +1-555-6431
+
+Skills
+Django, PostgreSQL, React, Kubernetes, Redis
+
+Employment history
+Silverpine Cloud 3
+Data Analyst
+March 2012 - Present
+- Built services using Django.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2016

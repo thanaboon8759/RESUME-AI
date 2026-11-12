@@ -1,0 +1,16 @@
+สิรินทร์ บุญมา (Sirin Abbott)
+Email: hold3.bi.14@example.com
+Phone: +1-555-9492
+
+Skills
+AWS, Excel, Django, Kubernetes, Pandas
+
+Employment history
+Data Analyst | Ironleaf Software 9
+2019 – Current
+- Built services using AWS.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2014

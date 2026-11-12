@@ -1,0 +1,16 @@
+ธนพร วงศ์ไทย (Thanaporn Dalton)
+Email: hold3.bi.11@example.com
+
+Skills
+SQL, Terraform, Power BI, Docker, Tableau
+
+Employment history
+Northwind Labs 7
+Software Engineer
+2020 - 2023
+- Built services using SQL.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2015

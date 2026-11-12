@@ -1,0 +1,16 @@
+กมล ทองดี (Kamol Kingsley)
+Email: hold3.bi.17@example.com
+Phone: +1-555-8739
+
+Skills
+FastAPI, AWS, Azure, JavaScript
+
+Employment history
+Backend Developer | Northwind Labs 9
+March 2020 – February 2025
+- Built services using FastAPI.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2014

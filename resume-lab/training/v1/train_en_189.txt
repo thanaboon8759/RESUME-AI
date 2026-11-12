@@ -1,0 +1,16 @@
+Avery Dalton
+Email: train.en.189@example.com
+Phone: +1-555-1252
+
+Skills
+Power BI, FastAPI, Flutter
+
+Employment history
+Software Engineer | Maplewood Digital 6
+May 2018 – Jan 2022
+- Built services using Power BI.
+
+Education
+Lakeside University
+BSc / Computer Science
+2017

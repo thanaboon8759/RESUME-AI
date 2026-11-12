@@ -1,0 +1,16 @@
+Emerson Kingsley
+Email: train.en.72@example.com
+
+Skills
+Kubernetes, AWS, Redis, GraphQL, Java
+
+Employment history
+Copperline Tech 8
+Software Engineer
+09/2012 - 06/2013
+- Built services using Kubernetes.
+
+Education
+Lakeside University
+BSc / Computer Science
+2008

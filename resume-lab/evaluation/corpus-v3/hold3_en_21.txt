@@ -1,0 +1,16 @@
+Sage Fairbanks
+Phone: +1-555-9567
+
+Skills
+Redis, Python, Kubernetes, Flutter, AWS
+
+Employment history
+Bluegate Systems 2
+Software Engineer
+06/2020 - Present
+- Built services using Redis.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2008

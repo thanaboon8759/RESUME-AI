@@ -1,0 +1,75 @@
+{
+  "configuration": {
+    "stage": "ocr",
+    "split": "development",
+    "corpus_sha256": "ccad7aff918f5f59b055619a0ff3cde998570b8480cffc5c33d1706699580332",
+    "corpus_directory": "corpus-v2",
+    "annotation_sha256": "de048cfe4375519696c7b7506d83ebeb19d2990d618b5e75ee30a5b20d3562af",
+    "server_sha256": "a28ebb95dd315f968fd9357f5fdf6428fcc4bdadd3aec954b0c0dbeafe0441ef",
+    "schema_sha256": "c60bebba1b180efd8ad65eee72ed2f6499e6ac8a81a0bfa0a0fab5cf0fea4f75",
+    "source_facts_sha256": "681785ffd28b093ce00bac9d57af6d0361f8b4591d02877f72019897b31d5ac6",
+    "runtime": {
+      "ollama": {
+        "version": "0.34.0"
+      },
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "evaluator_sha256": "c1daaa9d577d3cb53fd126f0e8e68f650de9a4013b5ecf5391c0e25f32f4ebea",
+    "models": [
+      {
+        "name": "typhoon-ocr-roundtrip-rp1:latest",
+        "digest": "dd5fafbfec76502c95f5b80a11e55adcf0aa4692946ef568451b6fd93abf060d",
+        "details": {
+          "parent_model": "typhoon-ocr-roundtrip:latest",
+          "format": "gguf",
+          "family": "qwen25vl",
+          "families": [
+            "qwen25vl"
+          ],
+          "parameter_size": "3.8B",
+          "quantization_level": "F16",
+          "context_length": 128000,
+          "embedding_length": 2048
+        },
+        "capabilities": [
+          "vision",
+          "completion"
+        ]
+      }
+    ]
+  },
+  "summary": [
+    {
+      "model": "typhoon-ocr-roundtrip-rp1:latest",
+      "attempts": 11,
+      "success_rate": 1.0,
+      "mean_seconds": 5.3234516363617415,
+      "observed_p95_seconds": 10.215769100002944,
+      "cer": 0.00671573720375584,
+      "by_language": {
+        "bi": {
+          "attempts": 3,
+          "success_rate": 1.0,
+          "cer": 0.014161041172535424
+        },
+        "en": {
+          "attempts": 4,
+          "success_rate": 1.0,
+          "cer": 0.0024074074074074076
+        },
+        "th": {
+          "attempts": 4,
+          "success_rate": 1.0,
+          "cer": 0.0054400890235195825
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Synthetic pilot corpus, not population-wide accuracy.",
+    "Literal evidence is not semantic factuality.",
+    "OCR error attempts receive CER=1; character insertion errors can exceed 1.",
+    "Observed p95 is unstable with small samples.",
+    "Latency/token counts are cost proxies; no energy or monetary cost measured."
+  ]
+}

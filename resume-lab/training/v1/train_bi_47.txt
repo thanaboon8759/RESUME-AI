@@ -1,0 +1,17 @@
+ภูริ ทองดี (Phuri Prescott)
+Email: train.bi.47@example.com
+Phone: +1-555-4715
+
+Skills
+Java, Spring, MySQL, Kubernetes
+
+Employment history
+Ironleaf Software 7
+Software Engineer
+Apr 2016 - Current
+- Built services using Java.
+
+Education
+Lakeside University
+BSc / Computer Science
+2020

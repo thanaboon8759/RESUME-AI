@@ -1,0 +1,16 @@
+นภัส สุขสวัสดิ์ (Napat Merritt)
+Email: train.bi.101@example.com
+Phone: +1-555-1467
+
+Skills
+Vue, Java, Django
+
+Employment history
+Backend Developer | Ironleaf Software 2
+June 2014 – Present
+- Built services using Vue.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2015

@@ -1,0 +1,17 @@
+เกียรติ แก้วประเสริฐ (Kiat Barrett)
+Email: train.bi.200@example.com
+Phone: +1-555-7246
+
+Skills
+Tableau, Terraform, Kubernetes, Rust
+
+Employment history
+Maplewood Digital 3
+Backend Developer
+11/2013 - 02/2019
+- Built services using Tableau.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2014

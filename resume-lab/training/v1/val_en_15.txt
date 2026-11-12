@@ -1,0 +1,16 @@
+Wren Garland
+Email: val.en.15@example.com
+Phone: +1-555-2307
+
+Skills
+Tableau, Java, Spring
+
+Employment history
+Data Analyst | Northwind Labs 3
+05/2021 – 05/2024
+- Built services using Tableau.
+
+Education
+Lakeside University
+BSc / Computer Science
+2010

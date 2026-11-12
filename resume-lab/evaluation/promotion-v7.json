@@ -1,0 +1,20 @@
+{
+  "policy_candidate": "v7",
+  "status": "approved-by-protocol, awaiting owner sign-off before model-policy.json changes",
+  "decided_at": "2026-11-08T11:46:54.642781+00:00",
+  "frozen_candidates": "evaluation/frozen-candidates-v7.json",
+  "frozen_candidates_sha256": "2f033f0ad6efa6a1846b32f6b99a5484eb06bb6498893a08d327e8c83949a998",
+  "holdout_run": "qlora-v1-holdout",
+  "holdout_corpus": "corpus-v3",
+  "holdout_summary_sha256": "96e29a2667cb70fd3d8f71ba4da09fcae3b0106527bf23fdee9dee6c64f2460e",
+  "promoted_ocr": "typhoon-ocr-qlora-v1-rp1:latest",
+  "fallback_order": [
+    "typhoon-ocr-finetuned:latest",
+    "typhoon-fast:latest",
+    "typhoon-ocr-qlora-v1:latest",
+    "typhoon-ocr-roundtrip-rp1:latest",
+    "typhoon-ocr-roundtrip:latest"
+  ],
+  "end_to_end": "3/3 corpus-v3 scanned PDFs (en, th, bi): exact name and skills with qwen2.5:7b extraction",
+  "not_done": "model-policy.json not regenerated: manage_policy.py supports only a single corpus-v2 manifest for development+holdout; extending it and switching the live default need owner approval."
+}

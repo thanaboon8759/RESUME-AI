@@ -1,0 +1,16 @@
+ชนินทร์ รุ่งเรือง (Chanin Sterling)
+Email: train.bi.5@example.com
+Phone: +1-555-2064
+
+Skills
+Pandas, Spring, PostgreSQL
+
+Employment history
+Backend Developer | Silverpine Cloud 5
+10/2017 – 02/2018
+- Built services using Pandas.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2018

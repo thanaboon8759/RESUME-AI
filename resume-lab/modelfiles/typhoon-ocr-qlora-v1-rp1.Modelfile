@@ -1,0 +1,2 @@
+FROM typhoon-ocr-qlora-v1:latest
+PARAMETER repeat_penalty 1.0

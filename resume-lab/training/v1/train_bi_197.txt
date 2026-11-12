@@ -1,0 +1,16 @@
+อัญชลี ประเสริฐวงศ์ (Anchalee Ellison)
+Email: train.bi.197@example.com
+Phone: +1-555-1086
+
+Skills
+Vue, AWS, Flutter
+
+Employment history
+Software Engineer | Harbor Analytics 7
+2013 – Current
+- Built services using Vue.
+
+Education
+Lakeside University
+BSc / Computer Science
+2018

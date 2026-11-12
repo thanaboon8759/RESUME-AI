@@ -1,0 +1,16 @@
+จิราพร แก้วประเสริฐ (Jiraporn Merritt)
+Phone: +1-555-7170
+
+Skills
+Azure, Java, FastAPI, Python
+
+Employment history
+Summit Data Works 8
+Data Analyst
+2013 - Current
+- Built services using Azure.
+
+Education
+Lakeside University
+BSc / Computer Science
+2015

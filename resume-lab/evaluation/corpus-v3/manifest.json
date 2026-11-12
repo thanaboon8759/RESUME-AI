@@ -1,0 +1,1366 @@
+{
+  "version": "synthetic-resume-v3",
+  "annotations_frozen": true,
+  "seed": 20261108,
+  "purpose": "Fresh untouched OCR holdout for the QLoRA promotion.",
+  "rendering": "build_corpus_v2.render (Tahoma via Pillow without RAQM).",
+  "eval_manifest_sha256": "ccad7aff918f5f59b055619a0ff3cde998570b8480cffc5c33d1706699580332",
+  "samples": [
+    {
+      "id": "hold3_en_0",
+      "split": "holdout",
+      "language": "en",
+      "layout": "two-column",
+      "text": "Morgan Radcliffe\nEmail: hold3.en.0@example.com\n\nSkills\nDocker, Azure, Python, Excel\n\nEmployment history\nData Analyst | Maplewood Digital 2\nMay 2017 – June 2022\n- Built services using Docker.\n\nEducation\nLakeside University\nBSc / Computer Science\n2008",
+      "truth": {
+        "full_name": "Morgan Radcliffe",
+        "contact_email": "hold3.en.0@example.com",
+        "contact_phone": null,
+        "skills": [
+          "Docker",
+          "Azure",
+          "Python",
+          "Excel"
+        ],
+        "experience": [
+          {
+            "company": "Maplewood Digital 2",
+            "role": "Data Analyst",
+            "start_date": "May 2017",
+            "end_date": "June 2022",
+            "achievements": [
+              "Built services using Docker."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Lakeside University",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2008"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_en_0.txt",
+        "image": "hold3_en_0.png",
+        "scanned_pdf": "hold3_en_0-scan.pdf",
+        "digital_pdf": "hold3_en_0-digital.pdf"
+      },
+      "sha256": {
+        "text": "d9938d32f6ea323f34e39341b38a0cfca9529669fe84412532aadbfe982c726a",
+        "image": "1b4a835a37a1c6e979a7cc984ae1168719c303d4c632f16be5138733b45924eb",
+        "scanned_pdf": "3ace2e190768d600fefd879dcadf371029b3789c98e784e22b3283693976f471",
+        "digital_pdf": "608df6de0d73b0ef73cd66f3a8fc5c95b2808633adfa4273a6bbb81c54a5a522"
+      },
+      "text_sha256": "d9938d32f6ea323f34e39341b38a0cfca9529669fe84412532aadbfe982c726a"
+    },
+    {
+      "id": "hold3_th_1",
+      "split": "holdout",
+      "language": "th",
+      "layout": "two-column",
+      "text": "อัญชลี ศรีสุข\nPhone: 086-306-8082\n\nทักษะ\nGit, FastAPI, Kotlin, Python\n\nประสบการณ์ทำงาน\nวิศวกรซอฟต์แวร์ | บริษัท ซอฟต์แวร์สยาม 8\n2562 – 2568\n- พัฒนาระบบด้วย Git.\n\nการศึกษา\nมหาวิทยาลัยเทคโนโลยีใหม่\nปริญญาตรี / วิทยาการคอมพิวเตอร์\n2558",
+      "truth": {
+        "full_name": "อัญชลี ศรีสุข",
+        "contact_email": null,
+        "contact_phone": "086-306-8082",
+        "skills": [
+          "Git",
+          "FastAPI",
+          "Kotlin",
+          "Python"
+        ],
+        "experience": [
+          {
+            "company": "บริษัท ซอฟต์แวร์สยาม 8",
+            "role": "วิศวกรซอฟต์แวร์",
+            "start_date": "2562",
+            "end_date": "2568",
+            "achievements": [
+              "พัฒนาระบบด้วย Git."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "มหาวิทยาลัยเทคโนโลยีใหม่",
+            "degree": "ปริญญาตรี",
+            "field_of_study": "วิทยาการคอมพิวเตอร์",
+            "graduation_year": "2558"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_th_1.txt",
+        "image": "hold3_th_1.png",
+        "scanned_pdf": "hold3_th_1-scan.pdf",
+        "digital_pdf": "hold3_th_1-digital.pdf"
+      },
+      "sha256": {
+        "text": "a0b379fc9cec9f5cfd2bb4b1bd36da337ee6b421e359d1900c86fe5608352939",
+        "image": "90a289006364a0498cbbc70753ed7364816060be6f71d07493b7fa830363ce0f",
+        "scanned_pdf": "13b2edb3a04505f9ee4bf2bf30db9720ddba26abf103ac955678d1d57e85b5a2",
+        "digital_pdf": "c1a3250ed371d9ad8a537caa7ba0f667f514ed312a8c7c4782626f4c27132403"
+      },
+      "text_sha256": "a0b379fc9cec9f5cfd2bb4b1bd36da337ee6b421e359d1900c86fe5608352939"
+    },
+    {
+      "id": "hold3_bi_2",
+      "split": "holdout",
+      "language": "bi",
+      "layout": "single-column",
+      "text": "รัฐพล วงศ์ไทย (Rattapol Thornton)\nPhone: +1-555-2409\n\nSkills\nSpring, Power BI, FastAPI, Redis, Java\n\nEmployment history\nHarbor Analytics 8\nSoftware Engineer\n11/2020 - Current\n- Built services using Spring.\n\nEducation\nLakeside University\nBSc / Computer Science\n2012",
+      "truth": {
+        "full_name": "รัฐพล วงศ์ไทย (Rattapol Thornton)",
+        "contact_email": null,
+        "contact_phone": "+1-555-2409",
+        "skills": [
+          "Spring",
+          "Power BI",
+          "FastAPI",
+          "Redis",
+          "Java"
+        ],
+        "experience": [
+          {
+            "company": "Harbor Analytics 8",
+            "role": "Software Engineer",
+            "start_date": "11/2020",
+            "end_date": "Current",
+            "achievements": [
+              "Built services using Spring."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Lakeside University",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2012"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_bi_2.txt",
+        "image": "hold3_bi_2.png",
+        "scanned_pdf": "hold3_bi_2-scan.pdf",
+        "digital_pdf": "hold3_bi_2-digital.pdf"
+      },
+      "sha256": {
+        "text": "bb18d53efa71cb7ec7563272c3701189c0521119c6020d12f508fa5c87805de9",
+        "image": "3dcafd1e7fefeb82e923620449ecb55f3b55c2e3ea10dbe4c38e035f1f3c90bf",
+        "scanned_pdf": "33eae07a05816f2bc91a1487449266bff2984df0439297da352031b823f97101",
+        "digital_pdf": "22d8fd769d193d22bd653e00fa323b2f7c91a659d35e947ae7e1be9c8d460548"
+      },
+      "text_sha256": "bb18d53efa71cb7ec7563272c3701189c0521119c6020d12f508fa5c87805de9"
+    },
+    {
+      "id": "hold3_en_3",
+      "split": "holdout",
+      "language": "en",
+      "layout": "single-column",
+      "text": "Harper Barrett\nPhone: +1-555-9405\n\nSkills\nPandas, Azure, Redis, Power BI, Rust\n\nEmployment history\nCopperline Tech 5\nData Analyst\n2020 - 2024\n- Built services using Pandas.\n\nEducation\nWestbridge Institute of Technology\nBSc / Computer Science\n2010",
+      "truth": {
+        "full_name": "Harper Barrett",
+        "contact_email": null,
+        "contact_phone": "+1-555-9405",
+        "skills": [
+          "Pandas",
+          "Azure",
+          "Redis",
+          "Power BI",
+          "Rust"
+        ],
+        "experience": [
+          {
+            "company": "Copperline Tech 5",
+            "role": "Data Analyst",
+            "start_date": "2020",
+            "end_date": "2024",
+            "achievements": [
+              "Built services using Pandas."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Westbridge Institute of Technology",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2010"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_en_3.txt",
+        "image": "hold3_en_3.png",
+        "scanned_pdf": "hold3_en_3-scan.pdf",
+        "digital_pdf": "hold3_en_3-digital.pdf"
+      },
+      "sha256": {
+        "text": "deba4b9a4bd3ab95a7ea193e3033e56bc89788037445da1d4fc533b2185d83cc",
+        "image": "0efb0877dd05d193bc6aff382fe60a6fc6cadc41267af2e2f78f864000af6f95",
+        "scanned_pdf": "6ce1f537557aad49877a521573210afcce61cd1d080f58c044492bb05b286ba2",
+        "digital_pdf": "d751c5b10de98577da08b824d8f7ab67a908803f7da8b4711d16bc67398b2099"
+      },
+      "text_sha256": "deba4b9a4bd3ab95a7ea193e3033e56bc89788037445da1d4fc533b2185d83cc"
+    },
+    {
+      "id": "hold3_th_4",
+      "split": "holdout",
+      "language": "th",
+      "layout": "single-column",
+      "text": "อนุชา ศรีสุข\nEmail: hold3.th.4@example.com\n\nทักษะ\nAzure, TypeScript, JavaScript\n\nประสบการณ์ทำงาน\nบริษัท เทคโนโลยีรุ่งโรจน์ 8\nวิศวกรซอฟต์แวร์\n2560 - ปัจจุบัน\n- พัฒนาระบบด้วย Azure.\n\nการศึกษา\nมหาวิทยาลัยราชภัฏตัวอย่าง\nปริญญาตรี / วิทยาการคอมพิวเตอร์\n2558",
+      "truth": {
+        "full_name": "อนุชา ศรีสุข",
+        "contact_email": "hold3.th.4@example.com",
+        "contact_phone": null,
+        "skills": [
+          "Azure",
+          "TypeScript",
+          "JavaScript"
+        ],
+        "experience": [
+          {
+            "company": "บริษัท เทคโนโลยีรุ่งโรจน์ 8",
+            "role": "วิศวกรซอฟต์แวร์",
+            "start_date": "2560",
+            "end_date": "ปัจจุบัน",
+            "achievements": [
+              "พัฒนาระบบด้วย Azure."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "มหาวิทยาลัยราชภัฏตัวอย่าง",
+            "degree": "ปริญญาตรี",
+            "field_of_study": "วิทยาการคอมพิวเตอร์",
+            "graduation_year": "2558"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_th_4.txt",
+        "image": "hold3_th_4.png",
+        "scanned_pdf": "hold3_th_4-scan.pdf",
+        "digital_pdf": "hold3_th_4-digital.pdf"
+      },
+      "sha256": {
+        "text": "c381cd21015ea0a846dc6e55373d27c12e74c4a004dc948fd5c9c5afb292a281",
+        "image": "ed8f159e5e8a7a371391f02b11fc8ee275c45299800454672a187dad393b2261",
+        "scanned_pdf": "21566341e31a9ba404935f26c6f2f07dc47185fa2b4bc3bcf57bfc3011aa357b",
+        "digital_pdf": "8087447de9f33187831b73780e0850ac1d9ee4ecc07911540e587c76c6e16376"
+      },
+      "text_sha256": "c381cd21015ea0a846dc6e55373d27c12e74c4a004dc948fd5c9c5afb292a281"
+    },
+    {
+      "id": "hold3_bi_5",
+      "split": "holdout",
+      "language": "bi",
+      "layout": "two-column",
+      "text": "ภูริ ใจดี (Phuri Langford)\nEmail: hold3.bi.5@example.com\nPhone: +1-555-8601\n\nSkills\nPostgreSQL, Python, TypeScript, Azure, Power BI\n\nEmployment history\nBackend Developer | Summit Data Works 2\n2018 – 2019\n- Built services using PostgreSQL.\n\nEducation\nLakeside University\nBSc / Computer Science\n2011",
+      "truth": {
+        "full_name": "ภูริ ใจดี (Phuri Langford)",
+        "contact_email": "hold3.bi.5@example.com",
+        "contact_phone": "+1-555-8601",
+        "skills": [
+          "PostgreSQL",
+          "Python",
+          "TypeScript",
+          "Azure",
+          "Power BI"
+        ],
+        "experience": [
+          {
+            "company": "Summit Data Works 2",
+            "role": "Backend Developer",
+            "start_date": "2018",
+            "end_date": "2019",
+            "achievements": [
+              "Built services using PostgreSQL."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Lakeside University",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2011"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_bi_5.txt",
+        "image": "hold3_bi_5.png",
+        "scanned_pdf": "hold3_bi_5-scan.pdf",
+        "digital_pdf": "hold3_bi_5-digital.pdf"
+      },
+      "sha256": {
+        "text": "24d2c45a63bea8abb64f2bbe1c199538a8a1980c69925964cb47a0a4120a4227",
+        "image": "65ef2ea6a33c0d87b9d0331370c9e1a74ef89ae0a7c7828feb252cea60a08814",
+        "scanned_pdf": "6dbb7fe89743d7215465e659d68870a04b4e56851421147ea52e3c06b3bcf105",
+        "digital_pdf": "5157fa995be464f783480ff8216dce8b91fbbbeae08ec54a01c0d6ca176de7b3"
+      },
+      "text_sha256": "24d2c45a63bea8abb64f2bbe1c199538a8a1980c69925964cb47a0a4120a4227"
+    },
+    {
+      "id": "hold3_en_6",
+      "split": "holdout",
+      "language": "en",
+      "layout": "two-column",
+      "text": "Avery Abbott\nEmail: hold3.en.6@example.com\n\nSkills\nMySQL, TypeScript, Linux, Pandas\n\nEmployment history\nSoftware Engineer | Summit Data Works 7\n2013 – 2023\n- Built services using MySQL.\n\nEducation\nLakeside University\nBSc / Computer Science\n2018",
+      "truth": {
+        "full_name": "Avery Abbott",
+        "contact_email": "hold3.en.6@example.com",
+        "contact_phone": null,
+        "skills": [
+          "MySQL",
+          "TypeScript",
+          "Linux",
+          "Pandas"
+        ],
+        "experience": [
+          {
+            "company": "Summit Data Works 7",
+            "role": "Software Engineer",
+            "start_date": "2013",
+            "end_date": "2023",
+            "achievements": [
+              "Built services using MySQL."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Lakeside University",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2018"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_en_6.txt",
+        "image": "hold3_en_6.png",
+        "scanned_pdf": "hold3_en_6-scan.pdf",
+        "digital_pdf": "hold3_en_6-digital.pdf"
+      },
+      "sha256": {
+        "text": "e85a363dfb435a193c4e4ff6e27b3056759c6d262560680b4ccd90a271c54a75",
+        "image": "e8008a661dc25e4f071f996af8acc91be23cfff8421fdcea5e410ee63c108971",
+        "scanned_pdf": "06b143d27b6fe7b8a0492d526f9b6ce1138ea49b2a69e1c5fb3c001db47538a7",
+        "digital_pdf": "73a302b844d6b72e271aabba2fabb2a63f2a36441bbffcfbc01e4ecfa4e0809f"
+      },
+      "text_sha256": "e85a363dfb435a193c4e4ff6e27b3056759c6d262560680b4ccd90a271c54a75"
+    },
+    {
+      "id": "hold3_th_7",
+      "split": "holdout",
+      "language": "th",
+      "layout": "single-column",
+      "text": "พิมพ์ชนก สมบูรณ์ชัย\nEmail: hold3.th.7@example.com\nPhone: 082-785-2201\n\nทักษะ\nDocker, Redis, Git, Python, Azure\n\nประสบการณ์ทำงาน\nบริษัท ระบบอัจฉริยะ 1\nวิศวกรซอฟต์แวร์\n2557 - ปัจจุบัน\n- พัฒนาระบบด้วย Docker.\n\nการศึกษา\nมหาวิทยาลัยราชภัฏตัวอย่าง\nปริญญาตรี / วิทยาการคอมพิวเตอร์\n2558",
+      "truth": {
+        "full_name": "พิมพ์ชนก สมบูรณ์ชัย",
+        "contact_email": "hold3.th.7@example.com",
+        "contact_phone": "082-785-2201",
+        "skills": [
+          "Docker",
+          "Redis",
+          "Git",
+          "Python",
+          "Azure"
+        ],
+        "experience": [
+          {
+            "company": "บริษัท ระบบอัจฉริยะ 1",
+            "role": "วิศวกรซอฟต์แวร์",
+            "start_date": "2557",
+            "end_date": "ปัจจุบัน",
+            "achievements": [
+              "พัฒนาระบบด้วย Docker."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "มหาวิทยาลัยราชภัฏตัวอย่าง",
+            "degree": "ปริญญาตรี",
+            "field_of_study": "วิทยาการคอมพิวเตอร์",
+            "graduation_year": "2558"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_th_7.txt",
+        "image": "hold3_th_7.png",
+        "scanned_pdf": "hold3_th_7-scan.pdf",
+        "digital_pdf": "hold3_th_7-digital.pdf"
+      },
+      "sha256": {
+        "text": "ab363259796fafea6df85329b608a85d3883057ab21c16d30be36630d7367610",
+        "image": "7eb7745552ba87878dc795ad4aae50fa481e7798cb1c8ce17ca59c63c888bc55",
+        "scanned_pdf": "a59cf1e83430e7ea8be4b8f0c4459bc0c6b4cd9e894578f9d79f5b288a041dc2",
+        "digital_pdf": "201cf4313c226a8aa15b934b57e1dde06e7c945b5d5e3093f21c9f02c3519ad8"
+      },
+      "text_sha256": "ab363259796fafea6df85329b608a85d3883057ab21c16d30be36630d7367610"
+    },
+    {
+      "id": "hold3_bi_8",
+      "split": "holdout",
+      "language": "bi",
+      "layout": "two-column",
+      "text": "สิรินทร์ วงศ์ไทย (Sirin Radcliffe)\nEmail: hold3.bi.8@example.com\nPhone: +1-555-9674\n\nSkills\nExcel, AWS, Django\n\nEmployment history\nData Analyst | Harbor Analytics 1\n01/2017 – 12/2022\n- Built services using Excel.\n\nEducation\nLakeside University\nBSc / Computer Science\n2008",
+      "truth": {
+        "full_name": "สิรินทร์ วงศ์ไทย (Sirin Radcliffe)",
+        "contact_email": "hold3.bi.8@example.com",
+        "contact_phone": "+1-555-9674",
+        "skills": [
+          "Excel",
+          "AWS",
+          "Django"
+        ],
+        "experience": [
+          {
+            "company": "Harbor Analytics 1",
+            "role": "Data Analyst",
+            "start_date": "01/2017",
+            "end_date": "12/2022",
+            "achievements": [
+              "Built services using Excel."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Lakeside University",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2008"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_bi_8.txt",
+        "image": "hold3_bi_8.png",
+        "scanned_pdf": "hold3_bi_8-scan.pdf",
+        "digital_pdf": "hold3_bi_8-digital.pdf"
+      },
+      "sha256": {
+        "text": "75fbaf94b5c2e1bc09c4bc3d34bb3a622f96b76713cd1ea8acc65fe8dce88483",
+        "image": "5afe4c748bc48e5431ccdafab6347f3be2b5e40799ba6bab5df86b35e07855b0",
+        "scanned_pdf": "4216709007a85a65a5d61a937ea972d3822872e1e785840ac04e5187cbe0e7bd",
+        "digital_pdf": "c683840c4577575da37da798697dae4f10eafb239671bca2675b2451d41b605e"
+      },
+      "text_sha256": "75fbaf94b5c2e1bc09c4bc3d34bb3a622f96b76713cd1ea8acc65fe8dce88483"
+    },
+    {
+      "id": "hold3_en_9",
+      "split": "holdout",
+      "language": "en",
+      "layout": "two-column",
+      "text": "Jamie Merritt\nEmail: hold3.en.9@example.com\nPhone: +1-555-8262\n\nSkills\nTerraform, Redis, Flutter, Rust, Kubernetes\n\nEmployment history\nBackend Developer | Northwind Labs 6\nMarch 2015 – March 2023\n- Built services using Terraform.\n\nEducation\nWestbridge Institute of Technology\nBSc / Computer Science\n2020",
+      "truth": {
+        "full_name": "Jamie Merritt",
+        "contact_email": "hold3.en.9@example.com",
+        "contact_phone": "+1-555-8262",
+        "skills": [
+          "Terraform",
+          "Redis",
+          "Flutter",
+          "Rust",
+          "Kubernetes"
+        ],
+        "experience": [
+          {
+            "company": "Northwind Labs 6",
+            "role": "Backend Developer",
+            "start_date": "March 2015",
+            "end_date": "March 2023",
+            "achievements": [
+              "Built services using Terraform."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Westbridge Institute of Technology",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2020"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_en_9.txt",
+        "image": "hold3_en_9.png",
+        "scanned_pdf": "hold3_en_9-scan.pdf",
+        "digital_pdf": "hold3_en_9-digital.pdf"
+      },
+      "sha256": {
+        "text": "3384a86627189c46c3493da5611ee9845e2a55af0e0e4ff3c4470fdfba13cfdf",
+        "image": "7c322665a36b3e4c5f03835cfd425f949f1bc17c4d03ab7c517409d66ae2479c",
+        "scanned_pdf": "c864050d87e9334f62d4448450bdd4e8c1c2cab9b5ae40ab3c965c18bfb19d6e",
+        "digital_pdf": "b1a2f74f5f2a58f011434ff3c417ceca5010343888f6cde7c3a7978e82376303"
+      },
+      "text_sha256": "3384a86627189c46c3493da5611ee9845e2a55af0e0e4ff3c4470fdfba13cfdf"
+    },
+    {
+      "id": "hold3_th_10",
+      "split": "holdout",
+      "language": "th",
+      "layout": "single-column",
+      "text": "นภัส บุญมา\nPhone: 082-868-4999\n\nทักษะ\nTerraform, Django, Java\n\nประสบการณ์ทำงาน\nบริษัท ซอฟต์แวร์สยาม 2\nวิศวกรซอฟต์แวร์\nม.ค. 2563 - ปัจจุบัน\n- พัฒนาระบบด้วย Terraform.\n\nการศึกษา\nมหาวิทยาลัยเทคโนโลยีใหม่\nปริญญาตรี / วิทยาการคอมพิวเตอร์\n2554",
+      "truth": {
+        "full_name": "นภัส บุญมา",
+        "contact_email": null,
+        "contact_phone": "082-868-4999",
+        "skills": [
+          "Terraform",
+          "Django",
+          "Java"
+        ],
+        "experience": [
+          {
+            "company": "บริษัท ซอฟต์แวร์สยาม 2",
+            "role": "วิศวกรซอฟต์แวร์",
+            "start_date": "ม.ค. 2563",
+            "end_date": "ปัจจุบัน",
+            "achievements": [
+              "พัฒนาระบบด้วย Terraform."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "มหาวิทยาลัยเทคโนโลยีใหม่",
+            "degree": "ปริญญาตรี",
+            "field_of_study": "วิทยาการคอมพิวเตอร์",
+            "graduation_year": "2554"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_th_10.txt",
+        "image": "hold3_th_10.png",
+        "scanned_pdf": "hold3_th_10-scan.pdf",
+        "digital_pdf": "hold3_th_10-digital.pdf"
+      },
+      "sha256": {
+        "text": "f9ad89d1e1988f41c84818d0fdabf44880cfd6bd3f4ada5899dd152a67e63102",
+        "image": "73bf39a1dc9d0697ab34cdad32a8a5465f4fc0782f3dbaec0dd4342b9ffb0286",
+        "scanned_pdf": "ba8e9f657f96fa8e8d7d24b2feb11446da3d202a4847e5c909cf77924ab9d91d",
+        "digital_pdf": "8bee061b60d95c10678d00d4b2eed50f7631c960311ff646531a1833c04cc0b0"
+      },
+      "text_sha256": "f9ad89d1e1988f41c84818d0fdabf44880cfd6bd3f4ada5899dd152a67e63102"
+    },
+    {
+      "id": "hold3_bi_11",
+      "split": "holdout",
+      "language": "bi",
+      "layout": "single-column",
+      "text": "ธนพร วงศ์ไทย (Thanaporn Dalton)\nEmail: hold3.bi.11@example.com\n\nSkills\nSQL, Terraform, Power BI, Docker, Tableau\n\nEmployment history\nNorthwind Labs 7\nSoftware Engineer\n2020 - 2023\n- Built services using SQL.\n\nEducation\nWestbridge Institute of Technology\nBSc / Computer Science\n2015",
+      "truth": {
+        "full_name": "ธนพร วงศ์ไทย (Thanaporn Dalton)",
+        "contact_email": "hold3.bi.11@example.com",
+        "contact_phone": null,
+        "skills": [
+          "SQL",
+          "Terraform",
+          "Power BI",
+          "Docker",
+          "Tableau"
+        ],
+        "experience": [
+          {
+            "company": "Northwind Labs 7",
+            "role": "Software Engineer",
+            "start_date": "2020",
+            "end_date": "2023",
+            "achievements": [
+              "Built services using SQL."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Westbridge Institute of Technology",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2015"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_bi_11.txt",
+        "image": "hold3_bi_11.png",
+        "scanned_pdf": "hold3_bi_11-scan.pdf",
+        "digital_pdf": "hold3_bi_11-digital.pdf"
+      },
+      "sha256": {
+        "text": "ced15a82f6f9be1730b1fbfa0b4a02a05926ae9bea2469be7e31fc9847cbd2a0",
+        "image": "19a3a31d13d028928436408a19e4de55903d5830ea4d6cd81db1ed0b729258d9",
+        "scanned_pdf": "d38c718d3c045f97f7a3cea2a70119307bb456dbc16ec3ccb07b30b3392b4bb5",
+        "digital_pdf": "1f18d7fd9694c4e3f50c50a2be085d4a7f38c50346658ab4ceaeb819278cf06b"
+      },
+      "text_sha256": "ced15a82f6f9be1730b1fbfa0b4a02a05926ae9bea2469be7e31fc9847cbd2a0"
+    },
+    {
+      "id": "hold3_en_12",
+      "split": "holdout",
+      "language": "en",
+      "layout": "single-column",
+      "text": "Finley Ellison\nEmail: hold3.en.12@example.com\n\nSkills\nRedis, C#, Go\n\nEmployment history\nNorthwind Labs 2\nData Analyst\nJuly 2013 - May 2025\n- Built services using Redis.\n\nEducation\nWestbridge Institute of Technology\nBSc / Computer Science\n2012",
+      "truth": {
+        "full_name": "Finley Ellison",
+        "contact_email": "hold3.en.12@example.com",
+        "contact_phone": null,
+        "skills": [
+          "Redis",
+          "C#",
+          "Go"
+        ],
+        "experience": [
+          {
+            "company": "Northwind Labs 2",
+            "role": "Data Analyst",
+            "start_date": "July 2013",
+            "end_date": "May 2025",
+            "achievements": [
+              "Built services using Redis."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Westbridge Institute of Technology",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2012"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_en_12.txt",
+        "image": "hold3_en_12.png",
+        "scanned_pdf": "hold3_en_12-scan.pdf",
+        "digital_pdf": "hold3_en_12-digital.pdf"
+      },
+      "sha256": {
+        "text": "a918930d3d1f4eea2ba2d2fd4f85e7b6bcc74011b91eb33e13f1cd4d701c4cca",
+        "image": "fbd0806b33c0c0e0f81b5186affdbeb10cba2ce3fa96d6f0425d0691f87d95d9",
+        "scanned_pdf": "b1b4b3fa101933b19dfa95f60d2403630e1a1d1007df3c321794a5be95acc469",
+        "digital_pdf": "8c20b763be8f53aba71972d64a71540f45faafd8a93479dfdc05b56f33ad1b3c"
+      },
+      "text_sha256": "a918930d3d1f4eea2ba2d2fd4f85e7b6bcc74011b91eb33e13f1cd4d701c4cca"
+    },
+    {
+      "id": "hold3_th_13",
+      "split": "holdout",
+      "language": "th",
+      "layout": "two-column",
+      "text": "วรเมธ มั่นคง\nEmail: hold3.th.13@example.com\n\nทักษะ\nJavaScript, Flutter, Excel, Python\n\nประสบการณ์ทำงาน\nวิศวกรซอฟต์แวร์ | บริษัท ข้อมูลก้าวหน้า 9\n2557 – 2561\n- พัฒนาระบบด้วย JavaScript.\n\nการศึกษา\nมหาวิทยาลัยเทคโนโลยีใหม่\nปริญญาตรี / วิทยาการคอมพิวเตอร์\n2557",
+      "truth": {
+        "full_name": "วรเมธ มั่นคง",
+        "contact_email": "hold3.th.13@example.com",
+        "contact_phone": null,
+        "skills": [
+          "JavaScript",
+          "Flutter",
+          "Excel",
+          "Python"
+        ],
+        "experience": [
+          {
+            "company": "บริษัท ข้อมูลก้าวหน้า 9",
+            "role": "วิศวกรซอฟต์แวร์",
+            "start_date": "2557",
+            "end_date": "2561",
+            "achievements": [
+              "พัฒนาระบบด้วย JavaScript."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "มหาวิทยาลัยเทคโนโลยีใหม่",
+            "degree": "ปริญญาตรี",
+            "field_of_study": "วิทยาการคอมพิวเตอร์",
+            "graduation_year": "2557"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_th_13.txt",
+        "image": "hold3_th_13.png",
+        "scanned_pdf": "hold3_th_13-scan.pdf",
+        "digital_pdf": "hold3_th_13-digital.pdf"
+      },
+      "sha256": {
+        "text": "2a049bc9381a3abb8f1966c1e7e085ae3c59cd3440a5c0df4d85e053ae6f0604",
+        "image": "bb9d47c9fa896a3d156bd65b8555f08aa675831ce2a165302381c1d13d593bec",
+        "scanned_pdf": "c891e204270b092971081caddabb310169ab29c79d005f44d1a04fd0453062e3",
+        "digital_pdf": "fc214303fd8904c86fddbd3bd1ff86d955f767771965ccae022496c9d434538d"
+      },
+      "text_sha256": "2a049bc9381a3abb8f1966c1e7e085ae3c59cd3440a5c0df4d85e053ae6f0604"
+    },
+    {
+      "id": "hold3_bi_14",
+      "split": "holdout",
+      "language": "bi",
+      "layout": "two-column",
+      "text": "สิรินทร์ บุญมา (Sirin Abbott)\nEmail: hold3.bi.14@example.com\nPhone: +1-555-9492\n\nSkills\nAWS, Excel, Django, Kubernetes, Pandas\n\nEmployment history\nData Analyst | Ironleaf Software 9\n2019 – Current\n- Built services using AWS.\n\nEducation\nWestbridge Institute of Technology\nBSc / Computer Science\n2014",
+      "truth": {
+        "full_name": "สิรินทร์ บุญมา (Sirin Abbott)",
+        "contact_email": "hold3.bi.14@example.com",
+        "contact_phone": "+1-555-9492",
+        "skills": [
+          "AWS",
+          "Excel",
+          "Django",
+          "Kubernetes",
+          "Pandas"
+        ],
+        "experience": [
+          {
+            "company": "Ironleaf Software 9",
+            "role": "Data Analyst",
+            "start_date": "2019",
+            "end_date": "Current",
+            "achievements": [
+              "Built services using AWS."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Westbridge Institute of Technology",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2014"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_bi_14.txt",
+        "image": "hold3_bi_14.png",
+        "scanned_pdf": "hold3_bi_14-scan.pdf",
+        "digital_pdf": "hold3_bi_14-digital.pdf"
+      },
+      "sha256": {
+        "text": "c4191a5f1ab5ce8ef8d2747c9f6bc27f316f7bb515a9c0c06b202dabaea2e9ba",
+        "image": "6194ca0a6bee0634d9587db3f4ca7d4e9a2b6e1f9e6b18fd01ab191f723c7d95",
+        "scanned_pdf": "416b93add6587dd40eedc1bb5a5c02a4b14b4db4490deb751edf933e5b93404e",
+        "digital_pdf": "0fa011bde33d33c1421572a9197dd9db3a907229d1af65e2a5ee7dc3009d97f1"
+      },
+      "text_sha256": "c4191a5f1ab5ce8ef8d2747c9f6bc27f316f7bb515a9c0c06b202dabaea2e9ba"
+    },
+    {
+      "id": "hold3_en_15",
+      "split": "holdout",
+      "language": "en",
+      "layout": "two-column",
+      "text": "Tatum Barrett\nPhone: +1-555-4034\n\nSkills\nTableau, Vue, PostgreSQL\n\nEmployment history\nData Analyst | Ironleaf Software 9\n06/2013 – Present\n- Built services using Tableau.\n\nEducation\nWestbridge Institute of Technology\nBSc / Computer Science\n2015",
+      "truth": {
+        "full_name": "Tatum Barrett",
+        "contact_email": null,
+        "contact_phone": "+1-555-4034",
+        "skills": [
+          "Tableau",
+          "Vue",
+          "PostgreSQL"
+        ],
+        "experience": [
+          {
+            "company": "Ironleaf Software 9",
+            "role": "Data Analyst",
+            "start_date": "06/2013",
+            "end_date": "Present",
+            "achievements": [
+              "Built services using Tableau."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Westbridge Institute of Technology",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2015"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_en_15.txt",
+        "image": "hold3_en_15.png",
+        "scanned_pdf": "hold3_en_15-scan.pdf",
+        "digital_pdf": "hold3_en_15-digital.pdf"
+      },
+      "sha256": {
+        "text": "f7e40f49978a29e610c27794d0a6d8d7233c8ef04eca1ec3c3e6b8006c1aef14",
+        "image": "0ca44412a8ed24022924f16784263e15304eaa62449fb5d277c25f48b1d65478",
+        "scanned_pdf": "c2bc55c3cd0a269ec4031e2c12a942e52c533e89eea8e2f1c2e4cd6f137c9642",
+        "digital_pdf": "bccb8ae1f488e23f0affe2da2898c7e1a77efd155b57759c195746ac76b67a81"
+      },
+      "text_sha256": "f7e40f49978a29e610c27794d0a6d8d7233c8ef04eca1ec3c3e6b8006c1aef14"
+    },
+    {
+      "id": "hold3_th_16",
+      "split": "holdout",
+      "language": "th",
+      "layout": "two-column",
+      "text": "ธีรวัฒน์ มั่นคง\nEmail: hold3.th.16@example.com\n\nทักษะ\nRedis, Excel, SQL, Linux, Power BI\n\nประสบการณ์ทำงาน\nวิศวกรซอฟต์แวร์ | บริษัท ระบบอัจฉริยะ 3\n2563 – 2565\n- พัฒนาระบบด้วย Redis.\n\nการศึกษา\nมหาวิทยาลัยราชภัฏตัวอย่าง\nปริญญาตรี / วิทยาการคอมพิวเตอร์\n2557",
+      "truth": {
+        "full_name": "ธีรวัฒน์ มั่นคง",
+        "contact_email": "hold3.th.16@example.com",
+        "contact_phone": null,
+        "skills": [
+          "Redis",
+          "Excel",
+          "SQL",
+          "Linux",
+          "Power BI"
+        ],
+        "experience": [
+          {
+            "company": "บริษัท ระบบอัจฉริยะ 3",
+            "role": "วิศวกรซอฟต์แวร์",
+            "start_date": "2563",
+            "end_date": "2565",
+            "achievements": [
+              "พัฒนาระบบด้วย Redis."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "มหาวิทยาลัยราชภัฏตัวอย่าง",
+            "degree": "ปริญญาตรี",
+            "field_of_study": "วิทยาการคอมพิวเตอร์",
+            "graduation_year": "2557"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_th_16.txt",
+        "image": "hold3_th_16.png",
+        "scanned_pdf": "hold3_th_16-scan.pdf",
+        "digital_pdf": "hold3_th_16-digital.pdf"
+      },
+      "sha256": {
+        "text": "89540b52dbdabd25f3d39d4997d5eced1bcf95dc546d12e96111f1d3339946c4",
+        "image": "b5bd028976d9dec65f7129d72cb552fcaf48096864170db4c6282f47a408d7d8",
+        "scanned_pdf": "1cc1774ec30d62d9fb740837858e28c2bdc8b91fc869f563c5a4e1f57e784142",
+        "digital_pdf": "89793d8015fd65d31107f6bc132cd2dfbd6d29aef50607324727d96b4b834819"
+      },
+      "text_sha256": "89540b52dbdabd25f3d39d4997d5eced1bcf95dc546d12e96111f1d3339946c4"
+    },
+    {
+      "id": "hold3_bi_17",
+      "split": "holdout",
+      "language": "bi",
+      "layout": "two-column",
+      "text": "กมล ทองดี (Kamol Kingsley)\nEmail: hold3.bi.17@example.com\nPhone: +1-555-8739\n\nSkills\nFastAPI, AWS, Azure, JavaScript\n\nEmployment history\nBackend Developer | Northwind Labs 9\nMarch 2020 – February 2025\n- Built services using FastAPI.\n\nEducation\nWestbridge Institute of Technology\nBSc / Computer Science\n2014",
+      "truth": {
+        "full_name": "กมล ทองดี (Kamol Kingsley)",
+        "contact_email": "hold3.bi.17@example.com",
+        "contact_phone": "+1-555-8739",
+        "skills": [
+          "FastAPI",
+          "AWS",
+          "Azure",
+          "JavaScript"
+        ],
+        "experience": [
+          {
+            "company": "Northwind Labs 9",
+            "role": "Backend Developer",
+            "start_date": "March 2020",
+            "end_date": "February 2025",
+            "achievements": [
+              "Built services using FastAPI."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Westbridge Institute of Technology",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2014"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_bi_17.txt",
+        "image": "hold3_bi_17.png",
+        "scanned_pdf": "hold3_bi_17-scan.pdf",
+        "digital_pdf": "hold3_bi_17-digital.pdf"
+      },
+      "sha256": {
+        "text": "3f3064c71c7d032cbb7b8a247f4e0e7916ade0afa4447fe287988b32651f3f11",
+        "image": "6eba70cba98843031974df5db6f9d00c457934a99f74d5d96fc35b355d492405",
+        "scanned_pdf": "62018d61608e1074029756424a6036d46262bcd3327ce0fbcebc64229e969b3a",
+        "digital_pdf": "4f4749d50943a85e07e1694058441260ab9d369900c8dc4e00c9ef50903741c1"
+      },
+      "text_sha256": "3f3064c71c7d032cbb7b8a247f4e0e7916ade0afa4447fe287988b32651f3f11"
+    },
+    {
+      "id": "hold3_en_18",
+      "split": "holdout",
+      "language": "en",
+      "layout": "two-column",
+      "text": "Finley Abbott\nEmail: hold3.en.18@example.com\n\nSkills\nC#, Pandas, Django, Flutter\n\nEmployment history\nBackend Developer | Harbor Analytics 2\nFebruary 2013 – Present\n- Built services using C#.\n\nEducation\nLakeside University\nBSc / Computer Science\n2011",
+      "truth": {
+        "full_name": "Finley Abbott",
+        "contact_email": "hold3.en.18@example.com",
+        "contact_phone": null,
+        "skills": [
+          "C#",
+          "Pandas",
+          "Django",
+          "Flutter"
+        ],
+        "experience": [
+          {
+            "company": "Harbor Analytics 2",
+            "role": "Backend Developer",
+            "start_date": "February 2013",
+            "end_date": "Present",
+            "achievements": [
+              "Built services using C#."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Lakeside University",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2011"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_en_18.txt",
+        "image": "hold3_en_18.png",
+        "scanned_pdf": "hold3_en_18-scan.pdf",
+        "digital_pdf": "hold3_en_18-digital.pdf"
+      },
+      "sha256": {
+        "text": "da4dca1c2a50b0d73e20905263f2af718aac24647e1609cc614cf94bdac02b52",
+        "image": "5414f91522596927c724d66c4de9817e9196d6001c03b5aaa05b6d9906781ae9",
+        "scanned_pdf": "9b1ffcce97119573ba5371f08c564458c0a2d9eebb3d45905d1eedcd9ec0d1f2",
+        "digital_pdf": "d65007f83e13722e4c4a6a3b5a1a3f8a6219434d3591eeb669608d8541e17b11"
+      },
+      "text_sha256": "da4dca1c2a50b0d73e20905263f2af718aac24647e1609cc614cf94bdac02b52"
+    },
+    {
+      "id": "hold3_th_19",
+      "split": "holdout",
+      "language": "th",
+      "layout": "single-column",
+      "text": "ศุภชัย ทองดี\nEmail: hold3.th.19@example.com\n\nทักษะ\nDjango, Rust, Kotlin, Flutter, C#\n\nประสบการณ์ทำงาน\nบริษัท ซอฟต์แวร์สยาม 6\nวิศวกรซอฟต์แวร์\nก.พ. 2555 - ธ.ค. 2557\n- พัฒนาระบบด้วย Django.\n\nการศึกษา\nมหาวิทยาลัยเทคโนโลยีใหม่\nปริญญาตรี / วิทยาการคอมพิวเตอร์\n2562",
+      "truth": {
+        "full_name": "ศุภชัย ทองดี",
+        "contact_email": "hold3.th.19@example.com",
+        "contact_phone": null,
+        "skills": [
+          "Django",
+          "Rust",
+          "Kotlin",
+          "Flutter",
+          "C#"
+        ],
+        "experience": [
+          {
+            "company": "บริษัท ซอฟต์แวร์สยาม 6",
+            "role": "วิศวกรซอฟต์แวร์",
+            "start_date": "ก.พ. 2555",
+            "end_date": "ธ.ค. 2557",
+            "achievements": [
+              "พัฒนาระบบด้วย Django."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "มหาวิทยาลัยเทคโนโลยีใหม่",
+            "degree": "ปริญญาตรี",
+            "field_of_study": "วิทยาการคอมพิวเตอร์",
+            "graduation_year": "2562"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_th_19.txt",
+        "image": "hold3_th_19.png",
+        "scanned_pdf": "hold3_th_19-scan.pdf",
+        "digital_pdf": "hold3_th_19-digital.pdf"
+      },
+      "sha256": {
+        "text": "c79c7529fe8c5c184a833563ff95820d878f4e1b50e57d3efd9ba03983cc76e6",
+        "image": "11f18155dc81c1f2dc7fc45d33561784297cd938eac9621c7c898806bf5f90b8",
+        "scanned_pdf": "93435d19e05103730f1cf7a0132db816adfb8cc4049626cd437fb0f983f0f694",
+        "digital_pdf": "ddf064357fdafd91ec7e419e0bf9d56961ec9fb9738158dc83c1b8e76a7ccd43"
+      },
+      "text_sha256": "c79c7529fe8c5c184a833563ff95820d878f4e1b50e57d3efd9ba03983cc76e6"
+    },
+    {
+      "id": "hold3_bi_20",
+      "split": "holdout",
+      "language": "bi",
+      "layout": "single-column",
+      "text": "ภูริ วงศ์ไทย (Phuri Thornton)\nPhone: +1-555-5266\n\nSkills\nPandas, AWS, C#, Python\n\nEmployment history\nNorthwind Labs 7\nBackend Developer\n2016 - 2020\n- Built services using Pandas.\n\nEducation\nLakeside University\nBSc / Computer Science\n2013",
+      "truth": {
+        "full_name": "ภูริ วงศ์ไทย (Phuri Thornton)",
+        "contact_email": null,
+        "contact_phone": "+1-555-5266",
+        "skills": [
+          "Pandas",
+          "AWS",
+          "C#",
+          "Python"
+        ],
+        "experience": [
+          {
+            "company": "Northwind Labs 7",
+            "role": "Backend Developer",
+            "start_date": "2016",
+            "end_date": "2020",
+            "achievements": [
+              "Built services using Pandas."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Lakeside University",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2013"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_bi_20.txt",
+        "image": "hold3_bi_20.png",
+        "scanned_pdf": "hold3_bi_20-scan.pdf",
+        "digital_pdf": "hold3_bi_20-digital.pdf"
+      },
+      "sha256": {
+        "text": "80d4b37a7c24040d3cd68c13424ad5c0a0be3d8aee8a491f15b786ec6dac6dbe",
+        "image": "a0c0f3fa21c178c26b9466a4a13a3d5d9e498e1fedbe97f493830e84c29ed781",
+        "scanned_pdf": "c7387b30baf1aa31856aff6339a66e40f2fc699310e9162d8281f290ab8e91e3",
+        "digital_pdf": "2ac7328fa6a5acc08ab1acc90121799c972bb18ace1866eb176229303b45ee3f"
+      },
+      "text_sha256": "80d4b37a7c24040d3cd68c13424ad5c0a0be3d8aee8a491f15b786ec6dac6dbe"
+    },
+    {
+      "id": "hold3_en_21",
+      "split": "holdout",
+      "language": "en",
+      "layout": "single-column",
+      "text": "Sage Fairbanks\nPhone: +1-555-9567\n\nSkills\nRedis, Python, Kubernetes, Flutter, AWS\n\nEmployment history\nBluegate Systems 2\nSoftware Engineer\n06/2020 - Present\n- Built services using Redis.\n\nEducation\nWestbridge Institute of Technology\nBSc / Computer Science\n2008",
+      "truth": {
+        "full_name": "Sage Fairbanks",
+        "contact_email": null,
+        "contact_phone": "+1-555-9567",
+        "skills": [
+          "Redis",
+          "Python",
+          "Kubernetes",
+          "Flutter",
+          "AWS"
+        ],
+        "experience": [
+          {
+            "company": "Bluegate Systems 2",
+            "role": "Software Engineer",
+            "start_date": "06/2020",
+            "end_date": "Present",
+            "achievements": [
+              "Built services using Redis."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Westbridge Institute of Technology",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2008"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_en_21.txt",
+        "image": "hold3_en_21.png",
+        "scanned_pdf": "hold3_en_21-scan.pdf",
+        "digital_pdf": "hold3_en_21-digital.pdf"
+      },
+      "sha256": {
+        "text": "6217d87dd9bfe793be6efc42603e5045d31abc1990621e8682deec8e6d5b5f8f",
+        "image": "37725787b56bf68be017ab186dd46f0ff244ff1eff947a7f24e1164f4795e68b",
+        "scanned_pdf": "8d1c2f8acce9872ebc2de7fdccf90b2cde67badbc22945d16177a4ffd8e37440",
+        "digital_pdf": "d7dfd81bd38162006acf978b3711aaa3e9fbeb86d813a033f3df14c123267791"
+      },
+      "text_sha256": "6217d87dd9bfe793be6efc42603e5045d31abc1990621e8682deec8e6d5b5f8f"
+    },
+    {
+      "id": "hold3_th_22",
+      "split": "holdout",
+      "language": "th",
+      "layout": "single-column",
+      "text": "เกียรติ จันทร์เพ็ญ\nEmail: hold3.th.22@example.com\nPhone: 089-406-5987\n\nทักษะ\nKotlin, Django, Flutter, JavaScript, TypeScript\n\nประสบการณ์ทำงาน\nบริษัท ซอฟต์แวร์สยาม 4\nวิศวกรซอฟต์แวร์\nก.พ. 2559 - พ.ค. 2567\n- พัฒนาระบบด้วย Kotlin.\n\nการศึกษา\nมหาวิทยาลัยเทคโนโลยีใหม่\nปริญญาตรี / วิทยาการคอมพิวเตอร์\n2559",
+      "truth": {
+        "full_name": "เกียรติ จันทร์เพ็ญ",
+        "contact_email": "hold3.th.22@example.com",
+        "contact_phone": "089-406-5987",
+        "skills": [
+          "Kotlin",
+          "Django",
+          "Flutter",
+          "JavaScript",
+          "TypeScript"
+        ],
+        "experience": [
+          {
+            "company": "บริษัท ซอฟต์แวร์สยาม 4",
+            "role": "วิศวกรซอฟต์แวร์",
+            "start_date": "ก.พ. 2559",
+            "end_date": "พ.ค. 2567",
+            "achievements": [
+              "พัฒนาระบบด้วย Kotlin."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "มหาวิทยาลัยเทคโนโลยีใหม่",
+            "degree": "ปริญญาตรี",
+            "field_of_study": "วิทยาการคอมพิวเตอร์",
+            "graduation_year": "2559"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_th_22.txt",
+        "image": "hold3_th_22.png",
+        "scanned_pdf": "hold3_th_22-scan.pdf",
+        "digital_pdf": "hold3_th_22-digital.pdf"
+      },
+      "sha256": {
+        "text": "594f7ce26c8e43d9e0a29f17f6813d2959ac5a4e083d7e858bade7c062c2b848",
+        "image": "5d28018259cda200449cecffc93fe0325e8b4b0117252a6444ed0ec116427c39",
+        "scanned_pdf": "b139ee06383971889e288846a524dfb0d2740dcd36b01ee57da74926f74408ac",
+        "digital_pdf": "fad56c47be2f7f5e3e467fc24baae28a1b66e87e390def82f797fb0ac893c506"
+      },
+      "text_sha256": "594f7ce26c8e43d9e0a29f17f6813d2959ac5a4e083d7e858bade7c062c2b848"
+    },
+    {
+      "id": "hold3_bi_23",
+      "split": "holdout",
+      "language": "bi",
+      "layout": "two-column",
+      "text": "ศุภชัย จันทร์เพ็ญ (Supachai Sterling)\nEmail: hold3.bi.23@example.com\nPhone: +1-555-1653\n\nSkills\nTypeScript, Excel, SQL, Redis, MySQL\n\nEmployment history\nSoftware Engineer | Summit Data Works 3\nSep 2015 – Present\n- Built services using TypeScript.\n\nEducation\nWestbridge Institute of Technology\nBSc / Computer Science\n2017",
+      "truth": {
+        "full_name": "ศุภชัย จันทร์เพ็ญ (Supachai Sterling)",
+        "contact_email": "hold3.bi.23@example.com",
+        "contact_phone": "+1-555-1653",
+        "skills": [
+          "TypeScript",
+          "Excel",
+          "SQL",
+          "Redis",
+          "MySQL"
+        ],
+        "experience": [
+          {
+            "company": "Summit Data Works 3",
+            "role": "Software Engineer",
+            "start_date": "Sep 2015",
+            "end_date": "Present",
+            "achievements": [
+              "Built services using TypeScript."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Westbridge Institute of Technology",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2017"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_bi_23.txt",
+        "image": "hold3_bi_23.png",
+        "scanned_pdf": "hold3_bi_23-scan.pdf",
+        "digital_pdf": "hold3_bi_23-digital.pdf"
+      },
+      "sha256": {
+        "text": "0b20a457059194241516fcb8dd64cfa2e2c6692faea2988afbb7641aafd9caad",
+        "image": "299df0269a0fb32ec4a83c8be080c5d9d54e79a6fe4ebfc0cd893f4afdaf2789",
+        "scanned_pdf": "ebf2cd792683d83eb124c3e5e0d03339c21766c5a40dcb35d2c7f62470b4fb0b",
+        "digital_pdf": "9dead200cdd5fddf72a6c03069523edcdfa95369ed69d4a4382bb43642faedc6"
+      },
+      "text_sha256": "0b20a457059194241516fcb8dd64cfa2e2c6692faea2988afbb7641aafd9caad"
+    },
+    {
+      "id": "hold3_en_24",
+      "split": "holdout",
+      "language": "en",
+      "layout": "two-column",
+      "text": "Parker Dalton\nPhone: +1-555-4836\n\nSkills\nKubernetes, Flutter, TypeScript, Rust\n\nEmployment history\nData Analyst | Silverpine Cloud 2\nDecember 2017 – Current\n- Built services using Kubernetes.\n\nEducation\nWestbridge Institute of Technology\nBSc / Computer Science\n2008",
+      "truth": {
+        "full_name": "Parker Dalton",
+        "contact_email": null,
+        "contact_phone": "+1-555-4836",
+        "skills": [
+          "Kubernetes",
+          "Flutter",
+          "TypeScript",
+          "Rust"
+        ],
+        "experience": [
+          {
+            "company": "Silverpine Cloud 2",
+            "role": "Data Analyst",
+            "start_date": "December 2017",
+            "end_date": "Current",
+            "achievements": [
+              "Built services using Kubernetes."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Westbridge Institute of Technology",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2008"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_en_24.txt",
+        "image": "hold3_en_24.png",
+        "scanned_pdf": "hold3_en_24-scan.pdf",
+        "digital_pdf": "hold3_en_24-digital.pdf"
+      },
+      "sha256": {
+        "text": "585a773aa0501353f5642f5bf497c0218e1a10830e73c20b81bf44f9590a73bd",
+        "image": "0619986aa8d5375d23708b45a0d3a0f1b822a28255b82b437c526154b5bc5323",
+        "scanned_pdf": "2360cc2b9e0ee3d77de38da0b82ae112b58cd8c1adf66d08dc983b8e5a974a82",
+        "digital_pdf": "caac63e0118db08ef2ee667562c7c248cbf37d0f3ee1d55e2a9b41b0d5472f43"
+      },
+      "text_sha256": "585a773aa0501353f5642f5bf497c0218e1a10830e73c20b81bf44f9590a73bd"
+    },
+    {
+      "id": "hold3_th_25",
+      "split": "holdout",
+      "language": "th",
+      "layout": "single-column",
+      "text": "ณัฐพล เพชรรัตน์\nPhone: 084-117-6224\n\nทักษะ\nFastAPI, Redis, Java, Go\n\nประสบการณ์ทำงาน\nบริษัท ซอฟต์แวร์สยาม 7\nวิศวกรซอฟต์แวร์\n2555 - ปัจจุบัน\n- พัฒนาระบบด้วย FastAPI.\n\nการศึกษา\nมหาวิทยาลัยราชภัฏตัวอย่าง\nปริญญาตรี / วิทยาการคอมพิวเตอร์\n2557",
+      "truth": {
+        "full_name": "ณัฐพล เพชรรัตน์",
+        "contact_email": null,
+        "contact_phone": "084-117-6224",
+        "skills": [
+          "FastAPI",
+          "Redis",
+          "Java",
+          "Go"
+        ],
+        "experience": [
+          {
+            "company": "บริษัท ซอฟต์แวร์สยาม 7",
+            "role": "วิศวกรซอฟต์แวร์",
+            "start_date": "2555",
+            "end_date": "ปัจจุบัน",
+            "achievements": [
+              "พัฒนาระบบด้วย FastAPI."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "มหาวิทยาลัยราชภัฏตัวอย่าง",
+            "degree": "ปริญญาตรี",
+            "field_of_study": "วิทยาการคอมพิวเตอร์",
+            "graduation_year": "2557"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_th_25.txt",
+        "image": "hold3_th_25.png",
+        "scanned_pdf": "hold3_th_25-scan.pdf",
+        "digital_pdf": "hold3_th_25-digital.pdf"
+      },
+      "sha256": {
+        "text": "d7f66f5f930541abd51a70a6f7fbf9725894b768fd761af8816db45bcc770205",
+        "image": "6549081a2463d5039078a36f83a9cfda96ecaf90fd29a41ced51c5e32a8c846b",
+        "scanned_pdf": "2ac8ff8a655176b15b14f5311a773cc1f133bc333eef21471402b258144ff905",
+        "digital_pdf": "5701ab0f35f831effc970149f7558cd9837062179ad0a0f3bbc6d36b1be19792"
+      },
+      "text_sha256": "d7f66f5f930541abd51a70a6f7fbf9725894b768fd761af8816db45bcc770205"
+    },
+    {
+      "id": "hold3_bi_26",
+      "split": "holdout",
+      "language": "bi",
+      "layout": "two-column",
+      "text": "ศุภชัย สุขสวัสดิ์ (Supachai Fairbanks)\nEmail: hold3.bi.26@example.com\n\nSkills\nVue, Go, Azure\n\nEmployment history\nData Analyst | Ironleaf Software 9\n02/2017 – Current\n- Built services using Vue.\n\nEducation\nLakeside University\nBSc / Computer Science\n2014",
+      "truth": {
+        "full_name": "ศุภชัย สุขสวัสดิ์ (Supachai Fairbanks)",
+        "contact_email": "hold3.bi.26@example.com",
+        "contact_phone": null,
+        "skills": [
+          "Vue",
+          "Go",
+          "Azure"
+        ],
+        "experience": [
+          {
+            "company": "Ironleaf Software 9",
+            "role": "Data Analyst",
+            "start_date": "02/2017",
+            "end_date": "Current",
+            "achievements": [
+              "Built services using Vue."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "institution": "Lakeside University",
+            "degree": "BSc",
+            "field_of_study": "Computer Science",
+            "graduation_year": "2014"
+          }
+        ]
+      },
+      "files": {
+        "text": "hold3_bi_26.txt",
+        "image": "hold3_bi_26.png",
+        "scanned_pdf": "hold3_bi_26-scan.pdf",
+        "digital_pdf": "hold3_bi_26-digital.pdf"
+      },
+      "sha256": {
+        "text": "380cbf1c2a569b54438bb073cb9d9735989b9e96bc8701e6f907ea0911b60a5c",
+        "image": "75ec4d0cfade636f093a114d5151930922a23821b55cd9c7e9b18818713037dc",
+        "scanned_pdf": "1919704b69933e290306aa5f0c6bb96bd3194392a3c06f32f1f99f49a0300df2",
+        "digital_pdf": "e18eb27ecb423254064b87713a81782a54c3f58156ea910ed0deac1267afe65b"
+      },
+      "text_sha256": "380cbf1c2a569b54438bb073cb9d9735989b9e96bc8701e6f907ea0911b60a5c"
+    }
+  ]
+}

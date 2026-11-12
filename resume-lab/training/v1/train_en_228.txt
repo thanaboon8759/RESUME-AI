@@ -1,0 +1,16 @@
+Reese Prescott
+Email: train.en.228@example.com
+Phone: +1-555-9817
+
+Skills
+Rust, TypeScript, Django
+
+Employment history
+Software Engineer | Northwind Labs 7
+Jun 2017 – Oct 2020
+- Built services using Rust.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2012

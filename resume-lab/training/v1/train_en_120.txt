@@ -1,0 +1,16 @@
+Jamie Calloway
+Email: train.en.120@example.com
+
+Skills
+GraphQL, Pandas, C#, Excel
+
+Employment history
+Silverpine Cloud 2
+Data Analyst
+08/2013 - 02/2021
+- Built services using GraphQL.
+
+Education
+Lakeside University
+BSc / Computer Science
+2018

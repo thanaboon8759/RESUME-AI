@@ -1,0 +1,16 @@
+พิมพ์ชนก นาคสวัสดิ์ (Pimchanok Ellison)
+Email: train.bi.179@example.com
+Phone: +1-555-2180
+
+Skills
+Excel, MySQL, Pandas, Redis
+
+Employment history
+Backend Developer | Summit Data Works 6
+09/2012 – 06/2024
+- Built services using Excel.
+
+Education
+Westbridge Institute of Technology
+BSc / Computer Science
+2013
