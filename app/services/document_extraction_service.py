@@ -6,6 +6,7 @@ import httpx
 import logging
 from io import BytesIO
 import fitz
+import threading
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -19,8 +20,17 @@ if not logger.handlers:
 TYPHOON_API_KEY = os.getenv("TYPHOON_API_KEY")
 TYPHOON_MODEL_NAME = os.getenv("TYPHOON_MODEL_NAME", "typhoon-ocr")
 
+# PyMuPDF is not thread-safe and _render_pages runs in worker threads: every fitz use holds this lock.
+_FITZ_LOCK = threading.Lock()
+
+
 def extract_text_fitz(file_bytes: bytes) -> tuple[str, list[dict]]:
     """Extract text and bounding blocks using PyMuPDF (fitz)."""
+    with _FITZ_LOCK:
+        return _extract_text_fitz(file_bytes)
+
+
+def _extract_text_fitz(file_bytes: bytes) -> tuple[str, list[dict]]:
     try:
         doc = fitz.open(stream=file_bytes, filetype="pdf")
         text = ""
@@ -139,7 +149,7 @@ LOCAL_OCR_MAX_SIDE = 2400         # px; a 144-dpi letter page is 1224x1584, so n
 
 def _render_pages(file_bytes: bytes) -> list[bytes]:
     """PNG bytes per page, capped in count and size. CPU-bound: call through asyncio.to_thread."""
-    with fitz.open(stream=file_bytes, filetype="pdf") as doc:
+    with _FITZ_LOCK, fitz.open(stream=file_bytes, filetype="pdf") as doc:
         if doc.page_count > LOCAL_OCR_MAX_PAGES:
             raise ValueError(f"{doc.page_count} pages; local OCR accepts at most {LOCAL_OCR_MAX_PAGES} pages")
         return [page.get_pixmap(dpi=min(144, int(72 * LOCAL_OCR_MAX_SIDE / max(page.rect.width, page.rect.height, 1))))
