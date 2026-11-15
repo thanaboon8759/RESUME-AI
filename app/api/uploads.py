@@ -2,18 +2,13 @@ from fastapi import APIRouter, Depends, UploadFile, File, Form, Response, HTTPEx
 from typing import List
 from app.schemas.upload import Upload
 from app.services import upload_service
+from app.services.upload_service import _safe_segment
 from app.auth import get_current_user
 from app.database.supabase.client import supabase
 from app.repositories import job_repository, upload_repository
-import re
 
 MAX_UPLOAD_BYTES = 20 * 1024 * 1024  # a real Thai scan in testing was 11.6 MB
 
-
-def _safe_segment(value: str) -> bool:
-    """Storage path pieces: no separators or dot-only names, so uploads stay in their job folder."""
-    # Denylist, not \w: Thai vowel and tone marks (e.g. ่ ู) are not \w, and Thai filenames are normal here.
-    return bool(value) and value not in (".", "..") and re.search(r"[/\\\x00-\x1f\x7f]", value) is None
 
 router = APIRouter()
 
@@ -59,7 +54,8 @@ async def upload_file(
 async def download_file(upload_id: str, user = Depends(get_current_user)):
     try:
         record = upload_repository.get_upload(upload_id)
-        if not record or record["user_id"] != user.id:  # 404, not 403: don't confirm other users' ids
+        # The row's job must be the caller's too: job_id and name are client-supplied and build the path.
+        if not record or record["user_id"] != user.id or not job_repository.get_job(record["job_id"], user.id):  # 404, not 403: don't confirm other users' ids
             raise HTTPException(status_code=404, detail="Upload record not found")
 
         job_id = record["job_id"]

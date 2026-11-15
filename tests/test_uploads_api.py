@@ -23,6 +23,7 @@ def storage(monkeypatch):
     monkeypatch.setitem(app.dependency_overrides, get_current_user, lambda: MockUser())
     sb = MagicMock()
     monkeypatch.setattr(api, "supabase", sb)
+    set_job(monkeypatch, object())  # the caller owns job "j" unless a test says otherwise
     yield sb.storage.from_.return_value
 
 
@@ -120,3 +121,48 @@ async def test_update_uses_path_id(monkeypatch, storage, client, saved):
     set_upload(monkeypatch, OWN)
     assert (await client.put("/api/uploads/x", json=body("y"))).status_code == 200
     assert saved.call_args.args[0].id == "x"
+
+
+async def test_download_row_pointing_at_foreign_job_is_404(monkeypatch, storage, client):
+    # The caller's own row, forged to point at someone else's job folder and file name.
+    set_upload(monkeypatch, {"id": "V_John", "job_id": "victimJob", "user_id": "u1", "name": "Doe_CV.pdf"})
+    set_job(monkeypatch, None)
+    assert (await client.get("/api/uploads/V_John/download")).status_code == 404
+    storage.download.assert_not_called()
+
+
+@pytest.fixture
+def created(monkeypatch):
+    save = MagicMock()
+    monkeypatch.setattr("app.repositories.upload_repository.create_uploads", save)
+    return save
+
+
+async def test_create_rows_for_foreign_job_is_404(monkeypatch, storage, client, created):
+    set_job(monkeypatch, None)
+    assert (await client.post("/api/uploads", json=[body("x")])).status_code == 404
+    created.assert_not_called()
+
+
+async def test_create_rows_with_bad_name_is_400(monkeypatch, storage, client, created):
+    assert (await client.post("/api/uploads", json=[{**body("x"), "name": "../a.pdf"}])).status_code == 400
+    assert (await client.post("/api/uploads", json=[body("a/b")])).status_code == 400
+    created.assert_not_called()
+
+
+async def test_create_own_rows(monkeypatch, storage, client, created):
+    assert (await client.post("/api/uploads", json=[body("x")])).status_code == 200
+    created.assert_called_once()
+
+
+async def test_update_row_to_foreign_job_is_404(monkeypatch, storage, client, saved):
+    set_upload(monkeypatch, None)
+    set_job(monkeypatch, None)
+    assert (await client.put("/api/uploads/x", json=body("x"))).status_code == 404
+    saved.assert_not_called()
+
+
+async def test_update_row_with_bad_name_is_400(monkeypatch, storage, client, saved):
+    set_upload(monkeypatch, OWN)
+    assert (await client.put("/api/uploads/x", json={**body("x"), "name": "a/../b.pdf"})).status_code == 400
+    saved.assert_not_called()
