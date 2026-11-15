@@ -58,7 +58,7 @@ def seed():
             })
 
     prefs = {
-        "id": "default",
+        "id": user_id,  # one preferences row per user (see preference_repository)
         "user_id": user_id,
         "name": "ทีมทรัพยากรบุคคล",
         "email": "hr@example.com",
