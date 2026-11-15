@@ -19,11 +19,11 @@ OWN = {**OTHER, "user_id": "u1"}
 
 @pytest.fixture
 def storage(monkeypatch):
-    app.dependency_overrides[get_current_user] = lambda: MockUser()
+    # setitem restores test_jobs.py's module-level override afterwards instead of deleting it
+    monkeypatch.setitem(app.dependency_overrides, get_current_user, lambda: MockUser())
     sb = MagicMock()
     monkeypatch.setattr(api, "supabase", sb)
     yield sb.storage.from_.return_value
-    app.dependency_overrides.pop(get_current_user, None)
 
 
 @pytest.fixture
