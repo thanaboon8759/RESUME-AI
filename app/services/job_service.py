@@ -1,5 +1,6 @@
 import uuid
 from typing import List
+from fastapi import HTTPException
 from app.schemas.job import Job
 from app.repositories import job_repository, candidate_repository
 
@@ -17,5 +18,8 @@ def create_job(job: Job, user_id: str) -> str:
     return job_id
 
 def update_job(job_id: str, job: Job, user_id: str):
+    owner = job_repository.get_job_owner(job_id)
+    if owner and owner != user_id:  # the upsert would otherwise take the job over
+        raise HTTPException(status_code=404, detail="Job not found")
     job.id = job_id
     job_repository.update_job(job, user_id)

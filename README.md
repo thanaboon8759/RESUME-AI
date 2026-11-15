@@ -29,7 +29,16 @@ Navigate to the `backend` directory and create a `.env` file based on your Supab
 ```env
 SUPABASE_URL=https://<your-project-id>.supabase.co
 SUPABASE_SERVICE_ROLE_KEY=<your-service-role-key>
+TYPHOON_API_KEY=<your-typhoon-api-key>
+DASHSCOPE_API_KEY=<your-dashscope-api-key>
+
+# OCR for scanned PDFs: "typhoon" (cloud API, default) or "ollama" (local model)
+OCR_PROVIDER=typhoon
+OLLAMA_URL=http://localhost:11434
+LOCAL_OCR_MODEL=typhoon-ocr-qlora-v1-rp1:latest
 ```
+
+`OCR_PROVIDER=ollama` keeps scanned resumes on this machine. It needs Ollama running, with `LOCAL_OCR_MODEL` installed.
 
 ### 3. Database Initialization
 Ensure your Supabase project is set up with the required tables:

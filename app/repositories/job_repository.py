@@ -36,3 +36,9 @@ def update_job(job: Job, user_id: str):
     if "createdAt" in job_data:
         job_data["created_at"] = job_data.pop("createdAt")
     supabase.table("jobs").upsert(job_data).execute()
+
+def get_job_owner(job_id: str) -> str | None:
+    """user_id of the job row, or None if it does not exist (service-role key bypasses RLS)."""
+    if not supabase: return None
+    res = supabase.table("jobs").select("user_id").eq("id", job_id).execute()
+    return res.data[0]["user_id"] if res.data else None

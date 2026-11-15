@@ -27,3 +27,9 @@ def update_upload(upload: Upload, user_id: str):
         "status": upload.status.value, "reason": upload.reason, "candidate_id": upload.candidateId, "attempts": upload.attempts
     }
     supabase.table("uploads").upsert(db_record).execute()
+
+def get_upload(upload_id: str) -> dict | None:
+    """The upload row, unfiltered by user: callers compare user_id (service-role key bypasses RLS)."""
+    if not supabase: return None
+    res = supabase.table("uploads").select("id", "job_id", "user_id", "name").eq("id", upload_id).execute()
+    return res.data[0] if res.data else None

@@ -1,4 +1,5 @@
 import uuid
+from urllib.parse import unquote
 import logging
 from typing import List
 from fastapi import HTTPException
@@ -24,6 +25,11 @@ async def create_candidate(job_id: str, candidate_data: CandidateCreate, user_id
     file_bytes = b""
     
     if candidate_data.resume_url:
+        # Storage paths are {jobId}/{id}_{filename}: only screen files under the caller's own job.
+        url = candidate_data.resume_url
+        if (not job_repository.get_job(job_id, user_id) or not url.startswith(f"{job_id}/")
+                or ".." in unquote(url).replace("\\", "/").split("/")):
+            raise HTTPException(status_code=404, detail="Resume not found")
         try:
             logger.info("Retrieving PDF from Supabase")
             file_bytes = supabase.storage.from_("uploads").download(candidate_data.resume_url)
