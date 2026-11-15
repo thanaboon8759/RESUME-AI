@@ -90,8 +90,10 @@ def _val_loss(model, collate, samples):
     return sum(losses) / len(losses)
 
 
-def _check_train_inputs(out_dir, train_set, val_set):
-    """Refuse runs that would save an untrained adapter or mix with an earlier run's files."""
+def _check_train_inputs(out_dir, train_set, val_set, base_dir=BASE):
+    """Refuse runs that would save an untrained adapter, mix with an earlier run, or overwrite the base."""
+    if Path(out_dir).resolve() == Path(base_dir).resolve():
+        raise ValueError("--out must not be the base model directory")
     if not train_set:
         raise ValueError("no training samples in split 'train'")
     if not val_set:
@@ -112,7 +114,7 @@ def train(base_dir=BASE, data_dir=DATA, out_dir=Path('runs/qlora-v1'), epochs=2,
           grad_accum=8, seed=7):
     out_dir = Path(out_dir)
     train_set, val_set = load_samples('train', data_dir), load_samples('val', data_dir)
-    _check_train_inputs(out_dir, train_set, val_set)
+    _check_train_inputs(out_dir, train_set, val_set, base_dir)
     _require_cuda()
     out_dir.mkdir(parents=True, exist_ok=True)
     random.seed(seed)
