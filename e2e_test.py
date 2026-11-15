@@ -11,6 +11,11 @@ load_dotenv()
 from app.services.candidate_service import create_candidate
 from app.schemas.candidate import CandidateCreate
 from app.database.supabase.client import supabase
+from app.repositories import job_repository
+from app.schemas.job import Job
+
+# A fixed UUID (user_id columns are UUID); the script owns its job so ownership checks pass.
+E2E_USER = "00000000-0000-4000-8000-0000000e2e01"
 
 def generate_english_pdf():
     packet = io.BytesIO()
@@ -87,7 +92,7 @@ async def run_test(name, pdf_bytes, job_id, expected_ocr_fallback=False):
         resume_url=file_path
     )
     
-    candidate = await create_candidate(job_id, candidate_data, user_id="e2e_test_user")
+    candidate = await create_candidate(job_id, candidate_data, user_id=E2E_USER)
     print(f"Created Candidate: {candidate.id}")
     print(f"Candidate Score: {candidate.score}")
     print(f"Candidate Extracted Text Length: {len(candidate.extractedText)}")
@@ -114,6 +119,10 @@ async def run_test(name, pdf_bytes, job_id, expected_ocr_fallback=False):
 
 async def main():
     job_id = "test_job_123"
+    # create_candidate only screens resumes under the caller's own job, so seed that job first.
+    job_repository.update_job(Job(id=job_id, title="E2E", jd="", required=["Python"], preferred=[],
+                                  weights={"Python": 3}, experience="", education="", location="",
+                                  salary="", mandatory=[]), E2E_USER)
     
     tests = [
         ("English Resume", generate_english_pdf(), False),

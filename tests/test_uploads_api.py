@@ -1,0 +1,175 @@
+from unittest.mock import MagicMock
+
+import pytest
+from httpx import ASGITransport, AsyncClient
+
+from app.api import uploads as api
+from app.auth import get_current_user
+from app.main import app
+
+
+class MockUser:
+    id = "u1"
+    email = "test@example.com"
+
+
+OTHER = {"id": "x", "job_id": "j", "user_id": "someone-else", "name": "a.pdf"}
+OWN = {**OTHER, "user_id": "u1"}
+
+
+@pytest.fixture
+def storage(monkeypatch):
+    # setitem restores test_jobs.py's module-level override afterwards instead of deleting it
+    monkeypatch.setitem(app.dependency_overrides, get_current_user, lambda: MockUser())
+    sb = MagicMock()
+    monkeypatch.setattr(api, "supabase", sb)
+    set_job(monkeypatch, object())  # the caller owns job "j" unless a test says otherwise
+    yield sb.storage.from_.return_value
+
+
+@pytest.fixture
+def client():
+    return AsyncClient(transport=ASGITransport(app=app), base_url="http://test")
+
+
+def set_upload(monkeypatch, row):
+    monkeypatch.setattr("app.repositories.upload_repository.get_upload", lambda upload_id: row, raising=False)
+
+
+def set_job(monkeypatch, job):
+    monkeypatch.setattr("app.repositories.job_repository.get_job", lambda job_id, user_id: job)
+
+
+async def post_file(client, name="cv.pdf", content=b"%PDF", upload_id="x"):
+    return await client.post("/api/uploads/file", files={"file": (name, content, "application/pdf")},
+                             data={"id": upload_id, "jobId": "j"})
+
+
+async def test_download_other_users_upload_is_404(monkeypatch, storage, client):
+    set_upload(monkeypatch, OTHER)
+    r = await client.get("/api/uploads/x/download")
+    assert r.status_code == 404
+    storage.download.assert_not_called()
+
+
+async def test_download_own_upload(monkeypatch, storage, client):
+    set_upload(monkeypatch, OWN)
+    storage.download.return_value = b"%PDF"
+    r = await client.get("/api/uploads/x/download")
+    assert r.status_code == 200 and r.content == b"%PDF"
+    storage.download.assert_called_once_with("j/x_a.pdf")
+
+
+async def test_download_missing_is_404(monkeypatch, storage, client):
+    set_upload(monkeypatch, None)
+    assert (await client.get("/api/uploads/x/download")).status_code == 404
+
+
+async def test_upload_to_other_users_job_is_404(monkeypatch, storage, client):
+    set_job(monkeypatch, None)
+    assert (await post_file(client)).status_code == 404
+    storage.upload.assert_not_called()
+
+
+async def test_upload_rejects_path_segments(monkeypatch, storage, client):
+    set_job(monkeypatch, object())
+    assert (await post_file(client, name="../x.pdf")).status_code == 400
+    assert (await post_file(client, upload_id="a/b")).status_code == 400
+    assert (await post_file(client, upload_id="..")).status_code == 400
+    assert (await post_file(client, upload_id="a\\b")).status_code == 400
+    storage.upload.assert_not_called()
+
+
+async def test_thai_filename_allowed(monkeypatch, storage, client):
+    set_job(monkeypatch, object())
+    assert (await post_file(client, name="เรซูเม่.pdf")).status_code == 200
+    assert storage.upload.call_args.args[0] == "j/x_เรซูเม่.pdf"
+
+
+async def test_upload_size_limit(monkeypatch, storage, client):
+    set_job(monkeypatch, object())
+    monkeypatch.setattr(api, "MAX_UPLOAD_BYTES", 10, raising=False)
+    assert (await post_file(client, content=b"x" * 10)).status_code == 200
+    assert (await post_file(client, content=b"x" * 11)).status_code == 413
+    assert storage.upload.call_count == 1
+
+
+def body(upload_id):
+    return {"id": upload_id, "jobId": "j", "name": "a.pdf", "size": 1, "status": "queued", "reason": "", "attempts": 0}
+
+
+@pytest.fixture
+def saved(monkeypatch):
+    save = MagicMock()
+    monkeypatch.setattr("app.repositories.upload_repository.update_upload", save)
+    return save
+
+
+async def test_update_other_users_row_is_404(monkeypatch, storage, client, saved):
+    set_upload(monkeypatch, OTHER)
+    assert (await client.put("/api/uploads/x", json=body("x"))).status_code == 404
+    saved.assert_not_called()
+
+
+async def test_update_creates_new_row(monkeypatch, storage, client, saved):
+    set_upload(monkeypatch, None)
+    assert (await client.put("/api/uploads/x", json=body("x"))).status_code == 200
+    saved.assert_called_once()
+
+
+async def test_update_uses_path_id(monkeypatch, storage, client, saved):
+    set_upload(monkeypatch, OWN)
+    assert (await client.put("/api/uploads/x", json=body("y"))).status_code == 200
+    assert saved.call_args.args[0].id == "x"
+
+
+async def test_download_row_pointing_at_foreign_job_is_404(monkeypatch, storage, client):
+    # The caller's own row, forged to point at someone else's job folder and file name.
+    set_upload(monkeypatch, {"id": "V_John", "job_id": "victimJob", "user_id": "u1", "name": "Doe_CV.pdf"})
+    set_job(monkeypatch, None)
+    assert (await client.get("/api/uploads/V_John/download")).status_code == 404
+    storage.download.assert_not_called()
+
+
+@pytest.fixture
+def created(monkeypatch):
+    save = MagicMock()
+    monkeypatch.setattr("app.repositories.upload_repository.create_uploads", save)
+    return save
+
+
+async def test_create_rows_for_foreign_job_is_404(monkeypatch, storage, client, created):
+    set_job(monkeypatch, None)
+    assert (await client.post("/api/uploads", json=[body("x")])).status_code == 404
+    created.assert_not_called()
+
+
+async def test_create_rows_with_bad_name_is_400(monkeypatch, storage, client, created):
+    assert (await client.post("/api/uploads", json=[{**body("x"), "name": "../a.pdf"}])).status_code == 400
+    assert (await client.post("/api/uploads", json=[body("a/b")])).status_code == 400
+    created.assert_not_called()
+
+
+async def test_create_own_rows(monkeypatch, storage, client, created):
+    assert (await client.post("/api/uploads", json=[body("x")])).status_code == 200
+    created.assert_called_once()
+
+
+async def test_update_row_to_foreign_job_is_404(monkeypatch, storage, client, saved):
+    set_upload(monkeypatch, None)
+    set_job(monkeypatch, None)
+    assert (await client.put("/api/uploads/x", json=body("x"))).status_code == 404
+    saved.assert_not_called()
+
+
+async def test_update_row_with_bad_name_is_400(monkeypatch, storage, client, saved):
+    set_upload(monkeypatch, OWN)
+    assert (await client.put("/api/uploads/x", json={**body("x"), "name": "a/../b.pdf"})).status_code == 400
+    saved.assert_not_called()
+
+
+async def test_percent_encoded_segments_are_400(monkeypatch, storage, client):
+    # Supabase storage URL-decodes paths, so %2F / %2E%2E would act as separators or dot segments.
+    assert (await post_file(client, name="..%2F..%2Fx.pdf")).status_code == 400
+    assert (await post_file(client, upload_id="%2E%2E")).status_code == 400
+    storage.upload.assert_not_called()
