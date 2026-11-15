@@ -62,3 +62,11 @@ def test_train_checks_before_cuda(tmp_path, monkeypatch):
     monkeypatch.setattr(t, "_require_cuda", no_cuda)
     with pytest.raises(ValueError):
         t.train(out_dir=tmp_path / "run")
+
+
+def test_train_refuses_base_dir(tmp_path):
+    base = tmp_path / "base"
+    base.mkdir()
+    (base / "config.json").write_text("{}")  # train() would write its own config.json over this
+    with pytest.raises(ValueError, match="base model directory"):
+        t._check_train_inputs(base / ".." / "base", SAMPLES, SAMPLES, base_dir=base)
