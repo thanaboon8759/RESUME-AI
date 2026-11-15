@@ -92,3 +92,7 @@ async def test_text_only_candidate_skips_ownership():
 
 async def test_resume_path_traversal_is_404():
     assert (await _create_with_url("job1/../otherjob/x_a.pdf", make_job())).status_code == 404
+
+
+async def test_resume_path_percent_traversal_is_404():
+    assert (await _create_with_url("job1/%2E%2E/otherjob/x_a.pdf", make_job())).status_code == 404

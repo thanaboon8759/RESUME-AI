@@ -8,7 +8,8 @@ from app.repositories import job_repository, upload_repository
 def _safe_segment(value: str) -> bool:
     """Storage path pieces: no separators or dot-only names, so uploads stay in their job folder."""
     # Denylist, not \w: Thai vowel and tone marks (e.g. ่ ู) are not \w, and Thai filenames are normal here.
-    return bool(value) and value not in (".", "..") and re.search(r"[/\\\x00-\x1f\x7f]", value) is None
+    # '%' too: Supabase storage URL-decodes paths, so %2F and %2E%2E would become separators and dot segments.
+    return bool(value) and value not in (".", "..") and re.search(r"[/\\%\x00-\x1f\x7f]", value) is None
 
 
 def _check_rows(uploads: List[Upload], user_id: str):
