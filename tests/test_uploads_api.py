@@ -166,3 +166,10 @@ async def test_update_row_with_bad_name_is_400(monkeypatch, storage, client, sav
     set_upload(monkeypatch, OWN)
     assert (await client.put("/api/uploads/x", json={**body("x"), "name": "a/../b.pdf"})).status_code == 400
     saved.assert_not_called()
+
+
+async def test_percent_encoded_segments_are_400(monkeypatch, storage, client):
+    # Supabase storage URL-decodes paths, so %2F / %2E%2E would act as separators or dot segments.
+    assert (await post_file(client, name="..%2F..%2Fx.pdf")).status_code == 400
+    assert (await post_file(client, upload_id="%2E%2E")).status_code == 400
+    storage.upload.assert_not_called()
