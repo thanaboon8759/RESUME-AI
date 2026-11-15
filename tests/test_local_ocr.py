@@ -124,3 +124,20 @@ async def test_local_ocr_renders_off_event_loop(monkeypatch):
     with patch("httpx.AsyncClient.post", AsyncMock(return_value=reply("x"))):
         assert await svc.extract_text_local(image_pdf(1)) == "x"
     assert seen == [getattr(svc, "_render_pages", None)] and seen[0] is not None
+
+
+def test_pymupdf_calls_hold_one_lock(monkeypatch):
+    # PyMuPDF is not thread-safe; _render_pages runs in worker threads, so every fitz.open must hold the lock.
+    lock = getattr(svc, "_FITZ_LOCK", None)
+    assert lock is not None
+    held = []
+    real_open = svc.fitz.open
+
+    def spy_open(*args, **kwargs):
+        held.append(lock.locked())
+        return real_open(*args, **kwargs)
+
+    monkeypatch.setattr(svc.fitz, "open", spy_open)
+    svc._render_pages(image_pdf(1))
+    svc.extract_text_fitz(image_pdf(1))
+    assert held == [True, True]
