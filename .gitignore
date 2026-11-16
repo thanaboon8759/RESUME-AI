@@ -30,3 +30,6 @@ models/
 *.gguf
 /runs/
 /compare-reports/
+
+# Local agent workspaces (ledgers can hold purge lists)
+.superpowers/
