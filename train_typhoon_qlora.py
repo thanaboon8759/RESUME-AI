@@ -171,6 +171,8 @@ def _copy_tree(src, dst):
 def merge(base_dir=BASE, adapter_dir=Path('runs/qlora-v1/adapter'), out_dir=Path('models/typhoon-ocr-qlora-v1-hf')):
     """Merge the LoRA adapter into full-precision base weights for Ollama import."""
     _check_merge_out(base_dir, out_dir)
+    if not (Path(adapter_dir) / 'adapter_config.json').exists():  # fail before minutes of loading the base model
+        raise ValueError(f"{adapter_dir} has no adapter_config.json; pass the adapter folder that training saved")
     from peft import PeftModel
     from transformers import AutoProcessor, Qwen2_5_VLForConditionalGeneration
     model = Qwen2_5_VLForConditionalGeneration.from_pretrained(base_dir, dtype=torch.bfloat16, device_map={'': 'cpu'})

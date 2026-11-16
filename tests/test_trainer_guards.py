@@ -70,3 +70,10 @@ def test_train_refuses_base_dir(tmp_path):
     (base / "config.json").write_text("{}")  # train() would write its own config.json over this
     with pytest.raises(ValueError, match="base model directory"):
         t._check_train_inputs(base / ".." / "base", SAMPLES, SAMPLES, base_dir=base)
+
+
+def test_merge_refuses_missing_adapter(tmp_path, monkeypatch):
+    # Before: the wrong folder failed only after minutes of loading the full bf16 base on CPU.
+    monkeypatch.setattr(t, "_check_merge_out", lambda b, o: None)
+    with pytest.raises(ValueError, match="adapter_config.json"):
+        t.merge(base_dir=tmp_path / "base", adapter_dir=tmp_path / "nope", out_dir=tmp_path / "out")
