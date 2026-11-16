@@ -34,8 +34,12 @@ def test_default_ocr_holdout_corpus_keeps_v6_behaviour(lab):
     p = freeze_and_promote(lab, "t6", "expanded-ocr-v5", "fresh-holdout-ocr-v6")
     assert p.returncode == 0, p.stderr + p.stdout
     new = json.loads((lab / "model-policy.json").read_text())
-    # The validated v6 policy, pinned to the commit before v7-qlora was promoted (benchmark itself is now v7).
-    old = json.loads(subprocess.run(["git", "show", "7dbd461:resume-lab/model-policy.json"],
+    # The validated v6 policy: the parent of the commit that promoted v7-qlora (benchmark itself is now v7).
+    # Found by message, not SHA: history was rewritten on 2026-11-16 and SHAs changed.
+    promote = subprocess.run(["git", "log", "-1", "--format=%H", "--grep=^feat: promote v7-qlora OCR policy", "HEAD"],
+                             capture_output=True, text=True, check=True).stdout.strip()
+    assert promote, "v7-qlora promotion commit not found"
+    old = json.loads(subprocess.run(["git", "show", f"{promote}~1:resume-lab/model-policy.json"],
                                     capture_output=True, text=True, check=True).stdout)
     assert "ocr_holdout_corpus" not in new
     for key in ["ocr", "extraction", "development", "holdout", "corpus_sha256", "engine_sha256"]:

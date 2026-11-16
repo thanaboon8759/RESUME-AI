@@ -13,6 +13,7 @@ ENV/
 .DS_Store
 Thumbs.db
 *.tmp
+*.log
 *.tmp_ocr.png
 *_rendered.png
 synthetic_dataset/**/images/

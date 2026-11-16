@@ -10,7 +10,7 @@ APPROVED_SAMPLES = {"bilingual_resume.pdf", "english_resume.pdf", "real_function
 
 
 def test_only_approved_samples():
-    found = {p.name for p in (ROOT / "benchmark_data").iterdir() if p.is_file()}
+    found = {p.name for p in (ROOT / "benchmark_data").iterdir() if p.is_file() and p.name != "SOURCES.md"}
     assert found <= APPROVED_SAMPLES, sorted(found - APPROVED_SAMPLES)
 
 
@@ -27,7 +27,8 @@ def test_web_ui_has_no_open_cors_and_uses_path_rules():
 
 
 def test_no_undefined_names():
-    import subprocess, sys
+    import importlib.util, subprocess, sys
+    assert importlib.util.find_spec("pyflakes"), "install requirements-dev.txt"  # else the run below passes empty
     files = [f for f in subprocess.run(["git", "ls-files", "*.py"], cwd=ROOT, capture_output=True, text=True).stdout.split()
              if not f.startswith("resume-lab/evaluation/runs/")]  # frozen historical copies
     out = subprocess.run([sys.executable, "-m", "pyflakes", *files], cwd=ROOT, capture_output=True, text=True).stdout
@@ -36,3 +37,19 @@ def test_no_undefined_names():
 
 def test_web_ui_installs_guards():
     assert "install_guards(app)" in (ROOT / "web_ui.py").read_text(encoding="utf-8")
+
+
+def test_run_logs_are_ignored():
+    import subprocess
+    assert subprocess.run(["git", "check-ignore", "-q", "runs-qlora-v1.log"], cwd=ROOT).returncode == 0
+
+
+def test_every_sample_has_a_source():
+    text = (ROOT / "benchmark_data" / "SOURCES.md").read_text(encoding="utf-8")
+    assert all(f"`{name}`" in text for name in APPROVED_SAMPLES)
+
+
+def test_sample_pdfs_have_no_author():
+    import fitz
+    for p in (ROOT / "benchmark_data").glob("*.pdf"):
+        assert fitz.open(p).metadata.get("author") in ("", None, "anonymous"), p.name  # no real person's name

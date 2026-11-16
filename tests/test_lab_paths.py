@@ -52,3 +52,15 @@ def test_upload_name_rejects_empty():
     for name in ["", "a/", "..", "x/..", "."]:
         with pytest.raises(ValueError):
             safe_upload_name(name)
+
+
+def test_upload_name_rejects_unopenable():
+    for name in ["cv\x00.pdf", "a\x1fb.pdf", "CON.pdf", "nul.txt", "COM1", "a<b.pdf", 'a"b.pdf',
+                 "a|b.pdf", "a?.pdf", "a*.pdf", "cv.pdf.", "cv.pdf ", "x" * 201 + ".pdf"]:
+        with pytest.raises(ValueError):
+            safe_upload_name(name)
+
+
+def test_upload_name_keeps_normal_names():
+    for name in ["my cv.pdf", "ประวัติ v2.final.pdf", "a-b_c (1).docx", "console.pdf"]:
+        assert safe_upload_name(name) == name
