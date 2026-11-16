@@ -6,7 +6,7 @@ from app.auth import get_current_user
 router = APIRouter()
 
 @router.get("/", response_model=Preferences)
-async def get_preferences(user = Depends(get_current_user)):
+def get_preferences(user = Depends(get_current_user)):
     prefs = preference_service.get_preferences(user.id)
     if not prefs:
         display_name = (user.user_metadata or {}).get("displayName") or (user.email.split('@')[0] if user.email else "Workspace")
@@ -31,5 +31,5 @@ async def get_preferences(user = Depends(get_current_user)):
     return prefs
 
 @router.put("/", response_model=Preferences)
-async def update_preferences(prefs: Preferences, user = Depends(get_current_user)):
+def update_preferences(prefs: Preferences, user = Depends(get_current_user)):
     return preference_service.update_preferences(prefs, user.id)

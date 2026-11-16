@@ -1,3 +1,4 @@
+import asyncio
 import uuid
 from urllib.parse import unquote
 import logging
@@ -25,7 +26,7 @@ async def create_candidate(job_id: str, candidate_data: CandidateCreate, user_id
     file_bytes = b""
     
     # Check the job before any download or paid AI call; candidates.job_id must reference a real job anyway.
-    job = job_repository.get_job(job_id, user_id)
+    job = await asyncio.to_thread(job_repository.get_job, job_id, user_id)
     if not job:
         raise HTTPException(status_code=404, detail="Job not found")
 
@@ -36,7 +37,7 @@ async def create_candidate(job_id: str, candidate_data: CandidateCreate, user_id
             raise HTTPException(status_code=404, detail="Resume not found")
         try:
             logger.info("Retrieving PDF from Supabase")
-            file_bytes = supabase.storage.from_("uploads").download(candidate_data.resume_url)
+            file_bytes = await asyncio.to_thread(supabase.storage.from_("uploads").download, candidate_data.resume_url)
         except Exception as e:
             logger.error(f"Failed to download PDF from Supabase: {e}")
             raise HTTPException(status_code=500, detail="Supabase PDF retrieval failure")
@@ -172,5 +173,5 @@ async def create_candidate(job_id: str, candidate_data: CandidateCreate, user_id
     )
     
     # Store the combined object temporarily in the same table
-    candidate_repository.create_candidate(candidate_id, job_id, candidate_data.name, screening, rich_candidate, user_id)
+    await asyncio.to_thread(candidate_repository.create_candidate, candidate_id, job_id, candidate_data.name, screening, rich_candidate, user_id)
     return rich_candidate

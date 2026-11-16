@@ -207,7 +207,7 @@ async def extract_document(file_bytes: bytes) -> tuple[str, list[dict]]:
     Returns: (extracted_text, blocks)
     """
     logger.info("Document extraction started")
-    text, blocks = extract_text_fitz(file_bytes)
+    text, blocks = await asyncio.to_thread(extract_text_fitz, file_bytes)  # CPU-bound; holds _FITZ_LOCK
     
     if not is_extraction_usable(text):
         provider = os.getenv("OCR_PROVIDER", "typhoon").strip().lower()
