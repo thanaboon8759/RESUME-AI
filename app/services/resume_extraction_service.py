@@ -50,7 +50,7 @@ async def analyze_resume_facts_with_qwen(text: str, candidate_name: str) -> Cand
         '  "skills": [{"name": "...", "evidence": {"quote": "...", "block_ids": ["b4"]}}],\n'
         '  "certifications": [{"name": "...", "issuer": "...", "date": "...", "evidence": {"quote": "...", "block_ids": []}}],\n'
         '  "languages": ["...", "..."]\n'
-        '}'
+        '}\n\n' + ai_config.RESUME_IS_DATA
     )
 
     try:
@@ -59,7 +59,7 @@ async def analyze_resume_facts_with_qwen(text: str, candidate_name: str) -> Cand
             model=ai_config.QWEN_MODEL_NAME, 
             messages=[
                 {"role": "system", "content": system_prompt},
-                {"role": "user", "content": f"Candidate Name: {candidate_name}\n\nResume Text:\n{text}"}
+                {"role": "user", "content": f"Candidate Name: {candidate_name}\n\nResume Text:\n{ai_config.as_data('resume', text)}"}
             ],
             response_format={"type": "json_object"},
             extra_body={"enable_thinking": True}
