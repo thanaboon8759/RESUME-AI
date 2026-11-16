@@ -1,3 +1,4 @@
+import logging
 from fastapi import APIRouter, HTTPException, Depends
 from fastapi.responses import Response
 from typing import List
@@ -6,6 +7,7 @@ from app.services import candidate_service
 from app.auth import get_current_user
 from app.database.supabase.client import supabase
 
+logger = logging.getLogger(__name__)
 router = APIRouter()
 
 @router.get("/jobs/{job_id}/candidates", response_model=List[Candidate])
@@ -31,5 +33,6 @@ def download_candidate_resume(candidate_id: str, user = Depends(get_current_user
     try:
         res = supabase.storage.from_("uploads").download(cand.get("resumeUrl"))
         return Response(content=res, media_type="application/pdf")
-    except Exception as e:
-        raise HTTPException(status_code=404, detail=f"Resume not found in storage: {str(e)}")
+    except Exception:
+        logger.exception("Resume download failed")  # details stay in the server log
+        raise HTTPException(status_code=404, detail="Resume not found")

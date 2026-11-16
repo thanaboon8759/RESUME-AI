@@ -173,3 +173,25 @@ async def test_percent_encoded_segments_are_400(monkeypatch, storage, client):
     assert (await post_file(client, name="..%2F..%2Fx.pdf")).status_code == 400
     assert (await post_file(client, upload_id="%2E%2E")).status_code == 400
     storage.upload.assert_not_called()
+
+
+async def test_upload_storage_error_hides_detail(monkeypatch, storage, client):
+    storage.upload.side_effect = Exception("bucket secret-host-9 down")
+    r = await post_file(client)
+    assert r.status_code == 500 and "secret-host" not in r.text
+
+
+async def test_download_storage_error_hides_detail(monkeypatch, storage, client):
+    set_upload(monkeypatch, OWN)
+    storage.download.side_effect = Exception("secret-host-9 timeout")
+    r = await client.get("/api/uploads/x/download")
+    assert r.status_code == 500 and "secret-host" not in r.text
+
+
+async def test_candidate_resume_error_hides_detail(monkeypatch, storage, client):
+    from app.api import candidates
+    monkeypatch.setattr(candidates, "supabase", api.supabase)
+    monkeypatch.setattr("app.services.candidate_service.get_candidate", lambda cid, uid: {"resumeUrl": "j/x_a.pdf"})
+    storage.download.side_effect = Exception("secret-host-9 timeout")
+    r = await client.get("/api/candidates/c1/resume")
+    assert r.status_code == 404 and "secret-host" not in r.text

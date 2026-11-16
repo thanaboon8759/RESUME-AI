@@ -1,6 +1,4 @@
 from enum import Enum
-from pydantic import BaseModel
-from typing import List, Optional, Dict
 
 class DecisionEnum(str, Enum):
     shortlisted = "shortlisted"

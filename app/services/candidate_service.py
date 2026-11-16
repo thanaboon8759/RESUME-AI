@@ -4,7 +4,7 @@ from urllib.parse import unquote
 import logging
 from typing import List
 from fastapi import HTTPException
-from app.schemas.candidate import Candidate, CandidateCreate, Criterion
+from app.schemas.candidate import Candidate, CandidateCreate
 from app.schemas.core import CriterionStatusEnum
 from app.repositories import candidate_repository, job_repository
 from app.services.document_extraction_service import extract_document
@@ -12,6 +12,7 @@ from app.services.resume_extraction_service import analyze_resume_facts_with_qwe
 from app.services.screening_service import screen_candidate_with_qwen
 from app.services.scoring import apply_job_rules, criterion_weight, is_mandatory
 from app.database.supabase.client import supabase
+from app.services import ai_config
 
 logger = logging.getLogger(__name__)
 
@@ -29,6 +30,10 @@ async def create_candidate(job_id: str, candidate_data: CandidateCreate, user_id
     job = await asyncio.to_thread(job_repository.get_job, job_id, user_id)
     if not job:
         raise HTTPException(status_code=404, detail="Job not found")
+    try:  # a missing AI key must fail before the download and any paid OCR call
+        ai_config.mock_mode(ai_config.DASHSCOPE_API_KEY, "DASHSCOPE_API_KEY")
+    except RuntimeError as e:
+        raise HTTPException(status_code=503, detail=str(e))
 
     if candidate_data.resume_url:
         # Storage paths are {jobId}/{id}_{filename}: only screen files under the caller's own job.

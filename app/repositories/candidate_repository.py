@@ -37,3 +37,9 @@ def create_candidate(candidate_id: str, job_id: str, name: str, ai_evaluation, r
         "reason": ai_evaluation.reasons, "full_data": rich_candidate.model_dump(mode="json")
     }
     supabase.table("candidates").insert(db_record).execute()
+
+def get_candidate_job_id(candidate_id: str, user_id: str) -> str | None:
+    """The job a candidate belongs to, or None if the caller has no such candidate."""
+    if not supabase: return None
+    res = supabase.table("candidates").select("job_id").eq("id", candidate_id).eq("user_id", user_id).execute()
+    return res.data[0]["job_id"] if res.data else None

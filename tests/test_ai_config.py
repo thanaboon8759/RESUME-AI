@@ -104,3 +104,7 @@ def test_nested_or_spaced_closing_tags_cannot_close_the_block(text):
     # One removal pass rebuilt "</resume>" from "</re</resume>sume>", and spaced tags were not matched at all.
     inner = ai_config.as_data("resume", text)[len("<resume>\n"):-len("\n</resume>")]
     assert re.search(r"<\s*/\s*resume\s*>", inner, re.IGNORECASE) is None
+
+
+def test_rule_names_the_fences():
+    assert "<resume>" in ai_config.RESUME_IS_DATA and "<candidate_profile>" in ai_config.RESUME_IS_DATA

@@ -1,10 +1,8 @@
 import asyncio
-import os
 import io
 from dotenv import load_dotenv
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
-from PIL import Image
 
 load_dotenv()
 

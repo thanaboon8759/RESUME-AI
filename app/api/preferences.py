@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, Depends
 from app.schemas.preference import Preferences
 from app.services import preference_service
 from app.auth import get_current_user
