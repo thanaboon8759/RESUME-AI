@@ -48,3 +48,34 @@ def test_stale_files_are_gone():
     for name in ["recreate_api.py", "init_admin.py", "test_login.py", "test.pdf", "package.json",
                  "package-lock.json", "app/database/seed/generate_seed.py", "app/database/seed/seed.sql"]:
         assert not (ROOT / name).exists(), name
+
+
+def test_replacement_keeps_structure():
+    from tests.test_real_resume_validation import PROJECT_KEYWORDS, SAMPLE_RESUME
+    assert SAMPLE_RESUME.count("[ID: b") >= 20
+    assert all(k.split()[0] in SAMPLE_RESUME.lower() for k in PROJECT_KEYWORDS)
+    assert "narin.example@example.com" in SAMPLE_RESUME
+
+
+def test_pyflakes_clean():
+    import sys
+    out = subprocess.run([sys.executable, "-m", "pyflakes", "app", "seed_db.py", "e2e_test.py"],
+                         capture_output=True, text=True, cwd=ROOT)
+    assert out.stdout.strip() == "", out.stdout
+
+
+def test_local_run_logs_are_ignored():
+    # Local logs of live runs can hold real resume text; they must never be committable.
+    r = subprocess.run(["git", "check-ignore", "-q", ".superpowers/live-local-1.txt"], cwd=ROOT)
+    assert r.returncode == 0
+
+
+def test_test_resumes_use_example_contacts():
+    # Contacts in tests must be obviously fake: example.com addresses and the 080-000-0000 phone.
+    files = subprocess.run(["git", "ls-files", "tests"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.split()
+    bad = []
+    for f in files:
+        text = (ROOT / f).read_text(encoding="utf-8", errors="ignore")
+        bad += [f"{f}: email" for e in re.findall(r"[\w.+-]+@([\w-]+\.[\w.]+)", text) if e not in ("example.com", "example.org")]
+        bad += [f"{f}: phone" for p in re.findall(r"\b0\d{1,2}[- ]?\d{3}[- ]?\d{4}\b", text) if p != "080-000-0000"]
+    assert bad == []

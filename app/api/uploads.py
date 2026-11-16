@@ -1,4 +1,5 @@
 import asyncio
+import logging
 from fastapi import APIRouter, Depends, UploadFile, File, Form, Response, HTTPException
 from typing import List
 from app.schemas.upload import Upload
@@ -11,6 +12,7 @@ from app.repositories import job_repository, upload_repository
 MAX_UPLOAD_BYTES = 20 * 1024 * 1024  # a real Thai scan in testing was 11.6 MB
 
 
+logger = logging.getLogger(__name__)
 router = APIRouter()
 
 @router.get("/jobs/{job_id}/uploads", response_model=List[Upload])
@@ -46,8 +48,9 @@ async def upload_file(
         await asyncio.to_thread(supabase.storage.from_("uploads").upload, file_path, content,
                                 file_options={"content-type": file.content_type, "x-upsert": "true"})
         return {"status": "success"}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    except Exception:
+        logger.exception("Upload failed")  # details stay in the server log
+        raise HTTPException(status_code=500, detail="Upload failed")
 
 @router.get("/uploads/{upload_id}/download")
 def download_file(upload_id: str, user = Depends(get_current_user)):
@@ -65,5 +68,6 @@ def download_file(upload_id: str, user = Depends(get_current_user)):
         return Response(content=res, media_type="application/octet-stream")
     except HTTPException:
         raise
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    except Exception:
+        logger.exception("Download failed")
+        raise HTTPException(status_code=500, detail="Download failed")

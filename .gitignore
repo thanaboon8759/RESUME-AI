@@ -4,3 +4,6 @@ __pycache__/
 temp_page_1.png
 .env
 node_modules/
+
+# Local agent workspaces and live-run logs (may contain resume text)
+.superpowers/

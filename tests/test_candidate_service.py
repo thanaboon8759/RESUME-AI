@@ -108,3 +108,26 @@ def test_position_is_the_candidates_role():
     with patch("app.repositories.candidate_repository.supabase", sb):
         candidate_repository.create_candidate("c1", "job1", "Ann", screening, rich, "u1")
     assert sb.table.return_value.insert.call_args.args[0]["position"] == "Product Designer"
+
+
+async def test_missing_key_is_503_before_download(monkeypatch):
+    # Without this check a missing key surfaced only after the download and possibly a paid OCR call, as a bare 500.
+    import pytest
+    from fastapi import HTTPException
+    from app.services import ai_config
+    monkeypatch.setattr(ai_config, "DASHSCOPE_API_KEY", None)
+    storage = MagicMock()
+    with patch(f"{SVC}.supabase", storage), patch(f"{SVC}.job_repository.get_job", return_value=make_job()), \
+         pytest.raises(HTTPException) as err:
+        await create_candidate("job1", CandidateCreate(name="Ann", resume_text="", resume_url="job1/x_a.pdf"), "user1")
+    assert err.value.status_code == 503 and "DASHSCOPE_API_KEY" in err.value.detail
+    storage.storage.from_.return_value.download.assert_not_called()
+
+
+async def test_mock_key_passes_early_check(monkeypatch):
+    from app.services import ai_config
+    monkeypatch.setattr(ai_config, "DASHSCOPE_API_KEY", "mock")
+    with patch(f"{SVC}.job_repository.get_job", return_value=make_job()), \
+         patch(f"{SVC}.candidate_repository.create_candidate", MagicMock()):
+        cand = await create_candidate("job1", CandidateCreate(name="Ann Lee", resume_text="..."), "user1")
+    assert cand.name == "Ann Lee"

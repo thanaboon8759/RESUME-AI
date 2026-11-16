@@ -1,7 +1,7 @@
 """
-Real-Resume Validation Test — Narin Example
+Resume Validation Test — synthetic sample resume
 
-Validates the complete pipeline with real resume data:
+Validates the complete pipeline with a realistic synthetic resume:
   PyMuPDF blocks → Qwen #1 → CandidateProfile + FactEvidence
   → Qwen #2 → ScreeningResult + evidence_refs → Backend evidence resolution
 
@@ -48,10 +48,10 @@ def strip_block_markers(text: str) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Real resume text (PyMuPDF block order as extracted)
+# Synthetic resume in real PyMuPDF block order (no real person's data: the repo is public)
 # ---------------------------------------------------------------------------
 
-REAL_RESUME = """\
+SAMPLE_RESUME = """\
 [ID: b0] EDUCATION
 
 [ID: b1] Motivated computer science student with \
@@ -126,11 +126,10 @@ July 2023 - Present
 
 [ID: b17] Email:narin.example@example.com \
 Github:https://github.com/example-narin \
-LikedIn:www.linkedin.com/in/example-narin \
+LinkedIn:www.linkedin.com/in/example-narin \
 MyWebsite: example-narin.github.io/portfolio
 
 [ID: b18] 123 Example Road, \
-Road, \
 Khlong Nueng, Khlong Luang, \
 Pathum Thani, Thailand \
 080-000-0000
@@ -159,7 +158,7 @@ Example Wittaya School
 # Marker-stripped version used to validate Qwen #1 evidence quotes.
 # Qwen correctly merges adjacent blocks and strips [ID: bX] markers,
 # so we must check against the clean content rather than the raw extraction.
-REAL_RESUME_STRIPPED = strip_block_markers(REAL_RESUME)
+SAMPLE_RESUME_STRIPPED = strip_block_markers(SAMPLE_RESUME)
 
 EXPECTED_SKILLS = {
     "python", "javascript", "html", "css", "next.js", "firebase",
@@ -235,7 +234,7 @@ async def get_profile():
     if not LIVE:
         pytest.skip("needs DASHSCOPE_API_KEY")
     if "profile" not in _CACHE:
-        _CACHE["profile"] = await analyze_resume_facts_with_qwen(REAL_RESUME, "Narin Example")
+        _CACHE["profile"] = await analyze_resume_facts_with_qwen(SAMPLE_RESUME, "Narin Example")
     return _CACHE["profile"]
 
 
@@ -269,7 +268,7 @@ def find_criterion(result, label: str):
 
 @pytest.mark.parametrize("fake_quote", NEGATIVE_EVIDENCE)
 def test_fabricated_evidence_rejected(fake_quote):
-    assert not evidence_exists(fake_quote, REAL_RESUME), (
+    assert not evidence_exists(fake_quote, SAMPLE_RESUME), (
         f"Fabricated evidence incorrectly passed: '{fake_quote}'"
     )
 
@@ -296,7 +295,7 @@ async def test_q1_no_score_or_decision():
 async def test_q1_name_extracted():
     profile = await get_profile()
     assert profile.personal_info.name is not None
-    assert "Narin" in profile.personal_info.name.lower(), (
+    assert "narin" in profile.personal_info.name.lower(), (
         f"Expected 'Narin' in name, got: {profile.personal_info.name}"
     )
 
@@ -409,8 +408,8 @@ async def test_q1_bangkok_university():
 async def test_q1_high_school():
     profile = await get_profile()
     institutions = [e.get("institution", "").lower() for e in profile.education]
-    assert any("example" in i or "wittaya" in i for i in institutions), (
-        f"example Wittaya not found: {institutions}"
+    assert any("example wittaya" in i or "wittaya" in i for i in institutions), (
+        f"Example Wittaya School not found: {institutions}"
     )
 
 
@@ -452,7 +451,7 @@ async def test_q1_skill_evidence_quotes_real():
     hallucinated = [
         (s.name, s.evidence.quote)
         for s in profile.skills
-        if s.evidence and s.evidence.quote and not evidence_exists(s.evidence.quote, REAL_RESUME)
+        if s.evidence and s.evidence.quote and not evidence_exists(s.evidence.quote, SAMPLE_RESUME)
     ]
     assert not hallucinated, (
         "Hallucinated skill evidence (not in resume after whitespace normalisation):\n"
@@ -469,7 +468,7 @@ async def test_q1_experience_evidence_quotes_real():
         ev.get("quote", "")
         for exp in profile.experience
         for ev in [exp.get("evidence") or {}]
-        if ev.get("quote") and not evidence_exists(ev["quote"], REAL_RESUME_STRIPPED)
+        if ev.get("quote") and not evidence_exists(ev["quote"], SAMPLE_RESUME_STRIPPED)
     ]
     assert not hallucinated, (
         "Hallucinated experience evidence (not in marker-stripped resume):\n"
@@ -485,7 +484,7 @@ async def test_q1_project_evidence_quotes_real():
         (proj.get("title"), ev.get("quote", ""))
         for proj in profile.projects
         for ev in [proj.get("evidence") or {}]
-        if ev.get("quote") and not evidence_exists(ev["quote"], REAL_RESUME_STRIPPED)
+        if ev.get("quote") and not evidence_exists(ev["quote"], SAMPLE_RESUME_STRIPPED)
     ]
     assert not hallucinated, (
         "Hallucinated project evidence (not in marker-stripped resume):\n"
@@ -501,7 +500,7 @@ async def test_q1_education_evidence_quotes_real():
         (edu.get("institution"), ev.get("quote", ""))
         for edu in profile.education
         for ev in [edu.get("evidence") or {}]
-        if ev.get("quote") and not evidence_exists(ev["quote"], REAL_RESUME_STRIPPED)
+        if ev.get("quote") and not evidence_exists(ev["quote"], SAMPLE_RESUME_STRIPPED)
     ]
     assert not hallucinated, (
         "Hallucinated education evidence (not in marker-stripped resume):\n"
