@@ -5,7 +5,7 @@ from app.schemas.candidate import CandidateProfile
 
 VALID_PROFILE_JSON = '''{
     "personal_info": {"name": "Test Candidate", "email": "real@example.com", "phone": "555-1234", "location": "Bangkok", "website": null, "github": null, "linkedin": null},
-    "education": [{"institution": "Bangkok University", "degree": "BS", "dates": "2020"}],
+    "education": [{"institution": "Example University", "degree": "BS", "dates": "2020"}],
     "experience": [{"company": "ABC Corp", "position": "Developer", "dates": "2021-2022", "responsibilities": ["Coding"]}],
     "projects": [{"title": "AI Project", "description": "Did AI", "technologies": ["Python"]}],
     "skills": [{"name": "Python", "evidence": {"quote": "Python", "block_ids": ["b1"]}}, {"name": "AWS", "evidence": {"quote": "AWS", "block_ids": ["b2"]}}],

@@ -164,7 +164,7 @@ SCENARIOS = [
         },
         "resume_text": (
             "Somchai Jaidee\n"
-            "Education: Chulalongkorn University, BS Computer Engineering (English Program)\n"
+            "Education: Example University, BS Computer Engineering (English Program)\n"
             "ประสบการณ์การทำงาน:\n"
             "- Web Developer ที่บริษัท ABC (2021-2023)\n"
             "  พัฒนาระบบด้วย React และ Node.js\n"

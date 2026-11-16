@@ -84,13 +84,26 @@ def test_test_resumes_use_example_contacts():
     assert bad == []
 
 
-ORG_WORD = re.compile(r".*\b(University|College|School|Institute|Co\.,? ?Ltd|Company)\b.*")
+# A named organisation: "Name University" / "Name Co., Ltd" or "School of Name". Org word in any case.
+_ORG = r"(?i:University|College|School|Institute|Company|Co\.,? ?Ltd)"
+ORG_NAME = re.compile(rf"\b[A-Z][\w'-]*(?: [A-Z][\w'-]*){{0,3}} {_ORG}\b|(?:\S+ ){{0,2}}{_ORG} of [A-Z]\w*")
 
 
 def test_test_resumes_use_example_orgs():
-    from tests.test_real_resume_validation import SAMPLE_RESUME
-    bad = [m.group(0) for m in ORG_WORD.finditer(SAMPLE_RESUME) if "Example" not in m.group(0)]
-    assert not bad, f"{len(bad)} line(s) name a real organisation"  # count only: CI logs must not echo names
+    # Organisations named in tests must be placeholders (Example/Mock), never real schools or employers.
+    files = subprocess.run(["git", "ls-files", "tests"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.split()
+    bad = [f for f in files if f != "tests/test_repo_hygiene.py"
+           for m in ORG_NAME.finditer((ROOT / f).read_text(encoding="utf-8", errors="ignore"))
+           if not re.search(r"example|mock", m.group(0), re.I)]
+    assert not bad, f"real organisation names in: {sorted(set(bad))}"  # file names only: CI logs must not echo names
+
+
+def test_org_check_catches_names_next_to_placeholders():
+    # One block can hold both "Example" text and a real name; the check must look at the name itself.
+    for text in ["Example Road, Realname College", "studied at Realname university", "School of Realname Studies"]:
+        assert any(not re.search(r"example|mock", m.group(0), re.I) for m in ORG_NAME.finditer(text)), text
+    for text in ["Example University", "Mock University", "Example School of Computing", "a high school", "- University"]:
+        assert all(re.search(r"example|mock", m.group(0), re.I) for m in ORG_NAME.finditer(text)), text
 
 
 def test_bucket_fix_sql_is_private():
