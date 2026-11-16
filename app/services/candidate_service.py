@@ -24,11 +24,15 @@ async def create_candidate(job_id: str, candidate_data: CandidateCreate, user_id
     extracted_text = candidate_data.resume_text
     file_bytes = b""
     
+    # Check the job before any download or paid AI call; candidates.job_id must reference a real job anyway.
+    job = job_repository.get_job(job_id, user_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="Job not found")
+
     if candidate_data.resume_url:
         # Storage paths are {jobId}/{id}_{filename}: only screen files under the caller's own job.
         url = candidate_data.resume_url
-        if (not job_repository.get_job(job_id, user_id) or not url.startswith(f"{job_id}/")
-                or ".." in unquote(url).replace("\\", "/").split("/")):
+        if not url.startswith(f"{job_id}/") or ".." in unquote(url).replace("\\", "/").split("/"):
             raise HTTPException(status_code=404, detail="Resume not found")
         try:
             logger.info("Retrieving PDF from Supabase")
@@ -43,13 +47,6 @@ async def create_candidate(job_id: str, candidate_data: CandidateCreate, user_id
         
     logger.info("Extracting factual resume profile (Qwen #1)")
     profile = await analyze_resume_facts_with_qwen(extracted_text, candidate_data.name)
-    
-    # Retrieve job requirements for screening
-    job = job_repository.get_job(job_id, user_id)
-    if not job:
-        # Fallback to mock job if user lacks jobs or E2E test bypasses job creation
-        from app.schemas.job import Job
-        job = Job(id=job_id, title="Unknown Job", jd="", required=[], preferred=[], weights={}, experience="", education="", location="", salary="", mandatory=[])
     
     logger.info("Screening candidate against job requirements (Qwen #2)")
     screening = await screen_candidate_with_qwen(profile, job)

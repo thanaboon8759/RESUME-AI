@@ -32,15 +32,15 @@ async def test_create_candidate_applies_job_rules():
 
 
 async def test_create_candidate_unknown_job():
-    screening = ScreeningResult(score=61, decision=DecisionEnum.shortlisted, criteria=[], reasons=["x"])
-    profile = CandidateProfile(personal_info=PersonalInfo(name="Ann Lee"))
-    with patch(f"{SVC}.analyze_resume_facts_with_qwen", AsyncMock(return_value=profile)), \
-         patch(f"{SVC}.screen_candidate_with_qwen", AsyncMock(return_value=screening)), \
-         patch(f"{SVC}.job_repository.get_job", return_value=None), \
-         patch(f"{SVC}.candidate_repository.create_candidate", MagicMock()):
-        cand = await create_candidate("job1", CandidateCreate(name="Ann Lee", resume_text="..."), "user1")
-
-    assert cand.score == 61 and cand.decision == DecisionEnum.undecided
+    # A missing job used to get a fake "Unknown Job": two paid AI calls, then the save failed on the job foreign key.
+    import pytest
+    from fastapi import HTTPException
+    extract, screen = AsyncMock(), AsyncMock()
+    with patch(f"{SVC}.analyze_resume_facts_with_qwen", extract), patch(f"{SVC}.screen_candidate_with_qwen", screen),          patch(f"{SVC}.job_repository.get_job", return_value=None), pytest.raises(HTTPException) as err:
+        await create_candidate("job1", CandidateCreate(name="Ann Lee", resume_text="..."), "user1")
+    assert err.value.status_code == 404
+    extract.assert_not_called()
+    screen.assert_not_called()
 
 
 async def test_fallback_reasons_are_unknown():
@@ -48,7 +48,7 @@ async def test_fallback_reasons_are_unknown():
     profile = CandidateProfile(personal_info=PersonalInfo(name="Ann Lee"))
     with patch(f"{SVC}.analyze_resume_facts_with_qwen", AsyncMock(return_value=profile)), \
          patch(f"{SVC}.screen_candidate_with_qwen", AsyncMock(return_value=screening)), \
-         patch(f"{SVC}.job_repository.get_job", return_value=None), \
+         patch(f"{SVC}.job_repository.get_job", return_value=make_job()), \
          patch(f"{SVC}.candidate_repository.create_candidate", MagicMock()):
         cand = await create_candidate("job1", CandidateCreate(name="Ann Lee", resume_text="..."), "user1")
 
@@ -84,10 +84,10 @@ async def test_text_only_candidate_skips_ownership():
     profile = CandidateProfile(personal_info=PersonalInfo(name="Ann Lee"))
     with patch(f"{SVC}.analyze_resume_facts_with_qwen", AsyncMock(return_value=profile)), \
          patch(f"{SVC}.screen_candidate_with_qwen", AsyncMock(return_value=screening)), \
-         patch(f"{SVC}.job_repository.get_job", return_value=None), \
+         patch(f"{SVC}.job_repository.get_job", return_value=make_job()), \
          patch(f"{SVC}.candidate_repository.create_candidate", MagicMock()):
         cand = await create_candidate("job1", CandidateCreate(name="Ann Lee", resume_text="...", resume_url=None), "user1")
-    assert cand.score == 61
+    assert cand.name == "Ann Lee"  # a text-only resume needs no storage path, only an owned job
 
 
 async def test_resume_path_traversal_is_404():
