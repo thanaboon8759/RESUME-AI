@@ -25,7 +25,7 @@ def client(monkeypatch):
 
 
 def set_owner(monkeypatch, owner):
-    monkeypatch.setattr("app.repositories.job_repository.get_job_owner", lambda job_id: owner, raising=False)
+    monkeypatch.setattr("app.repositories.job_repository.get_job_owner", lambda job_id: owner)
 
 
 async def test_update_other_users_job_is_404(monkeypatch, client):

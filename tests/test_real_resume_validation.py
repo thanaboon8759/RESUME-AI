@@ -16,7 +16,6 @@ import os
 import re
 import json
 import pytest
-import asyncio
 from dotenv import load_dotenv
 load_dotenv()
 LIVE = os.getenv("DASHSCOPE_API_KEY") not in (None, "", "mock")  # without a key the services return fake data
@@ -538,7 +537,7 @@ async def test_case_a_python_met_with_evidence_refs():
 async def test_case_a_nextjs_met():
     result = await get_result("a", JOB_A)
     c = find_criterion(result, "Next.js")
-    assert c is not None, f"Case A: Next.js not evaluated."
+    assert c is not None, "Case A: Next.js not evaluated."
     assert c.status == CriterionStatusEnum.met, f"Case A: Next.js should be met, got {c.status}"
 
 
@@ -617,7 +616,7 @@ async def test_case_d_shortlisted():
 async def test_case_d_neural_networks_met():
     result = await get_result("d", JOB_D)
     c = find_criterion(result, "Neural Networks")
-    assert c is not None, f"Case D: Neural Networks not evaluated."
+    assert c is not None, "Case D: Neural Networks not evaluated."
     assert c.status == CriterionStatusEnum.met, f"Case D: Neural Networks should be met. Got: {c.status}"
     assert len(c.evidence_refs) > 0, "Case D: Neural Networks needs evidence_refs"
 
@@ -626,7 +625,7 @@ async def test_case_d_neural_networks_met():
 async def test_case_d_computer_vision_met():
     result = await get_result("d", JOB_D)
     c = find_criterion(result, "Computer Vision")
-    assert c is not None, f"Case D: Computer Vision not evaluated."
+    assert c is not None, "Case D: Computer Vision not evaluated."
     assert c.status == CriterionStatusEnum.met, f"Case D: Computer Vision should be met. Got: {c.status}"
 
 

@@ -25,7 +25,7 @@ def client(monkeypatch):
 
 def set_candidate(monkeypatch, job_id):
     monkeypatch.setattr("app.repositories.candidate_repository.get_candidate_job_id",
-                        lambda candidate_id, user_id: job_id, raising=False)
+                        lambda candidate_id, user_id: job_id)
 
 
 async def test_decision_on_foreign_candidate_is_404(monkeypatch, client):

@@ -1,7 +1,6 @@
 import os
 import pytest
 import re
-import asyncio
 from dotenv import load_dotenv
 load_dotenv() # Load API keys BEFORE importing services
 LIVE = os.getenv("DASHSCOPE_API_KEY") not in (None, "", "mock")  # without a key the services return fake data

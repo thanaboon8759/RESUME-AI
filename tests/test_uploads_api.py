@@ -33,7 +33,7 @@ def client():
 
 
 def set_upload(monkeypatch, row):
-    monkeypatch.setattr("app.repositories.upload_repository.get_upload", lambda upload_id: row, raising=False)
+    monkeypatch.setattr("app.repositories.upload_repository.get_upload", lambda upload_id: row)
 
 
 def set_job(monkeypatch, job):
@@ -88,7 +88,7 @@ async def test_thai_filename_allowed(monkeypatch, storage, client):
 
 async def test_upload_size_limit(monkeypatch, storage, client):
     set_job(monkeypatch, object())
-    monkeypatch.setattr(api, "MAX_UPLOAD_BYTES", 10, raising=False)
+    monkeypatch.setattr(api, "MAX_UPLOAD_BYTES", 10)
     assert (await post_file(client, content=b"x" * 10)).status_code == 200
     assert (await post_file(client, content=b"x" * 11)).status_code == 413
     assert storage.upload.call_count == 1

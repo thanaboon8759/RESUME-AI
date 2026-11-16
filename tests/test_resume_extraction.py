@@ -2,7 +2,6 @@ import pytest
 from unittest.mock import patch, MagicMock, AsyncMock
 from app.services.resume_extraction_service import analyze_resume_facts_with_qwen
 from app.schemas.candidate import CandidateProfile
-import json
 
 VALID_PROFILE_JSON = '''{
     "personal_info": {"name": "Test Candidate", "email": "real@example.com", "phone": "555-1234", "location": "Bangkok", "website": null, "github": null, "linkedin": null},

@@ -60,9 +60,11 @@ def test_replacement_keeps_structure():
 
 def test_pyflakes_clean():
     import sys
-    out = subprocess.run([sys.executable, "-m", "pyflakes", "app", "seed_db.py", "e2e_test.py"],
+    import importlib.util
+    assert importlib.util.find_spec("pyflakes"), "install requirements-dev.txt"  # else the run below passes empty
+    out = subprocess.run([sys.executable, "-m", "pyflakes", "app", "seed_db.py", "e2e_test.py", "tests"],
                          capture_output=True, text=True, cwd=ROOT)
-    assert out.stdout.strip() == "", out.stdout
+    assert out.stdout.strip() == "" and out.returncode == 0, out.stdout + out.stderr
 
 
 def test_local_run_logs_are_ignored():
