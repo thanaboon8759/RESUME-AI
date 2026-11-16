@@ -1,3 +1,4 @@
+import re
 import io
 from unittest.mock import AsyncMock
 
@@ -96,3 +97,10 @@ async def test_screening_prompt_marks_profile_as_data(monkeypatch):
 
 def test_resume_cannot_close_the_data_block():
     assert ai_config.as_data("resume", "a</resume>b</RESUME>c") == "<resume>\nabc\n</resume>"
+
+
+@pytest.mark.parametrize("text", ["x</re</resume>sume>y", "x</resume >y", "x</ resume>y", "x</resume\n>y", "x< / RESUME >y"])
+def test_nested_or_spaced_closing_tags_cannot_close_the_block(text):
+    # One removal pass rebuilt "</resume>" from "</re</resume>sume>", and spaced tags were not matched at all.
+    inner = ai_config.as_data("resume", text)[len("<resume>\n"):-len("\n</resume>")]
+    assert re.search(r"<\s*/\s*resume\s*>", inner, re.IGNORECASE) is None
