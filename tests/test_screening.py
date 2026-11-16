@@ -4,7 +4,6 @@ from app.services.screening_service import screen_candidate_with_qwen
 from app.schemas.candidate import CandidateProfile, ScreeningResult, PersonalInfo
 from app.schemas.job import Job
 from app.schemas.core import DecisionEnum
-import json
 
 VALID_SCREENING_JSON = '''{
     "score": 90,

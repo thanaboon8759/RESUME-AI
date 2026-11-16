@@ -16,7 +16,6 @@ import os
 import re
 import json
 import pytest
-import asyncio
 from dotenv import load_dotenv
 load_dotenv()
 LIVE = os.getenv("DASHSCOPE_API_KEY") not in (None, "", "mock")  # without a key the services return fake data
@@ -89,7 +88,7 @@ troubleshooting bugs and providing ongoing post-deployment support.
 [ID: b8] AI Product Moderation System (Senior Project)
 
 [ID: b9] Developed an exclusive full-stack e-commerce platform tailored for \
-Bangkok University students using Next.js and MongoDB, featuring an \
+Example University students using Next.js and MongoDB, featuring an \
 automated moderation system to detect and block illegal product \
 listings before publication. \
 Engineered a custom AI-driven backend using Python to analyze \
@@ -118,10 +117,9 @@ and generate highly personalized music recommendations.
 utilizing Next.js to showcase technical projects, code repositories, \
 and AWS/Cybersecurity certifications.
 
-[ID: b16] Faculty : School of Information and \
-Technology Innovation \
+[ID: b16] Faculty : Example School of Computing \
 Computer Science Data Science and Cyber Security \
-Bangkok University \
+Example University \
 July 2023 - Present
 
 [ID: b17] Email:narin.example@example.com \
@@ -130,8 +128,8 @@ LinkedIn:www.linkedin.com/in/example-narin \
 MyWebsite: example-narin.github.io/portfolio
 
 [ID: b18] 123 Example Road, \
-Khlong Nueng, Khlong Luang, \
-Pathum Thani, Thailand \
+Example District, \
+Example City \
 080-000-0000
 
 [ID: b19] CONTACT
@@ -391,16 +389,16 @@ async def test_q1_portfolio_project():
 async def test_q1_two_education_records():
     profile = await get_profile()
     assert len(profile.education) >= 2, (
-        f"Expected Bangkok University + high school, got: {profile.education}"
+        f"Expected Example University + high school, got: {profile.education}"
     )
 
 
 @pytest.mark.asyncio
-async def test_q1_bangkok_university():
+async def test_q1_example_university():
     profile = await get_profile()
     institutions = [e.get("institution", "").lower() for e in profile.education]
-    assert any("bangkok" in i for i in institutions), (
-        f"Bangkok University not found: {institutions}"
+    assert any("example university" in i for i in institutions), (
+        f"Example University not found: {institutions}"
     )
 
 
@@ -418,10 +416,10 @@ async def test_q1_university_ongoing():
     """Must not claim graduation — source says 'Present'."""
     profile = await get_profile()
     for edu in profile.education:
-        if "bangkok" in edu.get("institution", "").lower():
+        if "example university" in edu.get("institution", "").lower():
             dates = edu.get("dates", "").lower()
             assert any(kw in dates for kw in ["present", "ongoing", "current", "2023"]), (
-                f"Bangkok University dates should show ongoing, got: '{dates}'"
+                f"Example University dates should show ongoing, got: '{dates}'"
             )
 
 
@@ -539,7 +537,7 @@ async def test_case_a_python_met_with_evidence_refs():
 async def test_case_a_nextjs_met():
     result = await get_result("a", JOB_A)
     c = find_criterion(result, "Next.js")
-    assert c is not None, f"Case A: Next.js not evaluated."
+    assert c is not None, "Case A: Next.js not evaluated."
     assert c.status == CriterionStatusEnum.met, f"Case A: Next.js should be met, got {c.status}"
 
 
@@ -618,7 +616,7 @@ async def test_case_d_shortlisted():
 async def test_case_d_neural_networks_met():
     result = await get_result("d", JOB_D)
     c = find_criterion(result, "Neural Networks")
-    assert c is not None, f"Case D: Neural Networks not evaluated."
+    assert c is not None, "Case D: Neural Networks not evaluated."
     assert c.status == CriterionStatusEnum.met, f"Case D: Neural Networks should be met. Got: {c.status}"
     assert len(c.evidence_refs) > 0, "Case D: Neural Networks needs evidence_refs"
 
@@ -627,7 +625,7 @@ async def test_case_d_neural_networks_met():
 async def test_case_d_computer_vision_met():
     result = await get_result("d", JOB_D)
     c = find_criterion(result, "Computer Vision")
-    assert c is not None, f"Case D: Computer Vision not evaluated."
+    assert c is not None, "Case D: Computer Vision not evaluated."
     assert c.status == CriterionStatusEnum.met, f"Case D: Computer Vision should be met. Got: {c.status}"
 
 

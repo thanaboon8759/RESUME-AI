@@ -4,7 +4,6 @@ These tests verify that whitespace normalization is applied correctly
 without weakening the strict evidence integrity requirement.
 """
 import re
-import pytest
 
 
 def normalize_evidence_text(text: str) -> str:

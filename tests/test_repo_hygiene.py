@@ -52,16 +52,19 @@ def test_stale_files_are_gone():
 
 def test_replacement_keeps_structure():
     from tests.test_real_resume_validation import PROJECT_KEYWORDS, SAMPLE_RESUME
-    assert SAMPLE_RESUME.count("[ID: b") >= 20
+    ids = re.findall(r"\[ID: b(\d+)\]", SAMPLE_RESUME)
+    assert ids == [str(i) for i in range(len(ids))] and len(ids) >= 20  # b0..bN, in order, no gaps
     assert all(k.split()[0] in SAMPLE_RESUME.lower() for k in PROJECT_KEYWORDS)
     assert "narin.example@example.com" in SAMPLE_RESUME
 
 
 def test_pyflakes_clean():
     import sys
-    out = subprocess.run([sys.executable, "-m", "pyflakes", "app", "seed_db.py", "e2e_test.py"],
+    import importlib.util
+    assert importlib.util.find_spec("pyflakes"), "install requirements-dev.txt"  # else the run below passes empty
+    out = subprocess.run([sys.executable, "-m", "pyflakes", "app", "seed_db.py", "e2e_test.py", "tests"],
                          capture_output=True, text=True, cwd=ROOT)
-    assert out.stdout.strip() == "", out.stdout
+    assert out.stdout.strip() == "" and out.returncode == 0, out.stdout + out.stderr
 
 
 def test_local_run_logs_are_ignored():
@@ -79,3 +82,30 @@ def test_test_resumes_use_example_contacts():
         bad += [f"{f}: email" for e in re.findall(r"[\w.+-]+@([\w-]+\.[\w.]+)", text) if e not in ("example.com", "example.org")]
         bad += [f"{f}: phone" for p in re.findall(r"\b0\d{1,2}[- ]?\d{3}[- ]?\d{4}\b", text) if p != "080-000-0000"]
     assert bad == []
+
+
+# A named organisation: "Name University" / "Name Co., Ltd" or "School of Name". Org word in any case.
+_ORG = r"(?i:University|College|School|Institute|Company|Co\.,? ?Ltd)"
+ORG_NAME = re.compile(rf"\b[A-Z][\w'-]*(?: [A-Z][\w'-]*){{0,3}} {_ORG}\b|(?:\S+ ){{0,2}}{_ORG} of [A-Z]\w*")
+
+
+def test_test_resumes_use_example_orgs():
+    # Organisations named in tests must be placeholders (Example/Mock), never real schools or employers.
+    files = subprocess.run(["git", "ls-files", "tests"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.split()
+    bad = [f for f in files if f != "tests/test_repo_hygiene.py"
+           for m in ORG_NAME.finditer((ROOT / f).read_text(encoding="utf-8", errors="ignore"))
+           if not re.search(r"example|mock", m.group(0), re.I)]
+    assert not bad, f"real organisation names in: {sorted(set(bad))}"  # file names only: CI logs must not echo names
+
+
+def test_org_check_catches_names_next_to_placeholders():
+    # One block can hold both "Example" text and a real name; the check must look at the name itself.
+    for text in ["Example Road, Realname College", "studied at Realname university", "School of Realname Studies"]:
+        assert any(not re.search(r"example|mock", m.group(0), re.I) for m in ORG_NAME.finditer(text)), text
+    for text in ["Example University", "Mock University", "Example School of Computing", "a high school", "- University"]:
+        assert all(re.search(r"example|mock", m.group(0), re.I) for m in ORG_NAME.finditer(text)), text
+
+
+def test_bucket_fix_sql_is_private():
+    sql = (ROOT / "app/database/migrations/2026-11-16-private-uploads-bucket.sql").read_text(encoding="utf-8").lower()
+    assert "update storage.buckets" in sql and "public = false" in sql and "where id = 'uploads'" in sql

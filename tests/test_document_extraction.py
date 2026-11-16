@@ -1,7 +1,6 @@
 import pytest
 from unittest.mock import patch, MagicMock, AsyncMock
-from app.services.document_extraction_service import extract_document, extract_text_fitz, extract_text_typhoon, is_extraction_usable
-import json
+from app.services.document_extraction_service import extract_document, is_extraction_usable
 
 @pytest.fixture(autouse=True)
 def patch_api_keys():
