@@ -1,26 +1,16 @@
-import os
 import json
 import logging
-from openai import AsyncOpenAI
+from app.services import ai_config
 from pydantic import ValidationError
 from app.schemas.candidate import CandidateProfile
 
 logger = logging.getLogger(__name__)
 
-DASHSCOPE_API_KEY = os.getenv("DASHSCOPE_API_KEY")
-QWEN_API_URL = os.getenv("QWEN_API_URL", "https://dashscope-intl.aliyuncs.com/compatible-mode/v1")
-QWEN_MODEL_NAME = os.getenv("QWEN_MODEL_NAME", "qwen3.8-flash")
-
-qwen_client = AsyncOpenAI(
-    api_key=DASHSCOPE_API_KEY or "mock",
-    base_url=QWEN_API_URL,
-    timeout=300.0,
-    max_retries=2
-)
+qwen_client = ai_config.qwen_client  # one shared client (tests patch it through this name)
 
 async def analyze_resume_facts_with_qwen(text: str, candidate_name: str) -> CandidateProfile:
     """Analyze the extracted text using Qwen to extract factual information only."""
-    if not DASHSCOPE_API_KEY or DASHSCOPE_API_KEY == "mock":
+    if ai_config.mock_mode(ai_config.DASHSCOPE_API_KEY, "DASHSCOPE_API_KEY"):
         return CandidateProfile(
             personal_info={"name": candidate_name, "email": "mock@test.com", "phone": "12345", "location": "Bangkok", "website": None, "github": None, "linkedin": None},
             education=[{"institution": "Mock University", "degree": "BS CS", "dates": "2018-2022"}],
@@ -60,16 +50,16 @@ async def analyze_resume_facts_with_qwen(text: str, candidate_name: str) -> Cand
         '  "skills": [{"name": "...", "evidence": {"quote": "...", "block_ids": ["b4"]}}],\n'
         '  "certifications": [{"name": "...", "issuer": "...", "date": "...", "evidence": {"quote": "...", "block_ids": []}}],\n'
         '  "languages": ["...", "..."]\n'
-        '}'
+        '}\n\n' + ai_config.RESUME_IS_DATA
     )
 
     try:
         logger.info("Qwen #1 (Resume Extraction) started")
         response = await qwen_client.chat.completions.create(
-            model=QWEN_MODEL_NAME, 
+            model=ai_config.QWEN_MODEL_NAME, 
             messages=[
                 {"role": "system", "content": system_prompt},
-                {"role": "user", "content": f"Candidate Name: {candidate_name}\n\nResume Text:\n{text}"}
+                {"role": "user", "content": f"Candidate Name: {candidate_name}\n\nResume Text:\n{ai_config.as_data('resume', text)}"}
             ],
             response_format={"type": "json_object"},
             extra_body={"enable_thinking": True}

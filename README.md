@@ -23,6 +23,7 @@ An intelligent recruitment and candidate evaluation platform designed to help HR
 ### 1. Prerequisites
 - Python 3.10+
 - Supabase project (URL and Service Role Key)
+- Install dependencies in a virtual environment: `pip install -r requirements-dev.txt` for development and tests, or `pip install -r requirements.txt` to run the server only.
 
 ### 2. Environment Configuration
 Navigate to the `backend` directory and create a `.env` file based on your Supabase credentials:

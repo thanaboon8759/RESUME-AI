@@ -1,27 +1,17 @@
-import os
 import json
 import logging
-from openai import AsyncOpenAI
+from app.services import ai_config
 from pydantic import ValidationError
 from app.schemas.candidate import CandidateProfile, ScreeningResult
 from app.schemas.job import Job
 
 logger = logging.getLogger(__name__)
 
-DASHSCOPE_API_KEY = os.getenv("DASHSCOPE_API_KEY")
-QWEN_API_URL = os.getenv("QWEN_API_URL", "https://dashscope-intl.aliyuncs.com/compatible-mode/v1")
-QWEN_MODEL_NAME = os.getenv("QWEN_MODEL_NAME", "qwen3.8-flash")
-
-qwen_client = AsyncOpenAI(
-    api_key=DASHSCOPE_API_KEY or "mock",
-    base_url=QWEN_API_URL,
-    timeout=300.0,
-    max_retries=2
-)
+qwen_client = ai_config.qwen_client  # one shared client (tests patch it through this name)
 
 async def screen_candidate_with_qwen(profile: CandidateProfile, job: Job) -> ScreeningResult:
     """Analyze the extracted candidate profile against job requirements using Qwen #2."""
-    if not DASHSCOPE_API_KEY or DASHSCOPE_API_KEY == "mock":
+    if ai_config.mock_mode(ai_config.DASHSCOPE_API_KEY, "DASHSCOPE_API_KEY"):
         from app.schemas.core import DecisionEnum
         return ScreeningResult(
             score=85,
@@ -65,16 +55,16 @@ async def screen_candidate_with_qwen(profile: CandidateProfile, job: Job) -> Scr
         '  "detectedLanguages": ["...", "..."],\n'
         '  "reasons": ["...", "..."],\n'
         '  "criteria": [{"label": "...", "status": "met" | "partial" | "unmet" | "unknown", "evidence_refs": [{"field": "skills", "value": "Python"}]}]\n'
-        '}'
+        '}\n\n' + ai_config.RESUME_IS_DATA
     )
 
     try:
         logger.info("Qwen #2 (Screening) started")
         response = await qwen_client.chat.completions.create(
-            model=QWEN_MODEL_NAME, 
+            model=ai_config.QWEN_MODEL_NAME, 
             messages=[
                 {"role": "system", "content": system_prompt},
-                {"role": "user", "content": f"Candidate Profile:\n{profile.model_dump_json(indent=2)}\n\nJob Requirements:\n{job.model_dump_json(indent=2)}"}
+                {"role": "user", "content": f"Candidate Profile:\n{ai_config.as_data('candidate_profile', profile.model_dump_json(indent=2))}\n\nJob Requirements:\n{job.model_dump_json(indent=2)}"}
             ],
             response_format={"type": "json_object"},
             extra_body={"enable_thinking": True}
