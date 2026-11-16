@@ -55,7 +55,7 @@ async def screen_candidate_with_qwen(profile: CandidateProfile, job: Job) -> Scr
         '  "detectedLanguages": ["...", "..."],\n'
         '  "reasons": ["...", "..."],\n'
         '  "criteria": [{"label": "...", "status": "met" | "partial" | "unmet" | "unknown", "evidence_refs": [{"field": "skills", "value": "Python"}]}]\n'
-        '}'
+        '}\n\n' + ai_config.RESUME_IS_DATA
     )
 
     try:
@@ -64,7 +64,7 @@ async def screen_candidate_with_qwen(profile: CandidateProfile, job: Job) -> Scr
             model=ai_config.QWEN_MODEL_NAME, 
             messages=[
                 {"role": "system", "content": system_prompt},
-                {"role": "user", "content": f"Candidate Profile:\n{profile.model_dump_json(indent=2)}\n\nJob Requirements:\n{job.model_dump_json(indent=2)}"}
+                {"role": "user", "content": f"Candidate Profile:\n{ai_config.as_data('candidate_profile', profile.model_dump_json(indent=2))}\n\nJob Requirements:\n{job.model_dump_json(indent=2)}"}
             ],
             response_format={"type": "json_object"},
             extra_body={"enable_thinking": True}
