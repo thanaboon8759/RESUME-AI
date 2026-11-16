@@ -14,17 +14,20 @@ def seed():
         print("Error: Supabase client not initialized. Check your .env file.")
         sys.exit(1)
 
-    print("Logging in as admin to bypass RLS...")
-    try:
-        auth_response = supabase.auth.sign_in_with_password({
-            "email": "admin@example.com",
-            "password": "REDACTED"
-        })
-        user_id = auth_response.user.id
-        print(f"Logged in as admin, user_id: {user_id}")
-    except Exception as e:
-        print(f"Warning: Login failed: {e}")
+    # Credentials come from .env only: this repo is public.
+    email, password = os.getenv("SEED_EMAIL"), os.getenv("SEED_PASSWORD")
+    if not email or not password:
+        print("Error: set SEED_EMAIL and SEED_PASSWORD in .env to the user the seed data belongs to.")
+        sys.exit(1)
 
+    print(f"Logging in as {email}...")
+    try:
+        auth_response = supabase.auth.sign_in_with_password({"email": email, "password": password})
+        user_id = auth_response.user.id
+        print(f"Logged in, user_id: {user_id}")
+    except Exception as e:
+        print(f"Error: login failed: {e}")
+        sys.exit(1)
 
     # Path to fixtures.json
     fixtures_path = Path(__file__).parent.parent / "frontend" / "src" / "mocks" / "fixtures.json"
