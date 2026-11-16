@@ -27,7 +27,8 @@ def test_web_ui_has_no_open_cors_and_uses_path_rules():
 
 
 def test_no_undefined_names():
-    import subprocess, sys
+    import importlib.util, subprocess, sys
+    assert importlib.util.find_spec("pyflakes"), "install requirements-dev.txt"  # else the run below passes empty
     files = [f for f in subprocess.run(["git", "ls-files", "*.py"], cwd=ROOT, capture_output=True, text=True).stdout.split()
              if not f.startswith("resume-lab/evaluation/runs/")]  # frozen historical copies
     out = subprocess.run([sys.executable, "-m", "pyflakes", *files], cwd=ROOT, capture_output=True, text=True).stdout
