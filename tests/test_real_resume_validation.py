@@ -89,7 +89,7 @@ troubleshooting bugs and providing ongoing post-deployment support.
 [ID: b8] AI Product Moderation System (Senior Project)
 
 [ID: b9] Developed an exclusive full-stack e-commerce platform tailored for \
-Bangkok University students using Next.js and MongoDB, featuring an \
+Example University students using Next.js and MongoDB, featuring an \
 automated moderation system to detect and block illegal product \
 listings before publication. \
 Engineered a custom AI-driven backend using Python to analyze \
@@ -118,10 +118,9 @@ and generate highly personalized music recommendations.
 utilizing Next.js to showcase technical projects, code repositories, \
 and AWS/Cybersecurity certifications.
 
-[ID: b16] Faculty : School of Information and \
-Technology Innovation \
+[ID: b16] Faculty : Example School of Computing \
 Computer Science Data Science and Cyber Security \
-Bangkok University \
+Example University \
 July 2023 - Present
 
 [ID: b17] Email:narin.example@example.com \
@@ -130,8 +129,8 @@ LinkedIn:www.linkedin.com/in/example-narin \
 MyWebsite: example-narin.github.io/portfolio
 
 [ID: b18] 123 Example Road, \
-Khlong Nueng, Khlong Luang, \
-Pathum Thani, Thailand \
+Example District, \
+Example City \
 080-000-0000
 
 [ID: b19] CONTACT
@@ -391,16 +390,16 @@ async def test_q1_portfolio_project():
 async def test_q1_two_education_records():
     profile = await get_profile()
     assert len(profile.education) >= 2, (
-        f"Expected Bangkok University + high school, got: {profile.education}"
+        f"Expected Example University + high school, got: {profile.education}"
     )
 
 
 @pytest.mark.asyncio
-async def test_q1_bangkok_university():
+async def test_q1_example_university():
     profile = await get_profile()
     institutions = [e.get("institution", "").lower() for e in profile.education]
-    assert any("bangkok" in i for i in institutions), (
-        f"Bangkok University not found: {institutions}"
+    assert any("example university" in i for i in institutions), (
+        f"Example University not found: {institutions}"
     )
 
 
@@ -418,10 +417,10 @@ async def test_q1_university_ongoing():
     """Must not claim graduation — source says 'Present'."""
     profile = await get_profile()
     for edu in profile.education:
-        if "bangkok" in edu.get("institution", "").lower():
+        if "example university" in edu.get("institution", "").lower():
             dates = edu.get("dates", "").lower()
             assert any(kw in dates for kw in ["present", "ongoing", "current", "2023"]), (
-                f"Bangkok University dates should show ongoing, got: '{dates}'"
+                f"Example University dates should show ongoing, got: '{dates}'"
             )
 
 

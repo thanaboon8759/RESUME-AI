@@ -52,7 +52,8 @@ def test_stale_files_are_gone():
 
 def test_replacement_keeps_structure():
     from tests.test_real_resume_validation import PROJECT_KEYWORDS, SAMPLE_RESUME
-    assert SAMPLE_RESUME.count("[ID: b") >= 20
+    ids = re.findall(r"\[ID: b(\d+)\]", SAMPLE_RESUME)
+    assert ids == [str(i) for i in range(len(ids))] and len(ids) >= 20  # b0..bN, in order, no gaps
     assert all(k.split()[0] in SAMPLE_RESUME.lower() for k in PROJECT_KEYWORDS)
     assert "narin.example@example.com" in SAMPLE_RESUME
 
@@ -79,3 +80,12 @@ def test_test_resumes_use_example_contacts():
         bad += [f"{f}: email" for e in re.findall(r"[\w.+-]+@([\w-]+\.[\w.]+)", text) if e not in ("example.com", "example.org")]
         bad += [f"{f}: phone" for p in re.findall(r"\b0\d{1,2}[- ]?\d{3}[- ]?\d{4}\b", text) if p != "080-000-0000"]
     assert bad == []
+
+
+ORG_WORD = re.compile(r".*\b(University|College|School|Institute|Co\.,? ?Ltd|Company)\b.*")
+
+
+def test_test_resumes_use_example_orgs():
+    from tests.test_real_resume_validation import SAMPLE_RESUME
+    bad = [m.group(0) for m in ORG_WORD.finditer(SAMPLE_RESUME) if "Example" not in m.group(0)]
+    assert not bad, f"{len(bad)} line(s) name a real organisation"  # count only: CI logs must not echo names
