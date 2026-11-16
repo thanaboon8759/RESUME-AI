@@ -26,7 +26,7 @@ VALID_SCREENING_JSON = '''{
 @pytest.fixture(autouse=True)
 def fake_api_key(monkeypatch):
     # Without a key the service returns its built-in mock before calling the client.
-    monkeypatch.setattr("app.services.screening_service.DASHSCOPE_API_KEY", "test-key")
+    monkeypatch.setattr("app.services.ai_config.DASHSCOPE_API_KEY", "test-key")
 
 @pytest.fixture
 def mock_qwen_screening():

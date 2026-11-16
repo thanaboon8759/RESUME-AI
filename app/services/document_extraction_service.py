@@ -6,6 +6,7 @@ import httpx
 import logging
 from io import BytesIO
 import fitz
+from app.services import ai_config
 import threading
 
 # Configure logging
@@ -97,7 +98,7 @@ def is_extraction_usable(text: str) -> bool:
 
 async def extract_text_typhoon(file_bytes: bytes) -> str:
     """Fallback OCR extraction using Typhoon."""
-    if not TYPHOON_API_KEY or TYPHOON_API_KEY == "mock":
+    if ai_config.mock_mode(TYPHOON_API_KEY, "TYPHOON_API_KEY"):
         return "Mock Typhoon OCR text extracted from image-based PDF. Candidate has 5 years of Python experience and loves building APIs with FastAPI."
     
     url = "https://api.opentyphoon.ai/v1/ocr"
