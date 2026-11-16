@@ -4,7 +4,6 @@ import json
 import base64
 import httpx
 import logging
-from io import BytesIO
 import fitz
 from app.services import ai_config
 import threading

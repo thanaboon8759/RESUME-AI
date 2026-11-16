@@ -43,9 +43,10 @@ LOCAL_OCR_MODEL=typhoon-ocr-qlora-v1-rp1:latest
 
 ### 3. Database Initialization
 Ensure your Supabase project is set up with the required tables:
-- `users`, `preferences`, `jobs`, `candidates`, `decisions`, `uploads`
-- Also, create a **Storage Bucket** named `uploads` (must be public or accessible via RLS).
-Run `schema.sql` (if available) in your Supabase SQL Editor.
+- `preferences`, `jobs`, `candidates`, `decisions`, `uploads` (sign-in users live in Supabase Auth, not a table)
+Run `app/database/migrations/schema.sql` once in the Supabase SQL Editor of a new project. It creates the tables, indexes, row-level security, and a **private** `uploads` storage bucket. Keep that bucket private: it holds candidates' resumes.
+
+Use the project's **service_role** key as `SUPABASE_SERVICE_ROLE_KEY` (Project Settings → API Keys). The backend does its own per-user checks and needs that key to read and write past row-level security. The anon key will not work.
 
 ### 4. Running the Server
 Activate the virtual environment and start the FastAPI development server:

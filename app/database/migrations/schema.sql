@@ -1,7 +1,8 @@
--- Create preferences table
-DROP TABLE IF EXISTS public.preferences CASCADE;
+-- Resume AI database: run once on a new, empty Supabase project (SQL Editor).
+-- Applied to the resume-ai project on 2026-11-16 as migration "resume_ai_schema".
+
 CREATE TABLE public.preferences (
-    id TEXT PRIMARY KEY,
+    id TEXT PRIMARY KEY,  -- the owner's user id: one row per user
     user_id UUID NOT NULL,
     name TEXT NOT NULL,
     email TEXT NOT NULL,
@@ -14,8 +15,6 @@ CREATE TABLE public.preferences (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
 
--- Create jobs table
-DROP TABLE IF EXISTS public.jobs CASCADE;
 CREATE TABLE public.jobs (
     id TEXT PRIMARY KEY,
     user_id UUID NOT NULL,
@@ -32,8 +31,6 @@ CREATE TABLE public.jobs (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
 
--- Create the candidates table in Supabase
-DROP TABLE IF EXISTS public.candidates CASCADE;
 CREATE TABLE public.candidates (
     id TEXT PRIMARY KEY,
     user_id UUID NOT NULL,
@@ -43,12 +40,10 @@ CREATE TABLE public.candidates (
     score INTEGER NOT NULL,
     decision TEXT NOT NULL,
     reason JSONB NOT NULL,
-    full_data JSONB NOT NULL, -- Stores the rich UI structure for the frontend
+    full_data JSONB NOT NULL, -- the rich candidate object the frontend shows
     created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
 
--- Create decisions table
-DROP TABLE IF EXISTS public.decisions CASCADE;
 CREATE TABLE public.decisions (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     user_id UUID NOT NULL,
@@ -64,8 +59,6 @@ CREATE TABLE public.decisions (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
 
--- Create uploads table
-DROP TABLE IF EXISTS public.uploads CASCADE;
 CREATE TABLE public.uploads (
     id TEXT PRIMARY KEY,
     user_id UUID NOT NULL,
@@ -78,3 +71,37 @@ CREATE TABLE public.uploads (
     attempts INTEGER NOT NULL DEFAULT 0,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
+
+-- Indexes for the app's filters (every query filters by user_id; foreign keys need their own index)
+CREATE INDEX preferences_user_id_idx ON public.preferences (user_id);
+CREATE INDEX jobs_user_id_idx ON public.jobs (user_id);
+CREATE INDEX candidates_job_user_idx ON public.candidates (job_id, user_id);
+CREATE INDEX candidates_user_id_idx ON public.candidates (user_id);
+CREATE INDEX decisions_user_id_idx ON public.decisions (user_id);
+CREATE INDEX decisions_candidate_id_idx ON public.decisions (candidate_id);
+CREATE INDEX decisions_job_id_idx ON public.decisions (job_id);
+CREATE INDEX uploads_job_user_idx ON public.uploads (job_id, user_id);
+CREATE INDEX uploads_candidate_id_idx ON public.uploads (candidate_id);
+CREATE INDEX uploads_user_id_idx ON public.uploads (user_id);
+
+-- Row level security: the backend's service-role key bypasses it; any direct client access sees only its own rows.
+ALTER TABLE public.preferences ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.jobs ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.candidates ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.decisions ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.uploads ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "own preferences" ON public.preferences FOR ALL TO authenticated
+    USING (user_id = (select auth.uid())) WITH CHECK (user_id = (select auth.uid()));
+CREATE POLICY "own jobs" ON public.jobs FOR ALL TO authenticated
+    USING (user_id = (select auth.uid())) WITH CHECK (user_id = (select auth.uid()));
+CREATE POLICY "own candidates" ON public.candidates FOR ALL TO authenticated
+    USING (user_id = (select auth.uid())) WITH CHECK (user_id = (select auth.uid()));
+CREATE POLICY "own decisions" ON public.decisions FOR ALL TO authenticated
+    USING (user_id = (select auth.uid())) WITH CHECK (user_id = (select auth.uid()));
+CREATE POLICY "own uploads" ON public.uploads FOR ALL TO authenticated
+    USING (user_id = (select auth.uid())) WITH CHECK (user_id = (select auth.uid()));
+
+-- Private resume storage: no public URLs; only the backend (service role) reads and writes it. 20 MB = the app's limit.
+INSERT INTO storage.buckets (id, name, public, file_size_limit)
+VALUES ('uploads', 'uploads', false, 20971520);

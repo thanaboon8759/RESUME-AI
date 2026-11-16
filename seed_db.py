@@ -114,7 +114,7 @@ def seed():
             }
             
             # Using upsert to avoid duplicates if run multiple times
-            result = supabase.table("candidates").upsert(db_record).execute()
+            supabase.table("candidates").upsert(db_record).execute()
             success_count += 1
             print(f"[OK] Seeded: {candidate['name']} ({candidate['id']})")
         except Exception as e:

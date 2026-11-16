@@ -23,8 +23,9 @@ def client(monkeypatch):
     return AsyncClient(transport=ASGITransport(app=app), base_url="http://test"), save
 
 
-def set_candidate(monkeypatch, row):
-    monkeypatch.setattr("app.repositories.candidate_repository.get_candidate", lambda candidate_id, user_id: row)
+def set_candidate(monkeypatch, job_id):
+    monkeypatch.setattr("app.repositories.candidate_repository.get_candidate_job_id",
+                        lambda candidate_id, user_id: job_id, raising=False)
 
 
 async def test_decision_on_foreign_candidate_is_404(monkeypatch, client):
@@ -36,6 +37,14 @@ async def test_decision_on_foreign_candidate_is_404(monkeypatch, client):
 
 async def test_decision_on_own_candidate_saved(monkeypatch, client):
     ac, save = client
-    set_candidate(monkeypatch, {"id": "c1"})
+    set_candidate(monkeypatch, "j1")
     assert (await ac.post("/api/decisions/", json=DECISION)).status_code == 200
     save.assert_called_once()
+
+
+async def test_decision_job_comes_from_candidate(monkeypatch, client):
+    # The client's jobId used to be stored as sent, so a decision could be filed under the wrong job.
+    ac, save = client
+    set_candidate(monkeypatch, "j-real")
+    assert (await ac.post("/api/decisions/", json={**DECISION, "jobId": "j-other"})).status_code == 200
+    assert save.call_args.args[0].jobId == "j-real"
