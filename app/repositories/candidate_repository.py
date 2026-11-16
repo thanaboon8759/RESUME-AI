@@ -33,7 +33,7 @@ def create_candidate(candidate_id: str, job_id: str, name: str, ai_evaluation, r
     if not supabase: return
     db_record = {
         "id": candidate_id, "user_id": user_id, "job_id": job_id, "candidate_name": name,
-        "position": "Backend Developer", "score": ai_evaluation.score, "decision": ai_evaluation.decision.value,
+        "position": rich_candidate.role or "", "score": ai_evaluation.score, "decision": ai_evaluation.decision.value,
         "reason": ai_evaluation.reasons, "full_data": rich_candidate.model_dump(mode="json")
     }
     supabase.table("candidates").insert(db_record).execute()

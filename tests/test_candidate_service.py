@@ -96,3 +96,15 @@ async def test_resume_path_traversal_is_404():
 
 async def test_resume_path_percent_traversal_is_404():
     assert (await _create_with_url("job1/%2E%2E/otherjob/x_a.pdf", make_job())).status_code == 404
+
+
+def test_position_is_the_candidates_role():
+    # Every row used to say "Backend Developer", whatever the job was.
+    from app.repositories import candidate_repository
+    screening = ScreeningResult(score=50, decision=DecisionEnum.undecided, criteria=[])
+    rich = MagicMock(role="Product Designer")
+    rich.model_dump.return_value = {}
+    sb = MagicMock()
+    with patch("app.repositories.candidate_repository.supabase", sb):
+        candidate_repository.create_candidate("c1", "job1", "Ann", screening, rich, "u1")
+    assert sb.table.return_value.insert.call_args.args[0]["position"] == "Product Designer"
