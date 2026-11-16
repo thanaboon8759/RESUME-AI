@@ -7,6 +7,8 @@ from pathlib import Path
 
 SAMPLES_DIR = Path("benchmark_data")
 _DRIVE = re.compile(r"^[A-Za-z]:")
+_BAD_CHARS = re.compile(r'[\x00-\x1f<>:"|?*]')
+_RESERVED = {"CON", "PRN", "AUX", "NUL", *(f"COM{i}" for i in range(1, 10)), *(f"LPT{i}" for i in range(1, 10))}
 
 
 def _inside(path: Path, root: Path) -> bool:
@@ -38,6 +40,8 @@ def safe_upload_name(filename: str) -> str:
     """Last path part of an uploaded file name; browsers may send folders, but they must not reach the disk path."""
     name = re.split(r"[/\\]", filename or "")[-1]
     name = _DRIVE.sub("", name)
-    if name in ("", ".", ".."):
+    # Names the OS cannot open (NUL, reserved devices, too long) would otherwise fail later as a 500.
+    if (name in ("", ".", "..") or _BAD_CHARS.search(name) or name[-1] in ". " or len(name) > 200
+            or name.split(".")[0].upper() in _RESERVED):
         raise ValueError("Invalid upload file name")
     return name
