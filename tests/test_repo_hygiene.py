@@ -91,3 +91,8 @@ def test_test_resumes_use_example_orgs():
     from tests.test_real_resume_validation import SAMPLE_RESUME
     bad = [m.group(0) for m in ORG_WORD.finditer(SAMPLE_RESUME) if "Example" not in m.group(0)]
     assert not bad, f"{len(bad)} line(s) name a real organisation"  # count only: CI logs must not echo names
+
+
+def test_bucket_fix_sql_is_private():
+    sql = (ROOT / "app/database/migrations/2026-11-16-private-uploads-bucket.sql").read_text(encoding="utf-8").lower()
+    assert "update storage.buckets" in sql and "public = false" in sql and "where id = 'uploads'" in sql
