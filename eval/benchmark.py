@@ -1,4 +1,5 @@
 import json
+import logging
 import time
 import sys
 from typing import List
@@ -6,6 +7,8 @@ from typing import List
 from schemas.models import CandidateProfile, ModelBenchmarkResult, BenchmarkReport
 from extraction.llm_local import extract_candidate_profile, check_ollama_connectivity
 from eval.test_data import TEST_SAMPLES
+
+logger = logging.getLogger(__name__)
 
 try:
     from rich.console import Console

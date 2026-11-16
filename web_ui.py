@@ -38,6 +38,8 @@ from extraction.llm_local import (
     check_ollama_connectivity,
 )
 from matching.bge_matcher import SkillMatcher
+from lab_paths import resolve_batch_dir, resolve_sample, safe_upload_name
+from lab_guard import install_guards
 
 # Module-level singletons to prevent expensive re-instantiation per request
 BENCHMARK_DATA_DIR = Path("benchmark_data")
@@ -48,11 +50,13 @@ app = FastAPI(title="Resume AI Web Testing Console")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    # Only this page: with "*", any website open in the browser could call these endpoints and read local files.
+    allow_origins=["http://127.0.0.1:8000", "http://localhost:8000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+install_guards(app)  # Host check against DNS rebinding; refuse cross-site POSTs
 
 
 class BatchRequest(BaseModel):
@@ -124,13 +128,10 @@ HTML_CONTENT = """<!DOCTYPE html>
           <div id="selectedFileName" class="text-xs text-blue-400 font-semibold mt-2 hidden truncate"></div>
         </div>
 
-        <!-- Quick Sample Buttons (All 7 Benchmark Files) -->
+        <!-- Quick Sample Buttons (Benchmark Files) -->
         <div>
           <div class="text-xs text-slate-400 mb-2 font-medium">Or Quick-Load Benchmark Sample:</div>
           <div class="grid grid-cols-2 gap-1.5" id="samplesContainer">
-            <button onclick="loadSample('kunanon_resume.pdf')" id="btn-kunanon_resume.pdf" class="col-span-2 sample-btn px-2.5 py-1.5 text-xs bg-blue-900/40 hover:bg-blue-800/60 rounded-lg border border-blue-500/50 text-left transition truncate text-blue-300 font-semibold">
-              Kunanon Hirunrattanaporn (Cybersecurity PDF)
-            </button>
             <button onclick="loadSample('thai_resume.pdf')" id="btn-thai_resume.pdf" class="sample-btn px-2.5 py-1.5 text-xs bg-slate-900 hover:bg-slate-700 rounded-lg border border-slate-700 text-left transition truncate">
               Thai Resume (PDF)
             </button>
@@ -386,14 +387,14 @@ HTML_CONTENT = """<!DOCTYPE html>
 
   <script>
     let activeTab = 'profile';
-    let selectedSample = 'kunanon_resume.pdf';
+    let selectedSample = 'english_resume.pdf';
     let currentUploadedFile = null;
     let latestSingleData = null;
     let latestBatchData = null;
 
     // Check backend health on load
     window.onload = async () => {
-      loadSample('kunanon_resume.pdf');
+      loadSample('english_resume.pdf');
       try {
         const res = await fetch('/api/health');
         if (res.ok) {
@@ -924,12 +925,15 @@ async def process_single_document(
 
     try:
         if file is not None and file.filename:
-            target_path = Path(temp_dir) / file.filename
+            try:
+                target_path = Path(temp_dir) / safe_upload_name(file.filename)
+            except ValueError:
+                raise HTTPException(status_code=400, detail="Invalid file name")
             with open(target_path, "wb") as f:
                 shutil.copyfileobj(file.file, f)
         elif sample:
-            sample_path = BENCHMARK_DATA_DIR / sample
-            if not sample_path.exists():
+            sample_path = resolve_sample(sample, BENCHMARK_DATA_DIR)
+            if sample_path is None:
                 raise HTTPException(status_code=404, detail=f"Sample '{sample}' not found in benchmark_data")
             target_path = sample_path
         else:
@@ -939,14 +943,13 @@ async def process_single_document(
         return JSONResponse(content=result)
 
     finally:
-        if file is not None and Path(temp_dir).exists():
-            shutil.rmtree(temp_dir, ignore_errors=True)
+        shutil.rmtree(temp_dir, ignore_errors=True)
 
 
 @app.post("/api/batch")
 def process_batch_directory(req: BatchRequest = Body(...)):
-    target_dir = Path(req.directory)
-    if not target_dir.exists() or not target_dir.is_dir():
+    target_dir = resolve_batch_dir(req.directory, BENCHMARK_DATA_DIR)
+    if target_dir is None:
         raise HTTPException(status_code=404, detail=f"Directory '{req.directory}' not found")
 
     supported_exts = {".pdf", ".docx", ".png", ".jpg", ".jpeg"}
